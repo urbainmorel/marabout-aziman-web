@@ -1,0 +1,199 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaSection from '../components/CtaSection.astro';
+import type { Post, Category } from '../mock/data';
+
+interface Props {
+  posts: Post[];
+  categories: Category[];
+  currentCategory?: string;
+  title?: string;
+  description?: string;
+}
+
+const {
+  posts,
+  categories,
+  currentCategory,
+  title = "Blog & Enseignements Spirituels | Cabinet Aziman",
+  description = "Explorez nos guides sur le retour affectif, les rituels de protection, la chance financière et les secrets ancestraux du maraboutage en France.",
+} = Astro.props;
+
+const featuredPost = posts.find((p) => p.featured) || posts[0];
+const regularPosts = featuredPost ? posts.filter((p) => p._id !== featuredPost._id) : posts;
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Breadcrumbs -->
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs
+      items={[
+        { name: 'Blog', href: '/blog' },
+        ...(currentCategory ? [{ name: currentCategory }] : []),
+      ]}
+    />
+  </div>
+
+  <!-- Hero Header -->
+  <section class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 text-center">
+    <span class="badge-sacred text-xs mb-3">Enseignements & Sagesse Traditionnelle</span>
+    <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-brand-dark mb-4">
+      {currentCategory ? `Rituels & Articles : ${currentCategory}` : "Le Guide des Rituels & Révélations Spirituelles"}
+    </h1>
+    <p class="font-sans text-xs sm:text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+      Comprendre les forces occultes, les secrets du retour d'affection et les règles de purification pour transformer votre quotidien.
+    </p>
+  </section>
+
+  <!-- Category Pills Filter -->
+  <section class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 mb-10 overflow-x-auto">
+    <div class="flex items-center justify-start md:justify-center gap-2 pb-2 whitespace-nowrap">
+      <a
+        href="/blog"
+        class={`px-4 py-2 rounded-full text-xs font-sans font-medium transition-all ${
+          !currentCategory
+            ? 'bg-brand-900 text-white shadow-sm'
+            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+        }`}
+      >
+        Tous les articles
+      </a>
+      {categories.map((cat) => {
+        const isCatActive = currentCategory === cat.title;
+        return (
+          <a
+            href={`/blog/categorie/${cat.slug}`}
+            class={`px-4 py-2 rounded-full text-xs font-sans font-medium transition-all ${
+              isCatActive
+                ? 'bg-brand-900 text-white shadow-sm'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+            }`}
+          >
+            {cat.title}
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    
+    <!-- Featured Post Spotlight (Only on main blog list) -->
+    {!currentCategory && featuredPost && (
+      <div class="card-luxury overflow-hidden mb-12 border border-gold-200/60 hover:shadow-ambient-lg transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          <div class="lg:col-span-7 relative h-64 sm:h-80 lg:h-full min-h-[280px] bg-gray-100 overflow-hidden">
+            <img
+              src={featuredPost.mainImage.asset.url}
+              alt={featuredPost.mainImage.alt}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-4 left-4 badge-gold shadow-md">
+              À la Une
+            </span>
+          </div>
+
+          <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                <span class="font-semibold text-brand-900 uppercase tracking-wider">{featuredPost.category.title}</span>
+                <span>•</span>
+                <span>{new Date(featuredPost.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                <span>•</span>
+                <span>{featuredPost.readingTime}</span>
+              </div>
+
+              <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark mb-4 hover:text-brand-900 transition-colors">
+                <a href={`/blog/${featuredPost.slug}`}>
+                  {featuredPost.title}
+                </a>
+              </h2>
+
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">
+                {featuredPost.excerpt}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center font-bold text-xs">
+                  MA
+                </div>
+                <span class="text-xs font-medium text-gray-800">{featuredPost.author.name}</span>
+              </div>
+
+              <a
+                href={`/blog/${featuredPost.slug}`}
+                class="text-xs font-sans font-bold text-brand-900 hover:text-gold-700 transition-colors flex items-center gap-1"
+              >
+                <span>Lire le guide complet</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- Posts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {regularPosts.map((post) => (
+        <article class="card-luxury overflow-hidden flex flex-col h-full group hover:border-gold-300 transition-all duration-300">
+          <div class="relative h-48 sm:h-52 overflow-hidden bg-gray-100">
+            <img
+              src={post.mainImage.asset.url}
+              alt={post.mainImage.alt}
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 text-[10px] font-sans font-semibold text-white bg-brand-dark/80 backdrop-blur-sm px-2.5 py-1 rounded">
+              {post.category.title}
+            </span>
+          </div>
+
+          <div class="p-5 flex flex-col justify-between flex-grow">
+            <div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-2">
+                <span>{new Date(post.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                <span>•</span>
+                <span>{post.readingTime}</span>
+              </div>
+
+              <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-900 transition-colors leading-snug mb-2">
+                <a href={`/blog/${post.slug}`}>
+                  {post.title}
+                </a>
+              </h3>
+
+              <p class="text-xs text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                {post.excerpt}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto">
+              <span class="text-[11px] text-gray-500 font-medium">Par {post.author.name}</span>
+              <a
+                href={`/blog/${post.slug}`}
+                class="text-xs font-sans font-semibold text-brand-900 hover:text-gold-700 transition-colors flex items-center gap-1"
+              >
+                <span>Lire</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+
+  <!-- Global CTA Banner -->
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <CtaSection
+      title="Besoin d'un éclairage spirituel personnalisé ?"
+      subtitle="Maître Aziman consulte l'oracle du Fâ pour vous révéler avec clarté les rituels adaptés à votre situation."
+    />
+  </div>
+</BaseLayout>

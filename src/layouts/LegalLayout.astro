@@ -1,0 +1,58 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import LegalTabs from '../components/LegalTabs.astro';
+
+interface Props {
+  title: string;
+  slug: 'mentions-legales' | 'politique-confidentialite' | 'cgu';
+  lastUpdated?: string;
+  description?: string;
+}
+
+const {
+  title,
+  slug,
+  lastUpdated = "31 août 2026",
+  description = "Informations légales, politique de confidentialité et conditions générales d'utilisation du site Cabinet Aziman.",
+} = Astro.props;
+---
+
+<BaseLayout title={`${title} | Cabinet Aziman`} description={description}>
+  <!-- Breadcrumbs -->
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs
+      items={[
+        { name: 'Informations Légales', href: '/mentions-legales' },
+        { name: title },
+      ]}
+    />
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="font-serif font-bold text-3xl sm:text-4xl text-brand-dark mb-2">
+        {title}
+      </h1>
+      <p class="text-xs text-gray-500 font-sans">
+        Dernière mise à jour : <time datetime="2026-08-31">{lastUpdated}</time>
+      </p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <LegalTabs currentSlug={slug} />
+
+    <!-- Legal Prose Content -->
+    <div class="bg-white p-6 sm:p-10 rounded-2xl border border-gray-100 shadow-sm prose-editorial">
+      <slot />
+    </div>
+
+    <!-- Footer Back Link -->
+    <div class="mt-8 text-center">
+      <a href="/" class="text-xs font-sans font-semibold text-brand-900 hover:text-gold-700 transition-colors inline-flex items-center gap-1">
+        <span>← Revenir à la page d'accueil</span>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

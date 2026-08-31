@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ValueProps from '../components/ValueProps.astro';
+import DomainCard from '../components/DomainCard.astro';
+import ShopCard from '../components/ShopCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { siteSettings, domains, shopItems, testimonials, faqItems } from '../mock/data';
+---
+
+<BaseLayout
+  title="Grand Marabout en France : Voyance & Rituels | Cabinet Aziman"
+  description="Consultez Maître Aziman, grand marabout en France. Retour affectif rapide, chance, protection et rituels ancestraux. RDV au cabinet ou à distance."
+>
+  <!-- 1. Hero Section -->
+  <section class="relative bg-brand-dark text-white overflow-hidden py-14 sm:py-20 lg:py-28" data-purpose="hero-section">
+    <!-- Hero Background Image with subtle spiritual overlay -->
+    <img
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgWV93CudSzkAmd-VgCaWANjQglNCysU74aQC9HgIA5tvzNQhkbfRnblFRHn4ml8keUGa--XZmDrq4UId63NlxsjMrYA65p96SNfF1ozgjYxpBeEJPw5ynJVmN9ki_8YZzzWdXZYyxHcnhSKbOTb4iLB-iR5iUnXdPTbyNg4SAhx_-W8xTSNFA3xAVI27YkaFSoHYgDy6VLbGN97IfFnYgOv02Li1URfXf0lUsFeSVua1YfXcWGYBtcw"
+      alt="Sanctuaire et consultation du Grand Marabout Aziman"
+      class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/85 to-brand-dark/60"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      
+      <!-- Trust Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold-300/40 text-gold-200 text-xs font-sans font-semibold tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Intervention Rapide en 24h à 72h • 25+ ans d'expérience</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight drop-shadow-sm">
+        Grand Marabout Aziman en France : <br />
+        <span class="text-gold-300 italic font-medium">Voyance & Rituels Traditionnels</span>
+      </h1>
+
+      <p class="font-sans text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto">
+        Résolution rapide de vos problèmes sentimentaux, financiers et spirituels. Rituels personnalisés de retour affectif, désenvoûtement et chance au cabinet en Île-de-France ou à distance.
+      </p>
+
+      <!-- Action Buttons (Extrapolated for Desktop & Mobile) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4 max-w-md mx-auto">
+        <a
+          href={siteSettings.whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-whatsapp w-full sm:w-auto py-3.5 px-6 text-sm"
+        >
+          <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.394 0 12.03a11.972 11.972 0 001.605 6.057L0 24l6.132-1.61a11.874 11.874 0 005.915 1.569h.005c6.635 0 12.032-5.396 12.035-12.032a11.85 11.85 0 00-3.48-8.504z"/>
+          </svg>
+          <span>Consultation Immédiate</span>
+        </a>
+        <a
+          href="#domaines"
+          class="btn-secondary w-full sm:w-auto py-3.5 px-6 text-sm text-brand-dark"
+        >
+          <span>Découvrir nos rituels</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. Value Props Section -->
+  <ValueProps />
+
+  <!-- 3. Section À Propos (Extrapolated 2-Col for Desktop) -->
+  <section class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16" data-purpose="about-section">
+    <div class="card-luxury p-6 sm:p-10 lg:p-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left Image / Emblem Column -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative h-72 sm:h-96 rounded-2xl overflow-hidden shadow-ambient bg-brand-dark">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG0AC5xQQkZVN6GKqNppO3JNzVln1mTUhW6umDVdmkxouZfCo0_DRdkK99JyRWg_wA0QyRloapYsege7E7_ZcJAS6270Ri5Zif1zJycat-lf8eKhTyobL8Jxfy8bYNGi6uGx4oPJwa5H24swsvAgbA5mkPgwsZTU9dQB7J109JML-AhCeHjewTeBYpw7ZJFuowiUqBMcrOJR_aSpYojxKAQfILJtLdd5i52Ue3vcJ6NjQpaMhqpSOJMw"
+              alt="Maître Aziman, Grand Marabout en France"
+              class="w-full h-full object-cover opacity-85"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs font-sans text-gold-300 uppercase tracking-widest block">Initiation Ancestrale</span>
+              <span class="font-serif font-bold text-lg text-white">Plus de 25 ans de pratique</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content Column -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex flex-col items-start">
+            <span class="badge-sacred text-xs mb-2">Cabinet d'Intervention Occulte</span>
+            <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark leading-tight">
+              À Propos de Maître Aziman
+            </h2>
+            <div class="h-1 w-16 bg-brand-900 rounded mt-2 mb-4"></div>
+          </div>
+
+          <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify">
+            Vous traversez une période de doutes sentimentaux, financiers ou spirituels ? Consulter un <strong>marabout en France</strong> réputé constitue le premier pas vers la résolution définitive de vos blocages. En effet, Maître Aziman met à votre service plus de vingt-cinq années d'initiation aux secrets ancestraux du Fâ et du Vodun du Bénin.
+          </p>
+
+          <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify">
+            Que vous souhaitiez une consultation privée dans son cabinet en Île-de-France ou un travail sérieux à distance, Maître Aziman intervient avec précision. Par conséquent, chaque rituel est personnalisé selon votre date de naissance et votre situation personnelle.
+          </p>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="/a-propos" class="btn-primary text-xs py-3 px-5">
+              <span>En savoir plus sur Maître Aziman</span>
+              <span>→</span>
+            </a>
+            <a href={siteSettings.whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-xs py-3 px-5">
+              <span>WhatsApp Direct</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Section Pourquoi Consulter Maître Aziman (4 Pillars Grid) -->
+  <section class="bg-surface-low py-12 md:py-20 border-y border-gray-200/80" data-purpose="why-choose-us">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+        <span class="badge-gold text-xs mb-2">Excellence & Déontologie</span>
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark mb-3">
+          Pourquoi consulter le Maître Aziman en France ?
+        </h2>
+        <div class="h-1 w-16 bg-brand-900 rounded mx-auto mb-4"></div>
+        <p class="text-xs sm:text-sm text-gray-600 font-sans leading-relaxed">
+          Faire appel à un authentique marabout en France vous garantit un accompagnement sur mesure fondé sur le secret initiatique et le respect des lois de la nature.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        
+        <!-- Card 1 -->
+        <div class="card-luxury p-6 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-900 flex items-center justify-center flex-shrink-0">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-base text-brand-dark mb-1">Une lignée initiatique pure</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">Initié dès l'enfance dans les grands sanctuaires traditionnels d'Afrique de l'Ouest, garantissant une puissance occulte originelle.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-luxury p-6 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-900 flex items-center justify-center flex-shrink-0">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-base text-brand-dark mb-1">Un cabinet discret en France</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">Un lieu neutre et apaisant en Île-de-France pour vous recevoir en toute confidentialité et sans aucun jugement.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-luxury p-6 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-900 flex items-center justify-center flex-shrink-0">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-base text-brand-dark mb-1">Des résultats rapides et vérifiables</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">Des rituels ciblés conçus pour déclencher des déblocages visibles en quelques jours (24h à 72h selon la situation).</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-luxury p-6 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-900 flex items-center justify-center flex-shrink-0">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-base text-brand-dark mb-1">Une disponibilité totale 7j/7</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">Consultations d'urgence au cabinet, par appel direct ou via WhatsApp avec un suivi régulier tout au long du travail.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Section Nos 8 Domaines d'Intervention Spirituelle (Responsive 4-Col Grid) -->
+  <section class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20" id="domaines" data-purpose="intervention-domains">
+    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <div class="h-px bg-gold-400 w-10"></div>
+        <span class="text-gold-700 font-sans uppercase tracking-widest text-xs font-semibold">Nos Spécialités</span>
+        <div class="h-px bg-gold-400 w-10"></div>
+      </div>
+      <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark mb-3">
+        Nos 8 Domaines d'Intervention Spirituelle
+      </h2>
+      <p class="text-xs sm:text-sm text-gray-600 font-sans leading-relaxed">
+        Découvrez nos rituels ancestraux adaptés aux réalités de votre quotidien. Cliquez sur chaque domaine pour accéder aux détails :
+      </p>
+    </div>
+
+    <!-- Responsive Grid: 2 columns on mobile, 4 columns on desktop -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+      {domains.map((domain) => (
+        <DomainCard domain={domain} />
+      ))}
+    </div>
+  </section>
+
+  <!-- 6. Section La Boutique Ésotérique Ancestrale (Responsive 4-Col Grid) -->
+  <section class="bg-surface-low py-12 md:py-20 border-y border-gray-200/80" id="boutique" data-purpose="esoteric-shop">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+        <div class="flex items-center justify-center gap-3 mb-2">
+          <div class="h-px bg-gold-400 w-10"></div>
+          <span class="text-gold-700 font-sans uppercase tracking-widest text-xs font-semibold">Articles Sacrés</span>
+          <div class="h-px bg-gold-400 w-10"></div>
+        </div>
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark mb-3">
+          La Boutique Ésotérique Ancestrale
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-600 font-sans leading-relaxed">
+          Chaque article est préparé, magnétisé et consacré selon les règles strictes de la tradition. Commandez en ligne avec livraison discrète sous 24h/48h par Colissimo ou Chronopost :
+        </p>
+      </div>
+
+      <!-- Responsive Grid: 2 columns on mobile, 4 columns on desktop -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+        {shopItems.map((item) => (
+          <ShopCard item={item} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Section Zones d'Intervention -->
+  <section class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16" data-purpose="intervention-zones">
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark mb-2">
+        Zones d'interventions en France & International
+      </h2>
+      <p class="text-xs sm:text-sm text-gray-600 font-sans">
+        Maître Aziman vous reçoit sur rendez-vous au sein de son cabinet en Île-de-France et intervient partout en France et à l'étranger :
+      </p>
+    </div>
+
+    <div class="card-luxury p-6 md:p-8 text-center max-w-3xl mx-auto">
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
+        {siteSettings.interventionCities.map((city) => (
+          <span class="bg-brand-50 hover:bg-brand-100 text-brand-900 border border-brand-200/60 text-xs px-3.5 py-1.5 rounded-full font-sans font-semibold transition-colors">
+            {city}
+          </span>
+        ))}
+      </div>
+      <p class="text-[11px] text-gray-500 font-sans mt-4">
+        Séances en cabinet privé ou consultations à distance par appel sécurisé et WhatsApp.
+      </p>
+    </div>
+  </section>
+
+  <!-- 8. Section Témoignages & Avis Vérifiés (3-Col Grid Desktop) -->
+  <section class="bg-white py-12 md:py-20 border-t border-gray-200/80" data-purpose="testimonials">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+        <span class="badge-gold text-xs mb-2">Retours d'Expérience</span>
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark mb-3">
+          Témoignages & Avis Vérifiés en France
+        </h2>
+        <div class="h-1 w-16 bg-brand-900 rounded mx-auto mb-4"></div>
+        <p class="text-xs sm:text-sm text-gray-600 font-sans">
+          Découvrez les retours authentiques de personnes ayant retrouvé la paix, l'amour et la prospérité grâce à l'accompagnement de Maître Aziman.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((testimonial) => (
+          <TestimonialCard testimonial={testimonial} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Section FAQ -->
+  <section class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20" data-purpose="faq">
+    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-12">
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <div class="h-px bg-gold-400 w-10"></div>
+        <span class="text-gold-700 font-sans uppercase tracking-widest text-xs font-semibold">Questions / Réponses</span>
+        <div class="h-px bg-gold-400 w-10"></div>
+      </div>
+      <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark mb-3">
+        Foire Aux Questions (FAQ)
+      </h2>
+      <p class="text-xs sm:text-sm text-gray-600 font-sans">
+        Toutes les réponses à vos interrogations sur le déroulement des consultations et la puissance des rituels.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <FaqAccordion items={faqItems} defaultOpenIndex={0} />
+    </div>
+  </section>
+
+  <!-- 10. Section CTA Banner -->
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <CtaSection />
+  </div>
+
+</BaseLayout>

@@ -1,0 +1,86 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { defaultAuthor, siteSettings } from '../mock/data';
+---
+
+<PageLayout
+  title="À Propos de Maître Aziman : Grand Marabout en France"
+  subtitle="Plus de vingt-cinq années d'initiation et de pratique consacrées à la résolution de vos blocages sentimentaux, professionnels et spirituels."
+  badge="Sagesse & Déontologie"
+  description="Découvrez le parcours initiatique de Maître Aziman, grand marabout et voyant en France. Une pratique ancestrale du Fâ et du Vodun fondée sur la vérité et l'éthique."
+  breadcrumbs={[
+    { name: 'À Propos' },
+  ]}
+>
+  <div class="card-luxury p-6 sm:p-10 lg:p-12 mb-10 prose-editorial">
+    <h2>Une Lignée Initiatique Respectée</h2>
+    <p>
+      Né dans une illustre famille de guérisseurs et de devins de la région côtière du Bénin, <strong>Maître Aziman</strong> a été initié dès son plus jeune âge aux secrets des plantes sacrées, aux rythmes invisibles des divinités bienveillantes et à l'art millénaire de la géomancie du <strong>Fâ</strong>.
+    </p>
+    <p>
+      Cette formation rigoureuse, dispensée pendant plus d'une décennie au cœur des sanctuaires traditionnels d'Afrique de l'Ouest, lui a conféré une maîtrise exceptionnelle des énergies spirituelles et des rituels de protection, de réconciliation amoureuse et de désenvoûtement.
+    </p>
+
+    <blockquote>
+      « La véritable magie ne force pas le destin : elle rétablit l'harmonie naturelle, lève les obstacles occultes et réveille les sentiments authentiques qui sommeillent dans chaque être humain. »
+      <br /><span class="text-sm font-sans font-normal text-gray-500">— Maître Aziman</span>
+    </blockquote>
+
+    <h2>Une Présence Dédiée aux Consultants en France</h2>
+    <p>
+      Installé en France depuis de nombreuses années, Maître Aziman accueille ses consultants dans un cadre apaisant et neutre au sein de son cabinet situé en Île-de-France. Il se déplace également de manière régulière dans les grandes métropoles françaises (Lyon, Marseille, Bordeaux, Lille, Nantes, Strasbourg) pour des séances privées.
+    </p>
+    <p>
+      Pour les personnes résidant en province ou à l'étranger, Maître Aziman propose des <strong>consultations à distance</strong> par téléphone ou par WhatsApp avec une rigueur et une efficacité strictement identiques à celles réalisées au cabinet.
+    </p>
+
+    <h2>Nos 4 Engagements Déontologiques</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
+        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+          Diagnostic Véridique
+        </h3>
+        <p class="text-xs text-gray-600">Aucune promesse irréaliste. Si un problème ne peut être résolu spirituellement, Maître Aziman vous le dit avec franchise.</p>
+      </div>
+
+      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
+        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+          Secret Initiatique Absolu
+        </h3>
+        <p class="text-xs text-gray-600">Vos identités, histoires et photographies sont protégées par une confidentialité inviolable.</p>
+      </div>
+
+      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
+        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+          Magie Pure Sans Choc en Retour
+        </h3>
+        <p class="text-xs text-gray-600">Tous les rituels sont protégés pour préserver l'intégrité physique, psychologique et morale de chacun.</p>
+      </div>
+
+      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
+        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+          Suivi Quotidien Personnalisé
+        </h3>
+        <p class="text-xs text-gray-600">Vous n'êtes jamais laissé seul : un accompagnement par appel et message est maintenu jusqu'à la réussite.</p>
+      </div>
+    </div>
+
+    <h2>Prendre Contact pour une Voyance Immédiate</h2>
+    <p>
+      Quelle que soit la nature de votre détresse, n'attendez pas que la situation s'aggrave. Une simple consultation divinatoire permet de mettre en lumière la racine de votre souffrance et d'enclencher la délivrance.
+    </p>
+
+    <div class="not-prose pt-4 flex flex-wrap gap-4">
+      <a href={siteSettings.whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-sm py-3 px-6">
+        <span>Échanger en direct sur WhatsApp</span>
+      </a>
+      <a href={`tel:${siteSettings.phone}`} class="btn-primary text-sm py-3 px-6">
+        <span>Appeler le Cabinet ({siteSettings.phoneDisplay})</span>
+      </a>
+    </div>
+  </div>
+</PageLayout>

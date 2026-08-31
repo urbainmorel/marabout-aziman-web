@@ -1,0 +1,34 @@
+---
+interface Props {
+  currentSlug: 'mentions-legales' | 'politique-confidentialite' | 'cgu';
+}
+
+const { currentSlug } = Astro.props;
+
+const legalLinks = [
+  { name: 'Mentions Légales', slug: 'mentions-legales', href: '/mentions-legales' },
+  { name: 'Politique de Confidentialité', slug: 'politique-confidentialite', href: '/politique-confidentialite' },
+  { name: 'Conditions Générales (CGU)', slug: 'cgu', href: '/cgu' },
+];
+---
+
+<div class="border-b border-gray-200 mb-8 overflow-x-auto">
+  <nav class="flex space-x-4 md:space-x-8 whitespace-nowrap" aria-label="Navigation légale">
+    {legalLinks.map((link) => {
+      const isActive = currentSlug === link.slug;
+      return (
+        <a
+          href={link.href}
+          class={`py-3 px-1 border-b-2 font-sans text-sm font-medium transition-colors ${
+            isActive
+              ? 'border-brand-900 text-brand-900 font-semibold'
+              : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300'
+          }`}
+          aria-current={isActive ? 'page' : undefined}
+        >
+          {link.name}
+        </a>
+      );
+    })}
+  </nav>
+</div>

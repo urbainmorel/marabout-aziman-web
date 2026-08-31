@@ -1,0 +1,87 @@
+# =========================================================================
+# PAGE LÉGALE 2 : POLITIQUE DE CONFIDENTIALITÉ (RGPD)
+# URL : /politique-de-confidentialite/
+# =========================================================================
+
+# Politique de Confidentialité et Protection des Données Personnelles (RGPD)
+
+La présente politique de confidentialité a pour objet d'informer les utilisateurs du site **www.marabout-aziman.fr** des modalités de collecte, de traitement et de protection de leurs données à caractère personnel, conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679) et à la Loi Informatique et Libertés du 6 janvier 1978 modifiée.
+
+---
+
+## 1. Responsable du Traitement
+
+Le responsable du traitement des données personnelles collectées sur le site est :
+
+* **Identité :** Alexandre MELBECK (VOYANCE TOTAL) — Cabinet Maître Aziman
+* **Statut :** Entrepreneur Individuel (SIRET : 945 386 159 00012)
+* **Adresses :** Paris, France / Cotonou, Bénin
+* **E-mail de contact :** contact@marabout-aziman.fr
+* **Téléphone :** +33 6 55 50 69 85 | **WhatsApp :** +229 95 30 98 59
+
+---
+
+## 2. Données Personnelles Collectées
+
+Nous veillons à ne collecter que les données strictement nécessaires aux finalités de nos services :
+
+### 2.1. Données de contact et de livraison
+* Nom, prénom ou pseudonyme.
+* Numéro de téléphone portable (pour les échanges directs et WhatsApp).
+* Adresse e-mail.
+* Adresse postale de livraison (pour l'expédition des commandes en France et à l'international).
+
+### 2.2. Données spécifiques aux consultations spirituelles
+* Prénoms usuels, dates et lieux de naissance.
+* Photographies transmises volontairement par le consultant pour la réalisation des rituels et tirages divinatoires.
+
+### 2.3. Données de transaction et paiement
+* Historique des achats et commandes de la boutique ésotérique.
+* *Sécurité bancaire :* Les paiements en ligne sont traités de manière chiffrée par nos prestataires sécurisés (Stripe / PayPal). Aucune coordonnée bancaire (numéro de carte de crédit) n'est stockée sur nos serveurs.
+
+---
+
+## 3. Finalités et Bases Légales des Traitements
+
+Vos données personnelles sont traitées pour des finalités déterminées et légitimes :
+
+* **Gestion des commandes e-commerce :** Préparation, consécration personnalisée et expédition des colis (Base légale : Exécution du contrat).
+* **Réalisation des consultations divinatoires et rituels :** Prise de rendez-vous en cabinet ou à distance et suivi des travaux (Base légale : Consentement explicite).
+* **Service client et assistance :** Réponses à vos sollicitations par téléphone, e-mail et WhatsApp (Base légale : Consentement).
+* **Gestion comptable et obligations légales :** Émission des factures et tenue des registres légaux (Base légale : Obligation légale).
+
+---
+
+## 4. Durée de Conservation des Données
+
+* **Données de consultation spirituelle (Photos, informations d'état civil) :** Supprimées définitivement dans un délai maximal de six (6) mois suivant la fin de l'accompagnement rituel.
+* **Données clients e-commerce :** Conservées trois (3) ans à compter de la dernière commande ou du dernier contact actif.
+* **Données de facturation :** Conservées dix (10) ans conformément aux obligations du Code de commerce français.
+
+---
+
+## 5. Destinataires des Données et Confidentialité
+
+Vos données personnelles sont couvertes par le secret le plus strict. Elles ne sont **jamais vendues, louées ou cédées** à des tiers à des fins publicitaires.
+
+Elles sont uniquement transmises aux prestataires techniques indispensables au fonctionnement du service :
+* **Transporteurs logistiques :** La Poste (Colissimo), Chronopost, Mondial Relay, DHL (uniquement pour l'acheminement des colis).
+* **Passerelles de paiement :** Stripe, PayPal.
+* **Hébergeur web :** OVH SAS (serveurs sécurisés en France).
+
+---
+
+## 6. Exercice de vos Droits (RGPD)
+
+Conformément à la réglementation européenne, vous disposez des droits suivants sur vos données :
+
+* **Droit d'accès (Art. 15 RGPD) :** Obtenir la copie de vos données traitées.
+* **Droit de rectification (Art. 16 RGPD) :** Mettre à jour des informations inexactes.
+* **Droit à l'effacement / Droit à l'oubli (Art. 17 RGPD) :** Demander la destruction immédiate de vos données et photographies.
+* **Droit à la limitation du traitement (Art. 18 RGPD).**
+* **Droit à la portabilité (Art. 20 RGPD).**
+* **Droit d'opposition (Art. 21 RGPD).**
+
+Pour exercer ces droits, il vous suffit d'adresser votre demande accompagnée d'un justificatif d'identité à : **contact@marabout-aziman.fr** ou par WhatsApp au **+229 95 30 98 59**.
+
+Vous disposez également du droit d'introduire une réclamation auprès de l'autorité de contrôle compétente en France, la **CNIL (Commission Nationale de l'Informatique et des Libertés - www.cnil.fr)**.

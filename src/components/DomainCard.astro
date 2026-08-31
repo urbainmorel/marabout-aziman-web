@@ -1,0 +1,68 @@
+---
+import type { DomainItem } from '../mock/data';
+
+interface Props {
+  domain: DomainItem;
+}
+
+const { domain } = Astro.props;
+---
+
+<div class="card-luxury overflow-hidden flex flex-col h-full group hover:border-gold-300/80 transition-all duration-300">
+  <!-- Image Container with fixed aspect ratio -->
+  <div class="relative h-36 sm:h-44 md:h-48 overflow-hidden bg-gray-100">
+    <img
+      src={domain.image}
+      alt={domain.title}
+      loading="lazy"
+      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+    <span class="absolute bottom-2 left-3 text-[11px] font-sans font-medium text-white/90 bg-brand-dark/70 backdrop-blur-sm px-2 py-0.5 rounded">
+      Rituel Consacré
+    </span>
+  </div>
+
+  <!-- Content -->
+  <div class="p-4 md:p-5 flex flex-col justify-between flex-grow">
+    <div>
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="font-serif font-bold text-base md:text-lg text-brand-dark leading-tight group-hover:text-brand-900 transition-colors">
+          {domain.title}
+        </h3>
+        <div class="w-7 h-7 rounded-full bg-gray-50 group-hover:bg-gold-50 flex items-center justify-center text-gray-400 group-hover:text-gold-700 transition-colors flex-shrink-0 ml-2">
+          <svg class="h-4 w-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </div>
+
+      <p class="text-xs text-gray-600 leading-relaxed mb-3 line-clamp-3">
+        {domain.description}
+      </p>
+
+      {domain.bullets && domain.bullets.length > 0 && (
+        <ul class="space-y-1 mb-4 hidden md:block">
+          {domain.bullets.map((bullet) => (
+            <li class="text-[11px] text-gray-500 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+
+    <!-- Card Action Link -->
+    <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto">
+      <a
+        href={`/contact?domaine=${domain.slug}`}
+        class="text-xs font-sans font-semibold text-brand-900 hover:text-gold-700 transition-colors flex items-center gap-1"
+      >
+        <span>Demander ce rituel</span>
+        <span>→</span>
+      </a>
+      <span class="text-[10px] text-gray-400 font-sans">24h - 72h</span>
+    </div>
+  </div>
+</div>

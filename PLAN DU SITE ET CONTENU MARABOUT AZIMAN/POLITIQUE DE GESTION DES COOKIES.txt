@@ -1,0 +1,66 @@
+# =========================================================================
+# PAGE LÉGALE 4 : POLITIQUE DE GESTION DES COOKIES
+# URL : /politique-cookies/
+# =========================================================================
+
+# Politique de Gestion des Cookies
+
+Le site **www.marabout-aziman.fr**, édité par **Alexandre MELBECK (VOYANCE TOTAL - Cabinet Maître Aziman)**, utilise des traceurs et cookies afin de garantir le bon fonctionnement technique du site, de sécuriser les paiements en ligne et d'améliorer l'expérience de navigation des utilisateurs.
+
+---
+
+## 1. Qu'est-ce qu'un Cookie ?
+
+Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, smartphone) lors de la consultation d'un site web. Il permet au site de mémoriser des informations relatives à votre navigation (ex. contenu de votre panier d'achat, identifiants de session, choix de langue).
+
+---
+
+## 2. Les Cookies Utilisés sur notre Site
+
+### 2.1. Cookies techniques essentiels (Strictement nécessaires)
+Ces cookies sont indispensables au fonctionnement normal et à la sécurité du site :
+* Gestion et mémorisation du panier d'achat de la boutique ésotérique.
+* Sécurisation des passerelles de paiement par carte bancaire (Stripe, PayPal).
+* Enregistrement de vos préférences de consentement aux cookies.
+* *Ces cookies ne nécessitent pas de consentement préalable conformément aux directives de la CNIL.*
+
+### 2.2. Cookies de mesure d'audience (Analytiques anonymisés)
+Ces cookies permettent d'analyser de façon anonyme la fréquentation du site et l'intérêt porté aux articles du blog afin d'en optimiser les performances.
+
+### 2.3. Traceurs de fonctionnalités tierces
+* **Bouton d'interaction WhatsApp :** Permet d'initier un échange chiffré direct avec Maître Aziman (+229 95 30 98 59 / +33 6 55 50 69 85).
+* **Médias intégrés :** Assure la lecture fluide des témoignages et contenus audio/vidéo.
+
+---
+
+## 3. Durée de Validité des Cookies
+
+Conformément aux recommandations de la CNIL en France, la durée de validité des cookies déposés sur votre terminal n'excède pas **treize (13) mois**. À l'expiration de ce délai, votre consentement sera de nouveau sollicité.
+
+---
+
+## 4. Paramétrage et Gestion de vos Préférences
+
+Vous pouvez à tout moment accepter, refuser ou personnaliser le dépôt des cookies :
+
+### 4.1. Via le bandeau de consentement du site
+Lors de votre première visite sur **www.marabout-aziman.fr**, un bandeau vous permet d'accepter tous les traceurs, de les refuser ou de paramétrer vos choix par catégorie.
+
+### 4.2. Via les paramètres de votre navigateur internet
+Vous pouvez configurer votre logiciel de navigation pour refuser systématiquement les cookies ou être averti avant leur enregistrement :
+* **Google Chrome :** Paramètres > Confidentialité et sécurité > Cookies et autres données des sites.
+* **Mozilla Firefox :** Paramètres > Vie privée et sécurité > Cookies et données de sites.
+* **Safari (Apple) :** Réglages > Safari > Confidentialité et sécurité > Bloquer tous les cookies.
+* **Microsoft Edge :** Paramètres > Cookies et autorisations de site.
+
+*Remarque : Le blocage complet des cookies techniques indispensables peut empêcher la validation de vos commandes sur la boutique.*
+
+---
+
+## 5. Contact concernant la Gestion des Cookies
+
+Pour toute question relative à l'utilisation des traceurs sur notre site, vous pouvez nous contacter :
+
+* **Par e-mail :** contact@marabout-aziman.fr
+* **Par téléphone :** +33 6 55 50 69 85
+* **Par WhatsApp :** +229 95 30 98 59

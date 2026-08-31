@@ -1,0 +1,464 @@
+# CAHIER DES CHARGES & PLAN DE SITE STRATÉGIQUE
+## Marabout Aziman — Cabinet de Voyance & Rituels Traditionnels en France
+**Objectif principal :** Atteindre la 1ère position sur Google France (`google.fr`) sur l'ensemble des requêtes transactionnelles et géolocalisées, tout en maximisant la conversion (prises de rendez-vous en cabinet, consultations à distance et ventes de produits).
+
+---
+
+## I. Architecture Technique & Cartographie des URLs
+
+Le site adopte une structure en **cocons sémantiques étanches (Topic Clusters)** organisée selon 5 grands répertoires racines.
+
+```text
+[DOMAINE RACINE : https://www.marabout-aziman.fr/]
+│
+├── /services/                                      --> Hub Pôle Rituels & Consultations
+│   ├── /services/amour-sentiments/                 --> Hub Service 1
+│   │   ├── /retour-affectif-urgent/
+│   │   ├── /cadenas-damour-attachement/
+│   │   ├── /bloquer-infidelite-conjoint/
+│   │   ├── /separation-eloignement-rivale/
+│   │   └── /deblocage-mariage-celibat/
+│   ├── /services/richesse-finance/                 --> Hub Service 2
+│   │   ├── /multiplication-argent-abondance/
+│   │   ├── /pacte-richesse-mami-wata/
+│   │   ├── /chance-jeux-hasard-loto/
+│   │   └── /recouvrement-dettes-blocages/
+│   ├── /services/commerce-carriere-reussite/       --> Hub Service 3
+│   │   ├── /attirer-clientele-boutique-restaurant/
+│   │   ├── /promotion-nomination-politique/
+│   │   ├── /reussite-examens-concours-permis/
+│   │   └── /neutraliser-concurrence-entreprise/
+│   ├── /services/divination-voyance/               --> Hub Service 4
+│   │   ├── /consultation-oracle-fa/
+│   │   ├── /tirage-cauris-en-direct/
+│   │   ├── /geomancie-sable-raml/
+│   │   ├── /miroir-magique-vision/
+│   │   └── /contact-ancetres-egun/
+│   ├── /services/protection-desenvoutement/        --> Hub Service 5
+│   │   ├── /grand-desenvoutement-nettoyage-aura/
+│   │   ├── /delivrance-mari-femme-de-nuit/
+│   │   ├── /purification-lieux-maisons-chantiers/
+│   │   └── /retour-a-lenvoyeur-justice-miroir/
+│   ├── /services/sante-traditionnelle/             --> Hub Service 6
+│   │   ├── /fertilite-deblocage-matrice/
+│   │   ├── /puissance-virile-endurance-agbo/
+│   │   ├── /soins-maladies-mystiques-folie/
+│   │   └── /sevrage-addiction-alcool-tabac/
+│   ├── /services/justice-proces-litiges/           --> Hub Service 7
+│   │   ├── /gagner-proces-cadenas-justice/
+│   │   ├── /baillonner-temoins-accusateurs/
+│   │   ├── /adoucir-sentence-liberation/
+│   │   └── /regler-litiges-fonciers-heritage/
+│   └── /services/immigration-titres-sejour-visas/  --> Hub Service 8
+│       ├── /titre-de-sejour-prefecture-france/
+│       ├── /bloquer-expulsion-annulation-oqtf/
+│       ├── /obtention-visa-ambassade-consulat/
+│       └── /deblocage-naturalisation-papiers/
+│
+├── /boutique/                                      --> Hub Pôle E-commerce ésotérique
+│   ├── /boutique/savons/                           --> Rayon 1 (Savons noirs & rituels)
+│   ├── /boutique/eaux/                             --> Rayon 2 (Eaux sacrées & lustrales)
+│   ├── /boutique/parfums-macerations/              --> Rayon 3 (Parfums & huiles)
+│   ├── /boutique/poudres-terres-sacrees/           --> Rayon 4 (Poudres & scarifications)
+│   ├── /boutique/talismans-cuir-gris-gris/         --> Rayon 5 (Talismans cuir & cornes)
+│   ├── /boutique/parures-bayas-metaux/             --> Rayon 6 (Bayas & parures)
+│   ├── /boutique/cadenas-receptacles-argent/       --> Rayon 7 (Cadenas & réceptacles)
+│   └── /boutique/pharmacopee-vegetale/             --> Rayon 8 (Plantes & Agbo)
+│
+├── /zones-d-intervention/                          --> Hub Pôle SEO Local France
+│   ├── /marabout-paris-ile-de-france/
+│   ├── /marabout-lyon-auvergne-rhone-alpes/
+│   ├── /marabout-marseille-nice-paca/
+│   ├── /marabout-bordeaux-nouvelle-aquitaine/
+│   ├── /marabout-lille-hauts-de-france/
+│   ├── /marabout-toulouse-montpellier-occitanie/
+│   ├── /marabout-nantes-rennes-grand-ouest/
+│   └── /marabout-strasbourg-grand-est/
+│
+├── /blog/                                          --> Hub Pôle Inbound & Longue Traîne
+│   ├── /amour-relations/
+│   ├── /richesse-prospérité/
+│   ├── /protection-mystique/
+│   ├── /sante-plantes/
+│   ├── /demarches-france/
+│   └── /guides-produits/
+│
+└── /pages-transverses/
+    ├── /a-propos/
+    ├── /cabinet-france-rdv/
+    ├── /temoignages-avis/
+    ├── /tarifs-engagements/
+    └── /contact/
+```
+
+---
+
+## II. Wireframe Fonctionnel & Stratégie de la Page d'Accueil (`/`)
+
+La page d’accueil est le point de départ de l'entonnoir de conversion. Elle cible les requêtes nationales génériques et oriente directement vers les hubs de services, la boutique et les pages locales.
+
+### 1. Section Hero (Au-dessus de la ligne de flottaison)
+* **Balisage H1 :** *Grand Maître Marabout Aziman — Cabinet de Voyance & Rituels Traditionnels en France*
+* **Proposition de valeur :** *Héritier des secrets ancestraux du Vodun et du Fâ. Interventions rapides en cabinet à Paris/Île-de-France et consultations à distance partout en France.*
+* **Éléments de réassurance immédiats :**
+  * Numéro d'appel direct français (`+33 6 ..` / `+33 7 ..`).
+  * Badge : *« Reçoit en Cabinet sur RDV & Travaille à Distance »*.
+  * Badge : *« Discrétion & Secret Initiatique 100 % Garantis »*.
+* **Call-To-Action (CTA) Principaux :**
+  * Bouton Vert Flottant & Fixe : *« Échanger en direct sur WhatsApp »*
+  * Bouton d'Action 1 : *« Réserver une consultation en cabinet »*
+  * Bouton d'Action 2 : *« Découvrir la boutique ésotérique »*
+
+### 2. Section « Nos 8 Domaines d'Intervention » (Services)
+Une grille de 8 blocs interactifs (titre, icône sacrée, descriptif synthétique et bouton d'accès direct vers la landing page dédiée) :
+1. **Amour & Sentiments** ➔ *Lien vers `/services/amour-sentiments/`*
+2. **Richesse & Abondance** ➔ *Lien vers `/services/richesse-finance/`*
+3. **Commerce & Carrière** ➔ *Lien vers `/services/commerce-carriere-reussite/`*
+4. **Divination & Voyance** ➔ *Lien vers `/services/divination-voyance/`*
+5. **Protection & Désenvoûtement** ➔ *Lien vers `/services/protection-desenvoutement/`*
+6. **Santé & Fertilité Traditionnelle** ➔ *Lien vers `/services/sante-traditionnelle/`*
+7. **Justice & Conflits Légaux** ➔ *Lien vers `/services/justice-proces-litiges/`*
+8. **Immigration & Papiers en France** ➔ *Lien vers `/services/immigration-titres-sejour-visas/`*
+
+### 3. Section « Boutique Ésotérique Ancestrale » (Produits)
+Une grille de 8 cartes de rayons avec mise en avant du délai d'expédition en France (Colissimo 48h / Chronopost 24h) :
+1. **Savons Noirs Rituels** ➔ *Lien vers `/boutique/savons/`*
+2. **Eaux Sacrées & Lustrales** ➔ *Lien vers `/boutique/eaux/`*
+3. **Parfums & Macérations** ➔ *Lien vers `/boutique/parfums-macerations/`*
+4. **Poudres Noires & Terres Sacrées** ➔ *Lien vers `/boutique/poudres-terres-sacrees/`*
+5. **Talismans en Cuir & Cornes** ➔ *Lien vers `/boutique/talismans-cuir-gris-gris/`*
+6. **Parures, Bayas & Métaux** ➔ *Lien vers `/boutique/parures-bayas-metaux/`*
+7. **Cadenas & Réceptacles d'Argent** ➔ *Lien vers `/boutique/cadenas-receptacles-argent/`*
+8. **Pharmacopée Végétale (*Agbo*)** ➔ *Lien vers `/boutique/pharmacopee-vegetale/`*
+
+### 4. Section « Cabinet en France & Consultations Régionales »
+* Présentation du cabinet principal en Île-de-France (accessibilité, discrétion, modalités de prise de rendez-vous).
+* **Carte interactive de France cliquable** permettant d'accéder directement aux 8 hubs régionaux.
+
+### 5. Section Preuve Sociale, Déontologie & Paiements
+* Avis vérifiés de consultants en France (Paris, Lyon, Marseille, etc.).
+* Modes de règlement acceptés : Espèces au cabinet, Carte Bancaire (Stripe 3D-Secure), Virement instantané français, PayPal.
+
+---
+
+## III. Pôle Services : Les 8 Silos & Landing Pages Spécifiques
+
+Chaque domaine est structuré sous forme d'un **Hub de Service (Page Pilier)** qui présente la vision d'Aziman et distribue l'autorité SEO vers ses **sous-pages rituelles spécifiques**.
+
+---
+
+### Service 1 : Amour, Sentiments et Relations Affectives
+* **Page Hub :** `/services/amour-sentiments/`
+  * **Titre SEO (Title) :** *Marabout Amour & Retour Affectif en France — Cabinet Aziman*
+  * **H1 :** *Rituels d'Amour, Retour de l'Être Aimé & Harmonie de Couple*
+* **Sous-Pages Spécifiques (Landing Pages Rituels) :**
+  1. `/services/amour-sentiments/retour-affectif-urgent/`  
+     *Cible :* *Retour affectif rapide 24h-72h, faire revenir son ex marabout France.*
+  2. `/services/amour-sentiments/cadenas-damour-attachement/`  
+     *Cible :* *Rituel cadenas d'amour scellé, attacher un homme par la magie.*
+  3. `/services/amour-sentiments/bloquer-infidelite-conjoint/`  
+     *Cible :* *Nouage de l'aiguillette, empêcher son conjoint de tromper.*
+  4. `/services/amour-sentiments/separation-eloignement-rivale/`  
+     *Cible :* *Séparer deux personnes rituel, chasser une maîtresse définitivement.*
+  5. `/services/amour-sentiments/deblocage-mariage-celibat/`  
+     *Cible :* *Débloquer le célibat, forcer une demande en mariage marabout.*
+
+---
+
+### Service 2 : Richesse, Finance, Affaires et Prospérité
+* **Page Hub :** `/services/richesse-finance/`
+  * **Titre SEO (Title) :** *Marabout Richesse & Prospérité Financière France — Maître Aziman*
+  * **H1 :** *Rituels d'Abondance Financière, Déblocage d'Argent & Prospérité*
+* **Sous-Pages Spécifiques :**
+  1. `/services/richesse-finance/multiplication-argent-abondance/`  
+     *Cible :* *Rituels de multiplication d'argent, déblocage de chance financière.*
+  2. `/services/richesse-finance/pacte-richesse-mami-wata/`  
+     *Cible :* *Pacte Mami Wata richesse, alliance avec les esprits de l'eau.*
+  3. `/services/richesse-finance/chance-jeux-hasard-loto/`  
+     *Cible :* *Bague magique pour gagner au loto, chance Euromillions casino.*
+  4. `/services/richesse-finance/recouvrement-dettes-blocages/`  
+     *Cible :* *Rituel pour récupérer une dette, forcer un débiteur à payer.*
+
+---
+
+### Service 3 : Commerce, Entreprises, Carrière et Réussite
+* **Page Hub :** `/services/commerce-carriere-reussite/`
+  * **Titre SEO (Title) :** *Marabout pour Entreprises, Commerce & Carrière — Aziman France*
+  * **H1 :** *Attraction de Clientèle, Réussite Professionnelle & Protection Commerciale*
+* **Sous-Pages Spécifiques :**
+  1. `/services/commerce-carriere-reussite/attirer-clientele-boutique-restaurant/`  
+     *Cible :* *Attirer du monde dans son magasin magie, booster chiffre d'affaires commerce.*
+  2. `/services/commerce-carriere-reussite/promotion-nomination-politique/`  
+     *Cible :* *Obtenir une promotion au travail marabout, nomination politique rituel.*
+  3. `/services/commerce-carriere-reussite/reussite-examens-concours-permis/`  
+     *Cible :* *Réussir un concours de la fonction publique, réussir permis de conduire.*
+  4. `/services/commerce-carriere-reussite/neutraliser-concurrence-entreprise/`  
+     *Cible :* *Protection contre la concurrence déloyale, dominer son marché.*
+
+---
+
+### Service 4 : Divination, Voyance Ancestrale et Médiumnité
+* **Page Hub :** `/services/divination-voyance/`
+  * **Titre SEO (Title) :** *Grand Voyant Médium Africain en France — Consultation Fâ & Cauris*
+  * **H1 :** *Consultations Divinatoires Traditionnelles, Fâ & Communication Ancestrale*
+* **Sous-Pages Spécifiques :**
+  1. `/services/divination-voyance/consultation-oracle-fa/`  
+     *Cible :* *Consultation oracle Fâ Ifá en France, prêtre bokonon Paris.*
+  2. `/services/divination-voyance/tirage-cauris-en-direct/`  
+     *Cible :* *Voyance traditionnelle par les cauris, voyance africaine directe.*
+  3. `/services/divination-voyance/miroir-magique-vision/`  
+     *Cible :* *Voyance par miroir magique, découvrir ses ennemis cachés.*
+  4. `/services/divination-voyance/contact-ancetres-egun/`  
+     *Cible :* *Médiumnité ancêtres Egun, libations et messages des défunts.*
+
+---
+
+### Service 5 : Protection Spirituelle, Purifications et Contre-Sorcellerie
+* **Page Hub :** `/services/protection-desenvoutement/`
+  * **Titre SEO (Title) :** *Désenvoûtement & Protection Sorcellerie en France — Maître Aziman*
+  * **H1 :** *Grand Désenvoûtement, Délivrance des Nuits & Boucliers Traditionnels*
+* **Sous-Pages Spécifiques :**
+  1. `/services/protection-desenvoutement/grand-desenvoutement-nettoyage-aura/`  
+     *Cible :* *Désenvoûtement de magie noire France, enlever le mauvais œil.*
+  2. `/services/protection-desenvoutement/delivrance-mari-femme-de-nuit/`  
+     *Cible :* *Chasser mari de nuit incube, délivrance des rêves érotiques et blocages.*
+  3. `/services/protection-desenvoutement/purification-lieux-maisons-chantiers/`  
+     *Cible :* *Purifier une maison hantée, chasser les mauvais esprits d'un local.*
+  4. `/services/protection-desenvoutement/retour-a-lenvoyeur-justice-miroir/`  
+     *Cible :* *Rituel de retour à l'envoyeur, renvoyer un sortilège à sa source.*
+
+---
+
+### Service 6 : Santé Traditionnelle, Fertilité et Pharmacopée
+* **Page Hub :** `/services/sante-traditionnelle/`
+  * **Titre SEO (Title) :** *Tradipraticien & Soins Traditionnels Africains en France — Aziman*
+  * **H1 :** *Fertilité de la Femme, Vigueur Masculine & Soins de Pharmacopée*
+* **Sous-Pages Spécifiques :**
+  1. `/services/sante-traditionnelle/fertilite-deblocage-matrice/`  
+     *Cible :* *Débloquer la matrice pour tomber enceinte, plantes africaines fertilité.*
+  2. `/services/sante-traditionnelle/puissance-virile-endurance-agbo/`  
+     *Cible :* *Soigner l'impuissance par les plantes, Agbo érection durable.*
+  3. `/services/sante-traditionnelle/soins-maladies-mystiques-folie/`  
+     *Cible :* *Soins traditionnels troubles mentaux subits, paralysie mystique.*
+  4. `/services/sante-traditionnelle/sevrage-addiction-alcool-tabac/`  
+     *Cible :* *Rituel de dégoût de l'alcool, stopper les addictions par les plantes.*
+
+---
+
+### Service 7 : Justice, Procès, Conflits et Litiges Légaux
+* **Page Hub :** `/services/justice-proces-litiges/`
+  * **Titre SEO (Title) :** *Marabout pour Procès, Justice & Litiges en France — Cabinet Aziman*
+  * **H1 :** *Cadenas de Justice, Bâillonnement des Témoins & Protection Juridique*
+* **Sous-Pages Spécifiques :**
+  1. `/services/justice-proces-litiges/gagner-proces-cadenas-justice/`  
+     *Cible :* *Gagner un procès au tribunal marabout, cadenas de justice dossier pénal.*
+  2. `/services/justice-proces-litiges/baillonner-temoins-accusateurs/`  
+     *Cible :* *Rituel langue de bœuf justice, faire taire un plaignant au tribunal.*
+  3. `/services/justice-proces-litiges/adoucir-sentence-liberation/`  
+     *Cible :* *Obtenir la libération conditionnelle, réduire une peine de prison.*
+  4. `/services/justice-proces-litiges/regler-litiges-fonciers-heritage/`  
+     *Cible :* *Résoudre un conflit d'héritage bloqué, protéger un bien foncier.*
+
+---
+
+### Service 8 : Immigration, Titres de Séjour, Visas et Démarches en France
+* **Page Hub :** `/services/immigration-titres-sejour-visas/`
+  * **Titre SEO (Title) :** *Marabout pour Titre de Séjour & Préfecture en France — Aziman*
+  * **H1 :** *Régularisation Préfecture, Annulation OQTF & Déblocage de Visas*
+* **Sous-Pages Spécifiques :**
+  1. `/services/immigration-titres-sejour-visas/titre-de-sejour-prefecture-france/`  
+     *Cible :* *Obtenir son titre de séjour préfecture marabout, régularisation sans papier.*
+  2. `/services/immigration-titres-sejour-visas/bloquer-expulsion-annulation-oqtf/`  
+     *Cible :* *Annuler une OQTF marabout, protection contre la reconduite à la frontière.*
+  3. `/services/immigration-titres-sejour-visas/obtention-visa-ambassade-consulat/`  
+     *Cible :* *Réussir entretien visa ambassade, débloquer un visa refusé.*
+  4. `/services/immigration-titres-sejour-visas/deblocage-naturalisation-papiers/`  
+     *Cible :* *Accélérer sa demande de nationalité française, déblocage administratif.*
+
+---
+
+## IV. Pôle Boutique : Les 8 Rayons & Fiches Produits Individuelles
+
+Chaque rayon dispose de sa **Landing Page Rayon** qui liste les produits et redirige vers chaque **fiche produit détaillée**.
+
+```text
+/boutique/
+│
+├── /savons/ (Rayon 1 : Savons Noirs & Rituels)
+│   ├── /savon-noir-etoile-afe/                      --> Ouverture de chance et destinée
+│   ├── /savon-fortune-prospérité/                  --> Attraction financière immédiate
+│   ├── /savon-seduction-charme/                    --> Magnétisme et séduction amoureuse
+│   ├── /savon-grand-desenvoutement/                --> Nettoyage lourd d'aura
+│   └── /savon-commandement-klaman/                 --> Charisme et autorité sur autrui
+│
+├── /eaux/ (Rayon 2 : Eaux Sacrées & Lustrales)
+│   ├── /eau-sacree-7-marigots/                     --> Grands lavages de déblocage
+│   ├── /eau-lustrale-sanctuaire/                   --> Purification des maisons et locaux
+│   ├── /eau-de-mer-nocturne/                       --> Rupture des liens occultes
+│   └── /eau-premier-orage-consacree/               --> Ouverture d'opportunités
+│
+├── /parfums-macerations/ (Rayon 3 : Parfums & Huiles)
+│   ├── /parfum-bint-el-sudan-argent/               --> Consacré pour l'attraction d'argent
+│   ├── /parfum-dangoma-seduction/                  --> Attirance amoureuse et charme
+│   ├── /parfum-dounia-affaires/                    --> Succès commercial et clientèle
+│   └── /huile-palmiste-noire-tchotcho/             --> Bouclier puissant anti-maléfices
+│
+├── /poudres-terres-sacrees/ (Rayon 4 : Poudres & Scarifications)
+│   ├── /poudre-noire-blindage-gblon/               --> Protection corporelle guerrière
+│   ├── /poudre-sublinguale-klaman/                 --> Parole d'autorité immédiate
+│   ├── /poudre-seuil-attraction-clientele/         --> Pour commerces et restaurants
+│   └── /poudre-terre-carrefour-bannissement/       --> Éloignement définitif d'ennemis
+│
+├── /talismans-cuir-gris-gris/ (Rayon 5 : Talismans Cuir & Cornes)
+│   ├── /talisman-bras-cuir-protecteur/             --> Protection des voyageurs et chauffeurs
+│   ├── /amulette-cou-protection-integrale/         --> Bouclier spirituel permanent
+│   ├── /ceinture-talismanique-gbekoun/             --> Vigueur et protection des reins
+│   └── /corne-belier-chargee-maison/               --> Sentinelle protectrice de foyer
+│
+├── /parures-bayas-metaux/ (Rayon 6 : Bayas, Perles & Métaux)
+│   ├── /baya-seduction-attachement/                --> Perles de reins magnétisées pour le couple
+│   ├── /baya-protection-maternite/                 --> Sécurisation de la grossesse
+│   ├── /bracelet-fer-forge-gou/                    --> Protection brute contre la sorcellerie
+│   ├── /bague-anti-poison-accident/                --> Anneau d'alerte et de protection
+│   └── /bague-chance-financiere-jeux/              --> Pour commerçants et joueurs
+│
+├── /cadenas-receptacles-argent/ (Rayon 7 : Cadenas & Réceptacles)
+│   ├── /cadenas-damour-scelle/                     --> Attachement éternel du conjoint
+│   ├── /cadenas-de-justice-proces/                 --> Fermeture de dossier judiciaire
+│   ├── /portefeuille-magique-bedou/                --> Portefeuille en cuir consacré
+│   ├── /calebasse-abondance-cauris/                --> Réceptacle d'attraction financière
+│   └── /canari-scelle-protection-terrain/          --> Sécurisation de biens immobiliers
+│
+└── /pharmacopee-vegetale/ (Rayon 8 : Plantes & Agbo)
+    ├── /bouteille-agbo-vigueur-masculine/          --> Macération pour reins et érection
+    ├── /decoction-gynecologique-fertilite/         --> Nettoyage matrice et stimulation ovarienne
+    ├── /potion-traditionnelle-sevrage-alcool/      --> Traitement de dégoût définitif
+    └── /pack-ecorces-racines-gouro/                --> Fagots d'arbres sacrés pour infusions
+```
+
+* **Fonctionnalités E-commerce France :**
+  * Bouton d'achat immédiat sécurisé par carte bancaire.
+  * Bouton alternatif : *« Commander directement sur WhatsApp »*.
+  * Option : *« Faire consacrer cet article avec votre signe astrologique par le Maître Aziman avant envoi »*.
+  * Expédition express sous pli neutre et discret sous 24h/48h via **Colissimo**, **Chronopost** ou **Mondial Relay**.
+
+---
+
+## V. Pôle SEO Local France : Les 8 Hubs Régionaux
+
+Ce silo positionne le site sur les recherches de proximité (*« Marabout + Ville »* ou *« Voyant africain + Département »*).
+
+```text
+/zones-d-intervention/
+│
+├── /marabout-paris-ile-de-france/
+│   └── Ciblage : Paris (75), Seine-Saint-Denis (93), Val-de-Marne (94), 
+│                 Hauts-de-Seine (92), Essonne (91), Val-d'Oise (95), Seine-et-Marne (77), Yvelines (78).
+│
+├── /marabout-lyon-auvergne-rhone-alpes/
+│   └── Ciblage : Lyon (69), Villeurbanne, Saint-Étienne (42), Grenoble (38), Annecy (74).
+│
+├── /marabout-marseille-nice-paca/
+│   └── Ciblage : Marseille (13), Nice (06), Toulon (83), Aix-en-Provence, Avignon (84).
+│
+├── /marabout-bordeaux-nouvelle-aquitaine/
+│   └── Ciblage : Bordeaux (33), Mérignac, Pessac, Pau (64), Bayonne, Limoges (87).
+│
+├── /marabout-lille-hauts-de-france/
+│   └── Ciblage : Lille (59), Roubaix, Tourcoing, Amiens (80), Dunkerque, Calais (62).
+│
+├── /marabout-toulouse-montpellier-occitanie/
+│   └── Ciblage : Toulouse (31), Montpellier (34), Nîmes (30), Perpignan (66), Béziers.
+│
+├── /marabout-nantes-rennes-grand-ouest/
+│   └── Ciblage : Nantes (44), Rennes (35), Angers (49), Le Mans (72), Brest (29).
+│
+└── /marabout-strasbourg-grand-est/
+    └── Ciblage : Strasbourg (67), Mulhouse (68), Metz (57), Nancy (54), Reims (51).
+```
+
+### Intégration UX & Visibilité des Pages Villes :
+1. **Dans le Header :** Menu déroulant *« Cabinet & Déplacements »*.
+2. **Sur l'Accueil :** Carte de France interactive géolocalisée.
+3. **Au bas de chaque Service :** Sélecteur de villes : *« Consulter le Maître Aziman depuis votre région »*.
+4. **Dans le Footer :** Bloc de liens SEO pointant vers les 8 hubs métropolitains.
+
+---
+
+## VI. Pôle Média & Blog SEO : Les 6 Silos de Contenu
+
+Le blog capte le trafic informationnel sur Google France et le convertit vers les services et les produits grâce à des ponts sémantiques.
+
+```text
+/blog/
+│
+├── /amour-relations/
+│   ├── "Comment savoir si votre partenaire est sous l'emprise d'un blocage sentimental ?"
+│   ├── "Retour affectif avec photo : comprendre le fonctionnement des rituels traditionnels"
+│   └── "Séparation de couple et rivalités : comment protéger son foyer contre les jalousies"
+│
+├── /richesse-prospérité/
+│   ├── "Blocages financiers mystiques : 5 signes qui prouvent que votre chance est fermée"
+│   ├── "Pacte de richesse traditionnel : mythes, réalités et engagements ancestraux"
+│   └── "Comment attirer la clientèle dans son commerce grâce aux secrets des plantes"
+│
+├── /protection-mystique/
+│   ├── "Mari de nuit (incube) : symptômes, conséquences et méthodes de délivrance"
+│   ├── "Comment reconnaître un envoûtement de sorcellerie et s'en libérer définitivement"
+│   └── "Purification des habitations : pourquoi et comment assainir un logement chargé"
+│
+├── /sante-plantes/
+│   ├── "Les vertus de l'Agbo traditionnel pour la vigueur masculine et le renforcement des reins"
+│   ├── "Infertilité féminine et trompes bouchées : l'approche par la pharmacopée africaine"
+│   └── "Sevrage de l'alcool par les plantes traditionnelles : le mécanisme des rituels de dégoût"
+│
+├── /demarches-france/
+│   ├── "Régularisation et titre de séjour en préfecture : comment dissiper les énergies de blocage"
+│   ├── "Audience au tribunal : rituels traditionnels pour apaiser les juges et les plaignants"
+│   └── "Contestation d'OQTF : démarches légales et soutien spirituel d'invisibilité"
+│
+└── /guides-produits/
+    ├── "Savon noir d'étoile Afé : guide d'utilisation pour purifier son aura"
+    ├── "Pourquoi porter un Baya (perles de reins) : histoire et vertus de séduction"
+    └── "L'usage du cadenas d'amour : précautions et rituels de fixation"
+```
+
+---
+
+## VII. Schéma du Maillage Interne Triangulaire (SEO & CRO)
+
+Chaque visiteur navigue au sein d'un écosystème fermé reliant systématiquement un **Problème (Article Blog)**, un **Rituel (Service)**, un **Objet Sacré (Produit)** et une **Localisation (Page Ville)** :
+
+```text
+                         [ARTICLE DE BLOG]
+               "Mari de nuit : symptômes et délivrance"
+                                 │
+                 ┌───────────────┴───────────────┐
+                 ▼                               ▼
+       [PAGE DE SERVICE]                 [FICHE PRODUIT]
+/services/protection-desenvoutement/   /boutique/savons/
+  /delivrance-mari-femme-de-nuit/     /savon-grand-desenvoutement/
+                 │                               │
+                 └───────────────┬───────────────┘
+                                 ▼
+                         [PAGE LOCALE / RDV]
+         /zones-d-intervention/marabout-paris-ile-de-france/
+                  ➔ Consultation en Cabinet ou WhatsApp
+```
+
+---
+
+## VIII. Spécifications Techniques & Conformité Google France
+
+1. **Données Structurées Schema.org (JSON-LD) :**
+   * `LocalBusiness` & `ProfessionalService` sur la page d'accueil et les pages villes avec géolocalisation France.
+   * `Product` sur les fiches de la boutique avec devise `EUR (€)` et état de stock.
+   * `FAQPage` sur chaque page de service pour occuper la position zéro (Featured Snippets) sur Google.fr.
+2. **Performances & Vitesse de Chargement :**
+   * Note Google PageSpeed > 90 sur mobile.
+   * Images compressées au format `.webp`.
+   * Hébergement haute performance situé sur le territoire français.
+3. **Boutons Flottants d'Action Directe (UX Mobile) :**
+   * **Bouton WhatsApp Flottant :** Présent sur 100 % des pages avec message d'amorce personnalisé selon la page visitée.
+   * **Bouton Appel Direct :** Relié au standard téléphonique français du cabinet.
+NB: j'ai ajouté en pièce jointe une maquette version mobiles des sections services et produits de la page d'accueil

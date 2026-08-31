@@ -1,0 +1,34 @@
+---
+import type { FaqItem } from '../mock/data';
+
+interface Props {
+  items: FaqItem[];
+  defaultOpenIndex?: number;
+}
+
+const { items, defaultOpenIndex = 0 } = Astro.props;
+---
+
+<div class="space-y-3.5">
+  {items.map((item, index) => (
+    <details
+      class="group card-luxury overflow-hidden transition-all duration-200"
+      open={index === defaultOpenIndex}
+    >
+      <summary class="flex justify-between items-center p-4 md:p-5 cursor-pointer list-none focus:outline-none select-none">
+        <h3 class="font-serif font-semibold text-sm md:text-base text-brand-dark pr-4 group-open:text-brand-900 leading-snug">
+          {item.question}
+        </h3>
+        <div class="w-7 h-7 rounded-full bg-gray-50 group-open:bg-brand-50 flex items-center justify-center text-gray-400 group-open:text-brand-900 flex-shrink-0 transition-colors">
+          <svg class="h-4 w-4 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+      </summary>
+      
+      <div class="px-4 md:px-5 pb-4 md:pb-5 pt-1 text-xs md:text-sm text-gray-600 font-sans leading-relaxed border-t border-gray-100">
+        <p>{item.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>

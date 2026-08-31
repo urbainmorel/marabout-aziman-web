@@ -1,0 +1,32 @@
+---
+import BlogListLayout from '../../../layouts/BlogListLayout.astro';
+import { mockPosts, categories, type Category } from '../../../mock/data';
+
+export async function getStaticPaths() {
+  return categories.map((category) => {
+    const filteredPosts = mockPosts.filter((post) => post.category.slug === category.slug);
+    return {
+      params: { category: category.slug },
+      props: {
+        category,
+        posts: filteredPosts.length > 0 ? filteredPosts : mockPosts,
+      },
+    };
+  });
+}
+
+interface Props {
+  category: Category;
+  posts: typeof mockPosts;
+}
+
+const { category, posts } = Astro.props;
+---
+
+<BlogListLayout
+  posts={posts}
+  categories={categories}
+  currentCategory={category.title}
+  title={`${category.title} : Rituels & Guides | Cabinet Aziman`}
+  description={category.description}
+/>

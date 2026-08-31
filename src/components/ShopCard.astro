@@ -1,0 +1,59 @@
+---
+import type { ShopItem } from '../mock/data';
+import { siteSettings } from '../mock/data';
+
+interface Props {
+  item: ShopItem;
+}
+
+const { item } = Astro.props;
+const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article ésotérique : ${item.title}`)}`;
+---
+
+<div class="card-luxury overflow-hidden flex flex-col h-full group hover:border-gold-300 transition-all duration-300">
+  <div class="relative h-36 sm:h-44 overflow-hidden bg-gray-100">
+    <img
+      src={item.image}
+      alt={item.title}
+      loading="lazy"
+      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+    {item.tag ? (
+      <span class="absolute top-2.5 right-2.5 badge-gold text-[10px] shadow-sm">
+        {item.tag}
+      </span>
+    ) : (
+      <span class="absolute top-2.5 right-2.5 badge-sacred text-[10px] shadow-sm">
+        Consacré
+      </span>
+    )}
+  </div>
+
+  <div class="p-4 flex flex-col justify-between flex-grow">
+    <div>
+      <span class="text-[10px] font-sans font-semibold text-gold-700 uppercase tracking-wider block mb-1">
+        {item.category}
+      </span>
+      <h3 class="font-serif font-bold text-base text-brand-dark leading-snug mb-2 group-hover:text-brand-900 transition-colors">
+        {item.title}
+      </h3>
+      <p class="text-xs text-gray-600 leading-relaxed line-clamp-2 mb-3">
+        {item.description}
+      </p>
+    </div>
+
+    <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto">
+      <span class="text-[11px] text-gray-500 font-sans">Livraison discrète</span>
+      <a
+        href={whatsappOrderUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-sans font-semibold text-brand-900 hover:text-gold-700 transition-colors flex items-center gap-1 bg-brand-50 hover:bg-brand-100 px-3 py-1.5 rounded-lg"
+      >
+        <span>Commander</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</div>

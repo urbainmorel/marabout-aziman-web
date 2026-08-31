@@ -1,0 +1,211 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteSettings, domains } from '../mock/data';
+---
+
+<PageLayout
+  title="Contact & Consultation Privée | Cabinet Aziman"
+  subtitle="Prenez rendez-vous au cabinet en Île-de-France ou sollicitez une intervention d'urgence à distance."
+  badge="Écoute & Discrétion"
+  description="Contactez Maître Aziman, grand marabout en France. Consultation divinatoire par téléphone, WhatsApp ou au cabinet privé. Secret professionnel garanti."
+  breadcrumbs={[
+    { name: 'Contact' },
+  ]}
+>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+    
+    <!-- Left Column: Direct Coordonnées & Information -->
+    <div class="lg:col-span-5 space-y-6">
+      
+      <div class="card-luxury p-6 sm:p-8 space-y-6 border-gold-300/70">
+        <div>
+          <span class="badge-gold text-xs mb-2">Disponibilité Immédiate</span>
+          <h2 class="font-serif font-bold text-2xl text-brand-dark">Coordonnées Directes</h2>
+          <p class="text-xs text-gray-600 font-sans mt-1">
+            Maître Aziman vous répond personnellement 7 jours sur 7.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- WhatsApp -->
+          <a
+            href={siteSettings.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-4 p-4 rounded-xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition-colors group"
+          >
+            <div class="w-12 h-12 rounded-xl bg-[#128C7E] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.394 0 12.03a11.972 11.972 0 001.605 6.057L0 24l6.132-1.61a11.874 11.874 0 005.915 1.569h.005c6.635 0 12.032-5.396 12.035-12.032a11.85 11.85 0 00-3.48-8.504z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-sans font-bold text-sm text-brand-dark">WhatsApp 24h/7j</p>
+              <p class="text-xs text-gray-600">Discussion en direct et confidentielle</p>
+              <span class="text-[11px] text-emerald-700 font-semibold block mt-0.5">Réponse en moins de 15 minutes</span>
+            </div>
+          </a>
+
+          <!-- Téléphone Direct -->
+          <a
+            href={`tel:${siteSettings.phone}`}
+            class="flex items-center gap-4 p-4 rounded-xl bg-brand-50 hover:bg-brand-100/80 border border-brand-200 transition-colors group"
+          >
+            <div class="w-12 h-12 rounded-xl bg-brand-900 text-gold-300 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg class="w-6 h-6 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <p class="font-sans font-bold text-sm text-brand-dark">Appel Direct au Cabinet</p>
+              <p class="text-xs text-brand-900 font-semibold">{siteSettings.phoneDisplay}</p>
+              <span class="text-[11px] text-gray-500 block mt-0.5">7j/7 de 08h00 à 23h00</span>
+            </div>
+          </a>
+
+          <!-- Email -->
+          <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div class="w-12 h-12 rounded-xl bg-gray-700 text-white flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <p class="font-sans font-bold text-sm text-brand-dark">Courrier Électronique</p>
+              <a href={`mailto:${siteSettings.email}`} class="text-xs text-brand-900 font-medium hover:underline">{siteSettings.email}</a>
+              <span class="text-[11px] text-gray-500 block mt-0.5">Pour les dossiers détaillés</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reassurance Badges -->
+        <div class="p-4 bg-gold-50 rounded-xl border border-gold-200/60 space-y-2 text-xs text-gray-700">
+          <p class="font-bold text-brand-dark flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-gold-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Garantie de Secret Professionnel
+          </p>
+          <p class="text-[11px] text-gray-600 leading-relaxed">
+            Vos photographies, dates de naissance et récits personnels ne sont jamais transmis à aucun tiers et restent sous le sceau du secret initiatique.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Right Column: Visual Form -->
+    <div class="lg:col-span-7">
+      <div class="card-luxury p-6 sm:p-10 border-gray-200">
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark mb-2">
+          Demande de Consultation & Rituel
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-600 font-sans mb-6">
+          Remplissez le formulaire ci-dessous. Maître Aziman étudiera votre situation et vous répondra sous 24h avec la plus grande bienveillance.
+        </p>
+
+        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Votre demande a bien été envoyée au Cabinet Aziman. Maître Aziman prendra contact avec vous dans les plus brefs délais.');">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="fullName" class="block text-xs font-sans font-semibold text-brand-dark mb-1">
+                Nom complet ou Prénom *
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                required
+                placeholder="Ex: Sophie Martin"
+                class="w-full rounded-lg border-gray-300 text-sm px-3.5 py-2.5 focus:border-brand-900 focus:ring-brand-900"
+              />
+            </div>
+
+            <div>
+              <label for="birthDate" class="block text-xs font-sans font-semibold text-brand-dark mb-1">
+                Date de naissance (pour le Fâ)
+              </label>
+              <input
+                type="date"
+                id="birthDate"
+                name="birthDate"
+                class="w-full rounded-lg border-gray-300 text-sm px-3.5 py-2.5 focus:border-brand-900 focus:ring-brand-900"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="phone" class="block text-xs font-sans font-semibold text-brand-dark mb-1">
+                Numéro de téléphone / WhatsApp *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="Ex: 06 12 34 56 78"
+                class="w-full rounded-lg border-gray-300 text-sm px-3.5 py-2.5 focus:border-brand-900 focus:ring-brand-900"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs font-sans font-semibold text-brand-dark mb-1">
+                Adresse Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Ex: sophie@email.com"
+                class="w-full rounded-lg border-gray-300 text-sm px-3.5 py-2.5 focus:border-brand-900 focus:ring-brand-900"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="domain" class="block text-xs font-sans font-semibold text-brand-dark mb-1">
+              Domaine d'intervention souhaité *
+            </label>
+            <select
+              id="domain"
+              name="domain"
+              class="w-full rounded-lg border-gray-300 text-sm px-3.5 py-2.5 focus:border-brand-900 focus:ring-brand-900"
+            >
+              {domains.map((dom) => (
+                <option value={dom.slug}>{dom.title} — {dom.subtitle}</option>
+              ))}
+              <option value="autre">Autre situation spécifique</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-sans font-semibold text-brand-dark mb-1">
+              Décrivez votre situation et vos attentes *
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              placeholder="Expliquez brièvement les blocages rencontrés, l'ancienneté du problème et vos souhaits..."
+              class="w-full rounded-lg border-gray-300 text-sm px-3.5 py-2.5 focus:border-brand-900 focus:ring-brand-900"
+            ></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="btn-primary w-full py-3.5 text-sm font-semibold"
+            >
+              <span>Envoyer ma demande confidentielle</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <p class="text-[10px] text-gray-500 text-center">
+            En soumettant ce formulaire, vous acceptez que vos informations soient utilisées exclusivement dans le cadre de votre consultation spirituelle.
+          </p>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</PageLayout>
