@@ -5,7 +5,6 @@ const BASE_DIR = path.resolve('PLAN DU SITE ET CONTENU MARABOUT AZIMAN');
 
 const OFFICIAL_PHONE_DISPLAY = "+33 (0)7 59 39 92 30";
 const OFFICIAL_PHONE_TEL = "+33759399230";
-const OFFICIAL_WHATSAPP_LINK = "https://wa.me/22995309859?text=Bonjour%20Ma%C3%AEtre%20Aziman%2C%20je%20souhaite%20une%20consultation%20confidentielle.";
 
 const IMAGES = {
   amour: [
@@ -91,6 +90,17 @@ function slugify(text) {
 }
 
 /**
+ * Remove all emojis, icons, and stickers from titles and subtitles
+ */
+function cleanTitleEmojis(text) {
+  if (!text) return '';
+  return text
+    .replace(/[\u{1F000}-\u{1FFFF}\u{2300}-\u{27BF}\u{FE00}-\u{FE0F}]/gu, '')
+    .replace(/^[✦★*•\-–—►▶️\s]+/gu, '')
+    .trim();
+}
+
+/**
  * Format inline markdown tokens into rich semantic HTML
  */
 function formatInline(text) {
@@ -116,12 +126,12 @@ function formatInline(text) {
 }
 
 /**
- * Convert raw markdown blocks into beautiful semantic HTML for senior web publishing
+ * Convert raw markdown blocks into clean semantic HTML without any stickers or emojis in headings
  */
 function markdownToHtml(markdown) {
   const lines = markdown.split(/\r?\n/);
   const htmlParts = [];
-  let currentList = null; // 'ul' or 'ol'
+  let currentList = null;
   let currentQuote = null;
 
   function closeCurrentList() {
@@ -148,6 +158,11 @@ function markdownToHtml(markdown) {
       continue;
     }
 
+    // Ignore code block fences if wrapping raw HTML
+    if (trimmed.startsWith('```')) {
+      continue;
+    }
+
     // Horizontal Rule
     if (trimmed === '---' || trimmed === '***' || trimmed === '___') {
       closeCurrentList();
@@ -156,38 +171,42 @@ function markdownToHtml(markdown) {
       continue;
     }
 
-    // Heading 2
+    // Heading 2 (clean emojis/stickers)
     if (trimmed.startsWith('## ')) {
       closeCurrentList();
       closeCurrentQuote();
-      const title = formatInline(trimmed.replace(/^##\s+/, ''));
+      const cleanTitle = cleanTitleEmojis(trimmed.replace(/^##\s+/, ''));
+      const title = formatInline(cleanTitle);
       htmlParts.push(`<h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark mt-10 mb-4 pb-2 border-b border-gold-200/80">${title}</h2>`);
       continue;
     }
 
-    // Heading 3
+    // Heading 3 (clean emojis/stickers)
     if (trimmed.startsWith('### ')) {
       closeCurrentList();
       closeCurrentQuote();
-      const title = formatInline(trimmed.replace(/^###\s+/, ''));
-      htmlParts.push(`<h3 class="font-serif font-bold text-xl sm:text-2xl text-brand-dark mt-8 mb-3 text-gold-700 flex items-center gap-2"><span>✦</span> ${title}</h3>`);
+      const cleanTitle = cleanTitleEmojis(trimmed.replace(/^###\s+/, ''));
+      const title = formatInline(cleanTitle);
+      htmlParts.push(`<h3 class="font-serif font-bold text-xl sm:text-2xl text-brand-dark mt-8 mb-3 text-gold-700">${title}</h3>`);
       continue;
     }
 
-    // Heading 4
+    // Heading 4 (clean emojis/stickers)
     if (trimmed.startsWith('#### ')) {
       closeCurrentList();
       closeCurrentQuote();
-      const title = formatInline(trimmed.replace(/^####\s+/, ''));
+      const cleanTitle = cleanTitleEmojis(trimmed.replace(/^####\s+/, ''));
+      const title = formatInline(cleanTitle);
       htmlParts.push(`<h4 class="font-serif font-semibold text-lg text-brand-dark mt-6 mb-2">${title}</h4>`);
       continue;
     }
 
-    // Heading 1 (if leftover in body) -> treat as prominent section title
+    // Heading 1 (if leftover in body)
     if (trimmed.startsWith('# ')) {
       closeCurrentList();
       closeCurrentQuote();
-      const title = formatInline(trimmed.replace(/^#\s+/, ''));
+      const cleanTitle = cleanTitleEmojis(trimmed.replace(/^#\s+/, ''));
+      const title = formatInline(cleanTitle);
       htmlParts.push(`<h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark mt-8 mb-4">${title}</h2>`);
       continue;
     }
@@ -216,7 +235,7 @@ function markdownToHtml(markdown) {
         htmlParts.push('<ul class="my-5 space-y-3 pl-4 border-l-2 border-gold-400 text-gray-700 text-sm sm:text-base leading-relaxed">');
       }
       const itemContent = formatInline(ulMatch[1]);
-      htmlParts.push(`<li class="flex items-start gap-2.5"><span class="text-gold-500 font-bold flex-shrink-0 mt-0.5">✦</span><span>${itemContent}</span></li>`);
+      htmlParts.push(`<li class="flex items-start gap-2.5"><span class="text-gold-500 font-bold flex-shrink-0 mt-0.5">•</span><span>${itemContent}</span></li>`);
       continue;
     }
 
@@ -242,7 +261,12 @@ function markdownToHtml(markdown) {
   closeCurrentList();
   closeCurrentQuote();
 
-  return htmlParts.join('\n');
+  let finalHtml = htmlParts.join('\n');
+  finalHtml = finalHtml.replace(/<h([1-6])(.*?)>(.*?)<\/h\1>/gi, (match, tag, attrs, inner) => {
+    return `<h${tag}${attrs}>${cleanTitleEmojis(inner)}</h${tag}>`;
+  });
+
+  return finalHtml;
 }
 
 /**
@@ -311,8 +335,8 @@ function parseYoastAndContent(filePath, fallbackSlug) {
 
     // Check if first line is the H1 title
     if (!h1 && trimmed.startsWith('# ') && !trimmed.startsWith('# =') && !trimmed.startsWith('# -')) {
-      h1 = trimmed.replace(/^#\s+/, '').trim();
-      continue; // do not include duplicate H1 in body text
+      h1 = cleanTitleEmojis(trimmed.replace(/^#\s+/, '').trim());
+      continue;
     }
 
     // Skip any leftover score or metadata comment
@@ -340,12 +364,12 @@ function parseYoastAndContent(filePath, fallbackSlug) {
     raw,
     rawBody,
     contentHtml,
-    metaTitle: metaTitle || h1,
+    metaTitle: cleanTitleEmojis(metaTitle || h1),
     metaDescription: metaDescription || rawBody.slice(0, 160).replace(/[#*`\n]/g, ' ').trim() + '...',
     targetQuery,
     slug,
     keywords,
-    h1: h1 || metaTitle
+    h1: cleanTitleEmojis(h1 || metaTitle)
   };
 }
 
@@ -353,14 +377,14 @@ function parseYoastAndContent(filePath, fallbackSlug) {
 // 1. SERVICES
 // ----------------------------------------------------
 const SERVICES_MAP = [
-  { folder: 'AMOUR SENTIMENTS', file: 'AMOUR SENTIMENTS.txt', silo: 'amour-sentiments', name: 'Amour & Sentiments', imgKey: 'amour', icon: '❤️' },
-  { folder: 'RICHESSE FINANCES', file: 'RICHESSE FINANCES.txt', silo: 'richesse-finance', name: 'Richesse & Abondance', imgKey: 'richesse', icon: '💰' },
-  { folder: 'COMMERCE CARRIERE REUISSITE', file: 'COMMERCE CARRIERE-REUISSITE.txt', silo: 'commerce-carriere-reussite', name: 'Commerce & Carrière', imgKey: 'commerce', icon: '📈' },
-  { folder: 'DIVINATION VOYANCE', file: 'DIVINATION VOYANCE.txt', silo: 'divination-voyance', name: 'Divination & Voyance', imgKey: 'divination', icon: '🔮' },
-  { folder: 'PROTECTION DESENVOUTEMENT', file: 'PROTECTION -DESENVOUTEMENT.txt', silo: 'protection-desenvoutement', name: 'Protection & Désenvoûtement', imgKey: 'protection', icon: '🛡️' },
-  { folder: 'SANTE TRADITIONNELLE', file: 'SANTE TRADITIONNELLE.txt', silo: 'sante-traditionnelle', name: 'Santé & Fertilité', imgKey: 'sante', icon: '🌿' },
-  { folder: 'JUSTICE PROCES LITIGE', file: 'JUSTICE PROCES - LITIGE.txt', silo: 'justice-proces-litiges', name: 'Justice & Litiges', imgKey: 'justice', icon: '⚖️' },
-  { folder: 'IMIGRATION TITRES SEJOUR VISAS', file: 'IMIGRATION -TITRES SEJOUR VISAS.txt', silo: 'immigration-titres-sejour-visas', name: 'Immigration & Papiers', imgKey: 'immigration', icon: '🛂' }
+  { folder: 'AMOUR SENTIMENTS', file: 'AMOUR SENTIMENTS.txt', silo: 'amour-sentiments', name: 'Amour & Sentiments', imgKey: 'amour' },
+  { folder: 'RICHESSE FINANCES', file: 'RICHESSE FINANCES.txt', silo: 'richesse-finance', name: 'Richesse & Abondance', imgKey: 'richesse' },
+  { folder: 'COMMERCE CARRIERE REUISSITE', file: 'COMMERCE CARRIERE-REUISSITE.txt', silo: 'commerce-carriere-reussite', name: 'Commerce & Carrière', imgKey: 'commerce' },
+  { folder: 'DIVINATION VOYANCE', file: 'DIVINATION VOYANCE.txt', silo: 'divination-voyance', name: 'Divination & Voyance', imgKey: 'divination' },
+  { folder: 'PROTECTION DESENVOUTEMENT', file: 'PROTECTION -DESENVOUTEMENT.txt', silo: 'protection-desenvoutement', name: 'Protection & Désenvoûtement', imgKey: 'protection' },
+  { folder: 'SANTE TRADITIONNELLE', file: 'SANTE TRADITIONNELLE.txt', silo: 'sante-traditionnelle', name: 'Santé & Fertilité', imgKey: 'sante' },
+  { folder: 'JUSTICE PROCES LITIGE', file: 'JUSTICE PROCES - LITIGE.txt', silo: 'justice-proces-litiges', name: 'Justice & Litiges', imgKey: 'justice' },
+  { folder: 'IMIGRATION TITRES SEJOUR VISAS', file: 'IMIGRATION -TITRES SEJOUR VISAS.txt', silo: 'immigration-titres-sejour-visas', name: 'Immigration & Papiers', imgKey: 'immigration' }
 ];
 
 const servicesHubs = [];
@@ -382,7 +406,7 @@ SERVICES_MAP.forEach((svc, index) => {
       const subImage = IMAGES[svc.imgKey][(sIdx + 1) % IMAGES[svc.imgKey].length];
 
       const subObj = {
-        title: parsedSub.h1 || baseName,
+        title: cleanTitleEmojis(parsedSub.h1 || baseName),
         slug: parsedSub.slug || slugify(baseName),
         silo: svc.silo,
         siloName: svc.name,
@@ -392,8 +416,7 @@ SERVICES_MAP.forEach((svc, index) => {
         content: parsedSub.rawBody,
         contentHtml: parsedSub.contentHtml,
         rawContent: parsedSub.raw,
-        image: subImage,
-        icon: svc.icon
+        image: subImage
       };
       subservices.push(subObj);
       allSubservices.push(subObj);
@@ -401,10 +424,9 @@ SERVICES_MAP.forEach((svc, index) => {
   }
 
   servicesHubs.push({
-    title: parsedHub?.h1 || svc.name,
+    title: cleanTitleEmojis(parsedHub?.h1 || svc.name),
     silo: svc.silo,
     name: svc.name,
-    icon: svc.icon,
     image: hubImage,
     metaTitle: parsedHub?.metaTitle || svc.name,
     metaDescription: parsedHub?.metaDescription || '',
@@ -412,13 +434,13 @@ SERVICES_MAP.forEach((svc, index) => {
     content: parsedHub?.rawBody || '',
     contentHtml: parsedHub?.contentHtml || '',
     rawContent: parsedHub?.raw || '',
-    subservices: subservices.map(s => ({ title: s.title, slug: s.slug, metaDescription: s.metaDescription, image: s.image }))
+    subservices: subservices.map(s => ({ title: cleanTitleEmojis(s.title), slug: s.slug, metaDescription: s.metaDescription, image: s.image }))
   });
 });
 
 fs.writeFileSync(
   path.resolve('src/data/servicesData.ts'),
-  `// Auto-generated real content dataset with semantic HTML formatting
+  `// Auto-generated real content dataset without sticker/emoji clutter in headings
 export interface SubService {
   title: string;
   slug: string;
@@ -431,14 +453,12 @@ export interface SubService {
   contentHtml: string;
   rawContent: string;
   image: string;
-  icon: string;
 }
 
 export interface ServiceHub {
   title: string;
   silo: string;
   name: string;
-  icon: string;
   image: string;
   metaTitle: string;
   metaDescription: string;
@@ -454,7 +474,7 @@ export const allSubservices: SubService[] = ${JSON.stringify(allSubservices, nul
 `
 );
 
-console.log(`✅ Services generated with rich HTML: ${servicesHubs.length} hubs, ${allSubservices.length} subservices.`);
+console.log(`✅ Services generated without stickers: ${servicesHubs.length} hubs, ${allSubservices.length} subservices.`);
 
 // ----------------------------------------------------
 // 2. BOUTIQUE
@@ -490,7 +510,7 @@ BOUTIQUE_MAP.forEach((cat, index) => {
         const pImage = IMAGES.boutique[(pIdx + index) % IMAGES.boutique.length];
 
         const prodObj = {
-          title: parsedProd.h1 || pBaseName,
+          title: cleanTitleEmojis(parsedProd.h1 || pBaseName),
           slug: parsedProd.slug || slugify(pBaseName),
           category: cat.category,
           categoryName: cat.name,
@@ -510,7 +530,7 @@ BOUTIQUE_MAP.forEach((cat, index) => {
   }
 
   boutiqueCategories.push({
-    title: parsedCat?.h1 || cat.name,
+    title: cleanTitleEmojis(parsedCat?.h1 || cat.name),
     category: cat.category,
     name: cat.name,
     price: cat.price,
@@ -521,13 +541,13 @@ BOUTIQUE_MAP.forEach((cat, index) => {
     content: parsedCat?.rawBody || '',
     contentHtml: parsedCat?.contentHtml || '',
     rawContent: parsedCat?.raw || '',
-    products: products.map(p => ({ title: p.title, slug: p.slug, price: p.price, image: p.image, metaDescription: p.metaDescription }))
+    products: products.map(p => ({ title: cleanTitleEmojis(p.title), slug: p.slug, price: p.price, image: p.image, metaDescription: p.metaDescription }))
   });
 });
 
 fs.writeFileSync(
   path.resolve('src/data/shopData.ts'),
-  `// Auto-generated real content dataset with semantic HTML formatting
+  `// Auto-generated real content dataset without sticker/emoji clutter in headings
 export interface ShopProduct {
   title: string;
   slug: string;
@@ -563,7 +583,7 @@ export const allProducts: ShopProduct[] = ${JSON.stringify(allProducts, null, 2)
 `
 );
 
-console.log(`✅ Shop generated with rich HTML: ${boutiqueCategories.length} categories, ${allProducts.length} products.`);
+console.log(`✅ Shop generated without stickers: ${boutiqueCategories.length} categories, ${allProducts.length} products.`);
 
 // ----------------------------------------------------
 // 3. ZONES
@@ -580,7 +600,7 @@ if (fs.existsSync(ZONES_DIR)) {
     const zImage = IMAGES.zones[idx % IMAGES.zones.length];
 
     allZones.push({
-      title: parsedZone.h1 || zBaseName,
+      title: cleanTitleEmojis(parsedZone.h1 || zBaseName),
       slug: parsedZone.slug || slugify(zBaseName),
       regionName: zBaseName,
       metaTitle: parsedZone.metaTitle,
@@ -596,7 +616,7 @@ if (fs.existsSync(ZONES_DIR)) {
 
 fs.writeFileSync(
   path.resolve('src/data/zonesData.ts'),
-  `// Auto-generated real content dataset with semantic HTML formatting
+  `// Auto-generated real content dataset without sticker/emoji clutter in headings
 export interface ZoneItem {
   title: string;
   slug: string;
@@ -614,7 +634,7 @@ export const allZones: ZoneItem[] = ${JSON.stringify(allZones, null, 2)};
 `
 );
 
-console.log(`✅ Zones generated with rich HTML: ${allZones.length} regions.`);
+console.log(`✅ Zones generated without stickers: ${allZones.length} regions.`);
 
 // ----------------------------------------------------
 // 4. BLOG
@@ -651,7 +671,7 @@ blogCategories.forEach(cat => {
       artIndex++;
 
       allBlogArticles.push({
-        title: parsedArt.h1 || aBaseName,
+        title: cleanTitleEmojis(parsedArt.h1 || aBaseName),
         slug: parsedArt.slug || slugify(aBaseName),
         category: cat.slug,
         categoryName: cat.name,
@@ -676,7 +696,7 @@ blogCategories.forEach(cat => {
 
 fs.writeFileSync(
   path.resolve('src/data/blogData.ts'),
-  `// Auto-generated real content dataset with semantic HTML formatting
+  `// Auto-generated real content dataset without sticker/emoji clutter in headings
 export interface BlogArticle {
   title: string;
   slug: string;
@@ -708,4 +728,4 @@ export const allBlogArticles: BlogArticle[] = ${JSON.stringify(allBlogArticles, 
 `
 );
 
-console.log(`✅ Blog generated with rich HTML: ${blogCategories.length} categories, ${allBlogArticles.length} articles.`);
+console.log(`✅ Blog generated without stickers: ${blogCategories.length} categories, ${allBlogArticles.length} articles.`);
