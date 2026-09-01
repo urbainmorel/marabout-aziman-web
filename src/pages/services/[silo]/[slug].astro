@@ -5,28 +5,39 @@ import ConsultationSidebar from '../../../components/ConsultationSidebar.astro';
 import TableOfContents from '../../../components/TableOfContents.astro';
 import TrustBadges from '../../../components/TrustBadges.astro';
 import CtaSection from '../../../components/CtaSection.astro';
-import { allSubservices, type SubService } from '../../../data/servicesData';
+import { servicesHubs, type ServiceSubservice, type ServiceHub } from '../../../data/servicesData';
 import { siteSettings } from '../../../data/siteData';
 
 export async function getStaticPaths() {
-  return allSubservices.map((sub) => ({
-    params: { silo: sub.silo, slug: sub.slug },
-    props: { sub },
-  }));
+  const paths: any[] = [];
+
+  servicesHubs.forEach((hub) => {
+    if (hub.subservices) {
+      hub.subservices.forEach((sub) => {
+        paths.push({
+          params: { silo: hub.silo, slug: sub.slug },
+          props: { hub, sub },
+        });
+      });
+    }
+  });
+
+  return paths;
 }
 
 interface Props {
-  sub: SubService;
+  hub: ServiceHub;
+  sub: ServiceSubservice;
 }
 
-const { sub } = Astro.props;
+const { hub, sub } = Astro.props;
 
-// Service JSON-LD Structured Data Schema
-const serviceSchema = {
+// Specific Ritual Schema
+const ritualSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": sub.title,
-  "serviceType": sub.siloName,
+  "serviceType": hub.name,
   "description": sub.metaDescription,
   "provider": {
     "@type": "ProfessionalService",
@@ -37,14 +48,9 @@ const serviceSchema = {
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Île-de-France" },
     { "@type": "Country", "name": "France" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Rituels Traditionnels et Consultations Spirituelles"
-  }
+  ]
 };
 
-// BreadcrumbList JSON-LD Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -64,14 +70,14 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": sub.siloName,
-      "item": `https://marabout-aziman.fr/services/${sub.silo}/`
+      "name": hub.name,
+      "item": `https://marabout-aziman.fr/services/${hub.silo}/`
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": sub.title,
-      "item": `https://marabout-aziman.fr/services/${sub.silo}/${sub.slug}/`
+      "item": `https://marabout-aziman.fr/services/${hub.silo}/${sub.slug}/`
     }
   ]
 };
@@ -81,56 +87,83 @@ const breadcrumbSchema = {
   title={sub.metaTitle}
   description={sub.metaDescription}
   keywords={sub.keywords}
-  image={sub.image}
-  schema={[serviceSchema, breadcrumbSchema]}
+  image={sub.image || hub.image}
+  schema={[ritualSchema, breadcrumbSchema]}
 >
   
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
-    badge={sub.siloName}
+    badge={`Rituel Ancestral • ${hub.name}`}
     title={sub.title}
     description={sub.metaDescription}
     breadcrumbs={[
-      { label: 'Services & Rituels', href: '/services' },
-      { label: sub.siloName, href: `/services/${sub.silo}` },
-      { label: sub.title, href: `/services/${sub.silo}/${sub.slug}` },
+      { label: 'Services', href: '/services' },
+      { label: hub.name, href: `/services/${hub.silo}` },
+      { label: sub.title, href: `/services/${hub.silo}/${sub.slug}` },
     ]}
   />
 
   <TrustBadges />
 
-  <!-- CONTENT -->
+  <!-- ARTICLE CONTENT -->
   <article class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
       
-      <!-- Main Content Body -->
+      <!-- Ritual Body & TOC -->
       <div class="lg:col-span-8 space-y-8">
         
-        <!-- Featured Image Card -->
-        <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-gold-400/20">
-          <img
-            src={sub.image}
-            alt={`Rituel traditionnel : ${sub.title}`}
-            class="w-full h-full object-cover"
-          />
-        </div>
+        {sub.image && (
+          <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-brand-800">
+            <img
+              src={sub.image}
+              alt={sub.title}
+              class="w-full h-full object-cover max-h-96"
+            />
+          </div>
+        )}
 
         <!-- Table of Contents -->
         <TableOfContents />
 
-        <!-- Rich Semantic HTML Content -->
+        <!-- Pure Editorial HTML -->
         <div class="prose-aziman" set:html={sub.contentHtml} />
+
+        <!-- Related Rituals in the Same Domain -->
+        {hub.subservices && hub.subservices.length > 1 && (
+          <div class="border-t border-brand-200 pt-10 mt-12 space-y-6">
+            <div class="space-y-1">
+              <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Autres Rituels du Domaine</span>
+              <h3 class="font-serif font-bold text-xl sm:text-2xl text-brand-dark">
+                Complétez votre démarche spirituelle
+              </h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {hub.subservices
+                .filter(s => s.slug !== sub.slug)
+                .slice(0, 4)
+                .map(other => (
+                  <a
+                    href={`/services/${hub.silo}/${other.slug}`}
+                    class="p-4 rounded-xl bg-brand-50/60 border border-brand-200 hover:border-brand-500 hover:bg-white transition-all flex items-center justify-between text-xs font-bold text-brand-dark group shadow-xs"
+                  >
+                    <span>{other.title}</span>
+                    <span class="text-brand-700 group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        )}
 
       </div>
 
-      <!-- Sticky Reusable Consultation & Action Sidebar -->
+      <!-- Reusable Luxury Consultation Sidebar -->
       <div class="lg:col-span-4">
         <ConsultationSidebar
-          title="Consulter pour ce Rituel"
-          subtitle={sub.title}
-          contextText={`Contactez directement Maître Aziman pour une analyse préalable de votre situation concernant le rituel "${sub.title}" et son exécution sur mesure.`}
-          actionText="Échanger sur WhatsApp"
-          customWhatsappMsg={`Bonjour Maître Aziman, je souhaite des informations et une consultation pour le rituel : ${sub.title}`}
+          title={`Rituel : ${sub.title.replace(' en France', '')}`}
+          subtitle="Consultation & Activation Personnalisée"
+          contextText={`Prenez contact avec Maître Aziman pour planifier ce rituel et bénéficier d'une prise en charge immédiate en cabinet ou à distance.`}
+          customWhatsappMsg={`Bonjour Maître Aziman, je souhaite des informations et un devis pour le rituel : ${sub.title}`}
         />
       </div>
 

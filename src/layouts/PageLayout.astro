@@ -18,7 +18,7 @@ const {
   subtitle,
   badge = "Cabinet Maître Aziman",
   description,
-  heroImage = "https://lh3.googleusercontent.com/aida-public/AB6AXuBG0AC5xQQkZVN6GKqNppO3JNzVln1mTUhW6umDVdmkxouZfCo0_DRdkK99JyRWg_wA0QyRloapYsege7E7_ZcJAS6270Ri5Zif1zJycat-lf8eKhTyobL8Jxfy8bYNGi6uGx4oPJwa5H24swsvAgbA5mkPgwsZTU9dQB7J109JML-AhCeHjewTeBYpw7ZJFuowiUqBMcrOJR_aSpYojxKAQfILJtLdd5i52Ue3vcJ6NjQpaMhqpSOJMw",
+  heroImage = "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80",
   breadcrumbs = [],
 } = Astro.props;
 ---
@@ -32,18 +32,17 @@ const {
     </div>
   )}
 
-  <!-- Hero Header Section (Inspired by MODELE AUTRES PAGES.html) -->
-  <section class="relative bg-brand-dark text-white py-12 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden mb-10">
-    <!-- Hero Image Background with overlay -->
+  <!-- Hero Header Section -->
+  <section class="relative bg-brand-950 text-white py-12 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden mb-10 border-b border-brand-800">
     <img
       src={heroImage}
       alt={title}
-      class="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-luminosity scale-105"
+      class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/80 to-transparent"></div>
 
     <div class="relative z-10 max-w-3xl mx-auto text-center space-y-4">
-      <span class="badge-gold text-xs px-3 py-1">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-white border border-white/20">
         {badge}
       </span>
 
@@ -52,40 +51,38 @@ const {
       </h1>
 
       {subtitle && (
-        <p class="font-sans text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto">
+        <p class="font-sans text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed max-w-2xl mx-auto">
           {subtitle}
         </p>
       )}
 
       <!-- Quick Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 max-w-md mx-auto">
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
         <a
           href={siteSettings.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-whatsapp w-full sm:w-auto"
+          class="btn-whatsapp text-xs py-2.5 px-5"
         >
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.394 0 12.03a11.972 11.972 0 001.605 6.057L0 24l6.132-1.61a11.874 11.874 0 005.915 1.569h.005c6.635 0 12.032-5.396 12.035-12.032a11.85 11.85 0 00-3.48-8.504z"/></svg>
-          <span>Consultation Immédiate</span>
+          <span>WhatsApp 24/7</span>
         </a>
         <a
           href={`tel:${siteSettings.phone}`}
-          class="btn-secondary w-full sm:w-auto text-brand-dark"
+          class="btn-secondary text-xs py-2.5 px-5 bg-white/10 hover:bg-white/20 text-white border-white/25"
         >
-          <span>Appel au Cabinet</span>
+          <span>Appeler le Cabinet</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Page Main Content Slot -->
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+  <!-- Main Content Slot -->
+  <main class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <slot />
-  </div>
+  </main>
 
   <!-- Global CTA Banner -->
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <CtaSection />
   </div>
-
 </BaseLayout>

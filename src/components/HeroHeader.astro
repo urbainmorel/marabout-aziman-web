@@ -26,11 +26,10 @@ interface Props {
 const { badge, title, description, breadcrumbs, metaInfo, author } = Astro.props;
 ---
 
-<section class="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-900 text-white py-14 sm:py-16 md:py-20 border-b border-gold-400/20 overflow-hidden">
+<section class="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-900 text-white py-14 sm:py-16 md:py-20 border-b border-slate-800 overflow-hidden">
   
-  <!-- Subtle Ambient Glow Orbs -->
-  <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-700/20 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Subtle Ambient Glow -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-900/20 rounded-full blur-3xl pointer-events-none"></div>
   
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <Breadcrumbs items={breadcrumbs} />
@@ -38,23 +37,23 @@ const { badge, title, description, breadcrumbs, metaInfo, author } = Astro.props
     <div class="mt-6 max-w-4xl space-y-4">
       
       {badge && (
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-400/15 border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-wider">
-          <span>✦</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-slate-100 text-xs font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
           <span>{badge}</span>
         </div>
       )}
 
       {metaInfo && (
-        <div class="flex flex-wrap items-center gap-3 text-xs text-gold-300 font-medium">
+        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-200 font-semibold">
           {metaInfo.category && (
-            <span class="px-3 py-1 rounded-full bg-gold-400/20 text-gold-200 uppercase tracking-wider font-semibold">
+            <span class="px-3 py-1 rounded-full bg-indigo-950 text-indigo-200 border border-indigo-700/60 uppercase tracking-wider font-bold">
               {metaInfo.category}
             </span>
           )}
           {metaInfo.readTime && <span>{metaInfo.readTime}</span>}
           {metaInfo.date && (
             <>
-              <span>•</span>
+              <span class="text-slate-500">•</span>
               <span>Publié le {metaInfo.date}</span>
             </>
           )}
@@ -66,21 +65,21 @@ const { badge, title, description, breadcrumbs, metaInfo, author } = Astro.props
       </h1>
 
       {description && (
-        <p class="text-sm sm:text-base md:text-lg text-gray-200/90 leading-relaxed font-sans max-w-3xl pt-1">
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-sans max-w-3xl pt-1">
           {description}
         </p>
       )}
 
       {author && (
-        <div class="pt-4 flex items-center gap-3.5 border-t border-white/10 mt-6">
+        <div class="pt-4 flex items-center gap-3.5 border-t border-slate-800 mt-6">
           <img
             src={author.avatar}
             alt={author.name}
-            class="w-11 h-11 rounded-full object-cover border-2 border-gold-400/80 shadow-md"
+            class="w-11 h-11 rounded-full object-cover border-2 border-slate-600 shadow-md"
           />
           <div>
-            <p class="text-sm font-semibold text-white">{author.name}</p>
-            <p class="text-xs text-gold-300/90">{author.role}</p>
+            <p class="text-sm font-bold text-white">{author.name}</p>
+            <p class="text-xs text-slate-300">{author.role}</p>
           </div>
         </div>
       )}

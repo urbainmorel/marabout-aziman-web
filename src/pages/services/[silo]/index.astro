@@ -102,9 +102,9 @@ const breadcrumbSchema = {
 
         <!-- Subservices Grid -->
         {hub.subservices && hub.subservices.length > 0 && (
-          <div class="border-t border-gold-200/80 pt-10 space-y-6">
+          <div class="border-t border-brand-200 pt-10 space-y-6">
             <div class="space-y-2">
-              <span class="text-xs font-bold text-gold-700 uppercase tracking-wider">Rituels Dédiés</span>
+              <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Rituels Dédiés</span>
               <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
                 Rituels & Interventions Spécifiques dans ce Domaine
               </h2>
@@ -112,20 +112,20 @@ const breadcrumbSchema = {
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {hub.subservices.map((sub) => (
-                <div class="card-luxury p-6 bg-white border border-gray-100 hover:border-gold-400/80 transition-all flex flex-col justify-between group shadow-xs">
+                <div class="card-luxury p-6 bg-white border border-brand-200/80 hover:border-brand-500 transition-all flex flex-col justify-between group shadow-xs">
                   <div>
                     <h3 class="font-serif font-bold text-base sm:text-lg text-brand-dark group-hover:text-brand-900 transition-colors">
                       <a href={`/services/${hub.silo}/${sub.slug}`}>
                         {sub.title}
                       </a>
                     </h3>
-                    <p class="text-xs text-gray-600 line-clamp-3 mt-2 leading-relaxed font-sans">
+                    <p class="text-xs text-slate-600 line-clamp-3 mt-2 leading-relaxed font-sans">
                       {sub.metaDescription}
                     </p>
                   </div>
                   <a
                     href={`/services/${hub.silo}/${sub.slug}`}
-                    class="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-brand-900 group-hover:text-gold-700 flex items-center justify-between uppercase tracking-wider"
+                    class="mt-5 pt-3 border-t border-brand-100 text-xs font-bold text-brand-900 group-hover:text-brand-700 flex items-center justify-between uppercase tracking-wider"
                   >
                     <span>Consulter le rituel</span>
                     <span class="group-hover:translate-x-1 transition-transform">→</span>

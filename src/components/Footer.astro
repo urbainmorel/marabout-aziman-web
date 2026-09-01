@@ -4,37 +4,37 @@ import { servicesHubs } from '../data/servicesData';
 import { allZones } from '../data/zonesData';
 ---
 
-<footer class="bg-brand-950 text-gray-300 pt-16 pb-12 border-t border-gold-400/20 relative overflow-hidden">
+<footer class="bg-brand-950 text-slate-200 pt-16 pb-12 border-t border-slate-800 relative overflow-hidden">
   
   <!-- Subtle ambient glow -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gold-400/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-brand-700/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
       
       <!-- Col 1: Brand & Presentation -->
       <div class="lg:col-span-2 space-y-4">
         <div class="flex items-center gap-3.5">
-          <div class="w-11 h-11 bg-brand-900 rounded-xl flex items-center justify-center text-gold-300 shadow-md border border-gold-400/30">
-            <span class="font-serif font-bold text-xl text-gold-300">A</span>
+          <div class="w-11 h-11 bg-brand-900 rounded-xl flex items-center justify-center text-white shadow-md border border-brand-700">
+            <span class="font-serif font-bold text-xl text-white">A</span>
           </div>
           <div class="flex flex-col">
             <span class="font-serif font-bold text-2xl text-white tracking-tight leading-none">Cabinet Aziman</span>
-            <span class="text-xs text-gold-300 font-sans font-semibold tracking-wider uppercase mt-1">{siteSettings.fullName}</span>
+            <span class="text-xs text-brand-300 font-sans font-semibold tracking-wider uppercase mt-1">{siteSettings.fullName}</span>
           </div>
         </div>
 
-        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-sm font-sans">
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm font-sans">
           Grand marabout voyant traditionnel en France, héritier des secrets sacrés du Fâ et du Vodun d'Abomey et Cotonou. Consultations privées en Île-de-France et rituels sérieux à distance partout en France et à l'international.
         </p>
 
-        <div class="pt-2 space-y-2 text-xs text-gray-300">
+        <div class="pt-2 space-y-2 text-xs text-slate-200">
           <p class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
             <strong class="text-white">Disponibilité :</strong> {siteSettings.workingHours}
           </p>
           <p class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+            <span class="w-2 h-2 rounded-full bg-brand-400"></span>
             <strong class="text-white">Cabinet France :</strong> {siteSettings.address}
           </p>
         </div>
@@ -53,19 +53,19 @@ import { allZones } from '../data/zonesData';
 
       <!-- Col 2: Major Rituals (Services) -->
       <div class="space-y-4">
-        <h4 class="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-gold-400/30 pb-2">
+        <h4 class="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-brand-800 pb-2">
           Nos 8 Domaines
         </h4>
         <ul class="space-y-2 text-xs sm:text-sm">
           {servicesHubs.slice(0, 6).map((svc) => (
             <li>
-              <a href={`/services/${svc.silo}`} class="text-gray-300 hover:text-gold-300 transition-colors">
+              <a href={`/services/${svc.silo}`} class="text-slate-300 hover:text-white transition-colors">
                 {svc.name}
               </a>
             </li>
           ))}
           <li>
-            <a href="/services" class="text-gold-300 hover:underline text-xs font-semibold">
+            <a href="/services" class="text-brand-300 hover:underline text-xs font-semibold">
               Voir tous les 8 domaines →
             </a>
           </li>
@@ -74,19 +74,19 @@ import { allZones } from '../data/zonesData';
 
       <!-- Col 3: Regional Intervention Zones -->
       <div class="space-y-4">
-        <h4 class="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-gold-400/30 pb-2">
+        <h4 class="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-brand-800 pb-2">
           Zones en France
         </h4>
         <ul class="space-y-2 text-xs sm:text-sm">
           {allZones.slice(0, 6).map((zone) => (
             <li>
-              <a href={`/zones-d-intervention/${zone.slug}`} class="text-gray-300 hover:text-gold-300 transition-colors">
+              <a href={`/zones-d-intervention/${zone.slug}`} class="text-slate-300 hover:text-white transition-colors">
                 {zone.regionName}
               </a>
             </li>
           ))}
           <li>
-            <a href="/zones-d-intervention" class="text-gold-300 hover:underline text-xs font-semibold">
+            <a href="/zones-d-intervention" class="text-brand-300 hover:underline text-xs font-semibold">
               Toutes les régions de France →
             </a>
           </li>
@@ -95,46 +95,46 @@ import { allZones } from '../data/zonesData';
 
       <!-- Col 4: Quick Navigation & Legal -->
       <div class="space-y-4">
-        <h4 class="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-gold-400/30 pb-2">
+        <h4 class="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-brand-800 pb-2">
           Informations & Légal
         </h4>
         <ul class="space-y-2 text-xs sm:text-sm">
-          <li><a href="/a-propos" class="text-gray-300 hover:text-gold-300 transition-colors">À Propos du Maître</a></li>
-          <li><a href="/cabinet-france" class="text-gray-300 hover:text-gold-300 transition-colors">Cabinet en France & RDV</a></li>
-          <li><a href="/temoignages-avis" class="text-gray-300 hover:text-gold-300 transition-colors">Avis & Témoignages</a></li>
-          <li><a href="/boutique" class="text-gray-300 hover:text-gold-300 transition-colors">Boutique Ésotérique</a></li>
-          <li><a href="/blog" class="text-gray-300 hover:text-gold-300 transition-colors">Blog & Guides</a></li>
-          <li><a href="/contact" class="text-gray-300 hover:text-gold-300 transition-colors">Contact & Urgences</a></li>
-          <li><a href="/mentions-legales" class="text-gray-400 hover:text-gold-300 transition-colors">Mentions Légales</a></li>
-          <li><a href="/politique-confidentialite" class="text-gray-400 hover:text-gold-300 transition-colors">Politique de Confidentialité</a></li>
-          <li><a href="/cgu" class="text-gray-400 hover:text-gold-300 transition-colors">Conditions Générales (CGU)</a></li>
-          <li><a href="/cookies" class="text-gray-400 hover:text-gold-300 transition-colors">Gestion des Cookies</a></li>
+          <li><a href="/a-propos" class="text-slate-300 hover:text-white transition-colors">À Propos du Maître</a></li>
+          <li><a href="/cabinet-france" class="text-slate-300 hover:text-white transition-colors">Cabinet en France & RDV</a></li>
+          <li><a href="/temoignages-avis" class="text-slate-300 hover:text-white transition-colors">Avis & Témoignages</a></li>
+          <li><a href="/boutique" class="text-slate-300 hover:text-white transition-colors">Boutique Ésotérique</a></li>
+          <li><a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog & Guides</a></li>
+          <li><a href="/contact" class="text-slate-300 hover:text-white transition-colors">Contact & Urgences</a></li>
+          <li><a href="/mentions-legales" class="text-slate-400 hover:text-white transition-colors">Mentions Légales</a></li>
+          <li><a href="/politique-confidentialite" class="text-slate-400 hover:text-white transition-colors">Politique de Confidentialité</a></li>
+          <li><a href="/cgu" class="text-slate-400 hover:text-white transition-colors">Conditions Générales (CGU)</a></li>
+          <li><a href="/cookies" class="text-slate-400 hover:text-white transition-colors">Gestion des Cookies</a></li>
         </ul>
       </div>
 
     </div>
 
     <!-- Payment & Guarantee Badges -->
-    <div class="py-6 border-b border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-400">
+    <div class="py-6 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300 font-sans">
       <div class="flex items-center gap-3">
-        <span class="text-gold-300 font-semibold uppercase tracking-wider text-[11px]">Garanties du Cabinet :</span>
+        <span class="text-brand-300 font-bold uppercase tracking-wider text-[11px]">Garanties :</span>
         <span>Secret Initiatique 100%</span>
-        <span>•</span>
+        <span class="text-slate-600">•</span>
         <span>Colis Discret 24/48h</span>
-        <span>•</span>
+        <span class="text-slate-600">•</span>
         <span>Consultations Certifiées</span>
       </div>
-      <div class="flex items-center gap-2 text-gray-400 text-xs">
-        <span>Moyens de règlement sécurisés : CB • Virement • PayPal • Espèces au cabinet</span>
+      <div class="flex items-center gap-2 text-slate-300 text-xs">
+        <span>Règlements sécurisés : CB • Virement • PayPal • Espèces au cabinet</span>
       </div>
     </div>
 
     <!-- Bottom Disclaimer & Copyright -->
-    <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 font-sans">
       <p>
         © {new Date().getFullYear()} {siteSettings.legalEntity} / {siteSettings.commercialName}. SIRET : {siteSettings.siret}.
       </p>
-      <p class="text-center md:text-right max-w-lg text-[11px] text-gray-400">
+      <p class="text-center md:text-right max-w-lg text-[11px] text-slate-400">
         Les rituels et consultations traditionnelles relèvent des pratiques spirituelles ancestrales. Ils ne dispensent en aucun cas d'un diagnostic médical ou d'un conseil juridique d'un professionnel agréé.
       </p>
     </div>

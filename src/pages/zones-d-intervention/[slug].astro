@@ -21,26 +21,26 @@ interface Props {
 
 const { zone } = Astro.props;
 
-// Localized Regional Service JSON-LD Schema
-const localZoneSchema = {
+// Local Business Schema
+const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": zone.title,
-  "serviceType": `Marabout et Praticien Spirituel Traditionnel à ${zone.regionName}`,
+  "@type": "ProfessionalService",
+  "name": `Cabinet Maître Aziman - ${zone.regionName}`,
   "description": zone.metaDescription,
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Cabinet Maître Aziman",
-    "telephone": siteSettings.phone,
-    "url": "https://marabout-aziman.fr"
-  },
+  "telephone": siteSettings.phone,
+  "url": `https://marabout-aziman.fr/zones-d-intervention/${zone.slug}/`,
   "areaServed": {
     "@type": "AdministrativeArea",
     "name": zone.regionName
+  },
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": zone.regionName,
+    "addressCountry": "FR"
   }
 };
 
-// BreadcrumbList JSON-LD Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -72,7 +72,7 @@ const breadcrumbSchema = {
   description={zone.metaDescription}
   keywords={zone.keywords}
   image={zone.image}
-  schema={[localZoneSchema, breadcrumbSchema]}
+  schema={[localBusinessSchema, breadcrumbSchema]}
 >
   
   <!-- HERO HEADER REUSABLE -->
@@ -95,7 +95,7 @@ const breadcrumbSchema = {
       <div class="lg:col-span-8 space-y-8">
         
         <!-- Featured Image -->
-        <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-gold-400/20 mb-8">
+        <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-brand-800 mb-8">
           <img
             src={zone.image}
             alt={`Intervention Marabout à ${zone.regionName} : ${zone.title}`}

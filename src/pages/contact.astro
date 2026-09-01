@@ -4,9 +4,9 @@ import HeroHeader from '../components/HeroHeader.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import { siteSettings } from '../data/siteData';
 
-const seoTitle = "Contacter un Marabout en France : WhatsApp & RDV | Aziman";
-const seoDesc = "Besoin de contacter un marabout en France sans attendre ? Joignez Maître Aziman par téléphone direct ou WhatsApp 24h/7j. Cabinet à Paris.";
-const seoKeywords = "contacter marabout france, telephone marabout paris, whatsapp marabout gratuit france, rdv marabout urgence, marabout direct france";
+const seoTitle = "Contact & Urgences : Cabinet Marabout Aziman | Paris & France";
+const seoDesc = "Contactez Maître Aziman, grand marabout en France. Ligne d'urgence 24h/7j, WhatsApp direct ou prise de RDV au cabinet de Paris. Réponse immédiate.";
+const seoKeywords = "contact marabout france, urgence marabout 24h, téléphone maître aziman, whatsapp marabout direct, rdv marabout paris";
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -18,12 +18,11 @@ const contactSchema = {
     "name": "Cabinet Maître Aziman",
     "telephone": siteSettings.phone,
     "email": siteSettings.email,
-    "url": "https://marabout-aziman.fr/contact/",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": siteSettings.phone,
-      "contactType": "customer support",
-      "availableLanguage": ["French", "Fon", "Yoruba"]
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paris",
+      "addressRegion": "Île-de-France",
+      "addressCountry": "FR"
     }
   }
 };
@@ -33,9 +32,9 @@ const contactSchema = {
   
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
-    badge="Accès, Téléphone & Urgences 24h/7j"
-    title="Contacter un Marabout en France : Téléphone, WhatsApp et Accès au Cabinet Aziman"
-    description="Vous traversez une crise sentimentale urgente, vous risquez une expulsion ou vous avez besoin d'un diagnostic divinatoire immédiat ? Contacter un marabout en France réputé comme Maître Aziman constitue la démarche la plus rapide pour trouver une issue à vos tourments."
+    badge="Secrétariat & Permanence 24h/7j"
+    title="Contact & Urgences Spirituelles du Cabinet Aziman en France"
+    description="Vous traversez une épreuve urgente ou souhaitez échanger en toute discrétion avec le Maître Aziman ? Le cabinet est joignable 24h/24 et 7j/7 par téléphone direct, WhatsApp ou formulaire sécurisé."
     breadcrumbs={[{ label: 'Contact', href: '/contact' }]}
   />
 
@@ -48,10 +47,10 @@ const contactSchema = {
       <!-- Direct Contact Details -->
       <div class="lg:col-span-5 space-y-6">
         
-        <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white space-y-6 shadow-2xl border border-gold-400/25 relative overflow-hidden">
-          <div class="absolute -top-16 -right-16 w-40 h-40 bg-gold-400/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white space-y-6 shadow-2xl border border-brand-800 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-40 h-40 bg-brand-700/15 rounded-full blur-2xl pointer-events-none"></div>
 
-          <div class="border-b border-white/10 pb-4">
+          <div class="border-b border-brand-800 pb-4">
             <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-1">Cabinet Ouvert 24h/7j</span>
             <h2 class="font-serif font-bold text-2xl text-white">
               Coordonnées Directes
@@ -60,10 +59,10 @@ const contactSchema = {
 
           <div class="space-y-4 text-xs sm:text-sm font-sans">
             <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-9 h-9 rounded-lg bg-brand-900 text-gold-300 flex items-center justify-center font-bold text-xs flex-shrink-0">01</div>
+              <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 border border-brand-700">01</div>
               <div>
-                <strong class="text-gold-300 block text-xs uppercase tracking-wider">Téléphone direct (Cabinet France) :</strong>
-                <a href={`tel:${siteSettings.phone}`} class="text-white hover:text-gold-300 font-bold text-base mt-0.5 inline-block">
+                <strong class="text-brand-300 block text-xs uppercase tracking-wider">Téléphone direct (Cabinet France) :</strong>
+                <a href={`tel:${siteSettings.phone}`} class="text-white hover:text-brand-300 font-bold text-base mt-0.5 inline-block">
                   {siteSettings.phoneDisplay}
                 </a>
               </div>
@@ -80,20 +79,20 @@ const contactSchema = {
             </div>
 
             <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-9 h-9 rounded-lg bg-brand-900 text-gold-300 flex items-center justify-center font-bold text-xs flex-shrink-0">03</div>
+              <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 border border-brand-700">03</div>
               <div>
-                <strong class="text-gold-300 block text-xs uppercase tracking-wider">Courrier électronique :</strong>
-                <a href={`mailto:${siteSettings.email}`} class="text-gray-300 hover:text-white font-medium text-xs mt-0.5 inline-block">
+                <strong class="text-brand-300 block text-xs uppercase tracking-wider">Courrier électronique :</strong>
+                <a href={`mailto:${siteSettings.email}`} class="text-slate-300 hover:text-white font-medium text-xs mt-0.5 inline-block">
                   {siteSettings.email}
                 </a>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-9 h-9 rounded-lg bg-brand-900 text-gold-300 flex items-center justify-center font-bold text-xs flex-shrink-0">04</div>
+              <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 border border-brand-700">04</div>
               <div>
-                <strong class="text-gold-300 block text-xs uppercase tracking-wider">Cabinet Principal :</strong>
-                <p class="text-gray-300 text-xs mt-0.5">
+                <strong class="text-brand-300 block text-xs uppercase tracking-wider">Cabinet Principal :</strong>
+                <p class="text-slate-300 text-xs mt-0.5">
                   Paris & Région Île-de-France (Adresse exacte transmise par SMS/WhatsApp lors de la confirmation du RDV).
                 </p>
               </div>
@@ -113,12 +112,12 @@ const contactSchema = {
         </div>
 
         <!-- Working Hours info -->
-        <div class="card-luxury p-6 bg-white border border-gray-100 text-xs space-y-2.5 shadow-xs">
+        <div class="card-luxury p-6 bg-white border border-brand-200/80 text-xs space-y-2.5 shadow-xs">
           <h3 class="font-serif font-bold text-brand-dark text-base">Disponibilité & Déplacements</h3>
-          <p class="text-gray-600 leading-relaxed font-sans">
+          <p class="text-slate-600 leading-relaxed font-sans">
             Le secrétariat et les lignes d'urgence restent ouverts 24h/24 et 7j/7 pour les crises sentimentales et blocages graves.
           </p>
-          <p class="text-gray-600 leading-relaxed font-sans">
+          <p class="text-slate-600 leading-relaxed font-sans">
             Consultations physiques au cabinet de Paris de 8h00 à 21h00 du lundi au dimanche sur rendez-vous.
           </p>
         </div>
@@ -127,13 +126,13 @@ const contactSchema = {
 
       <!-- Contact Form -->
       <div class="lg:col-span-7">
-        <div class="card-luxury p-6 sm:p-8 md:p-10 bg-white border border-gray-100 shadow-xl">
+        <div class="card-luxury p-6 sm:p-8 md:p-10 bg-white border border-brand-200/80 shadow-xl">
           <div class="space-y-2 mb-8">
-            <span class="text-xs font-bold text-gold-700 uppercase tracking-wider">Demande Confidentielle</span>
+            <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Demande Confidentielle</span>
             <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
               Formulaire de Contact Express
             </h2>
-            <p class="text-xs sm:text-sm text-gray-600 font-sans">
+            <p class="text-xs sm:text-sm text-slate-600 font-sans">
               Remplissez ce formulaire discret pour recevoir une réponse personnalisée du Maître Aziman sous 30 minutes :
             </p>
           </div>
@@ -141,50 +140,50 @@ const contactSchema = {
           <form class="space-y-4" id="consultation-form">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
+                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
                   Nom & Prénom / Pseudo <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   required
                   placeholder="Ex : Sylvie M."
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
+                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
                 />
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
+                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
                   Téléphone / WhatsApp <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="tel"
                   required
                   placeholder="Ex : 06 12 34 56 78"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
+                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
                 />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
+                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
                   Ville ou Région <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   required
                   placeholder="Ex : Paris ou Lyon"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
+                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
                 />
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
+                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
                   Domaine de Préoccupation <span class="text-red-500">*</span>
                 </label>
                 <select
                   required
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition bg-white font-sans"
+                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition bg-white font-sans"
                 >
                   <option value="">Sélectionnez un domaine...</option>
                   <option value="amour">Amour & Retour Affectif</option>
@@ -201,18 +200,18 @@ const contactSchema = {
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
+              <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
                 Votre Message Confidentiel <span class="text-red-500">*</span>
               </label>
               <textarea
                 rows="5"
                 required
                 placeholder="Décrivez avec précision votre situation actuelle (dates clés, difficultés rencontrées, souhaits)..."
-                class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
+                class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
               ></textarea>
             </div>
 
-            <div class="text-[11px] text-gray-500 flex items-center gap-2 pt-1 font-sans">
+            <div class="text-[11px] text-slate-500 flex items-center gap-2 pt-1 font-sans">
               <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
               <span>Secret initiatique et déontologique garanti. Aucune donnée n'est transmise à des tiers.</span>
             </div>

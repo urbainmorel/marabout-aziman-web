@@ -23,46 +23,46 @@ const whatsappUrl = customWhatsappMsg
 ---
 
 <aside class="space-y-6 sticky top-24">
-  <div class="card-luxury p-6 sm:p-7 bg-brand-950 text-white shadow-2xl border border-gold-400/25 space-y-6 relative overflow-hidden">
+  <div class="card-luxury p-6 sm:p-7 bg-brand-950 text-white shadow-2xl border border-slate-700 space-y-6 relative overflow-hidden">
     
-    <!-- Ambient gold shimmer -->
-    <div class="absolute -top-16 -right-16 w-40 h-40 bg-gold-400/10 rounded-full blur-2xl pointer-events-none"></div>
+    <!-- Ambient Shimmer -->
+    <div class="absolute -top-16 -right-16 w-40 h-40 bg-indigo-900/20 rounded-full blur-2xl pointer-events-none"></div>
 
     <!-- Header & Availability Pill -->
-    <div class="space-y-3 border-b border-white/10 pb-5">
-      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-semibold">
+    <div class="space-y-3 border-b border-slate-800 pb-5">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <span>Cabinet Ouvert • Réponse immédiate</span>
       </div>
 
-      <h3 class="font-serif font-bold text-xl text-white tracking-tight">
+      <h3 class="font-serif font-bold text-xl sm:text-2xl text-white tracking-tight">
         {title}
       </h3>
-      <p class="text-xs text-gold-300 font-medium">
+      <p class="text-xs text-slate-300 font-semibold">
         {subtitle}
       </p>
     </div>
 
     <!-- Description -->
-    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-sans">
+    <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
       {contextText}
     </p>
 
     <!-- Key Trust Points -->
-    <div class="space-y-2.5 text-xs text-gray-200 border-t border-white/10 pt-4">
+    <div class="space-y-2.5 text-xs text-slate-200 border-t border-slate-800 pt-4 font-sans">
       <div class="flex items-center justify-between">
-        <span class="text-gray-400">Téléphone Direct :</span>
-        <a href={`tel:${siteSettings.phone}`} class="font-bold text-white hover:text-gold-300 transition-colors">
+        <span class="text-slate-400">Téléphone Direct :</span>
+        <a href={`tel:${siteSettings.phone}`} class="font-bold text-white hover:text-indigo-300 transition-colors">
           {siteSettings.phoneDisplay}
         </a>
       </div>
       <div class="flex items-center justify-between">
-        <span class="text-gray-400">WhatsApp 24h/7j :</span>
+        <span class="text-slate-400">WhatsApp 24h/7j :</span>
         <span class="font-bold text-emerald-400">{siteSettings.whatsappDisplay}</span>
       </div>
       <div class="flex items-center justify-between">
-        <span class="text-gray-400">Confidentialité :</span>
-        <span class="font-semibold text-gold-200">100% Secret Initiatique</span>
+        <span class="text-slate-400">Confidentialité :</span>
+        <span class="font-bold text-white">100% Secret Initiatique</span>
       </div>
     </div>
 
@@ -80,28 +80,27 @@ const whatsappUrl = customWhatsappMsg
 
       <a
         href="/contact"
-        class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center bg-white/10 hover:bg-white/20 text-white border-white/20"
+        class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center bg-white/10 hover:bg-white/20 text-white border-white/25"
       >
         <span>Prendre RDV au Cabinet Paris</span>
       </a>
     </div>
 
     <!-- Reassurance footnote -->
-    <p class="text-[11px] text-gray-400 text-center pt-1 border-t border-white/5">
+    <p class="text-[11px] text-slate-400 text-center pt-2 border-t border-slate-800/80">
       Séance sans complaisance. Respect absolu de votre vie privée.
     </p>
 
   </div>
 
   <!-- Quick Reassurance Micro-Card -->
-  <div class="card-luxury p-5 bg-white border border-gray-100/90 text-xs space-y-2 text-gray-600">
-    <div class="flex items-center gap-2 font-bold text-brand-dark">
-      <span class="text-gold-600">✦</span>
+  <div class="card-luxury p-5 bg-white border border-slate-200 text-xs space-y-2 text-slate-700 shadow-sm">
+    <div class="flex items-center gap-2 font-bold text-slate-950 text-sm">
+      <span class="text-indigo-600">✓</span>
       <span>Intervention sur toute la France</span>
     </div>
-    <p class="leading-relaxed text-[11px]">
-      Paris, Lyon, Marseille, Bordeaux, Lille, Toulouse, Nantes, Strasbourg et DOM-TOM. Consultations privées ou rituels à distance avec suivi régulier.
+    <p class="text-slate-600 leading-relaxed font-sans">
+      Consultations physiques à Paris ou rituels à distance avec suivi régulier par téléphone et WhatsApp.
     </p>
   </div>
-
 </aside>

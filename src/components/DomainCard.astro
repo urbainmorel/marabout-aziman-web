@@ -8,7 +8,7 @@ interface Props {
 const { hub } = Astro.props;
 ---
 
-<div class="card-luxury p-6 sm:p-7 flex flex-col justify-between group hover:border-gold-400/80 transition-all duration-300">
+<div class="card-luxury p-6 sm:p-7 flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs">
   <div>
     <div class="relative h-48 mb-5 rounded-xl overflow-hidden bg-brand-950">
       <img
@@ -17,28 +17,28 @@ const { hub } = Astro.props;
         loading="lazy"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent"></div>
       <div class="absolute bottom-3.5 left-4 right-4 flex items-center justify-between">
-        <span class="text-white font-serif font-bold text-lg md:text-xl drop-shadow-md">{hub.name}</span>
-        <span class="text-gold-300 text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-900/80 border border-gold-400/30">
+        <span class="text-white font-serif font-bold text-lg md:text-xl drop-shadow">{hub.name}</span>
+        <span class="text-brand-100 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-brand-900/90 border border-brand-700">
           {hub.subservices?.length || 4} rituels
         </span>
       </div>
     </div>
 
-    <p class="text-xs sm:text-sm text-gray-600 line-clamp-3 mb-5 leading-relaxed font-sans">
+    <p class="text-xs sm:text-sm text-slate-700 line-clamp-3 mb-5 leading-relaxed font-sans">
       {hub.metaDescription || hub.content.slice(0, 140)}
     </p>
 
     <!-- Subservices list -->
     {hub.subservices && hub.subservices.length > 0 && (
-      <div class="space-y-1.5 mb-5 pt-3 border-t border-gray-100">
-        <span class="text-[11px] uppercase tracking-wider text-gold-700 font-bold block mb-2">Rituels majeurs :</span>
-        <ul class="text-xs text-gray-600 space-y-1.5 font-sans">
+      <div class="space-y-1.5 mb-5 pt-3 border-t border-brand-100">
+        <span class="text-[11px] uppercase tracking-wider text-brand-900 font-bold block mb-2">Rituels majeurs :</span>
+        <ul class="text-xs text-slate-700 space-y-1.5 font-sans">
           {hub.subservices.slice(0, 3).map((sub) => (
             <li class="flex items-center gap-2">
-              <span class="text-gold-500 font-bold">•</span>
-              <a href={`/services/${hub.silo}/${sub.slug}`} class="hover:text-brand-900 hover:underline transition-colors">
+              <span class="text-brand-600 font-bold">•</span>
+              <a href={`/services/${hub.silo}/${sub.slug}`} class="hover:text-brand-900 hover:underline transition-colors font-medium">
                 {sub.title.replace(' en France', '')}
               </a>
             </li>
@@ -50,7 +50,7 @@ const { hub } = Astro.props;
 
   <a
     href={`/services/${hub.silo}`}
-    class="inline-flex items-center justify-between w-full pt-4 mt-auto text-xs font-bold text-brand-900 hover:text-gold-700 border-t border-gray-100 transition-colors uppercase tracking-wider"
+    class="inline-flex items-center justify-between w-full pt-4 mt-auto text-xs font-bold text-brand-900 hover:text-brand-700 border-t border-brand-100 transition-colors uppercase tracking-wider"
   >
     <span>Consulter ce domaine</span>
     <span class="text-sm group-hover:translate-x-1 transition-transform">→</span>

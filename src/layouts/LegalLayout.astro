@@ -23,8 +23,8 @@ const {
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pt-4">
     <Breadcrumbs
       items={[
-        { name: 'Informations Légales', href: '/mentions-legales' },
-        { name: title },
+        { label: 'Informations Légales', href: '/mentions-legales' },
+        { label: title },
       ]}
     />
   </div>
@@ -35,7 +35,7 @@ const {
       <h1 class="font-serif font-bold text-3xl sm:text-4xl text-brand-dark mb-2">
         {title}
       </h1>
-      <p class="text-xs text-gray-500 font-sans">
+      <p class="text-xs text-slate-500 font-sans">
         Dernière mise à jour : <time datetime="2026-08-31">{lastUpdated}</time>
       </p>
     </div>
@@ -44,13 +44,13 @@ const {
     <LegalTabs currentSlug={slug} />
 
     <!-- Legal Prose Content -->
-    <div class="bg-white p-6 sm:p-10 rounded-2xl border border-gray-100 shadow-sm prose-editorial">
+    <div class="bg-white p-6 sm:p-10 rounded-2xl border border-brand-200/80 shadow-sm prose-aziman">
       <slot />
     </div>
 
     <!-- Footer Back Link -->
     <div class="mt-8 text-center">
-      <a href="/" class="text-xs font-sans font-semibold text-brand-900 hover:text-gold-700 transition-colors inline-flex items-center gap-1">
+      <a href="/" class="text-xs font-sans font-bold text-brand-900 hover:text-brand-700 transition-colors inline-flex items-center gap-1">
         <span>← Revenir à la page d'accueil</span>
       </a>
     </div>

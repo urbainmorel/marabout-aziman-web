@@ -12,30 +12,30 @@ interface Props {
 const { items = [] } = Astro.props;
 ---
 
-<div class="card-luxury p-6 bg-gold-50/50 border border-gold-300/60 shadow-xs mb-8">
-  <div class="flex items-center gap-2.5 mb-4 border-b border-gold-300/40 pb-3">
-    <span class="text-gold-700 font-serif font-bold text-lg">✦</span>
+<div class="card-luxury p-6 bg-brand-50/80 border border-brand-200 shadow-xs mb-8">
+  <div class="flex items-center gap-2.5 mb-4 border-b border-brand-200 pb-3">
+    <span class="w-2 h-2 rounded-full bg-brand-700"></span>
     <h3 class="font-serif font-bold text-base sm:text-lg text-brand-dark">
-      Sommaire de la Consultation & Rituels
+      Sommaire de l'Article & Rituels
     </h3>
   </div>
 
-  <nav class="space-y-1.5 text-xs sm:text-sm text-gray-700" aria-label="Table des matières">
+  <nav class="space-y-1.5 text-xs sm:text-sm text-slate-800" aria-label="Table des matières">
     {items.length > 0 ? (
       items.map((item, index) => (
         <a
           href={`#${item.id}`}
-          class={`block py-1 text-gray-700 hover:text-brand-900 transition-colors ${
-            item.level === 3 ? 'pl-4 text-gray-600 text-xs' : 'font-medium'
+          class={`block py-1 text-slate-800 hover:text-brand-900 hover:underline transition-colors ${
+            item.level === 3 ? 'pl-4 text-slate-600 text-xs' : 'font-semibold'
           }`}
         >
-          <span class="text-gold-600 font-semibold mr-1.5">{item.level === 2 ? `${index + 1}.` : '•'}</span>
+          <span class="text-brand-600 font-bold mr-1.5">{item.level === 2 ? `${index + 1}.` : '•'}</span>
           <span>{item.text}</span>
         </a>
       ))
     ) : (
       <div class="space-y-1.5 text-xs sm:text-sm" id="dynamic-toc-container">
-        <p class="text-xs text-gray-500 italic">Accès direct aux sections majeures de cet article :</p>
+        <p class="text-xs text-slate-500 italic">Accès direct aux sections majeures :</p>
         <ul class="space-y-2 pt-1" id="toc-list">
           <!-- Populated via client-side script if static items aren't provided -->
         </ul>
@@ -59,19 +59,18 @@ const { items = [] } = Astro.props;
         }
         const isH3 = heading.tagName.toLowerCase() === 'h3';
         const li = document.createElement('li');
-        li.className = isH3 ? 'pl-4 text-xs text-gray-600' : 'font-medium text-sm text-gray-800';
+        li.className = isH3 ? 'pl-4 text-xs text-slate-600' : 'text-sm font-semibold text-slate-800';
         
         const a = document.createElement('a');
         a.href = `#${heading.id}`;
-        a.className = 'hover:text-brand-900 hover:underline transition-colors flex items-start gap-1.5';
-        a.innerHTML = `<span class="text-gold-600 font-semibold flex-shrink-0">${isH3 ? '•' : (idx + 1) + '.'}</span> <span>${heading.textContent || ''}</span>`;
+        a.className = 'hover:text-brand-900 hover:underline transition-colors block py-0.5';
+        a.textContent = `${isH3 ? '• ' : `${idx + 1}. `}${heading.textContent || ''}`;
         
         li.appendChild(a);
         tocList.appendChild(li);
       });
     } else {
-      const parentCard = tocContainer.closest('.card-luxury');
-      if (parentCard) parentCard.style.display = 'none';
+      (tocContainer.closest('.card-luxury') as HTMLElement | null)?.classList.add('hidden');
     }
   }
 </script>

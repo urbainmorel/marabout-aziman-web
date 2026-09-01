@@ -23,18 +23,18 @@ const badges = [
 ];
 ---
 
-<section class="py-8 bg-surface-lowest border-y border-gray-100">
+<section class="py-8 bg-brand-50/70 border-y border-brand-200">
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {badges.map((b, idx) => (
-        <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gold-50/40 transition-colors">
-          <div class="w-9 h-9 rounded-lg bg-brand-900 text-gold-300 flex items-center justify-center font-serif font-bold text-sm flex-shrink-0 shadow-xs">
+        <div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-brand-200/80 shadow-xs hover:border-brand-400 transition-colors">
+          <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-serif font-bold text-sm flex-shrink-0 shadow-xs border border-brand-700">
             0{idx + 1}
           </div>
           <div>
-            <h4 class="font-serif font-bold text-sm text-brand-dark">{b.title}</h4>
-            <p class="text-[11px] font-semibold text-gold-600 uppercase tracking-wider">{b.subtitle}</p>
-            <p class="text-xs text-gray-500 mt-1 leading-relaxed">{b.desc}</p>
+            <h4 class="font-serif font-bold text-base text-brand-dark">{b.title}</h4>
+            <p class="text-[11px] font-bold text-brand-700 uppercase tracking-wider">{b.subtitle}</p>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed font-sans">{b.desc}</p>
           </div>
         </div>
       ))}

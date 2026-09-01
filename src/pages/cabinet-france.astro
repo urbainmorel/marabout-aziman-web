@@ -54,73 +54,71 @@ const cabinetSchema = {
         <TableOfContents />
 
         <div>
-          <p class="text-base sm:text-lg text-gray-700 leading-relaxed font-serif">
+          <p class="text-base sm:text-lg text-slate-800 leading-relaxed font-serif">
             En effet, situé en région parisienne et parfaitement desservi par les transports, son cabinet vous accueille dans une atmosphère de paix et de recueillement. Ainsi, vous bénéficiez d'une écoute attentive et d'un diagnostic spirituel immédiat par le Fâ.
           </p>
-          <p class="text-base sm:text-lg text-gray-700 leading-relaxed font-serif mt-4">
+          <p class="text-base sm:text-lg text-slate-800 leading-relaxed font-serif mt-4">
             Que vous habitiez en Île-de-France ou que vous préfériez une consultation à distance depuis la province, Maître Aziman vous reçoit 7 jours sur 7. Par conséquent, vous obtenez des réponses claires sans attendre.
           </p>
         </div>
 
-        <div class="border-t border-gold-200/80 pt-8 space-y-6">
+        <div class="border-t border-brand-200 pt-8 space-y-6">
           <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
             Les 2 Modes de Consultation Proposés par Maître Aziman
           </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="card-luxury p-6 bg-white border border-gray-100 shadow-xs">
+            <div class="card-luxury p-6 bg-white border border-brand-200/80 shadow-xs">
               <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">1. Consultation en Cabinet</h3>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
                 Vous êtes reçu individuellement dans le sanctuaire privé du Maître Aziman à Paris / Île-de-France. Vous assistez au lancer des cauris sacrés et repartez directement avec vos supports préparés.
               </p>
             </div>
-            <div class="card-luxury p-6 bg-white border border-gray-100 shadow-xs">
+            <div class="card-luxury p-6 bg-white border border-brand-200/80 shadow-xs">
               <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">2. Consultation à Distance</h3>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
                 Idéale si vous résidez en province (Lyon, Marseille, Bordeaux, Lille, etc.) ou à l'étranger. La séance offre exactement la même précision qu'en cabinet via appel vocal ou vidéo WhatsApp.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="border-t border-gold-200/80 pt-8 space-y-4">
+        <div class="border-t border-brand-200 pt-8 space-y-4">
           <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
-            Comment se déroule votre rendez-vous au cabinet ?
+            Comment se Déroule une Séance au Cabinet ?
           </h2>
-          <ol class="space-y-3 text-sm text-gray-700 list-decimal pl-5 font-sans">
-            <li><strong>L'accueil et la mise en confiance :</strong> Vous exposez librement votre situation sans crainte du jugement.</li>
-            <li><strong>Le tirage divinatoire du Fâ et des cauris :</strong> Maître Aziman interroge les oracles traditionnels pour identifier la racine de vos blocages.</li>
-            <li><strong>La proposition de rituels sur mesure :</strong> Vous découvrez les rituels ou produits de la boutique adaptés pour résoudre votre problème.</li>
-            <li><strong>La remise des consignes spirituelles :</strong> Vous recevez les règles simples à respecter pour déclencher votre déblocage.</li>
+          <ol class="space-y-3 text-sm sm:text-base text-slate-700 pl-6 list-decimal font-sans">
+            <li><strong>L'accueil et l'écoute confidentielle :</strong> Vous exposez librement votre situation sans aucune interruption ni jugement.</li>
+            <li><strong>L'interrogation oraculaire du Fâ :</strong> Tirage divinatoire pour identifier les origines invisibles de vos blocages.</li>
+            <li><strong>La révélation des causes et des remèdes :</strong> Explication détaillée des rituels ancestraux requis.</li>
+            <li><strong>La remise des recommandations :</strong> Remise ou envoi des produits consacrés et calendrier de suivi personnalisé.</li>
           </ol>
         </div>
 
-        <div class="border-t border-gold-200/80 pt-8 space-y-4">
+        <div class="border-t border-brand-200 pt-8 space-y-4">
           <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
-            Modalités Pratiques et Tarifs des Consultations
+            Prendre Rendez-Vous au Cabinet en Île-de-France
           </h2>
-          <div class="space-y-3 text-sm text-gray-700 font-sans">
-            <p>
-              Le Cabinet Maître Aziman pratique une tarification claire et transparente communiquée lors de la prise de contact :
-            </p>
-            <ul class="space-y-2 pl-4 border-l-2 border-gold-400">
-              <li><strong>Moyens de règlement acceptés :</strong> Espèces, Virement bancaire sécurisé, Carte Bancaire, PayPal.</li>
-              <li><strong>Accessibilité :</strong> Cabinet situé en région parisienne (adresse exacte et plan d'accès communiqués après confirmation du rendez-vous).</li>
-              <li><strong>Horaires d'ouverture :</strong> Du lundi au dimanche de 8h00 à 21h00 sans interruption.</li>
-            </ul>
-          </div>
+          <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-sans">
+            Pour garantir un anonymat parfait, les consultations au cabinet se font exclusivement sur rendez-vous préalable :
+          </p>
+          <ul class="space-y-2 pl-4 border-l-2 border-brand-300 text-sm sm:text-base text-slate-700 font-sans">
+            <li><strong>Par téléphone direct :</strong> <a href={`tel:${siteSettings.phone}`} class="font-bold text-brand-900 underline">{siteSettings.phoneDisplay}</a></li>
+            <li><strong>Par WhatsApp 24/7 :</strong> <a href={siteSettings.whatsappLink} target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-700 underline">{siteSettings.whatsappDisplay}</a></li>
+            <li><strong>Par le formulaire de réservation :</strong> <a href="/contact" class="font-bold text-brand-900 underline">Formulaire de contact sécurisé</a></li>
+          </ul>
         </div>
 
       </div>
 
-      <!-- Reusable Consultation Sidebar -->
+      <!-- Reusable Luxury Consultation Sidebar -->
       <div class="lg:col-span-4">
         <ConsultationSidebar
           title="Réserver une Séance"
-          subtitle="Cabinet Paris & Distance"
-          contextText="Bloquez votre créneau horaire privilégié avec Maître Aziman pour une séance en toute confidentialité."
-          actionText="Réserver sur WhatsApp 24h/7j"
-          customWhatsappMsg="Bonjour Maître Aziman, je souhaite réserver un créneau pour une consultation en cabinet ou par téléphone."
+          subtitle="Cabinet Paris & À Distance"
+          contextText="Sélectionnez votre créneau avec Maître Aziman. Prise en charge rapide 7j/7."
+          actionText="Réserver sur WhatsApp 24/7"
+          customWhatsappMsg="Bonjour Maître Aziman, je souhaite réserver une consultation au cabinet en France."
         />
       </div>
 

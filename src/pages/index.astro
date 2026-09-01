@@ -33,27 +33,27 @@ const faqSchema = {
 
 <BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={faqSchema}>
   
-  <!-- HERO SECTION LUXURY -->
-  <section class="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-900 text-white overflow-hidden py-16 sm:py-20 md:py-28 border-b border-gold-400/20">
+  <!-- HERO SECTION - DEEP VIOLET PRESTIGE -->
+  <section class="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-950 text-white overflow-hidden py-16 sm:py-20 md:py-28 border-b border-brand-800">
     
-    <!-- Ambient gold and indigo lighting -->
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-700/25 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-gold-400/15 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Subtle Ambient Lighting -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-700/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-violetSubtle-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-4xl mx-auto text-center space-y-6">
         
         <!-- Live Status Pill -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-wider shadow-sm">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider shadow-sm">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Cabinet en France & Consultations à Distance 7j/7</span>
         </div>
 
         <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5.5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
-          Grand Marabout en France : <span class="text-gold-300 italic font-serif">Cabinet de Voyance & Rituels Traditionnels</span> Aziman
+          Grand Marabout en France : <span class="text-brand-200 italic font-serif">Cabinet de Voyance & Rituels Traditionnels</span> Aziman
         </h1>
 
-        <p class="text-base sm:text-lg text-gray-200 font-sans leading-relaxed max-w-3xl mx-auto pt-1">
+        <p class="text-base sm:text-lg text-slate-200 font-sans leading-relaxed max-w-3xl mx-auto pt-1">
           Vous traversez une période de doutes sentimentaux, financiers ou spirituels ? Consulter un <strong>marabout en France</strong> réputé constitue le premier pas vers la résolution définitive de vos blocages. Maître Aziman met à votre service plus de 25 ans d'initiation aux secrets ancestraux du Fâ et du Vodun.
         </p>
 
@@ -80,15 +80,15 @@ const faqSchema = {
         </div>
 
         <!-- Trust Badges Quick List -->
-        <div class="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-300 font-medium">
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300 font-medium">
           <span class="flex items-center gap-1.5">
-            <span class="text-gold-400">✦</span> Secret 100% garanti
+            <span class="text-brand-300 font-bold">✓</span> Secret 100% garanti
           </span>
           <span class="flex items-center gap-1.5">
-            <span class="text-gold-400">✦</span> Diagnostic précis par le Fâ
+            <span class="text-brand-300 font-bold">✓</span> Diagnostic précis par le Fâ
           </span>
           <span class="flex items-center gap-1.5">
-            <span class="text-gold-400">✦</span> Résultats sous 24h à 7j
+            <span class="text-brand-300 font-bold">✓</span> Résultats sous 24h à 7j
           </span>
         </div>
 
@@ -107,7 +107,7 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <div class="lg:col-span-6 relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-gold-300/40">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-200">
           <img
             src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80"
             alt="Maître Aziman - Grand Marabout Traditionnel en France et Prêtre Bokonon"
@@ -115,16 +115,16 @@ const faqSchema = {
           />
           <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6 right-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-gold-300 font-bold">Initiation & Maîtrise</span>
+            <span class="text-xs uppercase tracking-widest text-brand-300 font-bold">Initiation & Maîtrise</span>
             <h3 class="font-serif text-2xl sm:text-3xl font-bold mt-1">{siteSettings.fullName}</h3>
-            <p class="text-xs text-gray-300 mt-1">{siteSettings.experienceYears}</p>
+            <p class="text-xs text-slate-300 mt-1">{siteSettings.experienceYears}</p>
           </div>
         </div>
       </div>
 
       <div class="lg:col-span-6 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-800 text-xs font-bold uppercase tracking-wider">
-          <span>✦</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-900 text-xs font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-700"></span>
           <span>Déontologie & Tradition Pure</span>
         </div>
 
@@ -132,31 +132,31 @@ const faqSchema = {
           Pourquoi consulter le Maître Aziman en France ?
         </h2>
 
-        <p class="text-sm sm:text-base text-gray-700 leading-relaxed font-sans">
+        <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-sans">
           Faire appel à un authentique <strong>marabout en France</strong> vous garantit un accompagnement sur mesure. De plus, Maître Aziman applique une déontologie stricte fondée sur le secret initiatique et le respect des lois de la nature.
         </p>
 
-        <ul class="space-y-4 text-sm text-gray-700 font-sans">
+        <ul class="space-y-4 text-sm sm:text-base text-slate-700 font-sans">
           <li class="flex items-start gap-3.5">
-            <div class="w-8 h-8 rounded-xl bg-brand-900 text-gold-300 flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs">01</div>
+            <div class="w-8 h-8 rounded-xl bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs border border-brand-700">01</div>
             <div>
               <strong class="text-brand-dark font-bold">Une lignée initiatique pure :</strong> Initié dès l'enfance dans les grands sanctuaires traditionnels d'Afrique de l'Ouest.
             </div>
           </li>
           <li class="flex items-start gap-3.5">
-            <div class="w-8 h-8 rounded-xl bg-brand-900 text-gold-300 flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs">02</div>
+            <div class="w-8 h-8 rounded-xl bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs border border-brand-700">02</div>
             <div>
               <strong class="text-brand-dark font-bold">Un cabinet discret en France :</strong> Un lieu neutre et apaisant en Île-de-France pour vous recevoir en toute confidentialité.
             </div>
           </li>
           <li class="flex items-start gap-3.5">
-            <div class="w-8 h-8 rounded-xl bg-brand-900 text-gold-300 flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs">03</div>
+            <div class="w-8 h-8 rounded-xl bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs border border-brand-700">03</div>
             <div>
               <strong class="text-brand-dark font-bold">Des résultats rapides et vérifiables :</strong> Des rituels ciblés conçus pour déclencher des déblocages visibles en quelques jours.
             </div>
           </li>
           <li class="flex items-start gap-3.5">
-            <div class="w-8 h-8 rounded-xl bg-brand-900 text-gold-300 flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs">04</div>
+            <div class="w-8 h-8 rounded-xl bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-serif font-bold mt-0.5 shadow-xs border border-brand-700">04</div>
             <div>
               <strong class="text-brand-dark font-bold">Une disponibilité totale :</strong> Consultations d'urgence 7j/7 au cabinet, par appel direct ou via WhatsApp.
             </div>
@@ -164,7 +164,7 @@ const faqSchema = {
         </ul>
 
         <div class="pt-2">
-          <a href="/a-propos" class="inline-flex items-center gap-2 text-sm font-bold text-brand-900 hover:text-gold-700 transition-colors uppercase tracking-wider">
+          <a href="/a-propos" class="inline-flex items-center gap-2 text-sm font-bold text-brand-900 hover:text-brand-700 transition-colors uppercase tracking-wider">
             <span>En savoir plus sur l'histoire et l'initiation du Maître Aziman</span>
             <span>→</span>
           </a>
@@ -175,18 +175,18 @@ const faqSchema = {
   </section>
 
   <!-- 8 DOMAINES D'INTERVENTION SECTION -->
-  <section class="py-16 sm:py-20 bg-surface border-y border-gray-200/60" id="domaines">
+  <section class="py-16 sm:py-20 bg-surface border-y border-brand-200" id="domaines">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-900 text-xs font-bold uppercase tracking-wider">
-          <span>✦</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-900 text-xs font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-700"></span>
           <span>Pôle Rituels & Consultations</span>
         </div>
         <h2 class="font-serif font-bold text-3xl sm:text-4xl md:text-4.5xl text-brand-dark">
           Nos 8 Domaines d'Intervention Spirituelle
         </h2>
-        <p class="text-xs sm:text-sm text-gray-600 font-sans max-w-2xl mx-auto">
+        <p class="text-xs sm:text-sm text-slate-600 font-sans max-w-2xl mx-auto">
           Découvrez nos rituels ancestraux adaptés aux réalités de votre quotidien. Cliquez sur chaque domaine pour accéder aux rituels détaillés :
         </p>
       </div>
@@ -203,14 +203,14 @@ const faqSchema = {
   <!-- BOUTIQUE ÉSOTÉRIQUE SECTION -->
   <section class="py-16 md:py-24 max-w-content mx-auto px-4 sm:px-6 lg:px-8" id="boutique">
     <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-800 text-xs font-bold uppercase tracking-wider">
-        <span>✦</span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-900 text-xs font-bold uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-700"></span>
         <span>Artisanat Sacré & Pharmacopée</span>
       </div>
       <h2 class="font-serif font-bold text-3xl sm:text-4xl md:text-4.5xl text-brand-dark">
         La Boutique Ésotérique Ancestrale
       </h2>
-      <p class="text-xs sm:text-sm text-gray-600 font-sans max-w-2xl mx-auto">
+      <p class="text-xs sm:text-sm text-slate-600 font-sans max-w-2xl mx-auto">
         Chaque article de notre boutique est préparé, magnétisé et consacré selon les règles strictes de la tradition. Livraison discrète en France en 24/48h par Colissimo ou Chronopost :
       </p>
     </div>
@@ -234,11 +234,11 @@ const faqSchema = {
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
-        <span class="text-xs uppercase tracking-widest text-gold-300 font-bold">Présence Nationale</span>
+        <span class="text-xs uppercase tracking-widest text-brand-300 font-bold">Présence Nationale</span>
         <h2 class="font-serif font-bold text-3xl sm:text-4xl md:text-4.5xl text-white">
           Cabinet en Île-de-France & Déplacements Régionaux
         </h2>
-        <p class="text-xs sm:text-sm text-gray-300 font-sans max-w-2xl mx-auto">
+        <p class="text-xs sm:text-sm text-slate-300 font-sans max-w-2xl mx-auto">
           Maître Aziman vous reçoit sur rendez-vous au sein de son cabinet principal situé en région parisienne et se déplace régulièrement dans les grandes métropoles françaises :
         </p>
       </div>
@@ -247,21 +247,21 @@ const faqSchema = {
         {allZones.map((zone) => (
           <a
             href={`/zones-d-intervention/${zone.slug}`}
-            class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-gold-400/60 hover:bg-white/10 transition-all duration-300 group flex flex-col justify-between"
+            class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-400/60 hover:bg-white/10 transition-all duration-200 group flex flex-col justify-between"
           >
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-bold text-gold-300 uppercase tracking-wider">Région France</span>
-                <span class="text-xs text-gray-400">RDV & Distance</span>
+                <span class="text-xs font-bold text-brand-300 uppercase tracking-wider">Région France</span>
+                <span class="text-xs text-slate-400">RDV & Distance</span>
               </div>
-              <h3 class="font-serif font-bold text-lg text-white group-hover:text-gold-200 transition-colors">
+              <h3 class="font-serif font-bold text-lg text-white group-hover:text-brand-200 transition-colors">
                 {zone.regionName}
               </h3>
-              <p class="text-xs text-gray-300 mt-2 line-clamp-2 font-sans">
+              <p class="text-xs text-slate-300 mt-2 line-clamp-2 font-sans">
                 {zone.metaDescription}
               </p>
             </div>
-            <span class="inline-flex items-center gap-1.5 text-xs text-gold-400 font-bold mt-4 pt-3 border-t border-white/10 group-hover:underline uppercase tracking-wider">
+            <span class="inline-flex items-center gap-1.5 text-xs text-brand-300 font-bold mt-4 pt-3 border-t border-white/10 group-hover:underline uppercase tracking-wider">
               <span>Consulter dans cette région</span>
               <span>→</span>
             </span>
@@ -281,14 +281,14 @@ const faqSchema = {
   <!-- TÉMOIGNAGES CLIENTS SECTION -->
   <section class="py-16 md:py-24 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-800 text-xs font-bold uppercase tracking-wider">
-        <span>✦</span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-900 text-xs font-bold uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-700"></span>
         <span>Preuve Sociale & Avis Clients</span>
       </div>
       <h2 class="font-serif font-bold text-3xl sm:text-4xl md:text-4.5xl text-brand-dark">
         Témoignages & Avis Vérifiés de Consultants en France
       </h2>
-      <p class="text-xs sm:text-sm text-gray-600 font-sans max-w-2xl mx-auto">
+      <p class="text-xs sm:text-sm text-slate-600 font-sans max-w-2xl mx-auto">
         Découvrez les retours d'expérience authentiques de personnes ayant retrouvé la paix, l'amour et la prospérité grâce à l'accompagnement de Maître Aziman :
       </p>
     </div>
@@ -300,20 +300,20 @@ const faqSchema = {
     </div>
 
     <div class="mt-12 text-center">
-      <a href="/temoignages-avis" class="btn-secondary text-xs sm:text-sm py-3 px-6 font-bold text-brand-900 border-gold-300">
+      <a href="/temoignages-avis" class="btn-secondary text-xs sm:text-sm py-3.5 px-6 font-bold text-brand-900">
         Lire l'ensemble des témoignages vérifiés →
       </a>
     </div>
   </section>
 
   <!-- FAQ SECTION -->
-  <section class="py-16 sm:py-20 bg-surface border-t border-gray-200/60">
+  <section class="py-16 sm:py-20 bg-surface border-t border-brand-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-12">
         <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
           Foire Aux Questions (FAQ)
         </h2>
-        <p class="text-xs sm:text-sm text-gray-600 font-sans">
+        <p class="text-xs sm:text-sm text-slate-600 font-sans">
           Les réponses claires du Maître Aziman à vos interrogations les plus fréquentes.
         </p>
       </div>

@@ -6,31 +6,29 @@
 
 @layer base {
   :root {
-    --color-primary: #1c0070;
-    --color-primary-dark: #12004d;
-    --color-primary-container: #250b73;
-    --color-gold: #775a19;
-    --color-gold-accent: #c59b27;
-    --color-gold-light: #fed488;
-    --color-gold-champagne: #f7f3e8;
-    --color-surface: #f9f9fb;
-    --color-surface-dim: #d9dadc;
-    --color-surface-low: #f3f3f5;
+    --color-primary: #240843;
+    --color-primary-dark: #130424;
+    --color-violet-light: #faf7ff;
+    --color-violet-soft: #f3ecff;
+    --color-violet-border: #e4d4fc;
+    --color-violet-accent: #6d28d9;
+    --color-surface: #faf8fe;
+    --color-surface-dim: #ede6f7;
     --color-surface-lowest: #ffffff;
-    --color-on-surface: #161c22;
-    --color-on-surface-variant: #474553;
+    --color-on-surface: #10031f;
+    --color-on-surface-variant: #382e46;
   }
 
   ::selection {
-    background-color: #1c0070;
-    color: #fed488;
+    background-color: #240843;
+    color: #ffffff;
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #fbfbfe;
-    color: var(--color-on-surface);
+    background-color: #ffffff;
+    color: #2d2638;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -38,86 +36,81 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', Georgia, serif;
     letter-spacing: -0.015em;
+    color: #10031f;
   }
 }
 
 @layer components {
-  /* Luxury Primary Button */
+  /* Primary Solid Button - Deep Majestic Violet */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-brand-900 hover:bg-brand-800 text-white font-sans font-semibold text-sm rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-brand-900 hover:bg-brand-950 text-white font-sans font-semibold text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center;
   }
 
-  /* Luxury Gold Outline / Light Button */
+  /* Secondary Outline Button - Refined Soft Violet */
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-gold-50/80 text-brand-900 font-sans font-semibold text-sm rounded-xl border border-gold-300/80 hover:border-gold-500 shadow-xs hover:shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-brand-50 text-brand-900 font-sans font-semibold text-sm rounded-xl border border-brand-200 hover:border-brand-600 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 text-center;
   }
 
-  /* Luxury WhatsApp Action Button */
+  /* WhatsApp Action Button - Vibrant Emerald */
   .btn-whatsapp {
-    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-sans font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-sans font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center;
   }
 
-  /* Luxury Phone Call Button */
+  /* Phone Call Button - Deep Violet */
   .btn-call {
-    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-brand-dark hover:bg-brand-900 text-white font-sans font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-brand-900 hover:bg-brand-950 text-white font-sans font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 text-center;
   }
 
-  /* Luxury Gold Separator Line */
-  .gold-divider {
+  /* Refined Violet Divider */
+  .violet-divider {
     height: 1px;
-    background: linear-gradient(90deg, rgba(197, 155, 39, 0) 0%, rgba(197, 155, 39, 0.45) 50%, rgba(197, 155, 39, 0) 100%);
+    background: linear-gradient(90deg, rgba(228, 212, 252, 0) 0%, rgba(171, 127, 240, 0.4) 50%, rgba(228, 212, 252, 0) 100%);
   }
 
-  /* Luxury Indigo Separator Line */
-  .indigo-divider {
-    height: 1px;
-    background: linear-gradient(90deg, rgba(28, 0, 112, 0) 0%, rgba(28, 0, 112, 0.3) 50%, rgba(28, 0, 112, 0) 100%);
-  }
-
-  /* Luxury White Card with subtle ambient shadow & gold hairline hover */
+  /* Luxury White Card with subtle violet border & hover state */
   .card-luxury {
-    @apply bg-white rounded-2xl border border-gray-100/90 shadow-sm hover:shadow-ambient hover:border-gold-300/60 transition-all duration-300;
+    @apply bg-white rounded-2xl border border-brand-200/80 shadow-xs hover:shadow-ambient hover:border-brand-400 transition-all duration-200;
   }
 
   /* Glassmorphism Header */
   .glass-header {
-    background-color: rgba(255, 255, 255, 0.94);
+    background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
 
-  /* Glassmorphism Dark Header for Hero Overlays */
+  /* Glassmorphism Dark for Hero / Overlays */
   .glass-dark {
-    background-color: rgba(18, 0, 77, 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(254, 212, 136, 0.15);
+    background-color: rgba(19, 4, 36, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(228, 212, 252, 0.15);
   }
 
-  /* Badges */
+  /* Badges - Refined Violet */
   .badge-sacred {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-900 border border-brand-200/60;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-900 border border-brand-200;
   }
 
-  .badge-gold {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gold-50 text-gold-900 border border-gold-300/70;
+  .badge-violet {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-brand-100 text-brand-900 border border-brand-300;
   }
 }
 
 /* -------------------------------------------------------------
    REFINED PROSE TYPOGRAPHY (.prose-aziman)
-   Senior Editorial Web Standards with High-End Formatting
+   Senior Editorial Web Standards with High Contrast & Readability
 ------------------------------------------------------------- */
 .prose-aziman {
-  @apply text-gray-700 leading-relaxed font-sans text-sm sm:text-base;
+  @apply text-slate-800 leading-relaxed font-sans text-base sm:text-lg;
 }
 
 .prose-aziman > p:first-of-type {
-  @apply text-base sm:text-lg text-gray-800 leading-relaxed font-serif font-normal;
+  @apply text-lg sm:text-xl text-brand-dark leading-relaxed font-serif font-normal;
 }
 
 .prose-aziman h2 {
-  @apply font-serif font-bold text-2xl sm:text-3xl text-brand-dark mt-10 mb-4 pb-2.5 border-b border-gold-200/80 tracking-tight;
+  @apply font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark mt-10 mb-4 pb-3 border-b border-brand-200 tracking-tight;
 }
 
 .prose-aziman h3 {
@@ -125,11 +118,11 @@
 }
 
 .prose-aziman h4 {
-  @apply font-serif font-semibold text-lg text-brand-dark mt-6 mb-2;
+  @apply font-serif font-bold text-lg text-brand-dark mt-6 mb-2;
 }
 
 .prose-aziman p {
-  @apply my-4 text-gray-700 leading-relaxed;
+  @apply my-4 text-slate-800 leading-relaxed;
 }
 
 .prose-aziman strong {
@@ -137,19 +130,19 @@
 }
 
 .prose-aziman em {
-  @apply italic text-gray-800 font-serif;
+  @apply italic text-slate-900 font-serif;
 }
 
 .prose-aziman a {
-  @apply text-brand-900 font-semibold underline decoration-gold-400 decoration-1 underline-offset-4 hover:text-gold-700 hover:decoration-gold-600 transition-colors;
+  @apply text-brand-700 font-bold underline decoration-brand-300 decoration-1 underline-offset-4 hover:text-brand-900 hover:decoration-brand-600 transition-colors;
 }
 
 .prose-aziman ul {
-  @apply my-5 space-y-3 pl-4 border-l-2 border-gold-400 text-gray-700;
+  @apply my-6 space-y-3.5 pl-4 border-l-2 border-brand-300 text-slate-800;
 }
 
 .prose-aziman ol {
-  @apply my-5 space-y-3 pl-6 list-decimal text-gray-700;
+  @apply my-6 space-y-3.5 pl-6 list-decimal text-slate-800;
 }
 
 .prose-aziman li {
@@ -157,9 +150,9 @@
 }
 
 .prose-aziman blockquote {
-  @apply my-6 p-6 rounded-2xl bg-gradient-to-br from-gold-50/90 to-amber-50/40 border-l-4 border-gold-500 text-brand-dark italic font-serif shadow-xs text-base sm:text-lg leading-relaxed relative;
+  @apply my-8 p-6 rounded-2xl bg-brand-50 border-l-4 border-brand-900 text-brand-dark italic font-serif shadow-xs text-base sm:text-lg leading-relaxed relative;
 }
 
 .prose-aziman hr {
-  @apply my-8 border-gold-200/70;
+  @apply my-10 border-brand-200;
 }

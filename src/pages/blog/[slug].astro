@@ -5,7 +5,7 @@ import ConsultationSidebar from '../../components/ConsultationSidebar.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CtaSection from '../../components/CtaSection.astro';
-import { allBlogArticles, type BlogArticle } from '../../data/blogData';
+import { allBlogArticles, type BlogPost } from '../../data/blogData';
 import { siteSettings } from '../../data/siteData';
 
 export async function getStaticPaths() {
@@ -16,30 +16,30 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  article: BlogArticle;
+  article: BlogPost;
 }
 
 const { article } = Astro.props;
 
-// Related articles from same category or fallback
+// Related Articles
 const relatedArticles = allBlogArticles
-  .filter((a) => a.slug !== article.slug && a.category === article.category)
-  .slice(0, 3);
+  .filter((a) => a.slug !== article.slug && (a.category === article.category || a.categoryName === article.categoryName))
+  .slice(0, 2);
 
-// Article JSON-LD Structured Data Schema
+// Article Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": article.title,
   "description": article.metaDescription,
   "image": article.image,
-  "datePublished": article.date,
-  "dateModified": article.date,
+  "datePublished": article.publishDate,
+  "dateModified": article.publishDate,
   "author": {
     "@type": "Person",
     "name": article.author.name,
     "jobTitle": article.author.role,
-    "image": article.author.avatar
+    "url": "https://marabout-aziman.fr/a-propos/"
   },
   "publisher": {
     "@type": "Organization",
@@ -55,7 +55,6 @@ const articleSchema = {
   }
 };
 
-// BreadcrumbList JSON-LD Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -94,29 +93,23 @@ const breadcrumbSchema = {
   keywords={article.keywords}
   image={article.image}
   schema={[articleSchema, breadcrumbSchema]}
-  article={{
-    publishedTime: article.date,
-    author: article.author.name,
-    section: article.categoryName
-  }}
 >
   
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
-    badge={article.categoryName}
     title={article.title}
     description={article.metaDescription}
+    metaInfo={{
+      category: article.categoryName,
+      readTime: article.readTime,
+      date: article.publishDate,
+    }}
+    author={article.author}
     breadcrumbs={[
       { label: 'Blog & Guides', href: '/blog' },
       { label: article.categoryName, href: `/blog/categorie/${article.category}` },
       { label: article.title, href: `/blog/${article.slug}` },
     ]}
-    metaInfo={{
-      category: article.categoryName,
-      readTime: article.readTime,
-      date: article.date,
-    }}
-    author={article.author}
   />
 
   <TrustBadges />
@@ -128,8 +121,8 @@ const breadcrumbSchema = {
       <!-- Main Content -->
       <div class="lg:col-span-8 space-y-8">
         
-        <!-- Featured Image with luxury frame -->
-        <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-gold-400/20 mb-8">
+        <!-- Featured Image with frame -->
+        <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-brand-800 mb-8">
           <img
             src={article.image}
             alt={`Illustration consacrée : ${article.title}`}
@@ -144,17 +137,17 @@ const breadcrumbSchema = {
         <div class="prose-aziman" set:html={article.contentHtml} />
 
         <!-- Author bio box -->
-        <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-gold-50/80 to-amber-50/30 border border-gold-300/60 shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
+        <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-brand-50/80 border border-brand-200 shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
           <img
             src={article.author.avatar}
             alt={article.author.name}
-            class="w-20 h-20 rounded-2xl object-cover border-2 border-gold-400 flex-shrink-0 shadow-md"
+            class="w-20 h-20 rounded-2xl object-cover border-2 border-brand-300 flex-shrink-0 shadow-md"
           />
           <div class="space-y-1.5">
-            <span class="text-[11px] uppercase tracking-wider font-bold text-gold-700">Auteur & Praticien Spirituel</span>
+            <span class="text-[11px] uppercase tracking-wider font-bold text-brand-700">Auteur & Praticien Spirituel</span>
             <h3 class="font-serif font-bold text-xl text-brand-dark">{article.author.name}</h3>
-            <p class="text-xs text-gold-800 font-semibold">{article.author.role}</p>
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed pt-1 font-sans">
+            <p class="text-xs text-brand-800 font-semibold">{article.author.role}</p>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed pt-1 font-sans">
               Initié aux secrets ancestraux du Fâ et du Vodun depuis plus de 25 ans. Reçoit sur rendez-vous à son cabinet en Île-de-France et réalise des rituels à distance avec suivi personnalisé partout en France.
             </p>
           </div>
@@ -162,9 +155,9 @@ const breadcrumbSchema = {
 
         <!-- Related Articles -->
         {relatedArticles.length > 0 && (
-          <div class="mt-14 pt-10 border-t border-gray-200 space-y-6">
+          <div class="mt-14 pt-10 border-t border-brand-200 space-y-6">
             <div class="space-y-1">
-              <span class="text-xs font-bold text-gold-700 uppercase tracking-wider">Lectures Recommandées</span>
+              <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Lectures Recommandées</span>
               <h3 class="font-serif font-bold text-2xl text-brand-dark">
                 Articles Similaires dans cette Thématique
               </h3>
@@ -172,16 +165,24 @@ const breadcrumbSchema = {
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {relatedArticles.map((rel) => (
-                <div class="card-luxury p-5 bg-white border border-gray-100 hover:border-gold-400/80 transition-all flex flex-col justify-between shadow-xs">
+                <div class="card-luxury p-5 bg-white border border-brand-200/80 hover:border-brand-500 transition-all flex flex-col justify-between shadow-xs">
                   <div>
-                    <span class="text-[10px] uppercase tracking-wider text-gold-700 font-bold bg-gold-50 px-2 py-0.5 rounded-full border border-gold-200/60 inline-block mb-2">
+                    <span class="text-[10px] uppercase tracking-wider text-brand-700 font-bold bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-200 inline-block mb-2">
                       {rel.categoryName}
                     </span>
                     <h4 class="font-serif font-bold text-base text-brand-dark mt-1 line-clamp-2">
-                      <a href={`/blog/${rel.slug}`} class="hover:text-brand-900">{rel.title}</a>
+                      <a href={`/blog/${rel.slug}`} class="hover:text-brand-900 transition-colors">
+                        {rel.title}
+                      </a>
                     </h4>
+                    <p class="text-xs text-slate-600 line-clamp-2 mt-2 font-sans">
+                      {rel.metaDescription}
+                    </p>
                   </div>
-                  <a href={`/blog/${rel.slug}`} class="text-xs font-bold text-brand-900 mt-4 pt-3 border-t border-gray-100 hover:text-gold-700 flex items-center justify-between uppercase tracking-wider">
+                  <a
+                    href={`/blog/${rel.slug}`}
+                    class="mt-4 pt-3 border-t border-brand-100 text-xs font-bold text-brand-900 hover:text-brand-700 flex items-center justify-between uppercase tracking-wider"
+                  >
                     <span>Lire l'article</span>
                     <span>→</span>
                   </a>
@@ -196,11 +197,10 @@ const breadcrumbSchema = {
       <!-- Reusable Luxury Consultation Sidebar -->
       <div class="lg:col-span-4">
         <ConsultationSidebar
-          title="Besoin d'une Consultation ?"
-          subtitle="Cabinet Paris & Urgences 24h/7j"
-          contextText={`Vous traversez une situation complexe abordée dans cet article ? Contactez Maître Aziman pour une voyance et un rituel sur mesure.`}
-          actionText="Échanger sur WhatsApp"
-          customWhatsappMsg={`Bonjour Maître Aziman, j'ai lu votre article "${article.title}" et je souhaite une consultation.`}
+          title="Besoin d'un Conseil ?"
+          subtitle="Consultation Confidentielle"
+          contextText="Vous souhaitez un éclairage précis sur les problématiques abordées dans cet article ? Contactez directement Maître Aziman."
+          customWhatsappMsg={`Bonjour Maître Aziman, je viens de lire votre article "${article.title}" et j'aimerais avoir votre avis sur ma situation.`}
         />
       </div>
 

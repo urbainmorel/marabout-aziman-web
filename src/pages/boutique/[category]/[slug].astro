@@ -1,49 +1,49 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import HeroHeader from '../../../components/HeroHeader.astro';
-import ConsultationSidebar from '../../../components/ConsultationSidebar.astro';
 import TableOfContents from '../../../components/TableOfContents.astro';
 import TrustBadges from '../../../components/TrustBadges.astro';
 import CtaSection from '../../../components/CtaSection.astro';
-import { allProducts, type ShopProduct } from '../../../data/shopData';
+import { boutiqueCategories, type ShopCategory, type ShopProduct } from '../../../data/shopData';
 import { siteSettings } from '../../../data/siteData';
 
 export async function getStaticPaths() {
-  return allProducts.map((prod) => ({
-    params: { category: prod.category, slug: prod.slug },
-    props: { prod },
-  }));
+  const paths: any[] = [];
+
+  boutiqueCategories.forEach((cat) => {
+    if (cat.products) {
+      cat.products.forEach((prod) => {
+        paths.push({
+          params: { category: cat.category, slug: prod.slug },
+          props: { cat, prod },
+        });
+      });
+    }
+  });
+
+  return paths;
 }
 
 interface Props {
+  cat: ShopCategory;
   prod: ShopProduct;
 }
 
-const { prod } = Astro.props;
-const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article ésotérique consacré : ${prod.title} (Tarif : ${prod.price})`)}`;
+const { cat, prod } = Astro.props;
 
-// Clean price number for schema
-const priceNumber = parseInt(prod.price.replace(/[^\d]/g, ''), 10) || 50;
+const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article consacré : ${prod.title} (${prod.price})`)}`;
 
-// Product JSON-LD Structured Data Schema
+// Product Schema
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": prod.title,
   "description": prod.metaDescription,
-  "image": prod.image,
-  "category": prod.categoryName,
-  "brand": {
-    "@type": "Brand",
-    "name": "Cabinet Maître Aziman"
-  },
+  "image": prod.image || cat.image,
   "offers": {
     "@type": "Offer",
-    "url": `https://marabout-aziman.fr/boutique/${prod.category}/${prod.slug}/`,
+    "price": prod.price.replace(/[^0-9]/g, '') || "50",
     "priceCurrency": "EUR",
-    "price": priceNumber,
-    "priceValidUntil": "2027-12-31",
-    "itemCondition": "https://schema.org/NewCondition",
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
@@ -52,7 +52,6 @@ const productSchema = {
   }
 };
 
-// BreadcrumbList JSON-LD Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -72,14 +71,14 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": prod.categoryName,
-      "item": `https://marabout-aziman.fr/boutique/${prod.category}/`
+      "name": cat.name,
+      "item": `https://marabout-aziman.fr/boutique/${cat.category}/`
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": prod.title,
-      "item": `https://marabout-aziman.fr/boutique/${prod.category}/${prod.slug}/`
+      "item": `https://marabout-aziman.fr/boutique/${cat.category}/${prod.slug}/`
     }
   ]
 };
@@ -89,19 +88,19 @@ const breadcrumbSchema = {
   title={prod.metaTitle}
   description={prod.metaDescription}
   keywords={prod.keywords}
-  image={prod.image}
+  image={prod.image || cat.image}
   schema={[productSchema, breadcrumbSchema]}
 >
   
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
-    badge={`${prod.categoryName} • Consécration Personnalisée`}
+    badge={`Rayon : ${cat.name}`}
     title={prod.title}
     description={prod.metaDescription}
     breadcrumbs={[
       { label: 'Boutique', href: '/boutique' },
-      { label: prod.categoryName, href: `/boutique/${prod.category}` },
-      { label: prod.title, href: `/boutique/${prod.category}/${prod.slug}` },
+      { label: cat.name, href: `/boutique/${cat.category}` },
+      { label: prod.title, href: `/boutique/${cat.category}/${prod.slug}` },
     ]}
   />
 
@@ -113,14 +112,14 @@ const breadcrumbSchema = {
       
       <div class="lg:col-span-8 space-y-8">
         
-        <!-- Product Image Showcase with Luxury Badge -->
-        <div class="relative rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-gold-400/25 mb-8">
+        <!-- Product Image Showcase -->
+        <div class="relative rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-brand-800 mb-8">
           <img
             src={prod.image}
             alt={`Article ésotérique consacré : ${prod.title}`}
             class="w-full h-full object-cover"
           />
-          <div class="absolute top-4 right-4 bg-brand-950/90 backdrop-blur-md text-gold-300 font-serif font-bold text-sm sm:text-base px-4 py-1.5 rounded-full border border-gold-400/30 shadow-lg">
+          <div class="absolute top-4 right-4 bg-brand-950/90 backdrop-blur-md text-white font-serif font-bold text-sm sm:text-base px-4 py-1.5 rounded-full border border-brand-700 shadow-lg">
             {prod.price}
           </div>
         </div>
@@ -133,18 +132,18 @@ const breadcrumbSchema = {
 
       </div>
 
-      <!-- Sticky Order Card with Reusable Luxury Styling -->
+      <!-- Sticky Order Card with Refined Violet Styling -->
       <aside class="lg:col-span-4 space-y-6">
-        <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white shadow-2xl border border-gold-400/25 space-y-6 sticky top-24 relative overflow-hidden">
-          <div class="absolute -top-16 -right-16 w-40 h-40 bg-gold-400/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white shadow-2xl border border-brand-800 space-y-6 sticky top-24 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-40 h-40 bg-brand-700/15 rounded-full blur-2xl pointer-events-none"></div>
 
-          <div class="border-b border-white/10 pb-5">
-            <span class="text-xs text-gold-300 uppercase tracking-widest font-bold block">Support Consacré</span>
+          <div class="border-b border-brand-800 pb-5">
+            <span class="text-xs text-brand-300 uppercase tracking-widest font-bold block">Support Consacré</span>
             <h3 class="font-serif font-bold text-xl sm:text-2xl text-white mt-1 leading-snug">{prod.title}</h3>
-            <p class="text-2.5xl font-serif font-bold text-gold-300 mt-2">{prod.price}</p>
+            <p class="text-2.5xl font-serif font-bold text-white mt-2">{prod.price}</p>
           </div>
 
-          <div class="space-y-2.5 text-xs text-gray-200 font-sans">
+          <div class="space-y-2.5 text-xs text-slate-200 font-sans">
             <p class="flex items-center gap-2.5">
               <span class="text-emerald-400 font-bold">✓</span> En stock - Expédition express
             </p>
@@ -171,14 +170,14 @@ const breadcrumbSchema = {
 
             <a
               href={`tel:${siteSettings.phone}`}
-              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center bg-white/10 hover:bg-white/20 text-white border-white/20"
+              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center bg-white/10 hover:bg-white/20 text-white border-white/25"
             >
-              <span>Appeler : {siteSettings.phoneDisplay}</span>
+              <span>Commander par téléphone</span>
             </a>
           </div>
 
-          <p class="text-[11px] text-gray-400 text-center pt-2 border-t border-white/5 font-sans">
-            Paiement sécurisé par CB, Virement, PayPal ou Espèces au cabinet.
+          <p class="text-[11px] text-slate-400 text-center pt-2 border-t border-brand-800/80 font-sans">
+            Notice d'utilisation fournie. Suivi par WhatsApp disponible.
           </p>
         </div>
       </aside>

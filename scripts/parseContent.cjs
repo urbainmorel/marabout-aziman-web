@@ -107,20 +107,20 @@ function formatInline(text) {
   let res = text;
 
   // Replace placeholder phone numbers with official clickable phone
-  res = res.replace(/\+33\s*\(0\)[0-9Xx\s]{8,15}/gi, `<a href="tel:${OFFICIAL_PHONE_TEL}" class="text-brand-900 font-bold hover:text-gold-600 underline">${OFFICIAL_PHONE_DISPLAY}</a>`);
-  res = res.replace(/06\s*XX\s*XX\s*XX\s*XX/gi, `<a href="tel:${OFFICIAL_PHONE_TEL}" class="text-brand-900 font-bold hover:text-gold-600 underline">${OFFICIAL_PHONE_DISPLAY}</a>`);
+  res = res.replace(/\+33\s*\(0\)[0-9Xx\s]{8,15}/gi, `<a href="tel:${OFFICIAL_PHONE_TEL}" class="text-brand-700 font-bold hover:text-brand-900 underline">${OFFICIAL_PHONE_DISPLAY}</a>`);
+  res = res.replace(/06\s*XX\s*XX\s*XX\s*XX/gi, `<a href="tel:${OFFICIAL_PHONE_TEL}" class="text-brand-700 font-bold hover:text-brand-900 underline">${OFFICIAL_PHONE_DISPLAY}</a>`);
 
   // Bold **text**
   res = res.replace(/\*\*(.+?)\*\*/g, '<strong class="text-brand-dark font-bold">$1</strong>');
 
   // Italic *text* or _text_
-  res = res.replace(/(?<!\*)\*([^*]+?)\*(?!\*)/g, '<em class="italic text-gray-800">$1</em>');
+  res = res.replace(/(?<!\*)\*([^*]+?)\*(?!\*)/g, '<em class="italic text-slate-900">$1</em>');
 
   // Markdown links [text](url)
-  res = res.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-brand-900 font-semibold underline decoration-gold-400 hover:text-gold-700 hover:decoration-gold-600 transition-colors">$1</a>');
+  res = res.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-brand-700 font-semibold underline decoration-brand-300 hover:text-brand-900 hover:decoration-brand-600 transition-colors">$1</a>');
 
   // Inline code `code`
-  res = res.replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded bg-gray-100 text-xs font-mono text-brand-900">$1</code>');
+  res = res.replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded bg-brand-50 text-xs font-mono text-brand-900">$1</code>');
 
   return res;
 }
@@ -167,7 +167,7 @@ function markdownToHtml(markdown) {
     if (trimmed === '---' || trimmed === '***' || trimmed === '___') {
       closeCurrentList();
       closeCurrentQuote();
-      htmlParts.push('<hr class="my-8 border-gold-200/80" />');
+      htmlParts.push('<hr class="my-8 border-brand-200" />');
       continue;
     }
 
@@ -177,7 +177,7 @@ function markdownToHtml(markdown) {
       closeCurrentQuote();
       const cleanTitle = cleanTitleEmojis(trimmed.replace(/^##\s+/, ''));
       const title = formatInline(cleanTitle);
-      htmlParts.push(`<h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark mt-10 mb-4 pb-2 border-b border-gold-200/80">${title}</h2>`);
+      htmlParts.push(`<h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark mt-10 mb-4 pb-2 border-b border-brand-200">${title}</h2>`);
       continue;
     }
 
@@ -187,7 +187,7 @@ function markdownToHtml(markdown) {
       closeCurrentQuote();
       const cleanTitle = cleanTitleEmojis(trimmed.replace(/^###\s+/, ''));
       const title = formatInline(cleanTitle);
-      htmlParts.push(`<h3 class="font-serif font-bold text-xl sm:text-2xl text-brand-dark mt-8 mb-3 text-gold-700">${title}</h3>`);
+      htmlParts.push(`<h3 class="font-serif font-bold text-xl sm:text-2xl text-brand-900 mt-8 mb-3">${title}</h3>`);
       continue;
     }
 
@@ -217,7 +217,7 @@ function markdownToHtml(markdown) {
       const quoteText = formatInline(trimmed.replace(/^>\s*/, ''));
       if (!currentQuote) {
         currentQuote = true;
-        htmlParts.push(`<blockquote class="my-6 p-5 rounded-2xl bg-gold-50/80 border-l-4 border-gold-500 text-brand-dark italic font-serif shadow-xs space-y-2"><p>${quoteText}</p>`);
+        htmlParts.push(`<blockquote class="my-6 p-6 rounded-2xl bg-brand-50 border-l-4 border-brand-900 text-brand-dark italic font-serif shadow-xs space-y-2"><p>${quoteText}</p>`);
       } else {
         htmlParts.push(`<p class="mt-2">${quoteText}</p>`);
       }
@@ -232,10 +232,10 @@ function markdownToHtml(markdown) {
       if (currentList !== 'ul') {
         closeCurrentList();
         currentList = 'ul';
-        htmlParts.push('<ul class="my-5 space-y-3 pl-4 border-l-2 border-gold-400 text-gray-700 text-sm sm:text-base leading-relaxed">');
+        htmlParts.push('<ul class="my-5 space-y-3 pl-4 border-l-2 border-brand-300 text-slate-800 text-base leading-relaxed">');
       }
       const itemContent = formatInline(ulMatch[1]);
-      htmlParts.push(`<li class="flex items-start gap-2.5"><span class="text-gold-500 font-bold flex-shrink-0 mt-0.5">•</span><span>${itemContent}</span></li>`);
+      htmlParts.push(`<li class="flex items-start gap-2.5"><span class="text-brand-600 font-bold flex-shrink-0 mt-0.5">•</span><span>${itemContent}</span></li>`);
       continue;
     }
 
@@ -245,7 +245,7 @@ function markdownToHtml(markdown) {
       if (currentList !== 'ol') {
         closeCurrentList();
         currentList = 'ol';
-        htmlParts.push('<ol class="my-5 space-y-3 pl-6 list-decimal text-gray-700 text-sm sm:text-base leading-relaxed">');
+        htmlParts.push('<ol class="my-5 space-y-3 pl-6 list-decimal text-slate-800 text-base leading-relaxed">');
       }
       const itemContent = formatInline(olMatch[2]);
       htmlParts.push(`<li>${itemContent}</li>`);
@@ -255,7 +255,7 @@ function markdownToHtml(markdown) {
     // Regular paragraph
     closeCurrentList();
     closeCurrentQuote();
-    htmlParts.push(`<p class="my-4 text-sm sm:text-base text-gray-700 leading-relaxed font-sans">${formatInline(trimmed)}</p>`);
+    htmlParts.push(`<p class="my-4 text-base text-slate-800 leading-relaxed font-sans">${formatInline(trimmed)}</p>`);
   }
 
   closeCurrentList();

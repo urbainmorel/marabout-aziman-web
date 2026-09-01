@@ -66,7 +66,7 @@ const breadcrumbSchema = {
   
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
-    badge="Rayon Boutique Ésotérique"
+    badge="Rayon Ésotérique & Produits Consacrés"
     title={cat.title}
     description={cat.metaDescription}
     breadcrumbs={[
@@ -90,9 +90,9 @@ const breadcrumbSchema = {
         <div class="prose-aziman" set:html={cat.contentHtml} />
 
         {cat.products && cat.products.length > 0 && (
-          <div class="border-t border-gold-200/80 pt-10 space-y-6">
+          <div class="border-t border-brand-200 pt-10 space-y-6">
             <div class="space-y-1">
-              <span class="text-xs font-bold text-gold-700 uppercase tracking-wider">Catalogue Consacré</span>
+              <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Catalogue Consacré</span>
               <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
                 Articles Disponibles dans ce Rayon
               </h2>
@@ -100,28 +100,28 @@ const breadcrumbSchema = {
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {cat.products.map((prod) => (
-                <div class="card-luxury p-6 bg-white border border-gray-100 hover:border-gold-400/80 transition-all flex flex-col justify-between group shadow-xs">
+                <div class="card-luxury p-6 bg-white border border-brand-200/80 hover:border-brand-500 transition-all flex flex-col justify-between group shadow-xs">
                   <div>
                     <div class="flex items-center justify-between mb-3">
-                      <span class="text-xs font-serif font-bold text-gold-900 bg-gold-50 border border-gold-300/70 px-3 py-0.5 rounded-full">
+                      <span class="text-xs font-serif font-bold text-brand-950 bg-brand-50 border border-brand-200 px-3 py-0.5 rounded-full">
                         {prod.price}
                       </span>
-                      <span class="text-[11px] text-emerald-700 bg-emerald-50 font-semibold px-2 py-0.5 rounded-full">En stock (48h)</span>
+                      <span class="text-[11px] text-emerald-800 bg-emerald-50 font-bold px-2 py-0.5 rounded-full">En stock (48h)</span>
                     </div>
                     <h3 class="font-serif font-bold text-base sm:text-lg text-brand-dark group-hover:text-brand-900 transition-colors">
                       <a href={`/boutique/${cat.category}/${prod.slug}`}>
                         {prod.title}
                       </a>
                     </h3>
-                    <p class="text-xs text-gray-600 line-clamp-3 mt-2 leading-relaxed font-sans">
+                    <p class="text-xs text-slate-600 line-clamp-3 mt-2 leading-relaxed font-sans">
                       {prod.metaDescription}
                     </p>
                   </div>
 
-                  <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                  <div class="mt-5 pt-4 border-t border-brand-100 flex items-center justify-between gap-2">
                     <a
                       href={`/boutique/${cat.category}/${prod.slug}`}
-                      class="text-xs font-bold text-brand-900 hover:text-gold-700 uppercase tracking-wider"
+                      class="text-xs font-bold text-brand-900 hover:text-brand-700 uppercase tracking-wider"
                     >
                       Détails →
                     </a>
@@ -142,14 +142,13 @@ const breadcrumbSchema = {
 
       </div>
 
-      <!-- Reusable Consultation / Order Sidebar -->
+      <!-- Reusable Luxury Consultation Sidebar -->
       <div class="lg:col-span-4">
         <ConsultationSidebar
           title={`Rayon : ${cat.name}`}
-          subtitle="Commande & Conseil d'Utilisation"
-          contextText={`Pour commander ou demander conseil sur l'activation et l'utilisation des produits du rayon ${cat.name}, contactez directement Maître Aziman.`}
-          actionText="Commander sur WhatsApp"
-          customWhatsappMsg={`Bonjour Maître Aziman, je souhaite des renseignements sur le rayon : ${cat.name}`}
+          subtitle="Commande & Préparation Personnalisée"
+          contextText={`Chaque produit de ce rayon est consacré à vos coordonnées astrales avant expédition en colis discret 24/48h.`}
+          customWhatsappMsg={`Bonjour Maître Aziman, je souhaite commander des articles du rayon ésotérique : ${cat.name}`}
         />
       </div>
 
