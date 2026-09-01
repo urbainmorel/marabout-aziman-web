@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import HeroHeader from '../../../components/HeroHeader.astro';
+import ConsultationSidebar from '../../../components/ConsultationSidebar.astro';
+import TableOfContents from '../../../components/TableOfContents.astro';
+import TrustBadges from '../../../components/TrustBadges.astro';
 import CtaSection from '../../../components/CtaSection.astro';
 import { allProducts, type ShopProduct } from '../../../data/shopData';
 import { siteSettings } from '../../../data/siteData';
@@ -90,95 +93,91 @@ const breadcrumbSchema = {
   schema={[productSchema, breadcrumbSchema]}
 >
   
-  <!-- HERO HEADER -->
-  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs
-        items={[
-          { label: 'Boutique', href: '/boutique' },
-          { label: prod.categoryName, href: `/boutique/${prod.category}` },
-          { label: prod.title, href: `/boutique/${prod.category}/${prod.slug}` },
-        ]}
-      />
-      
-      <div class="mt-6 max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
-          <span>{prod.categoryName}</span>
-          <span>•</span>
-          <span>Consécration Personnalisée</span>
-        </div>
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-          {prod.title}
-        </h1>
-        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
-          {prod.metaDescription}
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- HERO HEADER REUSABLE -->
+  <HeroHeader
+    badge={`${prod.categoryName} • Consécration Personnalisée`}
+    title={prod.title}
+    description={prod.metaDescription}
+    breadcrumbs={[
+      { label: 'Boutique', href: '/boutique' },
+      { label: prod.categoryName, href: `/boutique/${prod.category}` },
+      { label: prod.title, href: `/boutique/${prod.category}/${prod.slug}` },
+    ]}
+  />
+
+  <TrustBadges />
 
   <!-- CONTENT -->
-  <article class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+  <article class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
       
       <div class="lg:col-span-8 space-y-8">
         
-        <div class="rounded-2xl overflow-hidden shadow-lg max-h-96 bg-gray-100 mb-8">
+        <!-- Product Image Showcase with Luxury Badge -->
+        <div class="relative rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-gold-400/25 mb-8">
           <img
             src={prod.image}
             alt={`Article ésotérique consacré : ${prod.title}`}
             class="w-full h-full object-cover"
           />
+          <div class="absolute top-4 right-4 bg-brand-950/90 backdrop-blur-md text-gold-300 font-serif font-bold text-sm sm:text-base px-4 py-1.5 rounded-full border border-gold-400/30 shadow-lg">
+            {prod.price}
+          </div>
         </div>
+
+        <!-- Table of Contents -->
+        <TableOfContents />
 
         <!-- Rich Semantic HTML Content -->
         <div class="prose-aziman" set:html={prod.contentHtml} />
 
       </div>
 
-      <!-- Sticky Order Card -->
+      <!-- Sticky Order Card with Reusable Luxury Styling -->
       <aside class="lg:col-span-4 space-y-6">
-        <div class="card-luxury p-6 bg-brand-900 text-white shadow-xl space-y-5 sticky top-24">
-          <div class="border-b border-white/10 pb-4">
-            <span class="text-xs text-gold-300 uppercase tracking-widest font-semibold">Article Consacré</span>
-            <h3 class="font-serif font-bold text-xl text-white mt-1">{prod.title}</h3>
-            <p class="text-2xl font-bold text-gold-300 mt-2">{prod.price}</p>
+        <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white shadow-2xl border border-gold-400/25 space-y-6 sticky top-24 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-40 h-40 bg-gold-400/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div class="border-b border-white/10 pb-5">
+            <span class="text-xs text-gold-300 uppercase tracking-widest font-bold block">Support Consacré</span>
+            <h3 class="font-serif font-bold text-xl sm:text-2xl text-white mt-1 leading-snug">{prod.title}</h3>
+            <p class="text-2.5xl font-serif font-bold text-gold-300 mt-2">{prod.price}</p>
           </div>
 
-          <div class="space-y-2 text-xs text-gray-300">
-            <p class="flex items-center gap-2">
-              <span class="text-emerald-400">✓</span> En stock - Expédition express
+          <div class="space-y-2.5 text-xs text-gray-200 font-sans">
+            <p class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span> En stock - Expédition express
             </p>
-            <p class="flex items-center gap-2">
-              <span class="text-emerald-400">✓</span> Colissimo 48h France Métropolitaine
+            <p class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span> Colissimo 48h France Métropolitaine
             </p>
-            <p class="flex items-center gap-2">
-              <span class="text-emerald-400">✓</span> Emballage 100% anonyme & discret
+            <p class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span> Emballage 100% anonyme & discret
             </p>
-            <p class="flex items-center gap-2">
-              <span class="text-emerald-400">✓</span> Rituel de consécration inclus
+            <p class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span> Rituel de consécration à votre nom inclus
             </p>
           </div>
 
-          <div class="pt-2 space-y-2">
+          <div class="pt-2 space-y-2.5">
             <a
               href={whatsappOrderUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-whatsapp w-full justify-center text-xs py-3.5 font-bold shadow-lg"
+              class="btn-whatsapp w-full justify-center text-xs sm:text-sm py-4 font-bold shadow-lg"
             >
               <span>Commander sur WhatsApp</span>
             </a>
 
             <a
               href={`tel:${siteSettings.phone}`}
-              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center"
+              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center bg-white/10 hover:bg-white/20 text-white border-white/20"
             >
               <span>Appeler : {siteSettings.phoneDisplay}</span>
             </a>
           </div>
 
-          <p class="text-[11px] text-gray-400 text-center">
+          <p class="text-[11px] text-gray-400 text-center pt-2 border-t border-white/5 font-sans">
             Paiement sécurisé par CB, Virement, PayPal ou Espèces au cabinet.
           </p>
         </div>

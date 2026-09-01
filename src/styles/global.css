@@ -7,22 +7,29 @@
 @layer base {
   :root {
     --color-primary: #1c0070;
-    --color-primary-container: #311b92;
+    --color-primary-dark: #12004d;
+    --color-primary-container: #250b73;
     --color-gold: #775a19;
     --color-gold-accent: #c59b27;
     --color-gold-light: #fed488;
+    --color-gold-champagne: #f7f3e8;
     --color-surface: #f9f9fb;
     --color-surface-dim: #d9dadc;
     --color-surface-low: #f3f3f5;
     --color-surface-lowest: #ffffff;
-    --color-on-surface: #1a1c1d;
+    --color-on-surface: #161c22;
     --color-on-surface-variant: #474553;
+  }
+
+  ::selection {
+    background-color: #1c0070;
+    color: #fed488;
   }
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--color-surface);
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #fbfbfe;
     color: var(--color-on-surface);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -30,93 +37,129 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', Georgia, serif;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
 }
 
 @layer components {
-  /* Bouton Primaire Sacré Indigo */
+  /* Luxury Primary Button */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-900 hover:bg-brand-800 text-white font-sans font-medium text-sm rounded-lg shadow-ambient hover:shadow-ambient-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-brand-900 hover:bg-brand-800 text-white font-sans font-semibold text-sm rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center;
   }
 
-  /* Bouton Secondaire Or Subtil */
+  /* Luxury Gold Outline / Light Button */
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white hover:bg-gold-50 text-brand-900 font-sans font-medium text-sm rounded-lg border border-gold-200 hover:border-gold-400 shadow-sm transition-all duration-200 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-gold-50/80 text-brand-900 font-sans font-semibold text-sm rounded-xl border border-gold-300/80 hover:border-gold-500 shadow-xs hover:shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 text-center;
   }
 
-  /* Bouton WhatsApp Vert / Indigo */
+  /* Luxury WhatsApp Action Button */
   .btn-whatsapp {
-    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#128C7E] hover:bg-[#075E54] text-white font-sans font-semibold text-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-sans font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center;
   }
 
-  /* Bouton Appel Direct */
+  /* Luxury Phone Call Button */
   .btn-call {
-    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-brand-dark hover:bg-brand-900 text-white font-sans font-semibold text-sm rounded-lg shadow-md transition-all duration-200;
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-brand-dark hover:bg-brand-900 text-white font-sans font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center;
   }
 
-  /* Séparateur Luxueux avec dégradé Or */
+  /* Luxury Gold Separator Line */
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, rgba(197, 155, 39, 0) 0%, rgba(197, 155, 39, 0.6) 50%, rgba(197, 155, 39, 0) 100%);
+    background: linear-gradient(90deg, rgba(197, 155, 39, 0) 0%, rgba(197, 155, 39, 0.45) 50%, rgba(197, 155, 39, 0) 100%);
   }
 
+  /* Luxury Indigo Separator Line */
   .indigo-divider {
     height: 1px;
-    background: linear-gradient(90deg, rgba(49, 27, 146, 0) 0%, rgba(49, 27, 146, 0.4) 50%, rgba(49, 27, 146, 0) 100%);
+    background: linear-gradient(90deg, rgba(28, 0, 112, 0) 0%, rgba(28, 0, 112, 0.3) 50%, rgba(28, 0, 112, 0) 100%);
   }
 
-  /* Carte Éditoriale Blanche */
+  /* Luxury White Card with subtle ambient shadow & gold hairline hover */
   .card-luxury {
-    @apply bg-white rounded-xl border border-gray-100/90 shadow-sm hover:shadow-ambient transition-all duration-300;
+    @apply bg-white rounded-2xl border border-gray-100/90 shadow-sm hover:shadow-ambient hover:border-gold-300/60 transition-all duration-300;
   }
 
-  /* Header Glassmorphism */
+  /* Glassmorphism Header */
   .glass-header {
-    background-color: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
-  /* Badge de Confiance & Réassurance */
+  /* Glassmorphism Dark Header for Hero Overlays */
+  .glass-dark {
+    background-color: rgba(18, 0, 77, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(254, 212, 136, 0.15);
+  }
+
+  /* Badges */
   .badge-sacred {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-100 text-brand-900 border border-brand-200/50;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-900 border border-brand-200/60;
   }
 
   .badge-gold {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gold-100 text-gold-900 border border-gold-300/60;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gold-50 text-gold-900 border border-gold-300/70;
   }
 }
 
-/* Typographie Éditoriale pour le Blog et Pages */
-.prose-editorial {
-  @apply max-w-prose mx-auto text-gray-700 leading-relaxed font-sans text-base;
+/* -------------------------------------------------------------
+   REFINED PROSE TYPOGRAPHY (.prose-aziman)
+   Senior Editorial Web Standards with High-End Formatting
+------------------------------------------------------------- */
+.prose-aziman {
+  @apply text-gray-700 leading-relaxed font-sans text-sm sm:text-base;
 }
 
-.prose-editorial h2 {
-  @apply font-serif text-2xl md:text-3xl font-semibold text-brand-dark mt-10 mb-4 pb-2 border-b border-gray-100;
+.prose-aziman > p:first-of-type {
+  @apply text-base sm:text-lg text-gray-800 leading-relaxed font-serif font-normal;
 }
 
-.prose-editorial h3 {
-  @apply font-serif text-xl md:text-2xl font-semibold text-brand-dark mt-8 mb-3;
+.prose-aziman h2 {
+  @apply font-serif font-bold text-2xl sm:text-3xl text-brand-dark mt-10 mb-4 pb-2.5 border-b border-gold-200/80 tracking-tight;
 }
 
-.prose-editorial p {
-  @apply mb-5 leading-relaxed text-gray-700;
+.prose-aziman h3 {
+  @apply font-serif font-bold text-xl sm:text-2xl text-brand-900 mt-8 mb-3 tracking-tight;
 }
 
-.prose-editorial blockquote {
-  @apply font-serif italic text-lg md:text-xl text-brand-900 border-l-4 border-gold-400 pl-6 my-8 py-2 bg-slateSubtle-50 rounded-r-lg;
+.prose-aziman h4 {
+  @apply font-serif font-semibold text-lg text-brand-dark mt-6 mb-2;
 }
 
-.prose-editorial ul {
-  @apply list-disc list-outside ml-6 mb-6 space-y-2 text-gray-700;
+.prose-aziman p {
+  @apply my-4 text-gray-700 leading-relaxed;
 }
 
-.prose-editorial ol {
-  @apply list-decimal list-outside ml-6 mb-6 space-y-2 text-gray-700;
+.prose-aziman strong {
+  @apply font-bold text-brand-dark;
 }
 
-.prose-editorial strong {
-  @apply font-semibold text-brand-dark;
+.prose-aziman em {
+  @apply italic text-gray-800 font-serif;
+}
+
+.prose-aziman a {
+  @apply text-brand-900 font-semibold underline decoration-gold-400 decoration-1 underline-offset-4 hover:text-gold-700 hover:decoration-gold-600 transition-colors;
+}
+
+.prose-aziman ul {
+  @apply my-5 space-y-3 pl-4 border-l-2 border-gold-400 text-gray-700;
+}
+
+.prose-aziman ol {
+  @apply my-5 space-y-3 pl-6 list-decimal text-gray-700;
+}
+
+.prose-aziman li {
+  @apply leading-relaxed;
+}
+
+.prose-aziman blockquote {
+  @apply my-6 p-6 rounded-2xl bg-gradient-to-br from-gold-50/90 to-amber-50/40 border-l-4 border-gold-500 text-brand-dark italic font-serif shadow-xs text-base sm:text-lg leading-relaxed relative;
+}
+
+.prose-aziman hr {
+  @apply my-8 border-gold-200/70;
 }

@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import HeroHeader from '../../../components/HeroHeader.astro';
+import ConsultationSidebar from '../../../components/ConsultationSidebar.astro';
+import TableOfContents from '../../../components/TableOfContents.astro';
+import TrustBadges from '../../../components/TrustBadges.astro';
 import CtaSection from '../../../components/CtaSection.astro';
 import { boutiqueCategories, type ShopCategory } from '../../../data/shopData';
 import { siteSettings } from '../../../data/siteData';
@@ -61,77 +64,72 @@ const breadcrumbSchema = {
   schema={[categorySchema, breadcrumbSchema]}
 >
   
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs
-        items={[
-          { label: 'Boutique', href: '/boutique' },
-          { label: cat.name, href: `/boutique/${cat.category}` },
-        ]}
-      />
-      
-      <div class="mt-6 max-w-3xl space-y-4">
-        <div class="inline-block px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
-          Rayon Boutique Ésotérique
-        </div>
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-          {cat.title}
-        </h1>
-        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
-          {cat.metaDescription}
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- HERO HEADER REUSABLE -->
+  <HeroHeader
+    badge="Rayon Boutique Ésotérique"
+    title={cat.title}
+    description={cat.metaDescription}
+    breadcrumbs={[
+      { label: 'Boutique', href: '/boutique' },
+      { label: cat.name, href: `/boutique/${cat.category}` },
+    ]}
+  />
+
+  <TrustBadges />
 
   <!-- CONTENT & PRODUCTS -->
-  <article class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+  <article class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
       
       <div class="lg:col-span-8 space-y-8">
         
+        <!-- Table of Contents -->
+        <TableOfContents />
+
         <!-- Rich Semantic HTML Content -->
         <div class="prose-aziman" set:html={cat.contentHtml} />
 
         {cat.products && cat.products.length > 0 && (
-          <div class="border-t border-gold-200/80 pt-8 space-y-6">
-            <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
-              Articles Disponibles dans ce Rayon
-            </h2>
+          <div class="border-t border-gold-200/80 pt-10 space-y-6">
+            <div class="space-y-1">
+              <span class="text-xs font-bold text-gold-700 uppercase tracking-wider">Catalogue Consacré</span>
+              <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
+                Articles Disponibles dans ce Rayon
+              </h2>
+            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {cat.products.map((prod) => (
-                <div class="card-luxury p-5 bg-white border border-gray-200 hover:border-gold-300 transition-all flex flex-col justify-between group">
+                <div class="card-luxury p-6 bg-white border border-gray-100 hover:border-gold-400/80 transition-all flex flex-col justify-between group shadow-xs">
                   <div>
-                    <div class="flex items-center justify-between mb-2">
-                      <span class="text-xs font-bold text-brand-900 bg-brand-50 px-2 py-0.5 rounded">
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-xs font-serif font-bold text-gold-900 bg-gold-50 border border-gold-300/70 px-3 py-0.5 rounded-full">
                         {prod.price}
                       </span>
-                      <span class="text-[10px] text-emerald-600 font-medium">En stock (48h)</span>
+                      <span class="text-[11px] text-emerald-700 bg-emerald-50 font-semibold px-2 py-0.5 rounded-full">En stock (48h)</span>
                     </div>
-                    <h3 class="font-serif font-bold text-base text-brand-dark group-hover:text-brand-800 transition-colors">
+                    <h3 class="font-serif font-bold text-base sm:text-lg text-brand-dark group-hover:text-brand-900 transition-colors">
                       <a href={`/boutique/${cat.category}/${prod.slug}`}>
                         {prod.title}
                       </a>
                     </h3>
-                    <p class="text-xs text-gray-600 line-clamp-3 mt-2 leading-relaxed">
+                    <p class="text-xs text-gray-600 line-clamp-3 mt-2 leading-relaxed font-sans">
                       {prod.metaDescription}
                     </p>
                   </div>
 
-                  <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
                     <a
                       href={`/boutique/${cat.category}/${prod.slug}`}
-                      class="text-xs font-semibold text-brand-900 hover:text-gold-600"
+                      class="text-xs font-bold text-brand-900 hover:text-gold-700 uppercase tracking-wider"
                     >
-                      Détails du produit
+                      Détails →
                     </a>
                     <a
                       href={`https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander : ${prod.title}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="btn-whatsapp text-xs py-1.5 px-3"
+                      class="btn-whatsapp text-xs py-2 px-3.5 shadow-xs font-bold"
                     >
                       Commander
                     </a>
@@ -144,32 +142,16 @@ const breadcrumbSchema = {
 
       </div>
 
-      <!-- Sidebar -->
-      <aside class="lg:col-span-4 space-y-6">
-        <div class="card-luxury p-6 bg-brand-900 text-white shadow-xl space-y-5 sticky top-24">
-          <h3 class="font-serif font-bold text-lg text-white">Commander sur WhatsApp</h3>
-          <p class="text-xs text-gray-300 leading-relaxed">
-            Pour commander ou demander conseil sur l'utilisation des produits de ce rayon, échangez directement avec Maître Aziman :
-          </p>
-
-          <div class="space-y-2 text-xs text-gray-200">
-            <p><strong>WhatsApp :</strong> {siteSettings.whatsappDisplay}</p>
-            <p><strong>Expédition :</strong> Colissimo Suivi 48h France</p>
-            <p><strong>Emballage :</strong> 100% neutre et discret</p>
-          </div>
-
-          <div class="pt-2">
-            <a
-              href={`https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite des renseignements sur le rayon : ${cat.name}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-whatsapp w-full justify-center text-xs py-3 font-semibold"
-            >
-              <span>Contacter sur WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </aside>
+      <!-- Reusable Consultation / Order Sidebar -->
+      <div class="lg:col-span-4">
+        <ConsultationSidebar
+          title={`Rayon : ${cat.name}`}
+          subtitle="Commande & Conseil d'Utilisation"
+          contextText={`Pour commander ou demander conseil sur l'activation et l'utilisation des produits du rayon ${cat.name}, contactez directement Maître Aziman.`}
+          actionText="Commander sur WhatsApp"
+          customWhatsappMsg={`Bonjour Maître Aziman, je souhaite des renseignements sur le rayon : ${cat.name}`}
+        />
+      </div>
 
     </div>
   </article>

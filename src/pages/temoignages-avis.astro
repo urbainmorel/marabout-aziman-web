@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import HeroHeader from '../components/HeroHeader.astro';
+import TrustBadges from '../components/TrustBadges.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import CtaSection from '../components/CtaSection.astro';
 import { testimonials, siteSettings } from '../data/siteData';
@@ -11,29 +12,20 @@ const seoDesc = "Consultez les véritables avis marabout en France sur le Maîtr
 
 <BaseLayout title={seoTitle} description={seoDesc}>
   
-  <!-- HERO HEADER -->
-  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs items={[{ label: 'Avis & Témoignages', href: '/temoignages-avis' }]} />
-      
-      <div class="mt-6 max-w-3xl space-y-4">
-        <div class="inline-block px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
-          Preuve Sociale & Retours d'Expérience
-        </div>
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-          Avis Marabout en France : Témoignages Vérifiés et Retours d'Expérience du Cabinet Aziman
-        </h1>
-        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
-          Vous hésitez à faire appel à un praticien spirituel ou vous souhaitez vous assurer de l'honnêteté et de l'efficacité de ses travaux ? Consulter les véritables <strong>avis marabout en France</strong> sur le Maître Aziman constitue la meilleure preuve de son sérieux et de la puissance de ses rituels traditionnels.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- HERO HEADER REUSABLE -->
+  <HeroHeader
+    badge="Preuve Sociale & Retours d'Expérience"
+    title="Avis Marabout en France : Témoignages Vérifiés et Retours d'Expérience du Cabinet Aziman"
+    description="Vous hésitez à faire appel à un praticien spirituel ou vous souhaitez vous assurer de l'honnêteté et de l'efficacité de ses travaux ? Consulter les véritables avis marabout en France sur le Maître Aziman constitue la meilleure preuve de son sérieux et de la puissance de ses rituels traditionnels."
+    breadcrumbs={[{ label: 'Avis & Témoignages', href: '/temoignages-avis' }]}
+  />
+
+  <TrustBadges />
 
   <!-- CONTENT -->
-  <section class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto mb-10 text-center">
-      <p class="text-sm text-gray-700 leading-relaxed">
+  <section class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto mb-12 text-center">
+      <p class="text-sm sm:text-base text-gray-700 leading-relaxed font-sans">
         Depuis plus de quinze ans d'exercice en France, Maître Aziman a réuni des centaines de couples, débloqué des situations financières désespérées et sauvé des personnes persécutées par la sorcellerie. Découvrez ci-dessous les témoignages authentiques de consultants de Paris, Lyon, Marseille, Bordeaux, Nantes et toute la France.
       </p>
     </div>
@@ -45,25 +37,28 @@ const seoDesc = "Consultez les véritables avis marabout en France sur le Maîtr
     </div>
 
     <!-- How to submit review -->
-    <div class="mt-16 card-luxury p-8 bg-surface border border-gold-300/40 text-center max-w-2xl mx-auto space-y-4">
-      <h2 class="font-serif font-bold text-2xl text-brand-dark">
-        Déposez votre Avis sur le Cabinet du Maître Aziman
-      </h2>
-      <p class="text-xs sm:text-sm text-gray-600">
+    <div class="mt-16 card-luxury p-8 sm:p-10 bg-gradient-to-br from-gold-50/70 to-white border border-gold-300/60 text-center max-w-2xl mx-auto space-y-4 shadow-sm">
+      <div class="space-y-2">
+        <span class="text-xs font-bold text-gold-700 uppercase tracking-wider">Votre Témoignage Compte</span>
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
+          Déposez votre Avis sur le Cabinet du Maître Aziman
+        </h2>
+      </div>
+      <p class="text-xs sm:text-sm text-gray-600 font-sans">
         Vous avez bénéficié de l'aide spirituelle du Maître Aziman ? Partagez votre expérience pour éclairer les personnes qui traversent les mêmes épreuves :
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
         <a
           href={siteSettings.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-whatsapp text-xs py-3 px-6"
+          class="btn-whatsapp text-xs sm:text-sm py-3.5 px-6 font-bold shadow-md"
         >
           <span>Envoyer mon avis sur WhatsApp</span>
         </a>
         <a
           href={`mailto:${siteSettings.email}`}
-          class="text-xs font-bold text-brand-900 hover:text-gold-600 underline"
+          class="text-xs font-bold text-brand-900 hover:text-gold-700 underline"
         >
           Envoyer par e-mail ({siteSettings.email})
         </a>

@@ -1,0 +1,107 @@
+---
+import { siteSettings } from '../data/siteData';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  contextText?: string;
+  actionText?: string;
+  customWhatsappMsg?: string;
+}
+
+const {
+  title = "Consultation Spirituelle",
+  subtitle = "Cabinet Paris & À Distance",
+  contextText = "Échangez directement avec Maître Aziman pour une analyse confidentielle de votre situation et le choix du rituel adapté.",
+  actionText = "Échanger sur WhatsApp 24h/7j",
+  customWhatsappMsg
+} = Astro.props;
+
+const whatsappUrl = customWhatsappMsg
+  ? `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(customWhatsappMsg)}`
+  : siteSettings.whatsappLink;
+---
+
+<aside class="space-y-6 sticky top-24">
+  <div class="card-luxury p-6 sm:p-7 bg-brand-950 text-white shadow-2xl border border-gold-400/25 space-y-6 relative overflow-hidden">
+    
+    <!-- Ambient gold shimmer -->
+    <div class="absolute -top-16 -right-16 w-40 h-40 bg-gold-400/10 rounded-full blur-2xl pointer-events-none"></div>
+
+    <!-- Header & Availability Pill -->
+    <div class="space-y-3 border-b border-white/10 pb-5">
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Cabinet Ouvert • Réponse immédiate</span>
+      </div>
+
+      <h3 class="font-serif font-bold text-xl text-white tracking-tight">
+        {title}
+      </h3>
+      <p class="text-xs text-gold-300 font-medium">
+        {subtitle}
+      </p>
+    </div>
+
+    <!-- Description -->
+    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-sans">
+      {contextText}
+    </p>
+
+    <!-- Key Trust Points -->
+    <div class="space-y-2.5 text-xs text-gray-200 border-t border-white/10 pt-4">
+      <div class="flex items-center justify-between">
+        <span class="text-gray-400">Téléphone Direct :</span>
+        <a href={`tel:${siteSettings.phone}`} class="font-bold text-white hover:text-gold-300 transition-colors">
+          {siteSettings.phoneDisplay}
+        </a>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-gray-400">WhatsApp 24h/7j :</span>
+        <span class="font-bold text-emerald-400">{siteSettings.whatsappDisplay}</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-gray-400">Confidentialité :</span>
+        <span class="font-semibold text-gold-200">100% Secret Initiatique</span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="space-y-2.5 pt-2">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-whatsapp w-full justify-center text-xs sm:text-sm py-3.5 font-bold shadow-lg group"
+      >
+        <span>{actionText}</span>
+        <span class="group-hover:translate-x-1 transition-transform">→</span>
+      </a>
+
+      <a
+        href="/contact"
+        class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center bg-white/10 hover:bg-white/20 text-white border-white/20"
+      >
+        <span>Prendre RDV au Cabinet Paris</span>
+      </a>
+    </div>
+
+    <!-- Reassurance footnote -->
+    <p class="text-[11px] text-gray-400 text-center pt-1 border-t border-white/5">
+      Séance sans complaisance. Respect absolu de votre vie privée.
+    </p>
+
+  </div>
+
+  <!-- Quick Reassurance Micro-Card -->
+  <div class="card-luxury p-5 bg-white border border-gray-100/90 text-xs space-y-2 text-gray-600">
+    <div class="flex items-center gap-2 font-bold text-brand-dark">
+      <span class="text-gold-600">✦</span>
+      <span>Intervention sur toute la France</span>
+    </div>
+    <p class="leading-relaxed text-[11px]">
+      Paris, Lyon, Marseille, Bordeaux, Lille, Toulouse, Nantes, Strasbourg et DOM-TOM. Consultations privées ou rituels à distance avec suivi régulier.
+    </p>
+  </div>
+
+</aside>

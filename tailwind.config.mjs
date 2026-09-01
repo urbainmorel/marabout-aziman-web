@@ -56,6 +56,7 @@ export default {
         'content': '1200px',
       },
       boxShadow: {
+        'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
         'ambient': '0 10px 30px -10px rgba(28, 0, 112, 0.08)',
         'ambient-lg': '0 20px 40px -15px rgba(28, 0, 112, 0.12)',
         'gold-glow': '0 4px 20px -2px rgba(197, 155, 39, 0.25)',

@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import HeroHeader from '../../../components/HeroHeader.astro';
+import ConsultationSidebar from '../../../components/ConsultationSidebar.astro';
+import TableOfContents from '../../../components/TableOfContents.astro';
+import TrustBadges from '../../../components/TrustBadges.astro';
 import CtaSection from '../../../components/CtaSection.astro';
 import { servicesHubs, type ServiceHub } from '../../../data/servicesData';
 import { siteSettings } from '../../../data/siteData';
@@ -71,65 +74,60 @@ const breadcrumbSchema = {
   schema={[hubSchema, breadcrumbSchema]}
 >
   
-  <!-- HERO HEADER -->
-  <section class="relative bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20 overflow-hidden">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <Breadcrumbs
-        items={[
-          { label: 'Services', href: '/services' },
-          { label: hub.name, href: `/services/${hub.silo}` },
-        ]}
-      />
-      
-      <div class="mt-6 max-w-3xl space-y-4">
-        <div class="inline-flex items-center px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
-          <span>Domaine d'Intervention Majeur</span>
-        </div>
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-          {hub.title}
-        </h1>
-        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
-          {hub.metaDescription}
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- HERO HEADER REUSABLE -->
+  <HeroHeader
+    badge="Domaine d'Intervention Majeur"
+    title={hub.title}
+    description={hub.metaDescription}
+    breadcrumbs={[
+      { label: 'Services & Rituels', href: '/services' },
+      { label: hub.name, href: `/services/${hub.silo}` },
+    ]}
+  />
+
+  <TrustBadges />
 
   <!-- CONTENT & SUBSERVICES -->
-  <article class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+  <article class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
       
       <!-- Main Hub Body -->
       <div class="lg:col-span-8 space-y-10">
         
+        <!-- Table of Contents -->
+        <TableOfContents />
+
         <!-- Rich Semantic HTML Content -->
         <div class="prose-aziman" set:html={hub.contentHtml} />
 
         <!-- Subservices Grid -->
         {hub.subservices && hub.subservices.length > 0 && (
-          <div class="border-t border-gold-200/80 pt-8 space-y-6">
-            <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
-              Rituels & Interventions Spécifiques dans ce Domaine
-            </h2>
+          <div class="border-t border-gold-200/80 pt-10 space-y-6">
+            <div class="space-y-2">
+              <span class="text-xs font-bold text-gold-700 uppercase tracking-wider">Rituels Dédiés</span>
+              <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
+                Rituels & Interventions Spécifiques dans ce Domaine
+              </h2>
+            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {hub.subservices.map((sub) => (
-                <div class="card-luxury p-5 bg-white border border-gray-200 hover:border-gold-300 transition-all flex flex-col justify-between group">
+                <div class="card-luxury p-6 bg-white border border-gray-100 hover:border-gold-400/80 transition-all flex flex-col justify-between group shadow-xs">
                   <div>
-                    <h3 class="font-serif font-bold text-base text-brand-dark group-hover:text-brand-800 transition-colors">
+                    <h3 class="font-serif font-bold text-base sm:text-lg text-brand-dark group-hover:text-brand-900 transition-colors">
                       <a href={`/services/${hub.silo}/${sub.slug}`}>
                         {sub.title}
                       </a>
                     </h3>
-                    <p class="text-xs text-gray-600 line-clamp-3 mt-2 leading-relaxed">
+                    <p class="text-xs text-gray-600 line-clamp-3 mt-2 leading-relaxed font-sans">
                       {sub.metaDescription}
                     </p>
                   </div>
                   <a
                     href={`/services/${hub.silo}/${sub.slug}`}
-                    class="mt-4 pt-3 border-t border-gray-100 text-xs font-semibold text-gold-600 group-hover:text-gold-700 flex items-center justify-between"
+                    class="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-brand-900 group-hover:text-gold-700 flex items-center justify-between uppercase tracking-wider"
                   >
-                    <span>Découvrir le rituel complet</span>
+                    <span>Consulter le rituel</span>
                     <span class="group-hover:translate-x-1 transition-transform">→</span>
                   </a>
                 </div>
@@ -140,43 +138,15 @@ const breadcrumbSchema = {
 
       </div>
 
-      <!-- Sidebar -->
-      <aside class="lg:col-span-4 space-y-6">
-        <div class="card-luxury p-6 bg-brand-900 text-white shadow-xl space-y-5 sticky top-24">
-          <div class="border-b border-white/10 pb-4">
-            <h3 class="font-serif font-bold text-lg text-white">Besoin d'un Rituel ?</h3>
-            <p class="text-xs text-gold-300">Diagnostic Fâ immédiat 7j/7</p>
-          </div>
-
-          <p class="text-xs text-gray-300 leading-relaxed">
-            Consultez Maître Aziman pour une analyse préalable de votre situation et la réalisation du rituel personnalisé le plus adapté.
-          </p>
-
-          <div class="space-y-2 text-xs text-gray-200">
-            <p><strong>Téléphone :</strong> {siteSettings.phoneDisplay}</p>
-            <p><strong>WhatsApp :</strong> {siteSettings.whatsappDisplay}</p>
-            <p><strong>Lieu :</strong> Cabinet Paris & Distance</p>
-          </div>
-
-          <div class="pt-2 space-y-2">
-            <a
-              href={siteSettings.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-whatsapp w-full justify-center text-xs py-3 font-semibold"
-            >
-              <span>Échanger sur WhatsApp</span>
-            </a>
-
-            <a
-              href="/contact"
-              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center"
-            >
-              <span>Prendre RDV en cabinet</span>
-            </a>
-          </div>
-        </div>
-      </aside>
+      <!-- Reusable Luxury Consultation Sidebar -->
+      <div class="lg:col-span-4">
+        <ConsultationSidebar
+          title={`Consultation : ${hub.name}`}
+          subtitle="Cabinet Paris & Rituels à Distance"
+          contextText={`Consultez Maître Aziman pour une analyse préalable de votre situation dans le domaine ${hub.name} et l'activation du rituel le plus adapté.`}
+          customWhatsappMsg={`Bonjour Maître Aziman, je vous contacte pour une consultation dans le domaine : ${hub.name}`}
+        />
+      </div>
 
     </div>
   </article>

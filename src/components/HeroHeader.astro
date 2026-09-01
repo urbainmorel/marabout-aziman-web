@@ -1,0 +1,90 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  badge?: string;
+  title: string;
+  description?: string;
+  breadcrumbs: BreadcrumbItem[];
+  metaInfo?: {
+    date?: string;
+    readTime?: string;
+    category?: string;
+  };
+  author?: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+}
+
+const { badge, title, description, breadcrumbs, metaInfo, author } = Astro.props;
+---
+
+<section class="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-900 text-white py-14 sm:py-16 md:py-20 border-b border-gold-400/20 overflow-hidden">
+  
+  <!-- Subtle Ambient Glow Orbs -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-700/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl pointer-events-none"></div>
+  
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="mt-6 max-w-4xl space-y-4">
+      
+      {badge && (
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-400/15 border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+          <span>✦</span>
+          <span>{badge}</span>
+        </div>
+      )}
+
+      {metaInfo && (
+        <div class="flex flex-wrap items-center gap-3 text-xs text-gold-300 font-medium">
+          {metaInfo.category && (
+            <span class="px-3 py-1 rounded-full bg-gold-400/20 text-gold-200 uppercase tracking-wider font-semibold">
+              {metaInfo.category}
+            </span>
+          )}
+          {metaInfo.readTime && <span>{metaInfo.readTime}</span>}
+          {metaInfo.date && (
+            <>
+              <span>•</span>
+              <span>Publié le {metaInfo.date}</span>
+            </>
+          )}
+        </div>
+      )}
+
+      <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5.5xl text-white leading-[1.15] tracking-tight">
+        {title}
+      </h1>
+
+      {description && (
+        <p class="text-sm sm:text-base md:text-lg text-gray-200/90 leading-relaxed font-sans max-w-3xl pt-1">
+          {description}
+        </p>
+      )}
+
+      {author && (
+        <div class="pt-4 flex items-center gap-3.5 border-t border-white/10 mt-6">
+          <img
+            src={author.avatar}
+            alt={author.name}
+            class="w-11 h-11 rounded-full object-cover border-2 border-gold-400/80 shadow-md"
+          />
+          <div>
+            <p class="text-sm font-semibold text-white">{author.name}</p>
+            <p class="text-xs text-gold-300/90">{author.role}</p>
+          </div>
+        </div>
+      )}
+
+    </div>
+  </div>
+</section>

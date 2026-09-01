@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import HeroHeader from '../components/HeroHeader.astro';
 import LegalTabs from '../components/LegalTabs.astro';
 import { mentionsLegalesContent } from '../data/legalData';
 
@@ -9,32 +9,25 @@ const { title, metaTitle, metaDescription, intro, sections } = mentionsLegalesCo
 
 <BaseLayout title={metaTitle} description={metaDescription}>
   
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 border-b border-gold-400/20">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs items={[{ label: title, href: '/mentions-legales' }]} />
-      <div class="mt-4 max-w-3xl">
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl text-white">
-          {title}
-        </h1>
-        <p class="text-xs sm:text-sm text-gray-300 mt-2">
-          {intro}
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- HERO HEADER REUSABLE -->
+  <HeroHeader
+    badge="Informations Réglementaires"
+    title={title}
+    description={intro}
+    breadcrumbs={[{ label: title, href: '/mentions-legales' }]}
+  />
 
   <!-- LEGAL CONTENT -->
-  <section class="py-12 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-12 sm:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <LegalTabs activeTab="mentions" />
 
-    <div class="card-luxury p-6 sm:p-10 bg-white border border-gray-200 mt-6 space-y-8 prose-aziman">
+    <div class="card-luxury p-6 sm:p-10 md:p-12 bg-white border border-gray-100 mt-8 space-y-10 prose-aziman shadow-sm">
       {sections.map((sec) => (
         <div class="space-y-3">
-          <h2 class="font-serif font-bold text-xl text-brand-dark border-b border-gray-100 pb-2">
+          <h2 class="font-serif font-bold text-xl sm:text-2xl text-brand-dark border-b border-gold-200/60 pb-2.5">
             {sec.title}
           </h2>
-          <div class="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+          <div class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line font-sans">
             {sec.content}
           </div>
         </div>

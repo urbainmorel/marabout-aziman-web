@@ -3,17 +3,17 @@ import { valueProps } from '../data/siteData';
 ---
 
 <section class="relative z-10 -mt-8 sm:-mt-12 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-    {valueProps.map((prop) => (
-      <div class="card-luxury p-6 bg-white shadow-xl flex items-start gap-4 hover:-translate-y-1 transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl flex-shrink-0 shadow-inner">
-          {prop.icon}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+    {valueProps.map((prop, index) => (
+      <div class="card-luxury p-6 sm:p-7 bg-white shadow-xl flex items-start gap-4 hover:-translate-y-1 hover:border-gold-400/80 transition-all duration-300 border border-gray-100">
+        <div class="w-12 h-12 rounded-2xl bg-brand-950 text-gold-300 flex items-center justify-center font-serif font-bold text-base flex-shrink-0 shadow-md border border-gold-400/30">
+          0{index + 1}
         </div>
         <div>
-          <h3 class="font-serif font-bold text-base text-brand-dark mb-1">
+          <h3 class="font-serif font-bold text-base sm:text-lg text-brand-dark mb-1">
             {prop.title}
           </h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
+          <p class="text-xs text-gray-600 leading-relaxed font-sans">
             {prop.description}
           </p>
         </div>

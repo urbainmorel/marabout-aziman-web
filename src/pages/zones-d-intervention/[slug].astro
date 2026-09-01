@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import HeroHeader from '../../components/HeroHeader.astro';
+import ConsultationSidebar from '../../components/ConsultationSidebar.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
 import CtaSection from '../../components/CtaSection.astro';
 import { allZones, type ZoneItem } from '../../data/zonesData';
 import { siteSettings } from '../../data/siteData';
@@ -72,37 +75,27 @@ const breadcrumbSchema = {
   schema={[localZoneSchema, breadcrumbSchema]}
 >
   
-  <!-- HERO HEADER -->
-  <section class="relative bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20 overflow-hidden">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <Breadcrumbs
-        items={[
-          { label: 'Zones d\'Intervention', href: '/zones-d-intervention' },
-          { label: zone.regionName, href: `/zones-d-intervention/${zone.slug}` },
-        ]}
-      />
-      
-      <div class="mt-6 max-w-3xl space-y-4">
-        <div class="inline-flex items-center px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
-          <span>Secteur d'Intervention : {zone.regionName}</span>
-        </div>
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-          {zone.title}
-        </h1>
-        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
-          {zone.metaDescription}
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- HERO HEADER REUSABLE -->
+  <HeroHeader
+    badge={`Secteur d'Intervention : ${zone.regionName}`}
+    title={zone.title}
+    description={zone.metaDescription}
+    breadcrumbs={[
+      { label: 'Zones d\'Intervention', href: '/zones-d-intervention' },
+      { label: zone.regionName, href: `/zones-d-intervention/${zone.slug}` },
+    ]}
+  />
+
+  <TrustBadges />
 
   <!-- CONTENT -->
-  <article class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+  <article class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
       
       <div class="lg:col-span-8 space-y-8">
         
-        <div class="rounded-2xl overflow-hidden shadow-lg max-h-96 bg-gray-100 mb-8">
+        <!-- Featured Image -->
+        <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-gold-400/20 mb-8">
           <img
             src={zone.image}
             alt={`Intervention Marabout à ${zone.regionName} : ${zone.title}`}
@@ -110,44 +103,24 @@ const breadcrumbSchema = {
           />
         </div>
 
+        <!-- Table of Contents -->
+        <TableOfContents />
+
         <!-- Rich Semantic HTML Content -->
         <div class="prose-aziman" set:html={zone.contentHtml} />
 
       </div>
 
-      <!-- Sticky Local Booking Sidebar -->
-      <aside class="lg:col-span-4 space-y-6">
-        <div class="card-luxury p-6 bg-brand-900 text-white shadow-xl space-y-5 sticky top-24">
-          <h3 class="font-serif font-bold text-xl text-white">Consultation : {zone.regionName}</h3>
-          <p class="text-xs text-gray-300 leading-relaxed">
-            Prenez rendez-vous avec Maître Aziman pour une séance en cabinet ou un travail à distance immédiat dans votre région.
-          </p>
-
-          <div class="space-y-2 text-xs text-gray-200">
-            <p><strong>Téléphone :</strong> {siteSettings.phoneDisplay}</p>
-            <p><strong>WhatsApp :</strong> {siteSettings.whatsappDisplay}</p>
-            <p><strong>Disponibilité :</strong> 7j/7 - 24h/24</p>
-          </div>
-
-          <div class="pt-2 space-y-2">
-            <a
-              href={`https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je réside dans la région ${zone.regionName} et je souhaite une consultation.`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-whatsapp w-full justify-center text-xs py-3 font-semibold"
-            >
-              <span>Échanger sur WhatsApp</span>
-            </a>
-
-            <a
-              href="/contact"
-              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center"
-            >
-              <span>Réserver en Cabinet</span>
-            </a>
-          </div>
-        </div>
-      </aside>
+      <!-- Sticky Reusable Consultation Sidebar -->
+      <div class="lg:col-span-4">
+        <ConsultationSidebar
+          title={`Consultation : ${zone.regionName}`}
+          subtitle="Cabinet & Intervention à Distance"
+          contextText={`Prenez rendez-vous avec Maître Aziman pour une séance au cabinet de Paris ou un rituel à distance immédiat dans la région ${zone.regionName}.`}
+          actionText="Échanger sur WhatsApp"
+          customWhatsappMsg={`Bonjour Maître Aziman, je réside dans la région ${zone.regionName} et je souhaite une consultation.`}
+        />
+      </div>
 
     </div>
   </article>

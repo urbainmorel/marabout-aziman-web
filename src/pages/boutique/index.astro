@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import HeroHeader from '../../components/HeroHeader.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
 import ShopCard from '../../components/ShopCard.astro';
 import CtaSection from '../../components/CtaSection.astro';
 import { boutiqueCategories } from '../../data/shopData';
@@ -12,27 +13,18 @@ const seoDesc = "Découvrez la boutique ésotérique du Cabinet Maître Aziman. 
 
 <BaseLayout title={seoTitle} description={seoDesc}>
   
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs items={[{ label: 'Boutique Ésotérique', href: '/boutique' }]} />
-      
-      <div class="mt-6 max-w-3xl space-y-4">
-        <div class="inline-block px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
-          Artisanat Sacré, Magnétisation & Pharmacopée
-        </div>
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-          La Boutique Ésotérique Ancestrale du Maître Aziman
-        </h1>
-        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
-          Chaque article de notre boutique est préparé, magnétisé et consacré selon les règles strictes de la tradition africaine. Commandez en toute sécurité avec livraison discrète en France par Colissimo ou Chronopost en 24h/48h.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- HERO HEADER REUSABLE -->
+  <HeroHeader
+    badge="Artisanat Sacré, Magnétisation & Pharmacopée"
+    title="La Boutique Ésotérique Ancestrale du Maître Aziman"
+    description="Chaque article de notre boutique est préparé, magnétisé et consacré selon les règles strictes de la tradition africaine. Commandez en toute sécurité avec livraison discrète en France par Colissimo ou Chronopost en 24h/48h."
+    breadcrumbs={[{ label: 'Boutique Ésotérique', href: '/boutique' }]}
+  />
+
+  <TrustBadges />
 
   <!-- CATEGORIES GRID -->
-  <section class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {boutiqueCategories.map((cat) => (
         <ShopCard category={cat} />
@@ -40,21 +32,21 @@ const seoDesc = "Découvrez la boutique ésotérique du Cabinet Maître Aziman. 
     </div>
 
     <!-- Assurance banner -->
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 p-8 rounded-2xl bg-surface border border-gray-200 text-center">
-      <div class="space-y-1">
-        <span class="text-xs font-bold text-gold-600 uppercase tracking-wider block">Garantie 01</span>
-        <h3 class="font-serif font-bold text-sm text-brand-dark">Livraison Discrète 24/48h</h3>
-        <p class="text-xs text-gray-600">Emballage neutre sans mention ésotérique. Colissimo Suivi & Chronopost.</p>
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 p-8 sm:p-10 rounded-3xl bg-surface border border-gray-200/80 text-center shadow-xs">
+      <div class="space-y-1.5">
+        <span class="text-xs font-bold text-gold-700 uppercase tracking-wider block">Garantie 01</span>
+        <h3 class="font-serif font-bold text-base text-brand-dark">Livraison Discrète 24/48h</h3>
+        <p class="text-xs text-gray-600 font-sans">Emballage neutre sans mention ésotérique. Colissimo Suivi & Chronopost.</p>
       </div>
-      <div class="space-y-1">
-        <span class="text-xs font-bold text-gold-600 uppercase tracking-wider block">Garantie 02</span>
-        <h3 class="font-serif font-bold text-sm text-brand-dark">Consécration Personnalisée</h3>
-        <p class="text-xs text-gray-600">Chaque support est préparé au nom et prénom du consultant avant envoi.</p>
+      <div class="space-y-1.5">
+        <span class="text-xs font-bold text-gold-700 uppercase tracking-wider block">Garantie 02</span>
+        <h3 class="font-serif font-bold text-base text-brand-dark">Consécration Personnalisée</h3>
+        <p class="text-xs text-gray-600 font-sans">Chaque support est préparé au nom et prénom du consultant avant envoi.</p>
       </div>
-      <div class="space-y-1">
-        <span class="text-xs font-bold text-gold-600 uppercase tracking-wider block">Garantie 03</span>
-        <h3 class="font-serif font-bold text-sm text-brand-dark">Commande Directe WhatsApp</h3>
-        <p class="text-xs text-gray-600">Conseils d'utilisation et validation immédiate au {siteSettings.whatsappDisplay}.</p>
+      <div class="space-y-1.5">
+        <span class="text-xs font-bold text-gold-700 uppercase tracking-wider block">Garantie 03</span>
+        <h3 class="font-serif font-bold text-base text-brand-dark">Commande Directe WhatsApp</h3>
+        <p class="text-xs text-gray-600 font-sans">Conseils d'utilisation et validation immédiate au {siteSettings.whatsappDisplay}.</p>
       </div>
     </div>
   </section>
