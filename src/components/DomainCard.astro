@@ -1,58 +1,62 @@
 ---
-import type { ServiceHub } from '../data/servicesData';
-
 interface Props {
-  hub: ServiceHub;
+  hub: {
+    silo: string;
+    title: string;
+    name: string;
+    image: string;
+    homeDescription?: string;
+    content?: string;
+  };
+  index?: number;
 }
 
-const { hub } = Astro.props;
+const { hub, index } = Astro.props;
+
+// Exact description mapped from PAGE D'ACCUEIL.txt
+const homeDescriptions: Record<string, string> = {
+  'amour-sentiments': "Ne laissez pas une rupture briser votre existence. Grâce à des rituels puissants de retour affectif urgent, de cadenas d'amour et de verrouillage de fidélité, vous retrouvez l'harmonie conjugale et l'attachement indéfectible de votre partenaire.",
+  'richesse-finance': "Libérez enfin votre potentiel financier. En effet, Maître Aziman réalise des rituels d'ouverture de chance, des pactes de prospérité avec les esprits des eaux et des consécrations pour maximiser vos gains aux jeux de tirage et loteries.",
+  'commerce-carriere-reussite': "Développez votre activité professionnelle en toute sérénité. Ainsi, nos rituels d'attraction de clientèle, d'obtention de promotions et de neutralisation de la concurrence déloyale vous assurent une ascension fulgurante.",
+  'divination-voyance': "Levez le voile sur votre avenir grâce à la géomancie sacrée du Fâ et au tirage des cauris. Par conséquent, vous découvrez l'origine exacte de vos blocages et les opportunités qui s'offrent à vous.",
+  'protection-desenvoutement': "Défendez votre personne et votre foyer contre les énergies obscures. Nous effectuons des grands désenvoûtements, des délivrances de maris ou femmes de nuit, ainsi que des rituels de retour à l'envoyeur avec effet miroir.",
+  'sante-traditionnelle': "Profitez des vertus millénaires des plantes d'Afrique. De plus, nos préparations soutiennent la fertilité féminine, renforcent la vigueur masculine par l'Agbo et accompagnent le sevrage des addictions.",
+  'justice-proces-litiges': "Protégez vos droits face aux tribunaux. Grâce au mythique cadenas de justice et aux rituels d'apaisement, nous travaillons pour faire taire les accusateurs et obtenir des décisions favorables.",
+  'immigration-titres-sejour-visas': "Facilitez vos démarches auprès des préfectures et consulats. Nous activons des poudres de persuasion et des bains d'ouverture pour lever les blocages de titres de séjour, visas et arrêtés d'expulsion (OQTF)."
+};
+
+const desc = homeDescriptions[hub.silo] || hub.homeDescription || hub.content?.slice(0, 150);
 ---
 
-<div class="card-luxury p-6 sm:p-7 flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs">
+<div class="card-luxury p-5 sm:p-6 flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs bg-white">
   <div>
-    <div class="relative h-48 mb-5 rounded-xl overflow-hidden bg-brand-950">
+    <div class="relative h-40 mb-4 rounded-xl overflow-hidden bg-brand-950">
       <img
         src={hub.image}
         alt={hub.title}
         loading="lazy"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent"></div>
-      <div class="absolute bottom-3.5 left-4 right-4 flex items-center justify-between">
-        <span class="text-white font-serif font-bold text-lg md:text-xl drop-shadow">{hub.name}</span>
-        <span class="text-brand-100 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-brand-900/90 border border-brand-700">
-          {hub.subservices?.length || 4} rituels
-        </span>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent"></div>
+      <div class="absolute bottom-3 left-3 right-3">
+        <h3 class="text-white font-serif font-bold text-base sm:text-lg leading-snug drop-shadow">
+          <a href={`/services/${hub.silo}`} class="hover:text-brand-200 transition-colors">
+            {index ? `${index}. ` : ''}{hub.name}
+          </a>
+        </h3>
       </div>
     </div>
 
-    <p class="text-xs sm:text-sm text-slate-700 line-clamp-3 mb-5 leading-relaxed font-sans">
-      {hub.metaDescription || hub.content.slice(0, 140)}
+    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
+      {desc}
     </p>
-
-    <!-- Subservices list -->
-    {hub.subservices && hub.subservices.length > 0 && (
-      <div class="space-y-1.5 mb-5 pt-3 border-t border-brand-100">
-        <span class="text-[11px] uppercase tracking-wider text-brand-900 font-bold block mb-2">Rituels majeurs :</span>
-        <ul class="text-xs text-slate-700 space-y-1.5 font-sans">
-          {hub.subservices.slice(0, 3).map((sub) => (
-            <li class="flex items-center gap-2">
-              <span class="text-brand-600 font-bold">•</span>
-              <a href={`/services/${hub.silo}/${sub.slug}`} class="hover:text-brand-900 hover:underline transition-colors font-medium">
-                {sub.title.replace(' en France', '')}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )}
   </div>
 
   <a
     href={`/services/${hub.silo}`}
-    class="inline-flex items-center justify-between w-full pt-4 mt-auto text-xs font-bold text-brand-900 hover:text-brand-700 border-t border-brand-100 transition-colors uppercase tracking-wider"
+    class="inline-flex items-center justify-between w-full pt-3 mt-4 text-xs font-bold text-brand-900 hover:text-brand-700 border-t border-brand-100 transition-colors uppercase tracking-wider"
   >
-    <span>Consulter ce domaine</span>
+    <span>Découvrir les rituels</span>
     <span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
   </a>
 </div>
