@@ -13,36 +13,46 @@ import { allZones } from '../data/zonesData';
 
 const seoTitle = "Grand Marabout en France : Voyance & Rituels | Cabinet Aziman";
 const seoDesc = "Consultez Maître Aziman, grand marabout en France. Retour affectif rapide, chance, protection et rituels ancestraux. RDV au cabinet ou à distance.";
+const seoKeywords = "marabout en france, grand marabout paris, voyance fâ, marabout africain sérieux france, retour affectif rapide, rituel amour, desenvoutement france";
+
+// Rich Schema for Home FAQ
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": homeFaq.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc}>
+<BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={faqSchema}>
   
   <!-- HERO SECTION -->
   <section class="relative bg-gradient-to-b from-brand-900 via-brand-800 to-brand-900 text-white overflow-hidden py-16 md:py-24 lg:py-28">
-    <!-- Atmospheric sacred glowing overlays -->
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,183,5,0.15),transparent_50%)] pointer-events-none"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(28,0,112,0.4),transparent_50%)] pointer-events-none"></div>
 
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl mx-auto text-center space-y-6">
         
-        <!-- Trust badge -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-wider">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           <span>Cabinet en France & Consultations à Distance 7j/7</span>
         </div>
 
-        <!-- Main H1 Title -->
         <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
           Grand Marabout en France : <span class="text-gold-300 italic">Cabinet de Voyance & Rituels Traditionnels</span> Aziman
         </h1>
 
-        <!-- Pitch & Value proposition -->
         <p class="text-base sm:text-lg text-gray-200 font-sans leading-relaxed max-w-2xl mx-auto">
           Vous traversez une période de doutes sentimentaux, financiers ou spirituels ? Consulter un <strong>marabout en France</strong> réputé constitue le premier pas vers la résolution définitive de vos blocages. Maître Aziman met à votre service plus de 25 ans d'initiation aux secrets ancestraux du Fâ et du Vodun.
         </p>
 
-        <!-- CTA Buttons -->
         <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={siteSettings.whatsappLink}
@@ -64,7 +74,6 @@ const seoDesc = "Consultez Maître Aziman, grand marabout en France. Retour affe
           </a>
         </div>
 
-        <!-- Assurance micro items -->
         <div class="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-300">
           <span class="flex items-center gap-1.5">
             <span class="text-gold-400">✦</span> Secret 100% garanti
@@ -92,7 +101,7 @@ const seoDesc = "Consultez Maître Aziman, grand marabout en France. Retour affe
         <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gold-300/40">
           <img
             src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80"
-            alt="Maître Aziman - Grand Marabout en France"
+            alt="Maître Aziman - Grand Marabout Traditionnel en France et Prêtre Bokonon"
             class="w-full h-80 sm:h-96 object-cover"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent"></div>

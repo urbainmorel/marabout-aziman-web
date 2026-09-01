@@ -3,13 +3,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaSection from '../components/CtaSection.astro';
 import { siteSettings } from '../data/siteData';
-import { servicesHubs } from '../data/servicesData';
 
 const seoTitle = "À Propos du Maître Aziman : Marabout Traditionnel en France";
 const seoDesc = "Découvrez l'histoire, l'initiation et les valeurs du Maître Aziman, marabout traditionnel en France. 25 ans d'expérience au service de votre réussite. RDV.";
+const seoKeywords = "maître aziman, marabout traditionnel france, biographie marabout paris, prêtre bokonon fâ, grand marabout africain bénin";
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": seoTitle,
+  "description": seoDesc,
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Maître Aziman",
+    "jobTitle": "Grand Marabout Traditionnel et Prêtre Bokonon",
+    "description": "Initié aux secrets ancestraux du Fâ et du Vodun depuis plus de 25 ans.",
+    "telephone": siteSettings.phone,
+    "url": "https://marabout-aziman.fr/a-propos/"
+  }
+};
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc}>
+<BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={aboutSchema}>
   
   <!-- HERO HEADER -->
   <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
@@ -146,12 +161,11 @@ const seoDesc = "Découvrez l'histoire, l'initiation et les valeurs du Maître A
       <!-- Sidebar -->
       <aside class="lg:col-span-4 space-y-6">
         
-        <!-- Contact Card -->
         <div class="card-luxury p-6 bg-brand-900 text-white shadow-xl space-y-5 sticky top-24">
           <div class="flex items-center gap-3 border-b border-white/10 pb-4">
             <img
               src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=200&q=80"
-              alt="Maître Aziman"
+              alt="Portrait officiel du Maître Aziman, Grand Marabout en France"
               class="w-14 h-14 rounded-full object-cover border-2 border-gold-400"
             />
             <div>

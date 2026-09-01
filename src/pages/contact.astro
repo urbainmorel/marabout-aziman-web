@@ -5,9 +5,30 @@ import { siteSettings } from '../data/siteData';
 
 const seoTitle = "Contacter un Marabout en France : WhatsApp & RDV | Aziman";
 const seoDesc = "Besoin de contacter un marabout en France sans attendre ? Joignez Maître Aziman par téléphone direct ou WhatsApp 24h/7j. Cabinet à Paris.";
+const seoKeywords = "contacter marabout france, telephone marabout paris, whatsapp marabout gratuit france, rdv marabout urgence, marabout direct france";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": seoTitle,
+  "description": seoDesc,
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "name": "Cabinet Maître Aziman",
+    "telephone": siteSettings.phone,
+    "email": siteSettings.email,
+    "url": "https://marabout-aziman.fr/contact/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": siteSettings.phone,
+      "contactType": "customer support",
+      "availableLanguage": ["French", "Fon", "Yoruba"]
+    }
+  }
+};
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc}>
+<BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={contactSchema}>
   
   <!-- HERO HEADER -->
   <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">

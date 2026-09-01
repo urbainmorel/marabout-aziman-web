@@ -17,9 +17,70 @@ interface Props {
 }
 
 const { sub } = Astro.props;
+
+// Service JSON-LD Structured Data Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": sub.title,
+  "serviceType": sub.siloName,
+  "description": sub.metaDescription,
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Cabinet Maître Aziman",
+    "telephone": siteSettings.phone,
+    "url": "https://marabout-aziman.fr"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Île-de-France" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Rituels Traditionnels et Consultations Spirituelles"
+  }
+};
+
+// BreadcrumbList JSON-LD Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://marabout-aziman.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://marabout-aziman.fr/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": sub.siloName,
+      "item": `https://marabout-aziman.fr/services/${sub.silo}/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": sub.title,
+      "item": `https://marabout-aziman.fr/services/${sub.silo}/${sub.slug}/`
+    }
+  ]
+};
 ---
 
-<BaseLayout title={sub.metaTitle} description={sub.metaDescription}>
+<BaseLayout
+  title={sub.metaTitle}
+  description={sub.metaDescription}
+  keywords={sub.keywords}
+  image={sub.image}
+  schema={[serviceSchema, breadcrumbSchema]}
+>
   
   <!-- HERO HEADER -->
   <section class="relative bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20 overflow-hidden">
@@ -57,7 +118,7 @@ const { sub } = Astro.props;
         <div class="rounded-2xl overflow-hidden mb-8 shadow-lg max-h-96 bg-gray-100">
           <img
             src={sub.image}
-            alt={sub.title}
+            alt={`Rituel traditionnel : ${sub.title}`}
             class="w-full h-full object-cover"
           />
         </div>

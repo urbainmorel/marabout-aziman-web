@@ -6,9 +6,30 @@ import { siteSettings } from '../data/siteData';
 
 const seoTitle = "Cabinet Marabout en France : Prise de RDV | Aziman";
 const seoDesc = "Prenez rendez-vous au cabinet marabout en France du Maître Aziman à Paris. Consultations privées ou à distance par WhatsApp 7j/7. Discrétion.";
+const seoKeywords = "cabinet marabout france, consultation marabout paris, rdv marabout ile de france, voyance en cabinet paris, marabout sérieux paris";
+
+const cabinetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "name": "Cabinet de Consultation Spirituelle Maître Aziman",
+  "description": "Cabinet privé de voyance traditionnelle et rituels ancestraux à Paris / Île-de-France.",
+  "telephone": siteSettings.phone,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paris",
+    "addressRegion": "Île-de-France",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "48.8566",
+    "longitude": "2.3522"
+  },
+  "openingHours": "Mo-Su 08:00-21:00"
+};
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc}>
+<BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={cabinetSchema}>
   
   <!-- HERO HEADER -->
   <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
