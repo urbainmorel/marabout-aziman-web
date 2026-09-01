@@ -17,9 +17,59 @@ interface Props {
 }
 
 const { hub } = Astro.props;
+
+// Service Hub Schema
+const hubSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": hub.title,
+  "serviceType": hub.name,
+  "description": hub.metaDescription,
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Cabinet Maître Aziman",
+    "telephone": siteSettings.phone,
+    "url": "https://marabout-aziman.fr"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Île-de-France" },
+    { "@type": "Country", "name": "France" }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://marabout-aziman.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://marabout-aziman.fr/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": hub.name,
+      "item": `https://marabout-aziman.fr/services/${hub.silo}/`
+    }
+  ]
+};
 ---
 
-<BaseLayout title={hub.metaTitle} description={hub.metaDescription}>
+<BaseLayout
+  title={hub.metaTitle}
+  description={hub.metaDescription}
+  keywords={hub.keywords}
+  image={hub.image}
+  schema={[hubSchema, breadcrumbSchema]}
+>
   
   <!-- HERO HEADER -->
   <section class="relative bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20 overflow-hidden">
@@ -51,12 +101,10 @@ const { hub } = Astro.props;
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
       
       <!-- Main Hub Body -->
-      <div class="lg:col-span-8 space-y-10 prose-aziman">
+      <div class="lg:col-span-8 space-y-10">
         
-        <!-- Text Content -->
-        <div class="text-sm sm:text-base text-gray-700 leading-relaxed space-y-4 whitespace-pre-line">
-          {hub.content}
-        </div>
+        <!-- Rich Semantic HTML Content -->
+        <div class="prose-aziman" set:html={hub.contentHtml} />
 
         <!-- Subservices Grid -->
         {hub.subservices && hub.subservices.length > 0 && (

@@ -113,7 +113,7 @@ const breadcrumbSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
       
       <!-- Main Content Body -->
-      <div class="lg:col-span-8 space-y-8 prose-aziman">
+      <div class="lg:col-span-8 space-y-8">
         
         <div class="rounded-2xl overflow-hidden mb-8 shadow-lg max-h-96 bg-gray-100">
           <img
@@ -123,9 +123,8 @@ const breadcrumbSchema = {
           />
         </div>
 
-        <div class="text-sm sm:text-base text-gray-700 leading-relaxed space-y-4 whitespace-pre-line">
-          {sub.content}
-        </div>
+        <!-- Rich Semantic HTML Content -->
+        <div class="prose-aziman" set:html={sub.contentHtml} />
 
       </div>
 

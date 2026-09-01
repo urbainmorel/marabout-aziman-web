@@ -17,9 +17,49 @@ interface Props {
 }
 
 const { cat } = Astro.props;
+
+// Category Schema
+const categorySchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": cat.title,
+  "description": cat.metaDescription,
+  "url": `https://marabout-aziman.fr/boutique/${cat.category}/`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://marabout-aziman.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Boutique",
+      "item": "https://marabout-aziman.fr/boutique/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": cat.name,
+      "item": `https://marabout-aziman.fr/boutique/${cat.category}/`
+    }
+  ]
+};
 ---
 
-<BaseLayout title={cat.metaTitle} description={cat.metaDescription}>
+<BaseLayout
+  title={cat.metaTitle}
+  description={cat.metaDescription}
+  keywords={cat.keywords}
+  image={cat.image}
+  schema={[categorySchema, breadcrumbSchema]}
+>
   
   <!-- HERO -->
   <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
@@ -49,11 +89,10 @@ const { cat } = Astro.props;
   <article class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
       
-      <div class="lg:col-span-8 space-y-8 prose-aziman">
+      <div class="lg:col-span-8 space-y-8">
         
-        <div class="text-sm sm:text-base text-gray-700 leading-relaxed space-y-4 whitespace-pre-line">
-          {cat.content}
-        </div>
+        <!-- Rich Semantic HTML Content -->
+        <div class="prose-aziman" set:html={cat.contentHtml} />
 
         {cat.products && cat.products.length > 0 && (
           <div class="border-t border-gold-200/80 pt-8 space-y-6">
