@@ -1,11 +1,167 @@
 ---
-import BlogListLayout from '../../layouts/BlogListLayout.astro';
-import { mockPosts, categories } from '../../mock/data';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import { allBlogArticles, blogCategories } from '../../data/blogData';
+
+const seoTitle = "Blog & Guides Ésotériques : Rituels, Fâ & Secrets | Cabinet Aziman";
+const seoDesc = "Consultez tous les guides et articles de Maître Aziman sur le retour affectif, les rituels de protection, la chance financière et la pharmacopée traditionnelle.";
+
+const featuredPost = allBlogArticles[0];
+const regularPosts = allBlogArticles.slice(1);
 ---
 
-<BlogListLayout
-  posts={mockPosts}
-  categories={categories}
-  title="Blog, Rituels & Enseignements Spirituels | Cabinet Aziman"
-  description="Découvrez nos articles sur le retour d'affection immédiat, le cadenas d'amour, le désenvoûtement et les secrets de la prospérité par Maître Aziman."
-/>
+<BaseLayout title={seoTitle} description={seoDesc}>
+  
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Blog & Guides', href: '/blog' }]} />
+      
+      <div class="mt-6 max-w-3xl space-y-4">
+        <div class="inline-block px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+          Enseignements, Rituels & Guides
+        </div>
+        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+          Le Blog & Les Secrets Traditionnels du Maître Aziman
+        </h1>
+        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+          Retrouvez nos analyses détaillées, explications de rituels et conseils authentiques pour comprendre la puissance du Fâ, des plantes et des mystères ancestraux.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY PILLS -->
+  <section class="border-b border-gray-200 bg-surface py-4 sticky top-16 md:top-20 z-30 shadow-xs">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+        <a
+          href="/blog"
+          class="px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-brand-900 text-gold-300 shadow-sm"
+        >
+          Tous les articles ({allBlogArticles.length})
+        </a>
+        {blogCategories.map((cat) => (
+          <a
+            href={`/blog/categorie/${cat.slug}`}
+            class="px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap bg-white text-gray-700 hover:text-brand-900 hover:bg-gray-100 border border-gray-200 transition-colors"
+          >
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- POSTS LIST -->
+  <section class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Featured Spotlight Article -->
+    {featuredPost && (
+      <div class="mb-12">
+        <div class="card-luxury overflow-hidden grid grid-cols-1 lg:grid-cols-12 bg-white border border-gray-200/80 hover:border-gold-300 transition-all duration-300 group">
+          <div class="lg:col-span-7 h-64 sm:h-80 lg:h-full relative overflow-hidden bg-gray-100">
+            <img
+              src={featuredPost.image}
+              alt={featuredPost.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute top-4 left-4 bg-brand-900/90 backdrop-blur-sm text-gold-300 text-xs font-semibold px-3 py-1 rounded-md shadow">
+              À la Une
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 text-xs text-gray-500">
+                <span class="text-brand-900 font-semibold uppercase">{featuredPost.categoryName}</span>
+                <span>•</span>
+                <span>{featuredPost.readTime}</span>
+              </div>
+
+              <h2 class="font-serif font-bold text-xl sm:text-2xl text-brand-dark group-hover:text-brand-800 transition-colors leading-snug">
+                <a href={`/blog/${featuredPost.slug}`}>
+                  {featuredPost.title}
+                </a>
+              </h2>
+
+              <p class="text-xs sm:text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                {featuredPost.metaDescription}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img
+                  src={featuredPost.author.avatar}
+                  alt={featuredPost.author.name}
+                  class="w-7 h-7 rounded-full object-cover"
+                />
+                <span class="text-xs font-medium text-gray-700">{featuredPost.author.name}</span>
+              </div>
+
+              <a
+                href={`/blog/${featuredPost.slug}`}
+                class="text-xs font-bold text-brand-900 hover:text-gold-600 flex items-center gap-1"
+              >
+                <span>Lire l'article</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- Regular Grid Articles -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {regularPosts.map((post) => (
+        <article class="card-luxury overflow-hidden flex flex-col justify-between group hover:border-gold-300 transition-all duration-300 bg-white">
+          <div>
+            <div class="relative h-48 overflow-hidden bg-gray-100">
+              <img
+                src={post.image}
+                alt={post.title}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-2 left-2 bg-brand-dark/80 backdrop-blur-sm text-gold-300 text-[10px] font-semibold px-2 py-0.5 rounded">
+                {post.categoryName}
+              </div>
+            </div>
+
+            <div class="p-5 space-y-2">
+              <div class="text-[11px] text-gray-400">
+                {post.readTime}
+              </div>
+              <h3 class="font-serif font-bold text-base text-brand-dark group-hover:text-brand-800 transition-colors leading-snug line-clamp-2">
+                <a href={`/blog/${post.slug}`}>
+                  {post.title}
+                </a>
+              </h3>
+              <p class="text-xs text-gray-600 line-clamp-3 leading-relaxed">
+                {post.metaDescription}
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 mt-auto">
+            <a
+              href={`/blog/${post.slug}`}
+              class="pt-3 border-t border-gray-100 w-full inline-flex items-center justify-between text-xs font-semibold text-brand-900 hover:text-gold-600 transition-colors"
+            >
+              <span>Lire la suite</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <CtaSection />
+
+</BaseLayout>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import { allZones } from '../../data/zonesData';
+import { siteSettings } from '../../data/siteData';
+
+const seoTitle = "Zones d'Intervention en France : Cabinet & Distance | Aziman";
+const seoDesc = "Découvrez l'ensemble des zones d'intervention de Maître Aziman en France. Consultations en cabinet à Paris et déplacements réguliers à Lyon, Marseille, Bordeaux, etc.";
+---
+
+<BaseLayout title={seoTitle} description={seoDesc}>
+  
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Zones d\'Intervention', href: '/zones-d-intervention' }]} />
+      
+      <div class="mt-6 max-w-3xl space-y-4">
+        <div class="inline-block px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+          Présence Nationale & Déplacements
+        </div>
+        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+          Zones d'Intervention du Maître Aziman en France
+        </h1>
+        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+          Maître Aziman vous reçoit sur rendez-vous au sein de son cabinet principal en Île-de-France et intervient dans toutes les grandes métropoles françaises lors de ses déplacements et par rituels à distance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES GRID -->
+  <section class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {allZones.map((zone) => (
+        <div class="card-luxury overflow-hidden flex flex-col justify-between group hover:border-gold-300 transition-all duration-300">
+          <div class="relative h-44 bg-gray-100 overflow-hidden">
+            <img
+              src={zone.image}
+              alt={zone.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 text-white">
+              <span class="text-xs uppercase text-gold-300 font-semibold tracking-wider">Région</span>
+              <h3 class="font-serif font-bold text-lg">{zone.regionName}</h3>
+            </div>
+          </div>
+
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-gray-600 line-clamp-3 leading-relaxed">
+              {zone.metaDescription}
+            </p>
+
+            <a
+              href={`/zones-d-intervention/${zone.slug}`}
+              class="mt-4 pt-3 border-t border-gray-100 text-xs font-semibold text-brand-900 hover:text-gold-600 flex items-center justify-between"
+            >
+              <span>Consulter dans cette région</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection />
+
+</BaseLayout>

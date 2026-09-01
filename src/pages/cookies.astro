@@ -2,9 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import LegalTabs from '../components/LegalTabs.astro';
-import { cguContent } from '../data/legalData';
+import { cookiesContent } from '../data/legalData';
 
-const { title, metaTitle, metaDescription, intro, sections } = cguContent;
+const { title, metaTitle, metaDescription, intro, sections } = cookiesContent;
 ---
 
 <BaseLayout title={metaTitle} description={metaDescription}>
@@ -12,7 +12,7 @@ const { title, metaTitle, metaDescription, intro, sections } = cguContent;
   <!-- HERO -->
   <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 border-b border-gold-400/20">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs items={[{ label: title, href: '/cgu' }]} />
+      <Breadcrumbs items={[{ label: title, href: '/cookies' }]} />
       <div class="mt-4 max-w-3xl">
         <h1 class="font-serif font-bold text-3xl sm:text-4xl text-white">
           {title}
@@ -26,7 +26,7 @@ const { title, metaTitle, metaDescription, intro, sections } = cguContent;
 
   <!-- LEGAL CONTENT -->
   <section class="py-12 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <LegalTabs activeTab="cgu" />
+    <LegalTabs activeTab="cookies" />
 
     <div class="card-luxury p-6 sm:p-10 bg-white border border-gray-200 mt-6 space-y-8 prose-aziman">
       {sections.map((sec) => (

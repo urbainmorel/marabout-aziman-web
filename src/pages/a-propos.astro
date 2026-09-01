@@ -1,86 +1,197 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-import { defaultAuthor, siteSettings } from '../mock/data';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { siteSettings } from '../data/siteData';
+import { servicesHubs } from '../data/servicesData';
+
+const seoTitle = "À Propos du Maître Aziman : Marabout Traditionnel en France";
+const seoDesc = "Découvrez l'histoire, l'initiation et les valeurs du Maître Aziman, marabout traditionnel en France. 25 ans d'expérience au service de votre réussite. RDV.";
 ---
 
-<PageLayout
-  title="À Propos de Maître Aziman : Grand Marabout en France"
-  subtitle="Plus de vingt-cinq années d'initiation et de pratique consacrées à la résolution de vos blocages sentimentaux, professionnels et spirituels."
-  badge="Sagesse & Déontologie"
-  description="Découvrez le parcours initiatique de Maître Aziman, grand marabout et voyant en France. Une pratique ancestrale du Fâ et du Vodun fondée sur la vérité et l'éthique."
-  breadcrumbs={[
-    { name: 'À Propos' },
-  ]}
->
-  <div class="card-luxury p-6 sm:p-10 lg:p-12 mb-10 prose-editorial">
-    <h2>Une Lignée Initiatique Respectée</h2>
-    <p>
-      Né dans une illustre famille de guérisseurs et de devins de la région côtière du Bénin, <strong>Maître Aziman</strong> a été initié dès son plus jeune âge aux secrets des plantes sacrées, aux rythmes invisibles des divinités bienveillantes et à l'art millénaire de la géomancie du <strong>Fâ</strong>.
-    </p>
-    <p>
-      Cette formation rigoureuse, dispensée pendant plus d'une décennie au cœur des sanctuaires traditionnels d'Afrique de l'Ouest, lui a conféré une maîtrise exceptionnelle des énergies spirituelles et des rituels de protection, de réconciliation amoureuse et de désenvoûtement.
-    </p>
-
-    <blockquote>
-      « La véritable magie ne force pas le destin : elle rétablit l'harmonie naturelle, lève les obstacles occultes et réveille les sentiments authentiques qui sommeillent dans chaque être humain. »
-      <br /><span class="text-sm font-sans font-normal text-gray-500">— Maître Aziman</span>
-    </blockquote>
-
-    <h2>Une Présence Dédiée aux Consultants en France</h2>
-    <p>
-      Installé en France depuis de nombreuses années, Maître Aziman accueille ses consultants dans un cadre apaisant et neutre au sein de son cabinet situé en Île-de-France. Il se déplace également de manière régulière dans les grandes métropoles françaises (Lyon, Marseille, Bordeaux, Lille, Nantes, Strasbourg) pour des séances privées.
-    </p>
-    <p>
-      Pour les personnes résidant en province ou à l'étranger, Maître Aziman propose des <strong>consultations à distance</strong> par téléphone ou par WhatsApp avec une rigueur et une efficacité strictement identiques à celles réalisées au cabinet.
-    </p>
-
-    <h2>Nos 4 Engagements Déontologiques</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
-      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
-        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
-          Diagnostic Véridique
-        </h3>
-        <p class="text-xs text-gray-600">Aucune promesse irréaliste. Si un problème ne peut être résolu spirituellement, Maître Aziman vous le dit avec franchise.</p>
-      </div>
-
-      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
-        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
-          Secret Initiatique Absolu
-        </h3>
-        <p class="text-xs text-gray-600">Vos identités, histoires et photographies sont protégées par une confidentialité inviolable.</p>
-      </div>
-
-      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
-        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
-          Magie Pure Sans Choc en Retour
-        </h3>
-        <p class="text-xs text-gray-600">Tous les rituels sont protégés pour préserver l'intégrité physique, psychologique et morale de chacun.</p>
-      </div>
-
-      <div class="bg-surface-low p-4 rounded-xl border border-gray-200">
-        <h3 class="font-sans font-bold text-sm text-brand-dark mb-1 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
-          Suivi Quotidien Personnalisé
-        </h3>
-        <p class="text-xs text-gray-600">Vous n'êtes jamais laissé seul : un accompagnement par appel et message est maintenu jusqu'à la réussite.</p>
+<BaseLayout title={seoTitle} description={seoDesc}>
+  
+  <!-- HERO HEADER -->
+  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'À Propos', href: '/a-propos' }]} />
+      
+      <div class="mt-6 max-w-3xl space-y-4">
+        <div class="inline-block px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+          Biographie & Lignée Ancestrale
+        </div>
+        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+          À Propos du Maître Aziman : Héritier des Secrets du Fâ et Marabout Traditionnel en France
+        </h1>
+        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+          Vous cherchez un praticien spirituel authentique, enraciné dans une véritable lignée ancestrale et guidé par une éthique rigoureuse ? Consulter un <strong>marabout traditionnel en France</strong> tel que Maître Aziman représente la garantie d'un accompagnement sérieux, bienveillant et hautement efficace.
+        </p>
       </div>
     </div>
+  </section>
 
-    <h2>Prendre Contact pour une Voyance Immédiate</h2>
-    <p>
-      Quelle que soit la nature de votre détresse, n'attendez pas que la situation s'aggrave. Une simple consultation divinatoire permet de mettre en lumière la racine de votre souffrance et d'enclencher la délivrance.
-    </p>
+  <!-- MAIN EDITORIAL CONTENT -->
+  <article class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- Content Body -->
+      <div class="lg:col-span-8 space-y-10 prose-aziman">
+        
+        <div>
+          <p class="text-base text-gray-700 leading-relaxed font-serif">
+            En effet, Maître Aziman ne pratique pas une voyance superficielle ou improvisée. Il met à votre disposition plus de vingt-cinq années d'initiation dans les couvents sacrés d'Afrique de l'Ouest. Ainsi, il allie la sagesse du Fâ à la puissance des rituels traditionnels pour résoudre vos épreuves.
+          </p>
+          <p class="text-base text-gray-700 leading-relaxed font-serif mt-4">
+            Installé dans son cabinet en Île-de-France et disponible pour des interventions à distance, Maître Aziman écoute chaque consultant sans jugement. Par conséquent, vous bénéficiez de solutions occultes durables et respectueuses de votre équilibre.
+          </p>
+        </div>
 
-    <div class="not-prose pt-4 flex flex-wrap gap-4">
-      <a href={siteSettings.whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-sm py-3 px-6">
-        <span>Échanger en direct sur WhatsApp</span>
-      </a>
-      <a href={`tel:${siteSettings.phone}`} class="btn-primary text-sm py-3 px-6">
-        <span>Appeler le Cabinet ({siteSettings.phoneDisplay})</span>
-      </a>
+        <div class="border-t border-gold-200/80 pt-8 space-y-4">
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark flex items-center gap-3">
+            <span>🏛️</span> L'Origine et l'Initiation aux Grands Mystères Traditionnels
+          </h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Le parcours de Maître Aziman s'enracine dans la plus pure tradition familiale et initiatique :
+          </p>
+          <ul class="space-y-3 text-sm text-gray-700 pl-4 border-l-2 border-gold-400">
+            <li><strong>Un héritage spirituel de naissance :</strong> Issu d'une grande lignée de guérisseurs et de devins réputés au Bénin et au Togo.</li>
+            <li><strong>La formation en forêt sacrée :</strong> Retraite initiatique complète pour maîtriser la pharmacopée secrète (<em>Amassé</em>) et les langues occultes.</li>
+            <li><strong>L'intronisation au rang de grand prêtre Bokonon :</strong> Maîtrise absolue des 256 signes géomantiques sacrés du Fâ (<em>Ifá</em>).</li>
+            <li><strong>L'alliance avec les divinités gardiennes :</strong> Célébration des pactes avec les forces de la terre (<em>Azziza</em>), du fer (<em>Gou</em>) et des eaux (<em>Mami Wata</em>).</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-gold-200/80 pt-8 space-y-4">
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark flex items-center gap-3">
+            <span>⚖️</span> Les 4 Valeurs Fondamentales du Cabinet Aziman
+          </h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Maître Aziman applique une déontologie stricte fondée sur quatre engagements majeurs :
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="card-luxury p-5 bg-white border border-gray-100">
+              <span class="text-gold-600 font-bold text-base">01. Secret & Discrétion Absolue</span>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Vos confidences, vos photographies et vos rituels restent protégés par le secret initiatique le plus strict.
+              </p>
+            </div>
+            <div class="card-luxury p-5 bg-white border border-gray-100">
+              <span class="text-gold-600 font-bold text-base">02. Respect des Lois Naturelles</span>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Aucun rituel ne fait appel à des sacrifices humains ou à des magies destructrices de karma.
+              </p>
+            </div>
+            <div class="card-luxury p-5 bg-white border border-gray-100">
+              <span class="text-gold-600 font-bold text-base">03. Franchise & Honnêteté</span>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Si une situation ne peut pas être résolue spirituellement, Maître Aziman vous en informe dès la première consultation.
+              </p>
+            </div>
+            <div class="card-luxury p-5 bg-white border border-gray-100">
+              <span class="text-gold-600 font-bold text-base">04. Suivi Personnalisé</span>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Vous conservez un contact direct par téléphone ou WhatsApp tout au long de votre travail.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gold-200/80 pt-8 space-y-4">
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark flex items-center gap-3">
+            <span>🌍</span> Pourquoi Maître Aziman a-t-il installé son cabinet en France ?
+          </h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Après des années d'exercice en Afrique de l'Ouest, Maître Aziman a choisi d'implanter son sanctuaire en région parisienne :
+          </p>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-gold-500 font-bold">✓</span>
+              <span><strong>Répondre à la détresse de la diaspora et des résidents en France :</strong> Rompre l'isolement des personnes confrontées à des ruptures, des blocages administratifs ou des attaques occultes.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold-500 font-bold">✓</span>
+              <span><strong>Offrir un lieu physique de consultation sécurisé :</strong> Un espace neutre et apaisant pour vous recevoir en toute sérénité à Paris.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold-500 font-bold">✓</span>
+              <span><strong>Assurer une logistique rapide des produits sacrés :</strong> Expédition express de vos savons, poudres et talismans en 48h partout en France.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="border-t border-gold-200/80 pt-8 space-y-4">
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
+            Foire Aux Questions sur le Maître Aziman
+          </h2>
+          
+          <div class="space-y-4">
+            <div class="bg-surface p-5 rounded-xl border border-gray-200">
+              <h3 class="font-bold text-sm text-brand-dark">Depuis combien d'années Maître Aziman exerce-t-il en France ?</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Maître Aziman reçoit des consultants en France depuis plus de quinze ans au sein de son cabinet et lors de ses déplacements réguliers.
+              </p>
+            </div>
+            <div class="bg-surface p-5 rounded-xl border border-gray-200">
+              <h3 class="font-bold text-sm text-brand-dark">Quelle est la différence entre un voyant ordinaire et un Bokonon initié ?</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Le Bokonon maîtrise un oracle géomantique vivant et sacré. Il ne se limite pas à prédire : il applique les rituels précis pour corriger votre destinée.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-4 space-y-6">
+        
+        <!-- Contact Card -->
+        <div class="card-luxury p-6 bg-brand-900 text-white shadow-xl space-y-5 sticky top-24">
+          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+            <img
+              src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=200&q=80"
+              alt="Maître Aziman"
+              class="w-14 h-14 rounded-full object-cover border-2 border-gold-400"
+            />
+            <div>
+              <h3 class="font-serif font-bold text-lg text-white">Maître Aziman</h3>
+              <p class="text-xs text-gold-300">Grand Prêtre Bokonon en France</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-xs text-gray-200">
+            <p><strong>Téléphone direct :</strong> {siteSettings.phoneDisplay}</p>
+            <p><strong>WhatsApp :</strong> {siteSettings.whatsappDisplay}</p>
+            <p><strong>Lieu :</strong> Cabinet en Île-de-France & À Distance</p>
+            <p><strong>Disponibilité :</strong> 7j/7 sans interruption</p>
+          </div>
+
+          <div class="pt-2 space-y-2">
+            <a
+              href={siteSettings.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-whatsapp w-full justify-center text-xs py-3 font-semibold"
+            >
+              <span>Échanger sur WhatsApp</span>
+            </a>
+
+            <a
+              href="/contact"
+              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center"
+            >
+              <span>Prendre RDV au Cabinet</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
     </div>
-  </div>
-</PageLayout>
+  </article>
+
+  <!-- CTA -->
+  <CtaSection />
+
+</BaseLayout>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /studio/
+Disallow: /studio
+
+Sitemap: https://marabout-aziman.fr/sitemap-index.xml

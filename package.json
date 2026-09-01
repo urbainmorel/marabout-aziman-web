@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.7.4",
     "@astrojs/tailwind": "^5.1.5",
     "@portabletext/react": "^3.2.0",
     "@sanity/astro": "^3.2.3",

@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DomainCard from '../../components/DomainCard.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import { servicesHubs } from '../../data/servicesData';
+
+const seoTitle = "Nos 8 Domaines de Rituels & Consultations | Cabinet Aziman France";
+const seoDesc = "Découvrez l'ensemble des 8 domaines d'intervention spirituelle du Cabinet Maître Aziman en France : Amour, Richesse, Commerce, Protection, Justice, Santé, Voyance.";
+---
+
+<BaseLayout title={seoTitle} description={seoDesc}>
+  
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Services & Rituels', href: '/services' }]} />
+      
+      <div class="mt-6 max-w-3xl space-y-4">
+        <div class="inline-block px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+          Pôle Rituels & Consultations Traditionnelles
+        </div>
+        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+          Nos 8 Domaines d'Intervention Spirituelle en France
+        </h1>
+        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+          Héritier des secrets du Fâ et des grands mystères traditionnels d'Afrique de l'Ouest, Maître Aziman réalise des interventions ciblées et personnalisées en cabinet à Paris et à distance sur toute la France.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 HUBS GRID -->
+  <section class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {servicesHubs.map((hub) => (
+        <DomainCard hub={hub} />
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection />
+
+</BaseLayout>

@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CtaSection from '../../../components/CtaSection.astro';
+import { allProducts, type ShopProduct } from '../../../data/shopData';
+import { siteSettings } from '../../../data/siteData';
+
+export async function getStaticPaths() {
+  return allProducts.map((prod) => ({
+    params: { category: prod.category, slug: prod.slug },
+    props: { prod },
+  }));
+}
+
+interface Props {
+  prod: ShopProduct;
+}
+
+const { prod } = Astro.props;
+const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article ésotérique consacré : ${prod.title} (Tarif : ${prod.price})`)}`;
+---
+
+<BaseLayout title={prod.metaTitle} description={prod.metaDescription}>
+  
+  <!-- HERO HEADER -->
+  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 md:py-16 border-b border-gold-400/20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs
+        items={[
+          { label: 'Boutique', href: '/boutique' },
+          { label: prod.categoryName, href: `/boutique/${prod.category}` },
+          { label: prod.title, href: `/boutique/${prod.category}/${prod.slug}` },
+        ]}
+      />
+      
+      <div class="mt-6 max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gold-400/20 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+          <span>{prod.categoryName}</span>
+          <span>•</span>
+          <span>Consécration Personnalisée</span>
+        </div>
+        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+          {prod.title}
+        </h1>
+        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+          {prod.metaDescription}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <article class="py-12 md:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <div class="lg:col-span-8 space-y-8 prose-aziman">
+        
+        <div class="rounded-2xl overflow-hidden shadow-lg max-h-96 bg-gray-100 mb-8">
+          <img
+            src={prod.image}
+            alt={prod.title}
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="text-sm sm:text-base text-gray-700 leading-relaxed space-y-4 whitespace-pre-line">
+          {prod.content}
+        </div>
+
+      </div>
+
+      <!-- Sticky Order Card -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="card-luxury p-6 bg-brand-900 text-white shadow-xl space-y-5 sticky top-24">
+          <div class="border-b border-white/10 pb-4">
+            <span class="text-xs text-gold-300 uppercase tracking-widest font-semibold">Article Consacré</span>
+            <h3 class="font-serif font-bold text-xl text-white mt-1">{prod.title}</h3>
+            <p class="text-2xl font-bold text-gold-300 mt-2">{prod.price}</p>
+          </div>
+
+          <div class="space-y-2 text-xs text-gray-300">
+            <p class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> En stock - Expédition express
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> Colissimo 48h France Métropolitaine
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> Emballage 100% anonyme & discret
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> Rituel de consécration inclus
+            </p>
+          </div>
+
+          <div class="pt-2 space-y-2">
+            <a
+              href={whatsappOrderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-whatsapp w-full justify-center text-xs py-3.5 font-bold shadow-lg"
+            >
+              <span>Commander sur WhatsApp</span>
+            </a>
+
+            <a
+              href={`tel:${siteSettings.phone}`}
+              class="btn-secondary w-full justify-center text-xs py-3 font-semibold text-center"
+            >
+              <span>Appeler : {siteSettings.phoneDisplay}</span>
+            </a>
+          </div>
+
+          <p class="text-[11px] text-gray-400 text-center">
+            Paiement sécurisé par CB, Virement, PayPal ou Espèces au cabinet.
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <CtaSection />
+
+</BaseLayout>

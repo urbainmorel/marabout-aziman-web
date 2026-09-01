@@ -1,80 +1,39 @@
 ---
-import { siteSettings } from '../mock/data';
+import { siteSettings } from '../data/siteData';
+import { servicesHubs } from '../data/servicesData';
+import { allZones } from '../data/zonesData';
 ---
 
-<footer class="bg-[#120046] text-white pt-14 pb-10 border-t border-brand-900/60" id="site-footer">
+<footer class="bg-brand-dark text-gray-300 pt-16 pb-12 border-t border-brand-800">
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Main Footer Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-gray-800">
       
       <!-- Col 1: Brand & Presentation -->
-      <div class="space-y-4">
+      <div class="lg:col-span-2 space-y-4">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center text-gold-300 shadow-md border border-gold-400/30">
+          <div class="w-10 h-10 bg-brand-800 rounded-xl flex items-center justify-center text-gold-300 shadow-md">
             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
               <path clip-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" fill-rule="evenodd"></path>
             </svg>
           </div>
-          <div>
-            <span class="font-serif font-bold text-xl text-white tracking-tight block">Cabinet Aziman</span>
-            <span class="text-[11px] text-gold-300/90 uppercase tracking-wider block font-sans">Grand Marabout en France</span>
+          <div class="flex flex-col">
+            <span class="font-serif font-bold text-2xl text-white tracking-tight leading-none">Cabinet Aziman</span>
+            <span class="text-xs text-gold-300 font-sans tracking-wide uppercase mt-1">{siteSettings.fullName}</span>
           </div>
         </div>
-        
-        <p class="text-xs text-gray-300 leading-relaxed">
-          Initié aux secrets ancestraux du Fâ et des grands sanctuaires traditionnels, Maître Aziman intervient pour résoudre vos problèmes sentimentaux, financiers et spirituels avec une discrétion totale.
+
+        <p class="text-sm text-gray-400 leading-relaxed max-w-sm">
+          Grand marabout traditionnel en France, héritier des secrets sacrés du Fâ et du Vodun. Interventions rapides en cabinet à Paris/Île-de-France et rituels sérieux à distance partout en France.
         </p>
 
-        <div class="pt-2 flex items-center gap-2 text-xs text-emerald-300 font-medium">
-          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-          </svg>
-          <span>Secret Professionnel & Confidentialité 100%</span>
-        </div>
-      </div>
-
-      <!-- Col 2: Rituels & Domaines -->
-      <div>
-        <h3 class="font-serif text-lg font-semibold text-gold-200 mb-4 border-b border-gold-400/20 pb-2">Nos Rituels Majeurs</h3>
-        <ul class="space-y-2 text-xs text-gray-300">
-          <li><a href="/#domaines" class="hover:text-gold-300 transition-colors">Retour Affectif Immédiat (24h-72h)</a></li>
-          <li><a href="/#domaines" class="hover:text-gold-300 transition-colors">Cadenas d'Amour & Scellement</a></li>
-          <li><a href="/#domaines" class="hover:text-gold-300 transition-colors">Protection & Désenvoûtement</a></li>
-          <li><a href="/#domaines" class="hover:text-gold-300 transition-colors">Ouverture de Chance & Prospérité</a></li>
-          <li><a href="/#domaines" class="hover:text-gold-300 transition-colors">Attraction Clientèle & Commerce</a></li>
-          <li><a href="/#domaines" class="hover:text-gold-300 transition-colors">Justice, Litiges & Papiers</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Liens & Navigation -->
-      <div>
-        <h3 class="font-serif text-lg font-semibold text-gold-200 mb-4 border-b border-gold-400/20 pb-2">Navigation Rapide</h3>
-        <ul class="space-y-2 text-xs text-gray-300">
-          <li><a href="/" class="hover:text-gold-300 transition-colors">Page d'Accueil</a></li>
-          <li><a href="/a-propos" class="hover:text-gold-300 transition-colors">À Propos de Maître Aziman</a></li>
-          <li><a href="/#boutique" class="hover:text-gold-300 transition-colors">Boutique Ésotérique Ancestrale</a></li>
-          <li><a href="/blog" class="hover:text-gold-300 transition-colors">Blog & Enseignements Spirituels</a></li>
-          <li><a href="/contact" class="hover:text-gold-300 transition-colors">Prendre Rendez-vous / Contact</a></li>
-          <li><a href="/mentions-legales" class="hover:text-gold-300 transition-colors">Informations Légales & Déontologie</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Contact & Urgences -->
-      <div class="space-y-3">
-        <h3 class="font-serif text-lg font-semibold text-gold-200 mb-4 border-b border-gold-400/20 pb-2">Cabinet & Contact</h3>
-        <div class="space-y-2.5 text-xs text-gray-300">
-          <p class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-gold-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-            <span>{siteSettings.address}</span>
+        <div class="pt-2 space-y-2 text-xs text-gray-400">
+          <p class="flex items-center gap-2">
+            <span class="text-emerald-400">●</span>
+            <strong class="text-gray-200">Disponibilité :</strong> {siteSettings.workingHours}
           </p>
-          <p class="flex items-center gap-2.5">
-            <svg class="w-4 h-4 text-gold-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span>{siteSettings.workingHours}</span>
-          </p>
-          <p class="flex items-center gap-2.5">
-            <svg class="w-4 h-4 text-gold-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            <a href={`mailto:${siteSettings.email}`} class="hover:text-gold-300">{siteSettings.email}</a>
+          <p class="flex items-center gap-2">
+            <span class="text-gold-400">●</span>
+            <strong class="text-gray-200">Localisation :</strong> {siteSettings.address}
           </p>
         </div>
 
@@ -83,30 +42,87 @@ import { siteSettings } from '../mock/data';
             href={siteSettings.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-whatsapp text-xs py-2 px-3 w-full justify-center"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-semibold shadow transition-colors"
           >
-            <span>WhatsApp Direct ({siteSettings.phoneDisplay})</span>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>WhatsApp direct : {siteSettings.whatsappDisplay}</span>
           </a>
         </div>
       </div>
 
-    </div>
-
-    <!-- Divider -->
-    <div class="gold-divider mb-6 opacity-40"></div>
-
-    <!-- Bottom Bar -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-400">
-      <p>© {new Date().getFullYear()} Cabinet Aziman — Tous droits réservés.</p>
-      
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="/mentions-legales" class="hover:text-gold-300 transition-colors">Mentions Légales</a>
-        <span>•</span>
-        <a href="/politique-confidentialite" class="hover:text-gold-300 transition-colors">Politique de Confidentialité</a>
-        <span>•</span>
-        <a href="/cgu" class="hover:text-gold-300 transition-colors">Conditions Générales (CGU)</a>
+      <!-- Col 2: Major Rituals (Services) -->
+      <div class="space-y-4">
+        <h4 class="font-serif font-semibold text-lg text-white tracking-wide border-b border-gold-400/30 pb-2">
+          Nos 8 Domaines
+        </h4>
+        <ul class="space-y-2 text-sm">
+          {servicesHubs.slice(0, 6).map((svc) => (
+            <li>
+              <a href={`/services/${svc.silo}`} class="text-gray-400 hover:text-gold-300 transition-colors">
+                {svc.name}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/services" class="text-gold-300 hover:underline text-xs font-semibold">
+              Voir tous les 8 domaines →
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <!-- Col 3: Regional Intervention Zones -->
+      <div class="space-y-4">
+        <h4 class="font-serif font-semibold text-lg text-white tracking-wide border-b border-gold-400/30 pb-2">
+          Zones d'Intervention
+        </h4>
+        <ul class="space-y-2 text-sm">
+          {allZones.slice(0, 6).map((zone) => (
+            <li>
+              <a href={`/zones-d-intervention/${zone.slug}`} class="text-gray-400 hover:text-gold-300 transition-colors">
+                {zone.regionName}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/zones-d-intervention" class="text-gold-300 hover:underline text-xs font-semibold">
+              Toutes les régions de France →
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Quick Navigation & Legal -->
+      <div class="space-y-4">
+        <h4 class="font-serif font-semibold text-lg text-white tracking-wide border-b border-gold-400/30 pb-2">
+          Informations
+        </h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/a-propos" class="text-gray-400 hover:text-gold-300 transition-colors">À Propos du Maître</a></li>
+          <li><a href="/cabinet-france" class="text-gray-400 hover:text-gold-300 transition-colors">Cabinet en France & RDV</a></li>
+          <li><a href="/temoignages-avis" class="text-gray-400 hover:text-gold-300 transition-colors">Avis & Témoignages</a></li>
+          <li><a href="/boutique" class="text-gray-400 hover:text-gold-300 transition-colors">Boutique Ésotérique</a></li>
+          <li><a href="/blog" class="text-gray-400 hover:text-gold-300 transition-colors">Blog & Guides</a></li>
+          <li><a href="/contact" class="text-gray-400 hover:text-gold-300 transition-colors">Contact & Urgences</a></li>
+          <li><a href="/mentions-legales" class="text-gray-400 hover:text-gold-300 transition-colors">Mentions Légales</a></li>
+          <li><a href="/politique-confidentialite" class="text-gray-400 hover:text-gold-300 transition-colors">Politique de Confidentialité</a></li>
+          <li><a href="/cgu" class="text-gray-400 hover:text-gold-300 transition-colors">Conditions Générales (CGU)</a></li>
+          <li><a href="/cookies" class="text-gray-400 hover:text-gold-300 transition-colors">Gestion des Cookies</a></li>
+        </ul>
+      </div>
+
     </div>
 
+    <!-- Bottom Disclaimer & Copyright -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+      <p>
+        © {new Date().getFullYear()} {siteSettings.legalEntity}. Tous droits réservés. SIRET : {siteSettings.siret}.
+      </p>
+      <p class="text-center md:text-right max-w-md">
+        Les rituels et consultations traditionnelles relèvent des pratiques spirituelles ancestrales. Ils ne remplacent aucunement un avis ou traitement médical dispensé par un médecin.
+      </p>
+    </div>
   </div>
 </footer>

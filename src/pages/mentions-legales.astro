@@ -1,49 +1,45 @@
 ---
-import LegalLayout from '../layouts/LegalLayout.astro';
-import { siteSettings } from '../mock/data';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import LegalTabs from '../components/LegalTabs.astro';
+import { mentionsLegalesContent } from '../data/legalData';
+
+const { title, metaTitle, metaDescription, intro, sections } = mentionsLegalesContent;
 ---
 
-<LegalLayout
-  title="Mentions Légales"
-  slug="mentions-legales"
-  lastUpdated="31 août 2026"
-  description="Mentions légales du site Cabinet Aziman : éditeur, hébergement Cloudflare, propriété intellectuelle et déontologie."
->
-  <h2>1. Éditeur du Site</h2>
-  <p>
-    Le site internet <strong>marabout-aziman.fr</strong> est édité par le <strong>Cabinet Maître Aziman</strong>, praticien en sciences traditionnelles et voyance divinatoire.
-  </p>
-  <ul>
-    <li><strong>Dénomination :</strong> Cabinet Maître Aziman</li>
-    <li><strong>Responsable de la publication :</strong> Maître Aziman</li>
-    <li><strong>Contact téléphonique :</strong> {siteSettings.phoneDisplay}</li>
-    <li><strong>WhatsApp :</strong> {siteSettings.phoneDisplay}</li>
-    <li><strong>Adresse électronique :</strong> {siteSettings.email}</li>
-    <li><strong>Localisation :</strong> Île-de-France (Paris) & Déplacements réguliers en France</li>
-  </ul>
+<BaseLayout title={metaTitle} description={metaDescription}>
+  
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-brand-900 to-brand-800 text-white py-12 border-b border-gold-400/20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: title, href: '/mentions-legales' }]} />
+      <div class="mt-4 max-w-3xl">
+        <h1 class="font-serif font-bold text-3xl sm:text-4xl text-white">
+          {title}
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-300 mt-2">
+          {intro}
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <h2>2. Hébergement du Site</h2>
-  <p>
-    Le présent site est hébergé par une infrastructure mondiale sécurisée :
-  </p>
-  <ul>
-    <li><strong>Hébergeur :</strong> Cloudflare Inc.</li>
-    <li><strong>Adresse :</strong> 101 Townsend St, San Francisco, CA 94107, USA</li>
-    <li><strong>Site web :</strong> <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">www.cloudflare.com</a></li>
-  </ul>
+  <!-- LEGAL CONTENT -->
+  <section class="py-12 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <LegalTabs activeTab="mentions" />
 
-  <h2>3. Propriété Intellectuelle</h2>
-  <p>
-    L'ensemble des textes, photographies, illustrations, chartes graphiques, logos et éléments sonores présents sur ce site sont protégés par les dispositions du Code de la Propriété Intellectuelle. Toute reproduction, représentation, modification ou diffusion totale ou partielle sans accord écrit préalable de l'éditeur est formellement interdite.
-  </p>
+    <div class="card-luxury p-6 sm:p-10 bg-white border border-gray-200 mt-6 space-y-8 prose-aziman">
+      {sections.map((sec) => (
+        <div class="space-y-3">
+          <h2 class="font-serif font-bold text-xl text-brand-dark border-b border-gray-100 pb-2">
+            {sec.title}
+          </h2>
+          <div class="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+            {sec.content}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
 
-  <h2>4. Nature des Prestations</h2>
-  <p>
-    Les consultations de voyance, conseils spirituels et rituels traditionnels dispensés par le Cabinet Aziman relèvent des arts divinatoires ancestraux et du développement personnel traditionnel. Ils ne sauraient en aucun cas se substituer à un avis médical, un traitement thérapeutique ou une consultation juridique et financière auprès de professionnels habilités.
-  </p>
-
-  <h2>5. Médiation et Litiges</h2>
-  <p>
-    En cas de réclamation ou litige, les parties s'engagent à privilégier une conciliation amiable auprès du Cabinet Aziman en formulant leur demande par écrit à l'adresse <code>{siteSettings.email}</code>.
-  </p>
-</LegalLayout>
+</BaseLayout>

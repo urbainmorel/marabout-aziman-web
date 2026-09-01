@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sanity from '@sanity/astro';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,9 @@ export default defineConfig({
     react(),
     tailwind({
       applyBaseStyles: false,
+    }),
+    sitemap({
+      filter: (page) => !page.includes('/studio'),
     }),
     sanity({
       projectId: 'y8rqnviv',
