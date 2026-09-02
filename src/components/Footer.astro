@@ -35,18 +35,13 @@ import { allZones } from '../data/zonesData';
           Nos 8 Domaines
         </h4>
         <ul class="space-y-2 text-xs sm:text-sm">
-          {servicesHubs.slice(0, 6).map((svc) => (
+          {servicesHubs.map((svc) => (
             <li>
               <a href={`/services/${svc.silo}`} class="text-slate-300 hover:text-white transition-colors">
                 {svc.name}
               </a>
             </li>
           ))}
-          <li>
-            <a href="/services" class="text-brand-300 hover:underline text-xs font-semibold">
-              Voir tous les 8 domaines →
-            </a>
-          </li>
         </ul>
       </div>
 
