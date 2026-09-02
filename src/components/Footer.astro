@@ -56,18 +56,13 @@ import { allZones } from '../data/zonesData';
           Zones en France
         </h4>
         <ul class="space-y-2 text-xs sm:text-sm">
-          {allZones.slice(0, 6).map((zone) => (
+          {allZones.map((zone) => (
             <li>
               <a href={`/zones-d-intervention/${zone.slug}`} class="text-slate-300 hover:text-white transition-colors">
                 {zone.regionName}
               </a>
             </li>
           ))}
-          <li>
-            <a href="/zones-d-intervention" class="text-brand-300 hover:underline text-xs font-semibold">
-              Toutes les régions de France →
-            </a>
-          </li>
         </ul>
       </div>
 

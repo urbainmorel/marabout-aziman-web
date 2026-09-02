@@ -689,6 +689,20 @@ console.log(`✅ Shop generated with FULL real contents: ${boutiqueCategories.le
 const ZONES_DIR = path.join(BASE_DIR, 'ZONES D\'INTERVENTION');
 const allZones = [];
 
+function formatRegionName(name) {
+  const map = {
+    'BORDEAUX & NOUVELLE-AQUITAINE': 'Bordeaux & Nouvelle-Aquitaine',
+    'LILLE & HAUTS-DE-FRANCE': 'Lille & Hauts-de-France',
+    'LYON & AUVERGNE-RHÔNE-ALPES': 'Lyon & Auvergne-Rhône-Alpes',
+    'MARSEILLE, NICE & PACA': 'Marseille, Nice & PACA',
+    'NANTES, RENNES & GRAND OUEST': 'Nantes, Rennes & Grand Ouest',
+    'PARIS & ÎLE-DE-FRANCE': 'Paris & Île-de-France',
+    'STRASBOURG & GRAND EST': 'Strasbourg & Grand Est',
+    'TOULOUSE, MONTPELLIER & OCCITANIE': 'Toulouse, Montpellier & Occitanie',
+  };
+  return map[name.toUpperCase()] || name;
+}
+
 if (fs.existsSync(ZONES_DIR)) {
   const zoneFiles = fs.readdirSync(ZONES_DIR).filter(f => f.endsWith('.txt'));
   zoneFiles.forEach((zFile, idx) => {
@@ -700,7 +714,7 @@ if (fs.existsSync(ZONES_DIR)) {
     allZones.push({
       title: cleanTitleEmojis(parsedZone.h1 || zBaseName),
       slug: parsedZone.slug || slugify(zBaseName),
-      regionName: zBaseName,
+      regionName: formatRegionName(zBaseName),
       metaTitle: parsedZone.metaTitle,
       metaDescription: parsedZone.metaDescription,
       keywords: parsedZone.keywords,

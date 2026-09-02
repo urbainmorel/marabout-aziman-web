@@ -16,7 +16,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Bordeaux et Nouvelle-Aquitaine : Voyance et Rituels Africains",
     "slug": "marabout-bordeaux-nouvelle-aquitaine",
-    "regionName": "BORDEAUX & NOUVELLE-AQUITAINE",
+    "regionName": "Bordeaux & Nouvelle-Aquitaine",
     "metaTitle": "Marabout à Bordeaux & Nouvelle-Aquitaine | Aziman",
     "metaDescription": "Consultez Maître Aziman, grand marabout à Bordeaux et Nouvelle-Aquitaine. Retour affectif, désenvoûtement et commerce. RDV immédiat.",
     "keywords": "grand marabout voyant Bordeaux, marabout Gironde 33, marabout retour affectif Nouvelle-Aquitaine, féticheur marabout Mérignac Pau",
@@ -28,7 +28,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Lille et Hauts-de-France : Voyance, Protection et Rituels",
     "slug": "marabout-lille-hauts-de-france",
-    "regionName": "LILLE & HAUTS-DE-FRANCE",
+    "regionName": "Lille & Hauts-de-France",
     "metaTitle": "Marabout à Lille & Hauts-de-France",
     "metaDescription": "Consultez Maître Aziman, grand marabout à Lille et dans les Hauts-de-France. Retour d'affection, protection et examens. RDV au cabinet ou à distance.",
     "keywords": "grand marabout voyant Lille, marabout Nord 59, marabout retour affectif Hauts-de-France, féticheur marabout Roubaix Tourcoing",
@@ -40,7 +40,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Lyon et Auvergne-Rhône-Alpes : Voyance et Rituels Traditionnels",
     "slug": "marabout-lyon-auvergne-rhone-alpes",
-    "regionName": "LYON & AUVERGNE-RHÔNE-ALPES",
+    "regionName": "Lyon & Auvergne-Rhône-Alpes",
     "metaTitle": "Marabout à Lyon & Rhône-Alpes",
     "metaDescription": "Consultez Maître Aziman, marabout à Lyon et en Rhône-Alpes. Retour affectif rapide, chance et rituels traditionnels. RDV privé ou à distance.",
     "keywords": "grand marabout voyant Lyon, voyant africain Villeurbanne, marabout retour affectif 69, féticheur marabout Saint-Étienne Grenoble",
@@ -52,7 +52,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Marseille, Nice et Région PACA : Voyance et Rituels Sacrés",
     "slug": "marabout-marseille-nice-paca",
-    "regionName": "MARSEILLE, NICE & PACA",
+    "regionName": "Marseille, Nice & PACA",
     "metaTitle": "Marabout à Marseille & Nice PACA",
     "metaDescription": "Consultez Maître Aziman, grand marabout à Marseille, Nice et région PACA. Retour affectif, protection et chance aux jeux. RDV rapide 7j/7.",
     "keywords": "grand marabout voyant Marseille, marabout Nice PACA, marabout retour affectif 13, féticheur marabout Toulon Aix-en-Provence",
@@ -64,7 +64,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Nantes, Rennes et Grand Ouest : Voyance et Rituels Traditionnels",
     "slug": "marabout-nantes-rennes-grand-ouest",
-    "regionName": "NANTES, RENNES & GRAND OUEST",
+    "regionName": "Nantes, Rennes & Grand Ouest",
     "metaTitle": "Marabout à Nantes & Rennes",
     "metaDescription": "Consultez Maître Aziman, grand marabout à Nantes, Rennes et Grand Ouest. Retour affectif, déblocage de vie et protection. RDV rapide.",
     "keywords": "grand marabout voyant Nantes, marabout Rennes Bretagne, marabout retour affectif 44, féticheur marabout Angers Brest",
@@ -76,7 +76,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Paris et Île-de-France : Cabinet de Voyance et Rituels Traditionnels",
     "slug": "marabout-paris-ile-de-france",
-    "regionName": "PARIS & ÎLE-DE-FRANCE",
+    "regionName": "Paris & Île-de-France",
     "metaTitle": "Marabout à Paris & Île-de-France",
     "metaDescription": "Consultez Maître Aziman, grand marabout à Paris et en Île-de-France. Retour affectif, chance et protection. RDV au cabinet ou à distance 7j/7.",
     "keywords": "grand marabout voyant Paris, cabinet marabout Île-de-France, marabout retour affectif 75, féticheur marabout Bobigny Créteil Nanterre",
@@ -88,7 +88,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Strasbourg et Grand Est : Voyance, Justice et Rituels Sacrés",
     "slug": "marabout-strasbourg-grand-est",
-    "regionName": "STRASBOURG & GRAND EST",
+    "regionName": "Strasbourg & Grand Est",
     "metaTitle": "Marabout à Strasbourg & Grand Est",
     "metaDescription": "Consultez Maître Aziman, grand marabout à Strasbourg et dans le Grand Est. Rituels d'amour, justice, affaires et protection. RDV immédiat.",
     "keywords": "grand marabout voyant Strasbourg, marabout Alsace 67 68, marabout retour affectif Grand Est, féticheur marabout Mulhouse Metz Nancy",
@@ -100,7 +100,7 @@ export const allZones: ZoneItem[] = [
   {
     "title": "Grand Marabout à Toulouse, Montpellier et Occitanie : Voyance et Rituels Sacrés",
     "slug": "marabout-toulouse-montpellier-occitanie",
-    "regionName": "TOULOUSE, MONTPELLIER & OCCITANIE",
+    "regionName": "Toulouse, Montpellier & Occitanie",
     "metaTitle": "Marabout à Toulouse & Montpellier",
     "metaDescription": "Consultez Maître Aziman, grand marabout à Toulouse et Montpellier en Occitanie. Rituels d'amour, chance financière et santé. RDV 7j/7.",
     "keywords": "grand marabout voyant Toulouse, marabout Montpellier Hérault, marabout retour affectif 31, féticheur marabout Nîmes Perpignan",
