@@ -71,10 +71,10 @@ import { allZones } from '../data/zonesData';
         </ul>
       </div>
 
-      <!-- Col 4: Quick Navigation & Legal -->
+      <!-- Col 4: Quick Navigation -->
       <div class="space-y-4">
         <h4 class="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-brand-800 pb-2">
-          Informations & Légal
+          Navigation Rapide
         </h4>
         <ul class="space-y-2 text-xs sm:text-sm">
           <li><a href="/a-propos" class="text-slate-300 hover:text-white transition-colors">À Propos du Maître</a></li>
@@ -83,17 +83,24 @@ import { allZones } from '../data/zonesData';
           <li><a href="/boutique" class="text-slate-300 hover:text-white transition-colors">Boutique Ésotérique</a></li>
           <li><a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog & Guides</a></li>
           <li><a href="/contact" class="text-slate-300 hover:text-white transition-colors">Contact & Urgences</a></li>
-          <li><a href="/mentions-legales" class="text-slate-400 hover:text-white transition-colors">Mentions Légales</a></li>
-          <li><a href="/politique-confidentialite" class="text-slate-400 hover:text-white transition-colors">Politique de Confidentialité</a></li>
-          <li><a href="/cgu" class="text-slate-400 hover:text-white transition-colors">Conditions Générales (CGU)</a></li>
-          <li><a href="/cookies" class="text-slate-400 hover:text-white transition-colors">Gestion des Cookies</a></li>
         </ul>
       </div>
 
     </div>
 
+    <!-- Horizontal Legal Sub-section with Balanced Spacing -->
+    <div class="py-6 border-b border-slate-800/80 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-slate-400 font-sans">
+      <a href="/mentions-legales" class="hover:text-white transition-colors">Mentions Légales</a>
+      <span class="text-slate-700 hidden sm:inline">•</span>
+      <a href="/politique-confidentialite" class="hover:text-white transition-colors">Politique de Confidentialité</a>
+      <span class="text-slate-700 hidden sm:inline">•</span>
+      <a href="/cgu" class="hover:text-white transition-colors">Conditions Générales (CGU)</a>
+      <span class="text-slate-700 hidden sm:inline">•</span>
+      <a href="/cookies" class="hover:text-white transition-colors">Gestion des Cookies</a>
+    </div>
+
     <!-- Bottom Disclaimer & Copyright -->
-    <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 font-sans">
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 font-sans">
       <p>
         © {new Date().getFullYear()} {siteSettings.legalEntity} / {siteSettings.commercialName}. SIRET : {siteSettings.siret}.
       </p>
