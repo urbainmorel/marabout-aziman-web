@@ -27,28 +27,6 @@ import { allZones } from '../data/zonesData';
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm font-sans">
           Grand marabout voyant traditionnel en France, héritier des secrets sacrés du Fâ et du Vodun d'Abomey et Cotonou. Consultations privées en Île-de-France et rituels sérieux à distance partout en France et à l'international.
         </p>
-
-        <div class="pt-2 space-y-2 text-xs text-slate-200">
-          <p class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <strong class="text-white">Disponibilité :</strong> {siteSettings.workingHours}
-          </p>
-          <p class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-brand-400"></span>
-            <strong class="text-white">Cabinet France :</strong> {siteSettings.address}
-          </p>
-        </div>
-
-        <div class="pt-3 flex flex-wrap gap-3">
-          <a
-            href={siteSettings.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-whatsapp text-xs py-2.5 px-4 font-bold shadow-md"
-          >
-            <span>WhatsApp 24/7</span>
-          </a>
-        </div>
       </div>
 
       <!-- Col 2: Major Rituals (Services) -->
@@ -114,23 +92,8 @@ import { allZones } from '../data/zonesData';
 
     </div>
 
-    <!-- Payment & Guarantee Badges -->
-    <div class="py-6 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300 font-sans">
-      <div class="flex items-center gap-3">
-        <span class="text-brand-300 font-bold uppercase tracking-wider text-[11px]">Garanties :</span>
-        <span>Secret Initiatique 100%</span>
-        <span class="text-slate-600">•</span>
-        <span>Colis Discret 24/48h</span>
-        <span class="text-slate-600">•</span>
-        <span>Consultations Certifiées</span>
-      </div>
-      <div class="flex items-center gap-2 text-slate-300 text-xs">
-        <span>Règlements sécurisés : CB • Virement • PayPal • Espèces au cabinet</span>
-      </div>
-    </div>
-
     <!-- Bottom Disclaimer & Copyright -->
-    <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 font-sans">
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 font-sans">
       <p>
         © {new Date().getFullYear()} {siteSettings.legalEntity} / {siteSettings.commercialName}. SIRET : {siteSettings.siret}.
       </p>
