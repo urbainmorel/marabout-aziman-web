@@ -434,7 +434,7 @@ SERVICES_MAP.forEach((svc, index) => {
     content: parsedHub?.rawBody || '',
     contentHtml: parsedHub?.contentHtml || '',
     rawContent: parsedHub?.raw || '',
-    subservices: subservices.map(s => ({ title: cleanTitleEmojis(s.title), slug: s.slug, metaDescription: s.metaDescription, image: s.image }))
+    subservices: subservices
   });
 });
 
@@ -455,6 +455,8 @@ export interface SubService {
   image: string;
 }
 
+export interface ServiceSubservice extends SubService {}
+
 export interface ServiceHub {
   title: string;
   silo: string;
@@ -466,7 +468,7 @@ export interface ServiceHub {
   content: string;
   contentHtml: string;
   rawContent: string;
-  subservices: { title: string; slug: string; metaDescription: string; image: string }[];
+  subservices: SubService[];
 }
 
 export const servicesHubs: ServiceHub[] = ${JSON.stringify(servicesHubs, null, 2)};
@@ -474,7 +476,7 @@ export const allSubservices: SubService[] = ${JSON.stringify(allSubservices, nul
 `
 );
 
-console.log(`✅ Services generated without stickers: ${servicesHubs.length} hubs, ${allSubservices.length} subservices.`);
+console.log(`✅ Services generated with FULL real contents: ${servicesHubs.length} hubs, ${allSubservices.length} subservices.`);
 
 // ----------------------------------------------------
 // 2. BOUTIQUE
@@ -527,6 +529,102 @@ BOUTIQUE_MAP.forEach((cat, index) => {
         allProducts.push(prodObj);
       });
     }
+  } else if (cat.category === 'pharmacopee-vegetale') {
+    // 4 products from Pharmacopée Africaine
+    const pharmaProducts = [
+      {
+        title: "Bouteille d'Agbo Vigueur Masculine (Érection et Reins)",
+        slug: "bouteille-agbo-vigueur-masculine",
+        price: "60 €",
+        metaTitle: "Bouteille d'Agbo Vigueur Masculine en France | Aziman",
+        metaDescription: "Commandez l'Agbo traditionnel de Maître Aziman. Macération puissante pour renforcer l'érection, les reins et l'endurance virile. Livraison 48h France.",
+        content: `## Remède Ancestral de Vitalité Virile : L'Agbo Traditionnel
+
+La célèbre macération liquide pour hommes. Ainsi, elle purifie le sang, fortifie les reins et garantit des érections fermes et une endurance prolongée.
+
+### Propriétés et Bienfaits
+- Déblocage des flux sanguins et renforcement de l'appareil reproducteur masculin
+- Élimination de la fatigue générale et de la faiblesse des reins
+- Préparation 100% naturelle à base d'écorces et de racines sacrées d'Afrique de l'Ouest
+
+### Conseil d'utilisation
+Prendre un petit verre matin à jeun pendant 14 jours.`
+      },
+      {
+        title: "Décoction Gynécologique de Fertilité (Matrice et Trompes)",
+        slug: "decoction-gynecologique-fertilite",
+        price: "65 €",
+        metaTitle: "Décoction Gynécologique de Fertilité Féminine | Aziman",
+        metaDescription: "Remède traditionnel pour la fertilité féminine en France. Nettoie la matrice, débouche les trompes et stimule l'ovulation. Livraison discrète.",
+        content: `## Décoction Traditionnelle de Fertilité et Purification Matrice
+
+Spécialement formulée pour les femmes qui désirent concevoir. De plus, elle nettoie l'appareil reproducteur, débouche les trompes et stimule l'ovulation pour concevoir rapidement.
+
+### Propriétés et Bienfaits
+- Nettoyage en profondeur de la matrice et régulation des cycles menstruels
+- Désobstruction naturelle des trompes et stimulation ovarienne
+- Préparation à base de plantes douces et souveraines sélectionnées par Maître Aziman
+
+### Conseil d'utilisation
+À boire tiède chaque soir au coucher durant 21 jours consécutifs.`
+      },
+      {
+        title: "Potion Traditionnelle de Sevrage de l'Alcoolisme",
+        slug: "potion-traditionnelle-sevrage-alcool",
+        price: "75 €",
+        metaTitle: "Potion de Sevrage de l'Alcoolisme et Addictions | Aziman",
+        metaDescription: "Solution traditionnelle pour arrêter l'alcool définitivement. Potion végétale sans manque ni effets secondaires. Expédition rapide en France.",
+        content: `## Remède Végétal contre l'Addiction à l'Alcool
+
+Un remède végétal puissant à base d'écorces de rejet. Par conséquent, il provoque un dégoût physique et définitif de la boisson sans crise de manque.
+
+### Propriétés et Bienfaits
+- Dégoût progressif et durable de tout type d'alcool (vins, bières, spiritueux)
+- Apaisement du système nerveux pour éviter l'irritabilité et le manque
+- Purification du foie et élimination rapide des toxines accumulées
+
+### Conseil d'utilisation
+Verser quelques gouttes dans les boissons ou repas quotidiens selon la notice.`
+      },
+      {
+        title: "Pack d'Écorces et Racines Sacrées Gouro (Tisanes et Bains)",
+        slug: "pack-ecorces-racines-gouro",
+        price: "50 €",
+        metaTitle: "Pack Racines et Écorces Gouro en France | Aziman",
+        metaDescription: "Achetez le véritable fagot de racines Gouro en France. Idéal pour infusions énergisantes, hémorroïdes et vitalité. Livraison discrète 48h.",
+        content: `## Racines et Écorces Authentiques Gouro de Côte d'Ivoire
+
+Un assortiment de racines brutes d'Afrique. Idéal pour préparer vos propres infusions énergisantes, soigner les hémorroïdes et purifier le corps.
+
+### Propriétés et Bienfaits
+- Racine Gouro brute reconnue pour son effet tonique instantané
+- Traitement naturel efficace des hémorroïdes internes et externes
+- Propriétés purificatrices et revitalisantes pour l'ensemble de l'organisme
+
+### Conseil d'utilisation
+Faire bouillir le fagot de racines dans 2 litres d'eau pendant 15 minutes, filtrer et consommer tiède.`
+      }
+    ];
+
+    pharmaProducts.forEach((p, pIdx) => {
+      const pImage = IMAGES.sante[(pIdx + 1) % IMAGES.sante.length];
+      const prodObj = {
+        title: cleanTitleEmojis(p.title),
+        slug: p.slug,
+        category: cat.category,
+        categoryName: cat.name,
+        price: p.price,
+        metaTitle: p.metaTitle,
+        metaDescription: p.metaDescription,
+        keywords: "pharmacopee africaine, agbo en france, plantes medicinales afrique",
+        content: p.content,
+        contentHtml: markdownToHtml(p.content),
+        rawContent: p.content,
+        image: pImage
+      };
+      products.push(prodObj);
+      allProducts.push(prodObj);
+    });
   }
 
   boutiqueCategories.push({
@@ -541,7 +639,7 @@ BOUTIQUE_MAP.forEach((cat, index) => {
     content: parsedCat?.rawBody || '',
     contentHtml: parsedCat?.contentHtml || '',
     rawContent: parsedCat?.raw || '',
-    products: products.map(p => ({ title: cleanTitleEmojis(p.title), slug: p.slug, price: p.price, image: p.image, metaDescription: p.metaDescription }))
+    products: products
   });
 });
 
@@ -575,7 +673,7 @@ export interface ShopCategory {
   content: string;
   contentHtml: string;
   rawContent: string;
-  products: { title: string; slug: string; price: string; image: string; metaDescription: string }[];
+  products: ShopProduct[];
 }
 
 export const boutiqueCategories: ShopCategory[] = ${JSON.stringify(boutiqueCategories, null, 2)};
@@ -583,7 +681,7 @@ export const allProducts: ShopProduct[] = ${JSON.stringify(allProducts, null, 2)
 `
 );
 
-console.log(`✅ Shop generated without stickers: ${boutiqueCategories.length} categories, ${allProducts.length} products.`);
+console.log(`✅ Shop generated with FULL real contents: ${boutiqueCategories.length} categories, ${allProducts.length} products.`);
 
 // ----------------------------------------------------
 // 3. ZONES
