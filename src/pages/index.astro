@@ -73,24 +73,19 @@ const faqSchema = {
 
 <BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={faqSchema}>
   
-  <!-- 1. HERO SECTION (Fidèle à PAGE D'ACCUEIL.txt) -->
-  <section class="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-950 text-white overflow-hidden py-14 sm:py-18 md:py-24 border-b border-brand-800">
-    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div class="max-w-4xl mx-auto space-y-6">
-        
-        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5.5xl text-white tracking-tight leading-tight">
-          Grand Marabout en France : <br class="hidden sm:inline" />
-          <span class="text-brand-200 font-serif italic">Cabinet de Voyance & Rituels Traditionnels</span> Aziman
-        </h1>
+  <!-- 1. HERO SECTION - AVEC BEAU DÉGRADÉ ET SEULEMENT LE TITRE ET BOUTONS -->
+  <section class="relative bg-gradient-to-br from-[#0c0418] via-[#210943] to-[#0c0418] text-white overflow-hidden py-16 sm:py-20 md:py-28 border-b border-brand-800">
+    <!-- Subtle Ambient Glow -->
+    <div class="absolute -top-32 -left-32 w-80 h-80 bg-brand-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="space-y-4 max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-slate-200 font-sans leading-relaxed">
-          <p>
-            Vous traversez une période de doutes sentimentaux, financiers ou spirituels ? Consulter un <strong class="text-white font-bold">marabout en France</strong> réputé constitue le premier pas vers la résolution définitive de vos blocages. En effet, Maître Aziman met à votre service plus de vingt-cinq années d'initiation aux secrets ancestraux du Fâ et du Vodun. Ainsi, vous bénéficiez d'une écoute attentive, d'une discrétion absolue et d'interventions occultes rapides.
-          </p>
-          <p class="text-slate-300">
-            Que vous souhaitiez une consultation privée dans son cabinet en Île-de-France ou un travail sérieux à distance, Maître Aziman intervient avec précision. Par conséquent, chaque rituel est personnalisé selon votre date de naissance et votre situation personnelle.
-          </p>
-        </div>
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="max-w-3xl mx-auto space-y-8">
+        
+        <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5.5xl text-white tracking-tight leading-tight drop-shadow-sm">
+          Grand Marabout Aziman en France : <br class="hidden sm:inline" />
+          <span class="text-brand-200 font-serif italic">Cabinet de Voyance & Rituels Traditionnels</span>
+        </h1>
 
         <!-- CTA Buttons -->
         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -138,58 +133,81 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- 2. POURQUOI CONSULTER LE MAÎTRE AZIMAN EN FRANCE ? (Fidèle à PAGE D'ACCUEIL.txt) -->
-  <section class="py-14 sm:py-18 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- 2. SECTION À PROPOS DU CABINET (Placée juste avant "Pourquoi consulter le Maître Aziman en France ?") -->
+  <section class="py-12 sm:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto space-y-6">
-      <div class="text-center space-y-2">
-        <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
-          Pourquoi consulter le Maître Aziman en France ?
+      <div class="text-center space-y-2 mb-6">
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
+          À Propos du Cabinet Aziman
         </h2>
         <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
       </div>
 
-      <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-sans text-center sm:text-left">
-        Faire appel à un authentique <strong class="text-brand-dark font-bold">marabout en France</strong> vous garantit un accompagnement sur mesure. De plus, Maître Aziman applique une déontologie stricte fondée sur le secret initiatique et le respect des lois de la nature.
-      </p>
+      <div class="space-y-4 text-sm sm:text-base md:text-lg text-slate-700 font-serif leading-relaxed text-justify sm:text-left">
+        <p>
+          Vous traversez une période de doutes sentimentaux, financiers ou spirituels ? Consulter un <strong class="text-brand-dark font-bold">marabout en France</strong> réputé constitue le premier pas vers la résolution définitive de vos blocages. En effet, Maître Aziman met à votre service plus de vingt-cinq années d'initiation aux secrets ancestraux du Fâ et du Vodun. Ainsi, vous bénéficiez d'une écoute attentive, d'une discrétion absolue et d'interventions occultes rapides.
+        </p>
+        <p>
+          Que vous souhaitiez une consultation privée dans son cabinet en Île-de-France ou un travail sérieux à distance, Maître Aziman intervient avec précision. Par conséquent, chaque rituel est personnalisé selon votre profil spirituel et votre situation personnelle.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-sans">
-        <div class="card-luxury p-5 bg-brand-50/60 border border-brand-200/80 rounded-2xl flex items-start gap-3.5">
-          <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
-          <div>
-            <h3 class="font-bold text-sm text-brand-dark">Une lignée initiatique pure :</h3>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1">Initié dès l'enfance dans les grands sanctuaires traditionnels d'Afrique de l'Ouest.</p>
-          </div>
+  <!-- 3. POURQUOI CONSULTER LE MAÎTRE AZIMAN EN FRANCE ? (Fidèle à PAGE D'ACCUEIL.txt) -->
+  <section class="py-12 sm:py-16 bg-surface border-y border-brand-200" id="pourquoi-aziman">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="text-center space-y-2">
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
+            Pourquoi consulter le Maître Aziman en France ?
+          </h2>
+          <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
         </div>
 
-        <div class="card-luxury p-5 bg-brand-50/60 border border-brand-200/80 rounded-2xl flex items-start gap-3.5">
-          <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
-          <div>
-            <h3 class="font-bold text-sm text-brand-dark">Un cabinet discret en France :</h3>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1">Un lieu neutre et apaisant pour vous recevoir en toute confidentialité.</p>
-          </div>
-        </div>
+        <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-sans text-center sm:text-left">
+          Faire appel à un authentique <strong class="text-brand-dark font-bold">marabout en France</strong> vous garantit un accompagnement sur mesure. De plus, Maître Aziman applique une déontologie stricte fondée sur le secret initiatique et le respect des lois de la nature.
+        </p>
 
-        <div class="card-luxury p-5 bg-brand-50/60 border border-brand-200/80 rounded-2xl flex items-start gap-3.5">
-          <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
-          <div>
-            <h3 class="font-bold text-sm text-brand-dark">Des résultats rapides et vérifiables :</h3>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1">Des rituels ciblés conçus pour déclencher des déblocages visibles en quelques jours.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-sans">
+          <div class="card-luxury p-5 bg-white border border-brand-200/80 rounded-2xl flex items-start gap-3.5 shadow-xs">
+            <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
+            <div>
+              <h3 class="font-bold text-sm text-brand-dark">Une lignée initiatique pure :</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Initié dès l'enfance dans les grands sanctuaires traditionnels d'Afrique de l'Ouest.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card-luxury p-5 bg-brand-50/60 border border-brand-200/80 rounded-2xl flex items-start gap-3.5">
-          <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
-          <div>
-            <h3 class="font-bold text-sm text-brand-dark">Une disponibilité totale :</h3>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1">Consultations d'urgence 7j/7 au cabinet, par appel direct ou via WhatsApp.</p>
+          <div class="card-luxury p-5 bg-white border border-brand-200/80 rounded-2xl flex items-start gap-3.5 shadow-xs">
+            <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
+            <div>
+              <h3 class="font-bold text-sm text-brand-dark">Un cabinet discret en France :</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Un lieu neutre et apaisant pour vous recevoir en toute confidentialité.</p>
+            </div>
+          </div>
+
+          <div class="card-luxury p-5 bg-white border border-brand-200/80 rounded-2xl flex items-start gap-3.5 shadow-xs">
+            <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
+            <div>
+              <h3 class="font-bold text-sm text-brand-dark">Des résultats rapides et vérifiables :</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Des rituels ciblés conçus pour déclencher des déblocages visibles en quelques jours.</p>
+            </div>
+          </div>
+
+          <div class="card-luxury p-5 bg-white border border-brand-200/80 rounded-2xl flex items-start gap-3.5 shadow-xs">
+            <div class="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">✓</div>
+            <div>
+              <h3 class="font-bold text-sm text-brand-dark">Une disponibilité totale :</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Consultations d'urgence 7j/7 au cabinet, par appel direct ou via WhatsApp.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. NOS 8 DOMAINES D'INTERVENTION SPIRITUELLE (Fidèle à PAGE D'ACCUEIL.txt) -->
-  <section class="py-14 sm:py-18 bg-surface border-y border-brand-200" id="domaines">
+  <!-- 4. NOS 8 DOMAINES D'INTERVENTION SPIRITUELLE (2 COLONNES SUR MOBILE) -->
+  <section class="py-14 sm:py-18 bg-white" id="domaines">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mx-auto text-center space-y-2 mb-10">
@@ -202,7 +220,8 @@ const faqSchema = {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <!-- 2 colonnes sur mobile (grid-cols-2), 4 colonnes sur desktop (lg:grid-cols-4) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {servicesHubs.map((hub, idx) => (
           <DomainCard hub={hub} index={idx + 1} />
         ))}
@@ -211,26 +230,29 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- 4. LA BOUTIQUE ÉSOTÉRIQUE ANCESTRALE (Fidèle à PAGE D'ACCUEIL.txt) -->
-  <section class="py-14 sm:py-18 max-w-content mx-auto px-4 sm:px-6 lg:px-8" id="boutique">
-    <div class="max-w-3xl mx-auto text-center space-y-2 mb-10">
-      <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
-        La Boutique Ésotérique Ancestrale (Livraison France en 24/48h)
-      </h2>
-      <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
-      <p class="text-xs sm:text-sm text-slate-600 font-sans pt-2">
-        Chaque article de notre boutique est préparé, magnétisé et consacré selon les règles strictes de la tradition. Commandez en ligne avec livraison discrète par Colissimo ou Chronopost :
-      </p>
-    </div>
+  <!-- 5. LA BOUTIQUE ÉSOTÉRIQUE ANCESTRALE (2 COLONNES SUR MOBILE) -->
+  <section class="py-14 sm:py-18 bg-surface border-y border-brand-200" id="boutique">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center space-y-2 mb-10">
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
+          La Boutique Ésotérique Ancestrale (Livraison France en 24/48h)
+        </h2>
+        <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
+        <p class="text-xs sm:text-sm text-slate-600 font-sans pt-2">
+          Chaque article de notre boutique est préparé, magnétisé et consacré selon les règles strictes de la tradition. Commandez en ligne avec livraison discrète par Colissimo ou Chronopost :
+        </p>
+      </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-      {boutiqueCategories.map((category, idx) => (
-        <ShopCard category={category} index={idx + 1} />
-      ))}
+      <!-- 2 colonnes sur mobile (grid-cols-2), 4 colonnes sur desktop (lg:grid-cols-4) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        {boutiqueCategories.map((category, idx) => (
+          <ShopCard category={category} index={idx + 1} />
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- 5. CABINET EN ÎLE-DE-FRANCE & DÉPLACEMENTS RÉGIONAUX (Fidèle à PAGE D'ACCUEIL.txt) -->
+  <!-- 6. CABINET EN ÎLE-DE-FRANCE & DÉPLACEMENTS RÉGIONAUX (Fidèle à PAGE D'ACCUEIL.txt) -->
   <section class="py-14 sm:py-18 bg-brand-950 text-white border-y border-brand-800" id="zones">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
@@ -244,21 +266,21 @@ const faqSchema = {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto text-left">
         {homeZones.map((zone) => (
           <a
             href={`/zones-d-intervention/${zone.slug}`}
-            class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-300 hover:bg-white/10 transition-all duration-200 group flex flex-col justify-between"
+            class="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-300 hover:bg-white/10 transition-all duration-200 group flex flex-col justify-between"
           >
             <div>
-              <h3 class="font-serif font-bold text-sm sm:text-base text-white group-hover:text-brand-200 transition-colors">
+              <h3 class="font-serif font-bold text-xs sm:text-base text-white group-hover:text-brand-200 transition-colors leading-tight">
                 {zone.name}
               </h3>
-              <p class="text-[11px] text-slate-300 mt-1 font-sans">
+              <p class="text-[10px] sm:text-[11px] text-slate-300 mt-1 font-sans">
                 ({zone.depts})
               </p>
             </div>
-            <span class="text-[11px] text-brand-300 font-bold mt-3 inline-flex items-center gap-1 group-hover:underline">
+            <span class="text-[10px] sm:text-[11px] text-brand-300 font-bold mt-2.5 inline-flex items-center gap-1 group-hover:underline">
               <span>Voir la zone</span>
               <span>→</span>
             </span>
@@ -269,7 +291,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- 6. TÉMOIGNAGES & AVIS VÉRIFIÉS (Strictement les 3 avis du fichier PAGE D'ACCUEIL.txt) -->
+  <!-- 7. TÉMOIGNAGES & AVIS VÉRIFIÉS (Strictement les 3 avis du fichier PAGE D'ACCUEIL.txt) -->
   <section class="py-14 sm:py-18 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center space-y-2 mb-10">
       <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
@@ -298,7 +320,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- 7. FOIRE AUX QUESTIONS (Strictement les 3 questions du fichier PAGE D'ACCUEIL.txt) -->
+  <!-- 8. FOIRE AUX QUESTIONS (Strictement les 3 questions du fichier PAGE D'ACCUEIL.txt) -->
   <section class="py-14 sm:py-18 bg-surface border-t border-brand-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-2 mb-10">
@@ -328,7 +350,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- 8. CONTACTEZ LE CABINET DU MAÎTRE AZIMAN DÈS AUJOURD'HUI (Fidèle à PAGE D'ACCUEIL.txt) -->
+  <!-- 9. CONTACTEZ LE CABINET DU MAÎTRE AZIMAN DÈS AUJOURD'HUI (Fidèle à PAGE D'ACCUEIL.txt) -->
   <section class="py-14 sm:py-18 bg-brand-950 text-white border-t border-brand-800 text-center">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto space-y-6">

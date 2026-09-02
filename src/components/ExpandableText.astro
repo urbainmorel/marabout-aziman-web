@@ -1,0 +1,56 @@
+---
+interface Props {
+  text: string;
+  className?: string;
+}
+
+const { text, className = '' } = Astro.props;
+---
+
+<div class={`expandable-text-container font-sans text-xs sm:text-sm text-slate-700 leading-relaxed ${className}`}>
+  <p class="expandable-content line-clamp-2 transition-all duration-200">
+    {text}
+  </p>
+  <button
+    type="button"
+    class="expandable-toggle text-brand-900 hover:text-brand-700 font-bold text-[11px] sm:text-xs mt-1 inline-flex items-center gap-0.5 focus:outline-none cursor-pointer underline decoration-brand-300 underline-offset-2"
+    aria-expanded="false"
+  >
+    ...plus
+  </button>
+</div>
+
+<script>
+  function initExpandableText() {
+    document.querySelectorAll('.expandable-toggle').forEach((button) => {
+      // Avoid duplicate listener attachment
+      if ((button as any)._expandableInit) return;
+      (button as any)._expandableInit = true;
+
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const container = button.closest('.expandable-text-container');
+        const content = container?.querySelector('.expandable-content');
+        if (!content) return;
+
+        const isExpanded = content.classList.contains('line-clamp-none');
+        if (isExpanded) {
+          content.classList.remove('line-clamp-none');
+          content.classList.add('line-clamp-2');
+          button.textContent = '...plus';
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          content.classList.remove('line-clamp-2');
+          content.classList.add('line-clamp-none');
+          button.textContent = 'voir moins';
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  // Run on page load and view transitions
+  initExpandableText();
+  document.addEventListener('astro:page-load', initExpandableText);
+</script>

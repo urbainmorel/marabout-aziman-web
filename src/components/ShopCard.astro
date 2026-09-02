@@ -1,4 +1,6 @@
 ---
+import ExpandableText from './ExpandableText.astro';
+
 interface Props {
   category: {
     category: string;
@@ -25,21 +27,21 @@ const homeShopDescriptions: Record<string, string> = {
   'pharmacopee-vegetale': "Bouteilles d'Agbo pour la vitalité masculine et décoctions de fertilité féminine."
 };
 
-const desc = homeShopDescriptions[category.category] || category.homeDescription || category.content?.slice(0, 120);
+const desc = homeShopDescriptions[category.category] || category.homeDescription || category.content?.slice(0, 120) || '';
 ---
 
-<div class="card-luxury p-5 sm:p-6 flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs bg-white">
+<div class="card-luxury p-3 sm:p-5 flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs bg-white rounded-2xl">
   <div>
-    <div class="relative h-40 mb-4 rounded-xl overflow-hidden bg-brand-950">
+    <div class="relative h-28 sm:h-36 md:h-40 mb-3 rounded-xl overflow-hidden bg-brand-950">
       <img
         src={category.image}
         alt={category.title}
         loading="lazy"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent"></div>
-      <div class="absolute bottom-3 left-3 right-3">
-        <h3 class="text-white font-serif font-bold text-base sm:text-lg leading-snug drop-shadow">
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent to-transparent"></div>
+      <div class="absolute bottom-2 left-2.5 right-2.5">
+        <h3 class="text-white font-serif font-bold text-xs sm:text-base leading-tight drop-shadow">
           <a href={`/boutique/${category.category}`} class="hover:text-brand-200 transition-colors">
             {index ? `${index}. ` : ''}{category.name}
           </a>
@@ -47,16 +49,15 @@ const desc = homeShopDescriptions[category.category] || category.homeDescription
       </div>
     </div>
 
-    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
-      {desc}
-    </p>
+    <!-- Expandable Description (Max 2 lines with ...plus / voir moins) -->
+    <ExpandableText text={desc} />
   </div>
 
   <a
     href={`/boutique/${category.category}`}
-    class="inline-flex items-center justify-between w-full pt-3 mt-4 text-xs font-bold text-brand-900 hover:text-brand-700 border-t border-brand-100 transition-colors uppercase tracking-wider"
+    class="inline-flex items-center justify-between w-full pt-2.5 mt-3 text-[11px] sm:text-xs font-bold text-brand-900 hover:text-brand-700 border-t border-brand-100 transition-colors uppercase tracking-wider"
   >
     <span>Voir les articles</span>
-    <span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
+    <span class="text-xs sm:text-sm group-hover:translate-x-1 transition-transform">→</span>
   </a>
 </div>
