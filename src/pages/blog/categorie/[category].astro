@@ -22,6 +22,15 @@ interface Props {
 
 const { category, articles } = Astro.props;
 
+const shortCategoryNames: Record<string, string> = {
+  'amour-relations': 'Amour',
+  'richesse-prosperite': 'Richesse',
+  'protection-desenvoutement': 'Protection',
+  'sante-plantes': 'Santé',
+  'demarches-justice-france': 'Justice',
+  'guides-produits': 'Guides',
+};
+
 const seoTitle = `${category.name} : Rituels & Guides | Cabinet Aziman`;
 const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maître Aziman dans la catégorie ${category.name}. Rituels, conseils et enseignements.`;
 ---
@@ -42,14 +51,14 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
   <TrustBadges />
 
   <!-- CATEGORY PILLS -->
-  <section class="border-b border-brand-200 bg-surface/95 backdrop-blur-md py-4 sticky top-16 md:top-20 z-30 shadow-xs">
+  <section class="border-b border-brand-200 bg-surface/95 backdrop-blur-md py-3.5 sticky top-16 md:top-20 z-30 shadow-xs">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-1">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-0.5">
         <a
           href="/blog"
           class="px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-700 hover:text-brand-900 border border-brand-200 transition-colors"
         >
-          Tous les articles ({allBlogArticles.length})
+          Tous ({allBlogArticles.length})
         </a>
         {blogCategories.map((cat) => (
           <a
@@ -60,7 +69,7 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
                 : 'bg-white text-slate-700 hover:text-brand-900 hover:bg-brand-50 border border-brand-200'
             }`}
           >
-            {cat.name}
+            {shortCategoryNames[cat.slug] || cat.name}
           </a>
         ))}
       </div>
