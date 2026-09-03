@@ -38,6 +38,9 @@ const desc = homeDescriptions[hub.silo] || hub.homeDescription || hub.content?.s
         src={hub.image}
         alt={hub.title}
         loading="lazy"
+        decoding="async"
+        width="800"
+        height="500"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent"></div>

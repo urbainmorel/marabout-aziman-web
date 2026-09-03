@@ -89,7 +89,7 @@ const [beforeRituels, afterRituels] = hasMatch
       { label: hub.name, href: `/services/${hub.silo}` },
     ]}
   
-    image={"https://images.unsplash.com/photo-1517594422361-5e1823eb9753?q=80&w=1000&auto=format&fit=crop"}
+    image={`/images/services/categories/${hub.silo}-hero.webp`}
     primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
     
   />
@@ -134,6 +134,9 @@ const [beforeRituels, afterRituels] = hasMatch
                       src={sub.image || hub.image}
                       alt={sub.title}
                       loading="lazy"
+                      decoding="async"
+                      width="800"
+                      height="500"
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-transparent to-transparent"></div>

@@ -154,7 +154,11 @@ const formattedTitle = highlightWord
               src={image} 
               alt={title.replace(/<[^>]*>?/gm, '')} 
               class="w-full h-auto aspect-square lg:aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700" 
-              loading="lazy" 
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width="800"
+              height="800"
             />
           </div>
         </div>
