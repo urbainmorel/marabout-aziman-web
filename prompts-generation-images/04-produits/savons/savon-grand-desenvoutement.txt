@@ -1,0 +1,58 @@
+================================================================================
+PROMPTS IMAGES ULTRA-REALISTES - QUALITE PHOTO DE JOUR NATURELLE (STRICTEMENT ZERO HUMAIN, ZERO TEXTE)
+PRODUIT : SAVON DE GRAND DÉSENVOÛTEMENT ET DÉCHARGE
+================================================================================
+
+Rayon Boutique      : Savons Noirs & Rituels (/boutique/savons/)
+Produit URL         : /boutique/savons/savon-grand-desenvoutement/
+Titre Officiel      : Savon de Grand Désenvoûtement et Décharge : Destruction des Sorts et Protection
+Prix Conseille      : 65 €
+Mots-cles Cibles    : savon noir purification magie noire, savon contre mauvais sort marabout, savon pour chasser mari de nuit, savon décharge spirituelle
+Recherche Source    : "marabout africain savon de grand désenvoûtement et décharge : destruction des sorts et protection boutique rituel authentique pinterest" (Google Images & Pinterest)
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS TECHNIQUES PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Appareil Photo    : Appareil moderne haute résolution / iPhone 17 Pro Max 48MP ProRAW
+- Style Visuel      : Photo nette de jour, objets réels posés sur table ou extérieur naturel
+- Eclairage         : Lumière blanche naturelle, textures brutes et palpables
+- Regle Absolue 1   : AUCUN HUMAIN, AUCUN MARABOUT, AUCUNE MAIN, NATURE MORTE EXCLUSIVE
+- Regle Absolue 2   : AUCUN TEXTE, AUCUN MOT, AUCUNE LETTRE, AUCUN CHIFFRE, FLACONS NON ETIQUETES
+- Environnements    : Table en bois clair, bord de fenêtre, plage ensoleillée, forêt lumineuse (SANS couvent)
+
+================================================================================
+PROMPT 1 : PACKSHOT PRODUIT PRINCIPAL (FORMAT CARRE BOUTIQUE 1:1)
+================================================================================
+Objectif : Image principale pour la fiche produit et les listes catalogue e-commerce (sans texte).
+Format   : Format carré 1:1.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Daytime commercial product still life photograph of the authentic consecrated African spiritual product "Savon de Grand Désenvoûtement et Décharge", inspired by high-end Pinterest spiritual boutique photography. The product (pure glass bottle, earthenware pot or plain unlabelled amber jar with zero text) is elegantly displayed on a polished light wood pedestal next to consecrated white sea cowrie shells and raw botanical ingredients under bright natural white daylight. Clean luminous studio environment, crystal-clear focus, pure minimalist authentic aesthetic, strictly unbranded with no labels or words. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 1:1
+
+Parametres Midjourney : --v 6.1 --style raw --ar 1:1
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 2 : MACRO TEXTURE & DETAILS DE CONSECRATION (ZOOM PRODUIT 1:1)
+================================================================================
+Objectif : Deuxième image de la galerie produit montrant les matières et finitions sacrées sans étiquette.
+Format   : Format carré 1:1.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Extreme macro close-up photograph of "Savon de Grand Désenvoûtement et Décharge", inspired by luxury texture photography on Pinterest. Tack-sharp focus on the consecrated substance (rich organic black soap paste, amber herbal elixir with suspended root shavings, fine consecrated powder particles, or hand-forged metal) illuminated under bright natural white daylight. Glistening textures, fine craftsmanship, authentic raw micro-details, completely devoid of text or labels. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 1:1
+
+Parametres Midjourney : --v 6.1 --style raw --ar 1:1
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 3 : MISE EN SITUATION EN MILIEU NATUREL ORGANIQUE (16:9)
+================================================================================
+Objectif : Troisième image illustrant le produit dans son environnement naturel pur.
+Format   : Format 16:9 pour la notice d'emploi et l'ancrage dans la nature.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Luminous outdoor product photograph of "Savon de Grand Désenvoûtement et Décharge" in an unlabelled glass or clay container displayed in its natural habitat (on a mossy boulder in a sunlit green forest, or resting on sunlit ocean sand beside foaming clear waves). Bright morning sunlight creating clean highlights, lush botanical environment, pure natural harmony. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+================================================================================

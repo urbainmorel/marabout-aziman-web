@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroHeader from '../../components/HeroHeader.astro';
-import ConsultationSidebar from '../../components/ConsultationSidebar.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CtaSection from '../../components/CtaSection.astro';
@@ -23,7 +22,7 @@ const { article } = Astro.props;
 
 // Related Articles
 const relatedArticles = allBlogArticles
-  .filter((a) => a.slug !== article.slug && (a.category === article.category || a.categoryName === article.categoryName))
+  .filter(a => a.category === article.category && a.slug !== article.slug)
   .slice(0, 2);
 
 // Article Schema
@@ -39,19 +38,19 @@ const articleSchema = {
     "@type": "Person",
     "name": article.author.name,
     "jobTitle": article.author.role,
-    "url": "https://marabout-aziman.fr/a-propos/"
+    "url": "https://www.marabout-aziman.fr/a-propos/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Cabinet Maître Aziman",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://marabout-aziman.fr/favicon.svg"
+      "url": "https://www.marabout-aziman.fr/favicon.svg"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://marabout-aziman.fr/blog/${article.slug}/`
+    "@id": `https://www.marabout-aziman.fr/blog/${article.slug}/`
   }
 };
 
@@ -63,25 +62,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Accueil",
-      "item": "https://marabout-aziman.fr/"
+      "item": "https://www.marabout-aziman.fr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "https://marabout-aziman.fr/blog/"
+      "item": "https://www.marabout-aziman.fr/blog/"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": article.categoryName,
-      "item": `https://marabout-aziman.fr/blog/categorie/${article.category}/`
+      "item": `https://www.marabout-aziman.fr/blog/categorie/${article.category}/`
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": article.title,
-      "item": `https://marabout-aziman.fr/blog/${article.slug}/`
+      "item": `https://www.marabout-aziman.fr/blog/${article.slug}/`
     }
   ]
 };
@@ -110,101 +109,82 @@ const breadcrumbSchema = {
       { label: article.categoryName, href: `/blog/categorie/${article.category}` },
       { label: article.title, href: `/blog/${article.slug}` },
     ]}
+  
+    image={article ? article.image : "https://images.unsplash.com/photo-1533237199180-27937bebb5cb?q=80&w=1000&auto=format&fit=crop"}
+    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    secondaryCta={{ label: 'Lire nos publications', href: '/blog#articles', icon: 'book' }}
   />
 
   <TrustBadges />
 
-  <!-- ARTICLE BODY & SIDEBAR -->
-  <article class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+  <!-- ARTICLE CONTENT -->
+  <article class="py-12 sm:py-16 md:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    
+    <!-- Table of Contents -->
+    <TableOfContents />
+
+    <!-- Pure Editorial HTML -->
+    <div class="prose-aziman" set:html={article.contentHtml} />
+
+    <!-- Author Box -->
+    <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white rounded-3xl border border-brand-800 flex flex-col sm:flex-row items-center gap-6 my-10 shadow-xl relative overflow-hidden">
+      <div class="absolute -right-16 -bottom-16 w-40 h-40 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
       
-      <!-- Main Content -->
-      <div class="lg:col-span-8 space-y-8">
-        
-        <!-- Featured Image with frame -->
-        <div class="rounded-3xl overflow-hidden shadow-xl max-h-96 bg-brand-950 border border-brand-800 mb-8">
-          <img
-            src={article.image}
-            alt={`Illustration consacrée : ${article.title}`}
-            class="w-full h-full object-cover"
-          />
+      <img
+        src={article.author.avatar}
+        alt={article.author.name}
+        class="w-20 h-20 rounded-full object-cover border-2 border-brand-400 flex-shrink-0 shadow-md"
+      />
+      <div class="space-y-2 text-center sm:text-left">
+        <div>
+          <h3 class="font-serif font-bold text-xl text-white">{article.author.name}</h3>
+          <p class="text-xs font-bold text-brand-300 uppercase tracking-wider">{article.author.role}</p>
         </div>
-
-        <!-- Interactive Table of Contents -->
-        <TableOfContents />
-
-        <!-- Rich Semantic HTML Content -->
-        <div class="prose-aziman" set:html={article.contentHtml} />
-
-        <!-- Author bio box -->
-        <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-brand-50/80 border border-brand-200 shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
-          <img
-            src={article.author.avatar}
-            alt={article.author.name}
-            class="w-20 h-20 rounded-2xl object-cover border-2 border-brand-300 flex-shrink-0 shadow-md"
-          />
-          <div class="space-y-1.5">
-            <span class="text-[11px] uppercase tracking-wider font-bold text-brand-700">Auteur & Praticien Spirituel</span>
-            <h3 class="font-serif font-bold text-xl text-brand-dark">{article.author.name}</h3>
-            <p class="text-xs text-brand-800 font-semibold">{article.author.role}</p>
-            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed pt-1 font-sans">
-              Initié aux secrets ancestraux du Fâ et du Vodun depuis plus de 25 ans. Reçoit sur rendez-vous à son cabinet en Île-de-France et réalise des rituels à distance avec suivi personnalisé partout en France.
-            </p>
-          </div>
-        </div>
-
-        <!-- Related Articles -->
-        {relatedArticles.length > 0 && (
-          <div class="mt-14 pt-10 border-t border-brand-200 space-y-6">
-            <div class="space-y-1">
-              <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Lectures Recommandées</span>
-              <h3 class="font-serif font-bold text-2xl text-brand-dark">
-                Articles Similaires dans cette Thématique
-              </h3>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {relatedArticles.map((rel) => (
-                <div class="card-luxury p-5 bg-white border border-brand-200/80 hover:border-brand-500 transition-all flex flex-col justify-between shadow-xs">
-                  <div>
-                    <span class="text-[10px] uppercase tracking-wider text-brand-700 font-bold bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-200 inline-block mb-2">
-                      {rel.categoryName}
-                    </span>
-                    <h4 class="font-serif font-bold text-base text-brand-dark mt-1 line-clamp-2">
-                      <a href={`/blog/${rel.slug}`} class="hover:text-brand-900 transition-colors">
-                        {rel.title}
-                      </a>
-                    </h4>
-                    <p class="text-xs text-slate-600 line-clamp-2 mt-2 font-sans">
-                      {rel.metaDescription}
-                    </p>
-                  </div>
-                  <a
-                    href={`/blog/${rel.slug}`}
-                    class="mt-4 pt-3 border-t border-brand-100 text-xs font-bold text-brand-900 hover:text-brand-700 flex items-center justify-between uppercase tracking-wider"
-                  >
-                    <span>Lire l'article</span>
-                    <span>→</span>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+          Initié aux secrets ancestraux du Fâ et du Vodun depuis plus de 25 ans. Il vous accompagne avec bienveillance, honnêteté et secret initiatique absolu.
+        </p>
       </div>
-
-      <!-- Reusable Luxury Consultation Sidebar -->
-      <div class="lg:col-span-4">
-        <ConsultationSidebar
-          title="Besoin d'un Conseil ?"
-          subtitle="Consultation Confidentielle"
-          contextText="Vous souhaitez un éclairage précis sur les problématiques abordées dans cet article ? Contactez directement Maître Aziman."
-          customWhatsappMsg={`Bonjour Maître Aziman, je viens de lire votre article "${article.title}" et j'aimerais avoir votre avis sur ma situation.`}
-        />
-      </div>
-
     </div>
+
+    <!-- Related Articles -->
+    {relatedArticles.length > 0 && (
+      <div class="border-t border-brand-200 pt-10 mt-12 space-y-6">
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Poursuivre la lecture</span>
+          <h3 class="font-serif font-bold text-2xl text-brand-dark">
+            Articles Similaires dans cette Catégorie
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {relatedArticles.map((rel) => (
+            <div class="card-luxury p-5 bg-white border border-brand-200/80 hover:border-brand-500 transition-all flex flex-col justify-between shadow-xs">
+              <div>
+                <span class="text-[10px] uppercase tracking-wider text-brand-700 font-bold bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-200 inline-block mb-2">
+                  {rel.categoryName}
+                </span>
+                <h4 class="font-serif font-bold text-base text-brand-dark mt-1 line-clamp-2">
+                  <a href={`/blog/${rel.slug}`} class="hover:text-brand-900 transition-colors">
+                    {rel.title}
+                  </a>
+                </h4>
+                <p class="text-xs text-slate-600 line-clamp-2 mt-2 font-sans">
+                  {rel.metaDescription}
+                </p>
+              </div>
+              <a
+                href={`/blog/${rel.slug}`}
+                class="mt-4 pt-3 border-t border-brand-100 text-xs font-bold text-brand-900 hover:text-brand-700 flex items-center justify-between uppercase tracking-wider"
+              >
+                <span>Lire l'article</span>
+                <span>→</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
   </article>
 
   <!-- CTA -->

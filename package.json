@@ -4,11 +4,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --force",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && npx wrangler pages deploy dist --project-name marabout-aziman --branch main --commit-dirty=true",
+    "postinstall": "node scripts/patch-sanity-astro.cjs",
+    "generate-images": "node scripts/generate_images.cjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
@@ -25,7 +28,9 @@
     "react-dom": "^19.2.8",
     "sanity": "^3.75.0",
     "styled-components": "^6.5.3",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "openai": "^4.28.0",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",

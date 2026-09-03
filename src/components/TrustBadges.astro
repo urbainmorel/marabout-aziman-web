@@ -2,39 +2,63 @@
 const badges = [
   {
     title: "Cabinet & Distance",
-    subtitle: "Paris & Toute la France",
-    desc: "Consultation physique en cabinet ou à distance avec efficacité égale."
+    subtitle: "France & Autres Pays",
+    icon: "location"
   },
   {
     title: "Secret Professionnel",
     subtitle: "Confidentialité 100%",
-    desc: "Respect strict du secret initiatique et anonymat total garanti."
+    icon: "shield"
   },
   {
     title: "25 Ans d'Initiation",
-    subtitle: "Tradition Fâ & Vodun",
-    desc: "Grand prêtre Bokonon reconnu pour l'authenticité de ses rituels."
+    subtitle: "Tradition Fa & Vodun",
+    icon: "sprout"
   },
   {
     title: "Expédition 48h France",
-    subtitle: "Colis Neutre & Sécurisé",
-    desc: "Envoi discret de vos produits sacrés par Colissimo et Chronopost."
+    subtitle: "Colis neutre & sécurisé",
+    icon: "package"
   }
 ];
 ---
 
-<section class="py-8 bg-brand-50/70 border-y border-brand-200">
+<section class="border-t-2 border-[#1e073b] bg-[#faf8ff] py-6 sm:py-7">
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {badges.map((b, idx) => (
-        <div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-brand-200/80 shadow-xs hover:border-brand-400 transition-colors">
-          <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-serif font-bold text-sm flex-shrink-0 shadow-xs border border-brand-700">
-            0{idx + 1}
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-[#ebdffc]">
+      {badges.map((b) => (
+        <div class="flex items-center gap-3.5 lg:px-6 first:pl-0 last:pr-0">
+          <div class="w-12 h-12 rounded-2xl bg-[#eee6fa] flex items-center justify-center flex-shrink-0">
+            {b.icon === 'location' && (
+              <svg class="w-6 h-6 text-[#4c1d8c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" />
+                <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+            )}
+            {b.icon === 'shield' && (
+              <svg class="w-6 h-6 text-[#4c1d8c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c4.5 0 8 1.5 8 5 0 6-4 10-8 12-4-2-8-6-8-12 0-3.5 3.5-5 8-5z" />
+                <rect x="9.5" y="10.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 10.5V9a1.5 1.5 0 013 0v1.5" />
+              </svg>
+            )}
+            {b.icon === 'sprout' && (
+              <svg class="w-6 h-6 text-[#4c1d8c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-8m0 0c-3 0-6-2-6-5a6 6 0 016 5zm0 0c3 0 6-2 6-5a6 6 0 00-6 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 4.5l.5.5m5-0.5l-.5.5M12 3v1" />
+              </svg>
+            )}
+            {b.icon === 'package' && (
+              <svg class="w-6 h-6 text-[#4c1d8c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7.5L12 3 4 7.5M20 7.5v9L12 21M20 7.5l-8 4.5M4 7.5L12 12M4 7.5v9l8 4.5M12 12v9" />
+                <circle cx="18" cy="18" r="3.5" fill="#eee6fa" stroke="currentColor" stroke-width="1.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18l1 1 2-2" stroke-width="1.5" />
+              </svg>
+            )}
           </div>
-          <div>
-            <h4 class="font-serif font-bold text-base text-brand-dark">{b.title}</h4>
-            <p class="text-[11px] font-bold text-brand-700 uppercase tracking-wider">{b.subtitle}</p>
-            <p class="text-xs text-slate-600 mt-1 leading-relaxed font-sans">{b.desc}</p>
+          <div class="space-y-0.5">
+            <h4 class="font-sans font-bold text-sm sm:text-base text-[#190933] leading-snug">{b.title}</h4>
+            <p class="text-xs text-[#756a8a] font-sans font-normal leading-tight">{b.subtitle}</p>
           </div>
         </div>
       ))}

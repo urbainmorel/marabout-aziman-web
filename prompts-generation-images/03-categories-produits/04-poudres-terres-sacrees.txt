@@ -1,0 +1,56 @@
+================================================================================
+PROMPTS IMAGES ULTRA-REALISTES - QUALITE PHOTO DE JOUR NATURELLE (STRICTEMENT ZERO HUMAIN, ZERO TEXTE)
+RAYON BOUTIQUE : POUDRES NOIRES & TERRES SACRÉES
+================================================================================
+
+Rayon URL           : /boutique/poudres-terres-sacrees/
+Titre Officiel      : Poudres Noires & Terres Sacrées
+Recherche Source    : "marabout africain poudre noire blindage gblon terre carrefour klaman pinterest" (Google Images & Pinterest)
+Contexte Visuel     : Calebasses et coupelles de poudres rituelles sacrées (Gblon, Klaman, Osun, Efun) sur table en bois clair en plein jour SANS AUCUN TEXTE, sans humain.
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS TECHNIQUES PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Appareil Photo    : Appareil moderne haute résolution / iPhone 17 Pro Max 48MP
+- Style Visuel      : Photo nette de jour, objets réels posés sur table ou extérieur naturel
+- Eclairage         : Lumière blanche naturelle, textures brutes et palpables, style lumineux
+- Regle Absolue 1   : AUCUN HUMAIN, AUCUN MARABOUT, AUCUNE MAIN, NATURE MORTE EXCLUSIVE
+- Regle Absolue 2   : AUCUN TEXTE, AUCUN MOT, AUCUNE LETTRE, AUCUN CHIFFRE, FLACONS NON ETIQUETES
+- Environnements    : Table en bois clair, bord de fenêtre, plage ensoleillée, forêt lumineuse (SANS couvent)
+
+================================================================================
+PROMPT 1 : PACKSHOT DE CATEGORIE EN SITUATION (HERO BANNER 16:9)
+================================================================================
+Objectif : Grande image d'ambiance pour la bannière du rayon e-commerce sans texte.
+Format   : Format 16:9.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Documentary daytime still life of traditional West African sacred powders, inspired by authentic shrine imagery on Pinterest. Small polished half-calabashes and terracotta saucers containing contrasting ceremonial powders: velvety pitch-black shielding powder (Gblon), red camwood powder (Osun), pure white chalk powder (Efun), and golden-brown bark dust. Displayed on a light wood table with miniature plain brass spoons under bright natural white daylight. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+
+================================================================================
+PROMPT 2 : MACRO TEXTURE & MATIERES SACREES (CARRE 1:1)
+================================================================================
+Objectif : Gros plan macro sur la matière, la pureté et les finitions sans étiquette ni texte.
+Format   : Format carré 1:1.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Ultra-macro daytime photograph of consecrated African protective black powder (Gblon) resting inside a smooth coconut shell bowl, inspired by Google macro searches. Micro-particles of charred medicinal barks, crushed roasted seashells, and subtle mineral glints visible in extreme close-up under bright natural white daylight. High contrast and razor-sharp palpable textures, zero text. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 1:1
+
+Parametres Midjourney : --v 6.1 --style raw --ar 1:1
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 3 : MISE EN SITUATION EN NATURE PURE (16:9)
+================================================================================
+Objectif : Montrer les ingrédients et produits dans un cadre naturel organique.
+Format   : Format 16:9.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Outdoor daytime still life photograph of consecrated botanical threshold attraction powder sprinkled in an elegant line across ancient stone flagstones at the entrance of a historic wooden doorway. Bright morning sunlight grazing the stone texture, highlighting individual powder grains. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+================================================================================

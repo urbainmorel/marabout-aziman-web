@@ -2,10 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroHeader from '../components/HeroHeader.astro';
 import TrustBadges from '../components/TrustBadges.astro';
+import CtaSection from '../components/CtaSection.astro';
 import { siteSettings } from '../data/siteData';
 
-const seoTitle = "Contact & Urgences : Cabinet Marabout Aziman | Paris & France";
-const seoDesc = "Contactez Maître Aziman, grand marabout en France. Ligne d'urgence 24h/7j, WhatsApp direct ou prise de RDV au cabinet de Paris. Réponse immédiate.";
+const seoTitle = "Contact & Prise de RDV : Cabinet Marabout Aziman | Paris & France";
+const seoDesc = "Contactez Maître Aziman, grand marabout en France. Téléphone, WhatsApp direct 24h/7j, adresse du cabinet à Paris et horaires de consultation.";
 const seoKeywords = "contact marabout france, urgence marabout 24h, téléphone maître aziman, whatsapp marabout direct, rdv marabout paris";
 
 const contactSchema = {
@@ -33,210 +34,123 @@ const contactSchema = {
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
     badge="Secrétariat & Permanence 24h/7j"
-    title="Contact & Urgences Spirituelles du Cabinet Aziman en France"
-    description="Vous traversez une épreuve urgente ou souhaitez échanger en toute discrétion avec le Maître Aziman ? Le cabinet est joignable 24h/24 et 7j/7 par téléphone direct, WhatsApp ou formulaire sécurisé."
+    title="Contact Direct du Cabinet Aziman en France"
+    description="Vous souhaitez bénéficier d'un rituel sérieux, poser une question urgente ou réserver une consultation privée avec le Maître Aziman ? Retrouvez toutes nos coordonnées ci-dessous."
     breadcrumbs={[{ label: 'Contact', href: '/contact' }]}
+    highlightWord="Maître Aziman"
+    image="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1000&auto=format&fit=crop"
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
+    secondaryCta={{ label: 'Appeler le Cabinet', href: `tel:${siteSettings.phone}` }}
   />
 
   <TrustBadges />
 
-  <!-- CONTENT & FORM -->
-  <section class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+  <!-- 3 CARTES DE CONTACT ÉPURÉES ET CLAIRES -->
+  <section class="py-14 sm:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+      <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
+        Nos Coordonnées & Accès
+      </h2>
+      <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
+      <p class="text-xs sm:text-sm text-slate-600 font-sans">
+        Échangez en toute discrétion avec Maître Aziman par téléphone, WhatsApp ou rendez-vous en cabinet.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       
-      <!-- Direct Contact Details -->
-      <div class="lg:col-span-5 space-y-6">
+      <!-- Carte 1: Téléphone, WhatsApp & Email -->
+      <div class="card-luxury p-8 bg-white border border-brand-200/80 shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl flex flex-col items-center text-center space-y-6">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl shadow-sm border border-emerald-200/60">
+          📞
+        </div>
         
-        <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white space-y-6 shadow-2xl border border-brand-800 relative overflow-hidden">
-          <div class="absolute -top-16 -right-16 w-40 h-40 bg-brand-700/15 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="space-y-1.5">
+          <h3 class="font-serif font-bold text-xl text-brand-dark">Téléphone & WhatsApp</h3>
+          <p class="text-xs text-slate-500 font-sans">Ligne directe & secrétariat 24/7</p>
+        </div>
 
-          <div class="border-b border-brand-800 pb-4">
-            <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-1">Cabinet Ouvert 24h/7j</span>
-            <h2 class="font-serif font-bold text-2xl text-white">
-              Coordonnées Directes
-            </h2>
+        <div class="w-full space-y-4 pt-4 text-xs sm:text-sm font-sans border-t border-slate-100">
+          <div>
+            <span class="block text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Téléphone Direct :</span>
+            <a href={`tel:${siteSettings.phone}`} class="font-bold text-brand-dark hover:text-emerald-600 transition-colors text-base mt-0.5 inline-block">
+              {siteSettings.phoneDisplay}
+            </a>
           </div>
 
-          <div class="space-y-4 text-xs sm:text-sm font-sans">
-            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 border border-brand-700">01</div>
-              <div>
-                <strong class="text-brand-300 block text-xs uppercase tracking-wider">Téléphone direct (Cabinet France) :</strong>
-                <a href={`tel:${siteSettings.phone}`} class="text-white hover:text-brand-300 font-bold text-base mt-0.5 inline-block">
-                  {siteSettings.phoneDisplay}
-                </a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30">
-              <div class="w-9 h-9 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">02</div>
-              <div>
-                <strong class="text-emerald-300 block text-xs uppercase tracking-wider">WhatsApp direct (24h/7j) :</strong>
-                <a href={siteSettings.whatsappLink} target="_blank" rel="noopener noreferrer" class="text-white hover:text-emerald-300 font-bold text-base mt-0.5 inline-block">
-                  {siteSettings.whatsappDisplay}
-                </a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 border border-brand-700">03</div>
-              <div>
-                <strong class="text-brand-300 block text-xs uppercase tracking-wider">Courrier électronique :</strong>
-                <a href={`mailto:${siteSettings.email}`} class="text-slate-300 hover:text-white font-medium text-xs mt-0.5 inline-block">
-                  {siteSettings.email}
-                </a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-9 h-9 rounded-lg bg-brand-900 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 border border-brand-700">04</div>
-              <div>
-                <strong class="text-brand-300 block text-xs uppercase tracking-wider">Cabinet Principal :</strong>
-                <p class="text-slate-300 text-xs mt-0.5">
-                  Paris & Région Île-de-France (Adresse exacte transmise par SMS/WhatsApp lors de la confirmation du RDV).
-                </p>
-              </div>
-            </div>
+          <div>
+            <span class="block text-[11px] text-slate-400 uppercase tracking-wider font-semibold">WhatsApp Direct 24/7 :</span>
+            <a href={siteSettings.whatsappLink} target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-600 hover:text-emerald-700 transition-colors text-base mt-0.5 inline-block">
+              {siteSettings.whatsappDisplay}
+            </a>
           </div>
 
-          <div class="pt-2">
-            <a
-              href={siteSettings.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-whatsapp w-full justify-center text-xs sm:text-sm py-4 font-bold shadow-lg"
-            >
-              <span>WhatsApp 24/7</span>
+          <div>
+            <span class="block text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Email :</span>
+            <a href={`mailto:${siteSettings.email}`} class="font-medium text-slate-700 hover:text-brand-dark transition-colors mt-0.5 inline-block">
+              {siteSettings.email}
             </a>
           </div>
         </div>
-
-        <!-- Working Hours info -->
-        <div class="card-luxury p-6 bg-white border border-brand-200/80 text-xs space-y-2.5 shadow-xs">
-          <h3 class="font-serif font-bold text-brand-dark text-base">Disponibilité & Déplacements</h3>
-          <p class="text-slate-600 leading-relaxed font-sans">
-            Le secrétariat et les lignes d'urgence restent ouverts 24h/24 et 7j/7 pour les crises sentimentales et blocages graves.
-          </p>
-          <p class="text-slate-600 leading-relaxed font-sans">
-            Consultations physiques au cabinet de Paris de 8h00 à 21h00 du lundi au dimanche sur rendez-vous.
-          </p>
-        </div>
-
       </div>
 
-      <!-- Contact Form -->
-      <div class="lg:col-span-7">
-        <div class="card-luxury p-6 sm:p-8 md:p-10 bg-white border border-brand-200/80 shadow-xl">
-          <div class="space-y-2 mb-8">
-            <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Demande Confidentielle</span>
-            <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark">
-              Formulaire de Contact Express
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-600 font-sans">
-              Remplissez ce formulaire discret pour recevoir une réponse personnalisée du Maître Aziman sous 30 minutes :
+      <!-- Carte 2: Adresse du Cabinet -->
+      <div class="card-luxury p-8 bg-white border border-brand-200/80 shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl flex flex-col items-center text-center space-y-6">
+        <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-900 flex items-center justify-center text-2xl shadow-sm border border-brand-200/60">
+          📍
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-serif font-bold text-xl text-brand-dark">Adresse du Cabinet</h3>
+          <p class="text-xs text-slate-500 font-sans">Paris & Région Île-de-France</p>
+        </div>
+
+        <div class="w-full space-y-4 pt-4 text-xs sm:text-sm font-sans border-t border-slate-100">
+          <div>
+            <span class="block text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Localisation :</span>
+            <p class="font-bold text-slate-800 text-sm mt-0.5">
+              {siteSettings.address}
             </p>
           </div>
 
-          <form class="space-y-4" id="consultation-form">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
-                  Nom & Prénom / Pseudo <span class="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Ex : Sylvie M."
-                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
-                />
-              </div>
+          <div>
+            <span class="block text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Accès & Discours :</span>
+            <p class="text-slate-600 text-xs leading-relaxed mt-0.5">
+              {siteSettings.addressDetails}
+            </p>
+          </div>
+        </div>
+      </div>
 
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
-                  Téléphone / WhatsApp <span class="text-red-500">*</span>
-                </label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="Ex : 06 12 34 56 78"
-                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
-                />
-              </div>
-            </div>
+      <!-- Carte 3: Horaires & Disponibilité -->
+      <div class="card-luxury p-8 bg-white border border-brand-200/80 shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl flex flex-col items-center text-center space-y-6">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-2xl shadow-sm border border-indigo-200/60">
+          🕒
+        </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
-                  Ville ou Région <span class="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Ex : Paris ou Lyon"
-                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
-                />
-              </div>
+        <div class="space-y-1.5">
+          <h3 class="font-serif font-bold text-xl text-brand-dark">Horaires & Disponibilité</h3>
+          <p class="text-xs text-slate-500 font-sans">Ouvert 7j/7 sans interruption</p>
+        </div>
 
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
-                  Domaine de Préoccupation <span class="text-red-500">*</span>
-                </label>
-                <select
-                  required
-                  class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition bg-white font-sans"
-                >
-                  <option value="">Sélectionnez un domaine...</option>
-                  <option value="amour">Amour & Retour Affectif</option>
-                  <option value="richesse">Richesse, Finance & Abondance</option>
-                  <option value="commerce">Commerce & Carrière</option>
-                  <option value="divination">Divination & Voyance Fâ</option>
-                  <option value="protection">Protection & Désenvoûtement</option>
-                  <option value="sante">Santé Traditionnelle & Fertilité</option>
-                  <option value="justice">Justice, Procès & Litiges</option>
-                  <option value="papiers">Titre de Séjour & Visas</option>
-                  <option value="boutique">Achat de Produits Sacrés</option>
-                </select>
-              </div>
-            </div>
+        <div class="w-full space-y-4 pt-4 text-xs sm:text-sm font-sans border-t border-slate-100">
+          <div>
+            <span class="block text-[11px] text-slate-400 uppercase tracking-wider font-semibold">WhatsApp & Urgences :</span>
+            <span class="font-bold text-emerald-600 block text-base mt-0.5">24h/24 & 7j/7</span>
+          </div>
 
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider font-sans">
-                Votre Message Confidentiel <span class="text-red-500">*</span>
-              </label>
-              <textarea
-                rows="5"
-                required
-                placeholder="Décrivez avec précision votre situation actuelle (dates clés, difficultés rencontrées, souhaits)..."
-                class="w-full px-4 py-3 rounded-xl border border-brand-200 text-sm focus:border-brand-900 focus:ring-2 focus:ring-brand-900/20 outline-none transition font-sans"
-              ></textarea>
-            </div>
-
-            <div class="text-[11px] text-slate-500 flex items-center gap-2 pt-1 font-sans">
-              <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
-              <span>Secret initiatique et déontologique garanti. Aucune donnée n'est transmise à des tiers.</span>
-            </div>
-
-            <button
-              type="submit"
-              class="btn-primary w-full justify-center text-sm py-4 font-bold shadow-md hover:shadow-lg"
-            >
-              <span>Envoyer ma demande confidentielle à Maître Aziman</span>
-            </button>
-          </form>
-
+          <div>
+            <span class="block text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Consultations en Cabinet (Paris) :</span>
+            <span class="font-medium text-slate-800 block text-xs mt-0.5">Lundi au Dimanche : 8h00 - 21h00 (sur RDV)</span>
+          </div>
         </div>
       </div>
 
     </div>
+
   </section>
 
-</BaseLayout>
+  <CtaSection />
 
-<script>
-  const form = document.getElementById('consultation-form');
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Votre demande a bien été envoyée au Cabinet Aziman. Maître Aziman prendra contact avec vous dans les plus brefs délais.');
-    (form as HTMLFormElement).reset();
-  });
-</script>
+</BaseLayout>

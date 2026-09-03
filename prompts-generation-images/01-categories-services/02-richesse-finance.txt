@@ -1,0 +1,59 @@
+================================================================================
+PROMPTS IMAGES ULTRA-REALISTES - QUALITE PHOTO DE JOUR NATURELLE (STRICTEMENT ZERO HUMAIN, ZERO TEXTE)
+CATEGORIE DE SERVICES : RICHESSE & ABONDANCE
+================================================================================
+
+Rayon URL           : /services/richesse-finance/
+Titre SEO           : Marabout Richesse en France : Rituels d'Abondance Financière et Prospérité
+Recherche Source    : "marabout africain portefeuille magique calebasse multiplication argent richesse pinterest" (Google Images & Pinterest)
+Contexte Visuel     : Autel de prospérité ouest-africaine en lumière du jour SANS HUMAIN ET SANS TEXTE (aucun billet écrit, aucune lettre) : canari en terre cuite et calebasse sacrée ornée de cauris, jetons de laiton dorés polis et cauris posés sur natte de raphia tressée, feuilles sacrées, ou composition au pied d'un grand arbre en forêt ensoleillée.
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS TECHNIQUES PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Appareil Photo    : Appareil moderne haute résolution / iPhone 17 Pro Max 48MP ProRAW
+- Style Visuel      : Photo nette de jour, objets réels posés sur table ou extérieur naturel
+- Eclairage         : Lumière blanche naturelle, textures brutes et palpables, style lumineux
+- Regle Absolue 1   : AUCUN HUMAIN, AUCUN MARABOUT, AUCUNE MAIN, NATURE MORTE EXCLUSIVE
+- Regle Absolue 2   : AUCUN TEXTE, AUCUN MOT, AUCUNE LETTRE, AUCUN CHIFFRE, FLACONS NON ETIQUETES
+- Environnements    : Table en bois clair, bord de fenêtre, plage ensoleillée, forêt lumineuse (SANS couvent)
+
+================================================================================
+PROMPT 1 : AMBIANCE RITUELLE IMMERSIVE EN SANCTUAIRE (HERO BANNER 16:9)
+================================================================================
+Description : Calebasse sacrée d'abondance et canari de richesse débordant de cauris et jetons dorés (Zéro texte)
+Environnement: Natte de raphia sur table en bois clair en plein jour
+Format      : Format panoramique 16:9 pour la bannière principale
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Crisp daytime documentary photograph of an authentic traditional African prosperity altar, inspired by wealth consecration imagery on Pinterest. A dark consecrated terracotta pot (canari) and an aged smoked calabash overflowing with dozens of authentic African sea cowries, raw sparkling gold dust flakes, polished blank golden bronze tokens with no markings, and dried green sacred herbs, placed on a light hand-woven raffia mat in bright natural white daylight. Clean luminous room, crystal-clear details on natural materials. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+
+================================================================================
+PROMPT 2 : GROS PLAN MACRO & MATIERES SACREES (VIGNETTE & DETAIL 4:3)
+================================================================================
+Description : Macro sur la bourse talismanique en cuir camel et cauris sacrés (Zéro texte)
+Environnement: Macro table de chêne clair en lumière naturelle
+Format      : Format 4:3 pour l'encart d'explication des rituels ancestraux
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Extreme macro close-up of a consecrated African wealth talisman leather pouch, inspired by Pinterest occult still lifes. Hand-stitched plain camel-brown leather pouch with smooth raw grain and zero text, surrounded by lustrous white cowrie shells, polished round bronze discs without numbers or letters, and glistening natural magnetic lodestones on a woven raffia mat. Bright natural white window daylight illuminating the coarse saddle-stitching, powdery golden dust, and aged leather grain. Tack-sharp focal point. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 4:3
+
+Parametres Midjourney : --v 6.1 --style raw --ar 4:3
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 3 : SCENE RITUELLE EN ENVIRONNEMENT NATUREL (PLAGE / FORET / SENTIER 16:9)
+================================================================================
+Description : Offrande de prospérité au pied d'un grand arbre sacré en forêt ensoleillée (Zéro texte)
+Environnement: Forêt tropicale ensoleillée / Grand arbre Iroko
+Format      : Format 16:9 pour l'ambiance et la réassurance
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Luminous natural environment photograph of a traditional wealth offering placed at the moss-covered root base of a giant sacred Iroko tree in a lush green sunlit forest. A small smoked calabash bowl containing white cowries, polished blank brass discs, and golden yellow flowers rests nestled between giant tree roots. Bright morning sunbeams piercing through the dense jungle canopy, illuminating fresh dew drops on green leaves. Peaceful, majestic, sacred nature. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+================================================================================

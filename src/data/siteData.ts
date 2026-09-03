@@ -7,6 +7,7 @@ export interface SiteSettings {
   whatsappNumber: string;
   whatsappDisplay: string;
   whatsappLink: string;
+  whatsappRdvLink: string;
   email: string;
   address: string;
   addressDetails: string;
@@ -26,6 +27,7 @@ export const siteSettings: SiteSettings = {
   whatsappNumber: '+22995309859',
   whatsappDisplay: '+229 95 30 98 59',
   whatsappLink: 'https://wa.me/22995309859?text=Bonjour%20Ma%C3%AEtre%20Aziman%2C%20je%20souhaite%20une%20consultation%20confidentielle.',
+  whatsappRdvLink: 'https://wa.me/22995309859?text=Bonjour%20Ma%C3%AEtre%20Aziman%2C%20je%20souhaite%20prendre%20un%20rendez-vous%20pour%20une%20consultation.',
   email: 'contact@marabout-aziman.fr',
   address: 'Cabinet en Île-de-France (Paris) & Interventions partout en France',
   addressDetails: 'Accès Métro / RER à 3 min à pied. Parking sécurisé. Adresse exacte transmise par SMS/WhatsApp lors de la confirmation du RDV.',

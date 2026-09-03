@@ -46,14 +46,24 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
       { label: 'Blog & Guides', href: '/blog' },
       { label: category.name, href: `/blog/categorie/${category.slug}` },
     ]}
+    image="https://images.unsplash.com/photo-1533237199180-27937bebb5cb?q=80&w=1000&auto=format&fit=crop"
+    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    secondaryCta={{ label: 'Lire nos publications', href: '#articles', icon: 'book' }}
   />
 
   <TrustBadges />
 
   <!-- CATEGORY PILLS -->
-  <section class="border-b border-brand-200 bg-surface/95 backdrop-blur-md py-3.5 sticky top-16 md:top-20 z-30 shadow-xs">
+  <section class="border-b border-brand-200 bg-white/95 backdrop-blur-md py-3.5 sticky top-[104px] lg:top-[112px] z-30 shadow-md transition-all">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-0.5">
+        <div class="inline-flex items-center gap-1.5 pr-1 sm:pr-2 flex-shrink-0">
+          <svg class="w-3.5 h-3.5 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+          </svg>
+          <span class="font-serif font-bold text-brand-dark text-xs sm:text-sm tracking-wide">Catégories :</span>
+        </div>
+
         <a
           href="/blog"
           class="px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-700 hover:text-brand-900 border border-brand-200 transition-colors"
@@ -77,7 +87,7 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
   </section>
 
   <!-- POSTS GRID -->
-  <section class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="articles" class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-36">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {articles.map((post) => (
         <article class="card-luxury overflow-hidden flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 bg-white shadow-xs">

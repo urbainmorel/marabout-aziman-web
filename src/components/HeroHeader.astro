@@ -6,11 +6,19 @@ interface BreadcrumbItem {
   href: string;
 }
 
+interface ActionButton {
+  label: string;
+  href: string;
+  icon?: 'book' | 'sparkles' | 'whatsapp' | 'calendar' | 'phone';
+  iconPosition?: 'left' | 'right';
+}
+
 interface Props {
   badge?: string;
   title: string;
+  highlightWord?: string;
   description?: string;
-  breadcrumbs: BreadcrumbItem[];
+  breadcrumbs?: BreadcrumbItem[];
   metaInfo?: {
     date?: string;
     readTime?: string;
@@ -21,69 +29,136 @@ interface Props {
     role: string;
     avatar: string;
   };
+  image?: string;
+  primaryCta?: ActionButton;
+  secondaryCta?: ActionButton;
 }
 
-const { badge, title, description, breadcrumbs, metaInfo, author } = Astro.props;
+const { 
+  badge, 
+  title, 
+  highlightWord,
+  description, 
+  breadcrumbs, 
+  metaInfo, 
+  author,
+  image = "https://images.unsplash.com/photo-1533237199180-27937bebb5cb?q=80&w=1000&auto=format&fit=crop", 
+  primaryCta,
+  secondaryCta
+} = Astro.props;
+
+const formattedTitle = highlightWord 
+  ? title.replace(new RegExp(`(${highlightWord})`, 'gi'), '<span class="text-[#b490f0]">$1</span>')
+  : title;
 ---
-
-<section class="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-900 text-white py-14 sm:py-16 md:py-20 border-b border-slate-800 overflow-hidden">
-  
+<section class="relative bg-gradient-to-r from-[#120424] via-[#1a0a33] to-[#250d45] text-white py-12 md:py-20 lg:py-24 border-b border-[#351a5c] overflow-hidden">
   <!-- Subtle Ambient Glow -->
-  <div class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-900/20 rounded-full blur-3xl pointer-events-none"></div>
-  
+  <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-600/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <Breadcrumbs items={breadcrumbs} />
-
-    <div class="mt-6 max-w-4xl space-y-4">
+    <div class={`grid grid-cols-1 ${image ? 'lg:grid-cols-12 gap-10 lg:gap-16 items-center' : 'lg:grid-cols-1 text-center items-center justify-items-center'}`}>
       
-      {badge && (
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-slate-100 text-xs font-bold uppercase tracking-wider">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span>{badge}</span>
+      <!-- Left Content -->
+      <div class={`${image ? 'lg:col-span-7' : 'max-w-4xl mx-auto flex flex-col items-center'} space-y-6 w-full`}>
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <div class={image ? 'w-full' : 'w-full flex justify-center'}>
+            <Breadcrumbs items={breadcrumbs} />
+          </div>
+        )}
+
+        {badge && (
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/80 text-slate-100 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] shadow-sm mt-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
+            <span>{badge}</span>
+          </div>
+        )}
+
+        <h1 
+          class={`font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.18] sm:leading-[1.12] tracking-tight ${image ? '' : 'text-center'}`}
+          set:html={formattedTitle}
+        />
+
+        <!-- Elegant Divider -->
+        <div class={`flex items-center gap-3 py-2 opacity-80 ${image ? 'justify-center lg:justify-start' : 'justify-center'}`}>
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-[#b490f0]/60"></div>
+          <div class="w-2 h-2 rotate-45 border border-[#b490f0]/60"></div>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-[#b490f0]/60"></div>
         </div>
-      )}
 
-      {metaInfo && (
-        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-200 font-semibold">
-          {metaInfo.category && (
-            <span class="px-3 py-1 rounded-full bg-indigo-950 text-indigo-200 border border-indigo-700/60 uppercase tracking-wider font-bold">
-              {metaInfo.category}
-            </span>
-          )}
-          {metaInfo.readTime && <span>{metaInfo.readTime}</span>}
-          {metaInfo.date && (
-            <>
-              <span class="text-slate-500">•</span>
-              <span>Publié le {metaInfo.date}</span>
-            </>
-          )}
-        </div>
-      )}
+        {description && (
+          <p class={`text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-sans max-w-2xl ${image ? '' : 'text-center'}`}>
+            {description}
+          </p>
+        )}
 
-      <h1 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5.5xl text-white leading-[1.15] tracking-tight">
-        {title}
-      </h1>
+        {metaInfo && (
+          <div class={`flex flex-wrap items-center gap-3 text-xs text-slate-300 font-semibold pt-2 ${image ? '' : 'justify-center'}`}>
+            {metaInfo.category && (
+              <span class="px-3 py-1 rounded-full bg-brand-900/50 text-brand-200 border border-brand-700/50 uppercase tracking-wider font-bold">
+                {metaInfo.category}
+              </span>
+            )}
+            {metaInfo.readTime && <span>{metaInfo.readTime}</span>}
+            {metaInfo.date && (
+              <>
+                <span class="text-slate-500">•</span>
+                <span>Publié le {metaInfo.date}</span>
+              </>
+            )}
+          </div>
+        )}
 
-      {description && (
-        <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-sans max-w-3xl pt-1">
-          {description}
-        </p>
-      )}
+        {author && (
+          <div class={`pt-2 flex items-center gap-3.5 ${image ? '' : 'justify-center'}`}>
+            <img
+              src={author.avatar}
+              alt={author.name}
+              class="w-11 h-11 rounded-full object-cover border-2 border-brand-500 shadow-md"
+            />
+            <div>
+              <p class="text-sm font-bold text-white">{author.name}</p>
+              <p class="text-xs text-slate-400">{author.role}</p>
+            </div>
+          </div>
+        )}
 
-      {author && (
-        <div class="pt-4 flex items-center gap-3.5 border-t border-slate-800 mt-6">
-          <img
-            src={author.avatar}
-            alt={author.name}
-            class="w-11 h-11 rounded-full object-cover border-2 border-slate-600 shadow-md"
-          />
-          <div>
-            <p class="text-sm font-bold text-white">{author.name}</p>
-            <p class="text-xs text-slate-300">{author.role}</p>
+        <!-- CTAs -->
+        {(primaryCta || secondaryCta) && (
+          <div class={`flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4 ${image ? '' : 'justify-center'}`}>
+            {primaryCta && (
+              <a href={primaryCta.href} class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-sans font-bold text-sm sm:text-base rounded-full shadow-lg shadow-emerald-900/20 transition-all duration-300 transform hover:-translate-y-0.5 w-full sm:w-auto">
+                {primaryCta.iconPosition !== 'right' && primaryCta.icon === 'book' && <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>}
+                {primaryCta.iconPosition !== 'right' && primaryCta.icon === 'whatsapp' && <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>}
+                {primaryCta.iconPosition !== 'right' && primaryCta.icon === 'calendar' && <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>}
+                <span>{primaryCta.label}</span>
+                {primaryCta.iconPosition === 'right' && primaryCta.icon === 'whatsapp' && <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>}
+              </a>
+            )}
+            {secondaryCta && (
+              <a href={secondaryCta.href} class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-transparent border border-white/20 hover:bg-white/5 text-white font-sans font-bold text-sm sm:text-base rounded-full transition-all duration-300 w-full sm:w-auto">
+                {secondaryCta.icon === 'sparkles' && <svg class="w-5 h-5 text-brand-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>}
+                {secondaryCta.icon === 'whatsapp' && <svg class="w-5 h-5 text-brand-300" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>}
+                <span>{secondaryCta.label}</span>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+
+      <!-- Right Image -->
+      {image && (
+        <div class="lg:col-span-5 relative mt-10 lg:mt-0 flex justify-center lg:justify-end">
+          <div class="relative rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(150,80,250,0.15)] group border border-[#4a2a7a]/40 max-w-md w-full">
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#120424]/40 to-transparent z-10"></div>
+            <img 
+              src={image} 
+              alt={title.replace(/<[^>]*>?/gm, '')} 
+              class="w-full h-auto aspect-square lg:aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700" 
+              loading="lazy" 
+            />
           </div>
         </div>
       )}
-
     </div>
   </div>
 </section>

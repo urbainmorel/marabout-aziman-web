@@ -1,0 +1,59 @@
+================================================================================
+PROMPTS IMAGES ULTRA-REALISTES - QUALITE PHOTO DE JOUR NATURELLE (STRICTEMENT ZERO HUMAIN, ZERO TEXTE)
+CATEGORIE DE SERVICES : IMMIGRATION & PAPIERS
+================================================================================
+
+Rayon URL           : /services/immigration-titres-sejour-visas/
+Titre SEO           : Marabout Titre de Séjour en France : Régularisation, Préfecture, Annulation OQTF et Visas
+Recherche Source    : "marabout africain rituel papiers prefecture titre de sejour visa passeport pinterest" (Google Images & Pinterest)
+Contexte Visuel     : Cérémonie d'ouverture de voie et déblocage en plein jour SANS HUMAIN ET SANS TEXTE (aucun passeport écrit, aucun document avec lettres) : carnet vierge en cuir artisanal sans inscription, bol d'eau lustrale aux fleurs blanches de jasmin, poudres dorées et cauris blancs sur table en bois clair.
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS TECHNIQUES PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Appareil Photo    : Appareil moderne haute résolution / iPhone 17 Pro Max 48MP ProRAW
+- Style Visuel      : Photo nette de jour, objets réels posés sur table ou extérieur naturel
+- Eclairage         : Lumière blanche naturelle, textures brutes et palpables, style lumineux
+- Regle Absolue 1   : AUCUN HUMAIN, AUCUN MARABOUT, AUCUNE MAIN, NATURE MORTE EXCLUSIVE
+- Regle Absolue 2   : AUCUN TEXTE, AUCUN MOT, AUCUNE LETTRE, AUCUN CHIFFRE, FLACONS NON ETIQUETES
+- Environnements    : Table en bois clair, bord de fenêtre, plage ensoleillée, forêt lumineuse (SANS couvent)
+
+================================================================================
+PROMPT 1 : AMBIANCE RITUELLE IMMERSIVE EN SANCTUAIRE (HERO BANNER 16:9)
+================================================================================
+Description : Autel d'ouverture de chemin administratif, bol aux fleurs de jasmin et carnet vierge en cuir (Plein jour - Zéro texte)
+Environnement: Table en bois clair baignée de soleil près d'une fenêtre
+Format      : Format panoramique 16:9 pour la bannière principale
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Documentary daytime photograph of an authentic African road-opening and success altar, inspired by Pinterest spiritual photos. On a bright woven geometric ceremonial altar cloth rests a blank unwritten handmade brown leather notebook closed with raw cord and completely free of any text, letters or logos. Beside it sits pristine white sea cowries and a rustic terracotta bowl of clear spring water with floating fresh white jasmine flowers. Small heaps of golden attraction botanical powders and white chalk sticks catch bright natural white daylight streaming through a large window. Clean, uplifting, crisp details. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+
+================================================================================
+PROMPT 2 : GROS PLAN MACRO & MATIERES SACREES (VIGNETTE & DETAIL 4:3)
+================================================================================
+Description : Macro sur la fiole de poudre dorée Klaman et cauris sacrés (Lumière de jour - Zéro texte)
+Environnement: Macro bureau en bois clair en plein jour
+Format      : Format 4:3 pour l'encart d'explication des rituels ancestraux
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Macro top-down daytime photograph of success items on a light wooden desk, inspired by Pinterest esoteric still life. An open miniature unlabelled clear glass vial of sparkling golden Klaman authority powder sits on a clean blank piece of handmade parchment with zero writing or letters. Two pristine white cowrie shells catch bright natural white daylight. Tack-sharp focus on the paper texture, glass reflections, and delicate botanical powder granules. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 4:3
+
+Parametres Midjourney : --v 6.1 --style raw --ar 4:3
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 3 : SCENE RITUELLE EN ENVIRONNEMENT NATUREL (PLAGE / FORET / SENTIER 16:9)
+================================================================================
+Description : Cérémonie d'ouverture de route sur un sentier ensoleillé en plein jour (Zéro texte)
+Environnement: Sentier tropical bordé de palmiers sous un ciel ensoleillé
+Format      : Format 16:9 pour l'ambiance et la réassurance
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Luminous daytime landscape photograph of a traditional road-opening blessing setup along an outdoor dirt path lined with wild green palms and white lilies. On a woven natural reed mat rests an earthenware pitcher of consecrated water, a bowl of white cowrie shells, and yellow marigold flowers catching radiant morning sunlight. Bright atmosphere of new beginnings and open roads. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+================================================================================

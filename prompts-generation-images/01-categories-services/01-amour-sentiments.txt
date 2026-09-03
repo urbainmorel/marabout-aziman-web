@@ -1,0 +1,59 @@
+================================================================================
+PROMPTS IMAGES ULTRA-REALISTES - QUALITE PHOTO DE JOUR NATURELLE (STRICTEMENT ZERO HUMAIN, ZERO TEXTE)
+CATEGORIE DE SERVICES : AMOUR & SENTIMENTS
+================================================================================
+
+Rayon URL           : /services/amour-sentiments/
+Titre SEO           : Marabout Retour Affectif en France : Rituels d'Amour et Réconciliation de Couple
+Recherche Source    : "marabout africain rituel retour affectif cadenas amour cauris pinterest" (Google Images & Pinterest)
+Contexte Visuel     : Composition rituelle d'amour en lumière naturelle de jour SANS AUCUN HUMAIN ET SANS AUCUN TEXTE : table en bois clair près d'une fenêtre ensoleillée, deux statuettes votives traditionnelles en bois sculpté liées face à face par des fils de coton rouge et blanc, cadenas en laiton scellé à la cire d'abeille, pétales de roses séchées, coupelle en terre cuite de miel sauvage doré et cauris sacrés, ou plage océanique lumineuse en plein jour.
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS TECHNIQUES PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Appareil Photo    : Appareil moderne haute résolution / iPhone 17 Pro Max 48MP ProRAW
+- Style Visuel      : Photo nette de jour, objets réels posés sur table ou extérieur naturel
+- Eclairage         : Lumière blanche naturelle, textures brutes et palpables, style lumineux
+- Regle Absolue 1   : AUCUN HUMAIN, AUCUN MARABOUT, AUCUNE MAIN, NATURE MORTE EXCLUSIVE
+- Regle Absolue 2   : AUCUN TEXTE, AUCUN MOT, AUCUNE LETTRE, AUCUN CHIFFRE, FLACONS NON ETIQUETES
+- Environnements    : Table en bois clair, bord de fenêtre, plage ensoleillée, forêt lumineuse (SANS couvent)
+
+================================================================================
+PROMPT 1 : AMBIANCE RITUELLE IMMERSIVE EN SANCTUAIRE (HERO BANNER 16:9)
+================================================================================
+Description : Autel d'amour sacré et statuettes votives enlacées (Lumière naturelle de jour - Zéro texte)
+Environnement: Table en bois clair près d'une fenêtre ensoleillée / Autel sculpté
+Format      : Format panoramique 16:9 pour la bannière principale
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Crisp daytime documentary photograph of an authentic traditional West African love ritual setup, inspired by genuine ethnological photography on Pinterest. On a rustic light solid wood table by a bright sunlit window with natural white daylight, two traditional hand-carved wooden figurines stand face to face, tightly bound together with red and white braided cotton cords. In front of them lies an antique plain brass padlock consecrated with drips of red beeswax, surrounded by lustrous white sea cowrie shells, dried pink hibiscus and rose petals, and a small rustic terracotta bowl of golden wild honey. Clean bright ambiance, sharp natural shadows on the wood grain. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+
+================================================================================
+PROMPT 2 : GROS PLAN MACRO & MATIERES SACREES (VIGNETTE & DETAIL 4:3)
+================================================================================
+Description : Macro sur le cadenas d'amour en laiton, cire rouge et cauris (Plein jour - Zéro texte)
+Environnement: Macro table en bois clair
+Format      : Format 4:3 pour l'encart d'explication des rituels ancestraux
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Extreme macro documentary photograph of an authentic African love lock ritual setup, inspired by esoteric still life collections on Pinterest. An antique plain hand-forged brass padlock, intricately wrapped in natural crimson cotton threads and tied to two sacred white cowrie shells. Golden droplets of pure wild honey glisten on the metal shackle beside dried floral petals. Clear bright directional daylight illuminating the metal patina, rough thread fibers and rustic wood texture. Tack-sharp focal plane, exquisite tactile details. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 4:3
+
+Parametres Midjourney : --v 6.1 --style raw --ar 4:3
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 3 : SCENE RITUELLE EN ENVIRONNEMENT NATUREL (PLAGE / FORET / SENTIER 16:9)
+================================================================================
+Description : Offrande d'amour rituelle sur une plage océanique sauvage en plein jour (Zéro texte)
+Environnement: Plage océanique sauvage ensoleillée
+Format      : Format 16:9 pour l'ambiance et la réassurance
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Luminous fine art coastal photograph of an African love ritual offering on a deserted Atlantic ocean beach in bright daytime sunlight. On clean golden wet sand near gentle crystal-clear foaming surf rests a hand-woven palm-leaf basket containing two small bound wooden lover figurines, pristine white cowrie shells, red rose petals, and two clear plain glass lanterns with white candles. Sparkling ocean waves, clear blue sky, misty coastal horizon. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+================================================================================

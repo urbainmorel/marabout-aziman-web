@@ -11,9 +11,10 @@ interface Props {
     content?: string;
   };
   index?: number;
+  expandable?: boolean;
 }
 
-const { hub, index } = Astro.props;
+const { hub, index, expandable = false } = Astro.props;
 
 // Exact description mapped from PAGE D'ACCUEIL.txt
 const homeDescriptions: Record<string, string> = {
@@ -32,7 +33,7 @@ const desc = homeDescriptions[hub.silo] || hub.homeDescription || hub.content?.s
 
 <div class="card-luxury p-3 sm:p-5 flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs bg-white rounded-2xl">
   <div>
-    <div class="relative h-28 sm:h-36 md:h-40 mb-3 rounded-xl overflow-hidden bg-brand-950">
+    <div class="relative aspect-[16/10] mb-3 rounded-xl overflow-hidden bg-brand-950">
       <img
         src={hub.image}
         alt={hub.title}
@@ -49,8 +50,14 @@ const desc = homeDescriptions[hub.silo] || hub.homeDescription || hub.content?.s
       </div>
     </div>
 
-    <!-- Expandable Description (Max 2 lines with ...plus / voir moins) -->
-    <ExpandableText text={desc} />
+    <!-- Description: Expandable on home, Full on pillar pages -->
+    {expandable ? (
+      <ExpandableText text={desc} />
+    ) : (
+      <p class="font-sans text-xs sm:text-sm text-slate-700 leading-relaxed">
+        {desc}
+      </p>
+    )}
   </div>
 
   <a

@@ -6,8 +6,8 @@ import DomainCard from '../../components/DomainCard.astro';
 import CtaSection from '../../components/CtaSection.astro';
 import { servicesHubs } from '../../data/servicesData';
 
-const seoTitle = "Nos 8 Domaines de Rituels & Consultations | Cabinet Aziman France";
-const seoDesc = "Découvrez l'ensemble des 8 domaines d'intervention spirituelle du Cabinet Maître Aziman en France : Amour, Richesse, Commerce, Protection, Justice, Santé, Voyance.";
+const seoTitle = "Nos Domaines de Rituels & Consultations | Cabinet Aziman France";
+const seoDesc = "Découvrez l'ensemble des domaines d'intervention spirituelle du Cabinet Maître Aziman en France : Amour, Richesse, Commerce, Protection, Justice, Santé, Voyance.";
 ---
 
 <BaseLayout title={seoTitle} description={seoDesc}>
@@ -15,9 +15,13 @@ const seoDesc = "Découvrez l'ensemble des 8 domaines d'intervention spirituelle
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
     badge="Pôle Rituels & Consultations Traditionnelles"
-    title="Nos 8 Domaines d'Intervention Spirituelle en France"
+    title="Nos Domaines d'Intervention Spirituelle en France"
     description="Héritier des secrets du Fâ et des grands mystères traditionnels d'Afrique de l'Ouest, Maître Aziman réalise des interventions ciblées et personnalisées en cabinet à Paris et à distance sur toute la France."
     breadcrumbs={[{ label: 'Services & Rituels', href: '/services' }]}
+    highlightWord="Maître Aziman"
+    image="https://images.unsplash.com/photo-1517594422361-5e1823eb9753?q=80&w=1000&auto=format&fit=crop"
+    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    
   />
 
   <TrustBadges />

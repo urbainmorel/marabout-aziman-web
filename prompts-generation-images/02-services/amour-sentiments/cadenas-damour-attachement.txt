@@ -1,0 +1,57 @@
+================================================================================
+PROMPTS IMAGES ULTRA-REALISTES - QUALITE PHOTO DE JOUR NATURELLE (STRICTEMENT ZERO HUMAIN, ZERO TEXTE)
+SERVICE : RITUEL DU CADENAS D'AMOUR EN FRANCE
+================================================================================
+
+Categorie Parente   : Amour & Sentiments (/services/amour-sentiments/)
+Service URL         : /services/amour-sentiments/cadenas-damour-attachement/
+Titre de la Page    : Rituel du Cadenas d'Amour en France : Sceller les Sentiments et l'Attachement Éternel
+Mots-cles Cibles    : rituel cadenas d'amour marabout, attacher un homme par la magie, cadenas d'amour puissant, sceller les sentiments couple
+Recherche Source    : "marabout africain rituel du cadenas d'amour en france autel rituel sacre pinterest" (Google Images & Pinterest)
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS TECHNIQUES PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Appareil Photo    : Appareil moderne haute résolution / iPhone 17 Pro Max 48MP
+- Style Visuel      : Photo nette de jour, objets réels posés sur table ou extérieur naturel
+- Eclairage         : Lumière blanche naturelle, textures brutes et palpables
+- Regle Absolue 1   : AUCUN HUMAIN, AUCUN MARABOUT, AUCUNE MAIN, NATURE MORTE EXCLUSIVE
+- Regle Absolue 2   : AUCUN TEXTE, AUCUN MOT, AUCUNE LETTRE, AUCUN CHIFFRE, FLACONS NON ETIQUETES
+- Environnements    : Table en bois clair, plage ensoleillée, forêt lumineuse, sentier naturel (SANS couvent)
+
+================================================================================
+PROMPT 1 : AUTEL SACRE EN SANCTUAIRE (HERO SECTION 16:9)
+================================================================================
+Objectif : Illustrer le dispositif rituel consacré sur table en bois clair sans aucun humain et sans aucun texte.
+Format   : Format 16:9 pour l'en-tête de la page de service.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Crisp daytime documentary photograph of an authentic consecrated altar setup for Rituel du Cadenas d'Amour en France, inspired by traditional African spiritual shrines on Pinterest. On a solid light wooden table near a bright sunlit window with natural white daylight, consecrated traditional artifacts specific to Rituel du Cadenas d'Amour en France (plain carved wood, sacred cowries, unengraved brass charms and herbal bowls) are neatly arranged on a clean woven reed mat. High clarity, sharp details, clean background. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+
+================================================================================
+PROMPT 2 : GROS PLAN MACRO SUR LES SUPPORTS SACRES & CONSECRATIONS (4:3)
+================================================================================
+Objectif : Mettre en valeur les objets consacrés (cauris, talismans, fils, poudres) sans écriture.
+Format   : Format 4:3 pour la section méthodologie et déroulement.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Macro daytime photograph of the consecrated spiritual instruments and natural botanical ingredients dedicated to Rituel du Cadenas d'Amour en France, inspired by top Pinterest ritual still life photography. Consecrated plain brass charms, pristine white sea cowries, sacred braided red-and-white cords, and natural powdered herbal mixtures arranged on light weathered wood. Tack-sharp focus on the raw textures, glistening consecrated oils, and natural fibers under bright natural white daylight. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 4:3
+
+Parametres Midjourney : --v 6.1 --style raw --ar 4:3
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 3 : SCENE D'OFFRANDE RITUELLE EN NATURE SAUVAGE (16:9)
+================================================================================
+Objectif : Montrer la dimension naturelle et ancestrale (forêt, plage, sentier).
+Format   : Format 16:9 pour la sérénité et la réassurance.
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Luminous environmental daytime photograph of a sacred spiritual offering for Rituel du Cadenas d'Amour en France placed in a pristine outdoor natural setting (sunlit mossy forest clearing at the base of a sacred tree, or quiet secluded ocean beach). A rustic earthenware bowl, small clay offering vessels, and pristine white cowrie shells catching bright natural sunlight. Peaceful, pristine, organic nature. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+================================================================================

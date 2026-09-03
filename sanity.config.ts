@@ -7,7 +7,6 @@ export default defineConfig({
   title: 'Maître Aziman Studio',
   projectId: 'y8rqnviv',
   dataset: 'production',
-  basePath: '/studio',
   plugins: [structureTool()],
   schema: {
     types: schemaTypes,

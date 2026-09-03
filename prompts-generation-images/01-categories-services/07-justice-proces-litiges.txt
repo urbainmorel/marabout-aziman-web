@@ -1,0 +1,59 @@
+================================================================================
+PROMPTS IMAGES ULTRA-REALISTES - QUALITE PHOTO DE JOUR NATURELLE (STRICTEMENT ZERO HUMAIN, ZERO TEXTE)
+CATEGORIE DE SERVICES : JUSTICE & LITIGES
+================================================================================
+
+Rayon URL           : /services/justice-proces-litiges/
+Titre SEO           : Gagner un Procès en France : Rituels de Justice, Cadenas Mystique et Protection Légale
+Recherche Source    : "marabout africain rituel justice cadenas proces faire taire temoin dossier penal pinterest" (Google Images & Pinterest)
+Contexte Visuel     : Rituel judiciaire maraboutique en lumière de jour SANS HUMAIN ET SANS TEXTE (aucun document écrit, aucun mot) : cadenas en fer forgé scellé à la cire et ficelé de fil de coton, canari en terre cuite rempli de miel doré adoucissant, rouleau de papyrus vierge non écrit lié par cordelette, sur table de chêne clair.
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS TECHNIQUES PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Appareil Photo    : Appareil moderne haute résolution / iPhone 17 Pro Max 48MP ProRAW
+- Style Visuel      : Photo nette de jour, objets réels posés sur table ou extérieur naturel
+- Eclairage         : Lumière blanche naturelle, textures brutes et palpables, style lumineux
+- Regle Absolue 1   : AUCUN HUMAIN, AUCUN MARABOUT, AUCUNE MAIN, NATURE MORTE EXCLUSIVE
+- Regle Absolue 2   : AUCUN TEXTE, AUCUN MOT, AUCUNE LETTRE, AUCUN CHIFFRE, FLACONS NON ETIQUETES
+- Environnements    : Table en bois clair, bord de fenêtre, plage ensoleillée, forêt lumineuse (SANS couvent)
+
+================================================================================
+PROMPT 1 : AMBIANCE RITUELLE IMMERSIVE EN SANCTUAIRE (HERO BANNER 16:9)
+================================================================================
+Description : Cadenas de justice en fer forgé scellé, bol de miel et rouleau vierge lié (Plein jour - Zéro texte)
+Environnement: Table en chêne clair en lumière naturelle de jour
+Format      : Format panoramique 16:9 pour la bannière principale
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Crisp documentary daytime photograph of an authentic African judicial resolution and victory ritual setup, inspired by esoteric traditions on Pinterest. On a solid light oak table in bright natural white daylight, a heavy antique plain hand-forged black iron padlock is wrapped tightly with sacred black and white braided cotton cords. In front of it sits a terracotta bowl filled with pure golden wild honey, and a blank clean unwritten rolled papyrus parchment scroll tied with natural raffia string. Clean bright lighting, sharp metallic and natural fiber textures, absolutely zero writing or text. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+
+================================================================================
+PROMPT 2 : GROS PLAN MACRO & MATIERES SACREES (VIGNETTE & DETAIL 4:3)
+================================================================================
+Description : Macro sur le cadenas de justice scellé à la cire et aiguilles d'acier (Lumière blanche - Zéro texte)
+Environnement: Macro pierre claire en plein jour
+Format      : Format 4:3 pour l'encart d'explication des rituels ancestraux
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Macro daytime photograph of a consecrated judicial silencing padlock charm, inspired by Google images of African justice charms. The rough black iron padlock is sealed with plain smooth red sealing wax, entwined with two consecrated steel needles through cotton fiber cords. Bright natural daylight highlighting the metallic pitting of the forged iron and the glossy texture of the wax seal. Extreme photographic precision, zero text. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 4:3
+
+Parametres Midjourney : --v 6.1 --style raw --ar 4:3
+Resolution Flux / SD  : 1024x1024 pixels
+
+================================================================================
+PROMPT 3 : SCENE RITUELLE EN ENVIRONNEMENT NATUREL (PLAGE / FORET / SENTIER 16:9)
+================================================================================
+Description : Autel de justice rituel sur un promontoire rocheux naturel en plein jour (Zéro texte)
+Environnement: Promontoire rocheux baigné de soleil
+Format      : Format 16:9 pour l'ambiance et la réassurance
+
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Fine art landscape daytime photograph of a judicial protection altar situated on a flat rocky outcrop under a bright sunny sky. A dark iron padlock bound with white cords, pristine sea cowries, and small clay offering vessels arranged neatly on the granite stone. Distant green rolling hills under the clear blue sky, solemn serenity. strictly no text, no words, no letters, no numbers, no writing, no watermark, no typography, no fonts, completely unwritten blank surfaces, plain unlabelled unbranded bottles and jars, no logos, strictly no humans, no people, nobody, no hands, no faces, uninhabited scene, empty room, still life composition, shot on modern camera, bright natural white daylight, sharp focus, crystal clear details, raw tactile palpable textures, authentic wood grain, cloth weaving and natural fibers, realistic depth of field, 8k resolution, hyper-realistic, no artificial plastic look, no CGI render, no 3D graphics --ar 16:9
+
+Parametres Midjourney : --v 6.1 --style raw --ar 16:9
+Resolution Flux / SD  : 1536x1024 pixels
+================================================================================
