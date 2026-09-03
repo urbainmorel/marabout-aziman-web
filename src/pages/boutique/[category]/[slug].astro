@@ -104,7 +104,7 @@ const breadcrumbSchema = {
       { label: prod.title, href: `/boutique/${cat.category}/${prod.slug}` },
     ]}
   
-    image={prod ? prod.image : "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=1000&auto=format&fit=crop"}
+    image={prod ? `/images/boutique/${cat.category}/${prod.slug}-hero.webp` : `/images/boutique/categories/${cat.category}-hero.webp`}
     primaryCta={{
       label: 'Commander',
       href: whatsappOrderUrl,
@@ -123,6 +123,10 @@ const breadcrumbSchema = {
       <img
         src={prod.image}
         alt={`Article ésotérique consacré : ${prod.title}`}
+        loading="lazy"
+        decoding="async"
+        width="800"
+        height="500"
         class="w-full h-full object-cover"
       />
       <div class="absolute top-4 right-4 bg-brand-950/90 backdrop-blur-md text-white font-serif font-bold text-sm sm:text-base px-4 py-1.5 rounded-full border border-brand-700 shadow-lg">

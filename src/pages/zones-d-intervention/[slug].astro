@@ -84,7 +84,7 @@ const breadcrumbSchema = {
       { label: zone.regionName, href: `/zones-d-intervention/${zone.slug}` },
     ]}
   
-    image={"https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1000&auto=format&fit=crop"}
+    image="/images/zones/details-zone.webp"
     primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
     
   />
@@ -99,6 +99,10 @@ const breadcrumbSchema = {
       <img
         src={zone.image}
         alt={`Intervention Marabout à ${zone.regionName} : ${zone.title}`}
+        loading="lazy"
+        decoding="async"
+        width="800"
+        height="500"
         class="w-full h-full object-cover"
       />
     </div>

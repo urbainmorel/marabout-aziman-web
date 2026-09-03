@@ -1,0 +1,27 @@
+================================================================================
+PROMPT BLOG UNIQUE - PHOTOGRAPHIE EDITORIALE HAUTE DEFINITION (16:9 LANDSCAPE)
+ARTICLE : DÉBLOQUER UN VISA REFUSÉ : RITUELS D'OUVERTURE
+================================================================================
+
+Catégorie Blog      : Démarches & Justice en France (/blog/categorie/demarches-justice-france/)
+Article URL         : /blog/debloquer-un-visa-refuse-rituels-consulat/
+Concept Visuel      : Clé dorée ancienne posée sur un dossier en cuir marron fermé avec coupelle de poudre d'ouverture dorée
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Type de Plan      : Photo éditoriale réaliste de reportage, composition 16:9 soignée
+- Éclairage         : Lumière blanche naturelle de jour, reflets nets, matières organiques
+- Règle 1           : STRICTEMENT AUCUN HUMAIN, AUCUNE MAIN, AUCUN VISAGE
+- Règle 2           : STRICTEMENT AUCUN TEXTE, AUCUNE LETTRE, AUCUNE ÉTIQUETTE
+- Règle 3           : Objet et composition uniques et spécifiques au sujet traité
+
+================================================================================
+PROMPT UNIQUE : ARTICLE BLOG (FORMAT PAYSAGE 16:9)
+================================================================================
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Still life photograph of path-opening ritual artifacts for official procedures. A heavy antique polished golden brass key laying on a closed vintage brown leather portfolio folder, accompanied by a small white ceramic cup of fine shimmering golden road-opening powder on a clean light oak desk in bright daylight. crisp documentary photograph, realistic editorial still life, authentic traditional materials and real physical artifacts, clean luminous daylight composition, rich tactile textures, 8k resolution, shot on 50mm macro lens, strictly no text, no words, no letters, no numbers, no writing, no labels, no watermark, no typography, strictly no humans, no people, nobody, no hands, no faces, no 3D render, no CGI
+
+Paramètres Midjourney : --v 6.1 --style raw --ar 16:9
+Résolution DALL-E / gpt-image-2 : 1536x1024 pixels
+================================================================================

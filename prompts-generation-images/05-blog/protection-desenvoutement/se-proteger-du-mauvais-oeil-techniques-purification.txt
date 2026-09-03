@@ -1,0 +1,27 @@
+================================================================================
+PROMPT BLOG UNIQUE - PHOTOGRAPHIE EDITORIALE HAUTE DEFINITION (16:9 LANDSCAPE)
+ARTICLE : MAUVAIS ŒIL ET JALOUSIE : TECHNIQUES DE PROTECTION
+================================================================================
+
+Catégorie Blog      : Protection & Désenvoûtement (/blog/categorie/protection-desenvoutement/)
+Article URL         : /blog/se-proteger-du-mauvais-oeil-techniques-purification/
+Concept Visuel      : Amulette protectrice en verre bleu et argent sur cristaux de sel brut et feuilles de sauge
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Type de Plan      : Photo éditoriale réaliste de reportage, composition 16:9 soignée
+- Éclairage         : Lumière blanche naturelle de jour, reflets nets, matières organiques
+- Règle 1           : STRICTEMENT AUCUN HUMAIN, AUCUNE MAIN, AUCUN VISAGE
+- Règle 2           : STRICTEMENT AUCUN TEXTE, AUCUNE LETTRE, AUCUNE ÉTIQUETTE
+- Règle 3           : Objet et composition uniques et spécifiques au sujet traité
+
+================================================================================
+PROMPT UNIQUE : ARTICLE BLOG (FORMAT PAYSAGE 16:9)
+================================================================================
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Macro still life of traditional evil eye protection artifacts. A vibrant cobalt-blue handcrafted glass eye talisman mounted in sterling silver filigree, resting on a bed of raw transparent rock salt crystals and dried white sage leaves on a light travertine surface in bright morning daylight. crisp documentary photograph, realistic editorial still life, authentic traditional materials and real physical artifacts, clean luminous daylight composition, rich tactile textures, 8k resolution, shot on 50mm macro lens, strictly no text, no words, no letters, no numbers, no writing, no labels, no watermark, no typography, strictly no humans, no people, nobody, no hands, no faces, no 3D render, no CGI
+
+Paramètres Midjourney : --v 6.1 --style raw --ar 16:9
+Résolution DALL-E / gpt-image-2 : 1536x1024 pixels
+================================================================================

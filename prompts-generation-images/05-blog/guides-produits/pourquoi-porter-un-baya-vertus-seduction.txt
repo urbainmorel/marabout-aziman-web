@@ -1,0 +1,27 @@
+================================================================================
+PROMPT BLOG UNIQUE - PHOTOGRAPHIE EDITORIALE HAUTE DEFINITION (16:9 LANDSCAPE)
+ARTICLE : POURQUOI PORTER UN BAYA ? HISTOIRE ET VERTUS
+================================================================================
+
+Catégorie Blog      : Guides & Produits (/blog/categorie/guides-produits/)
+Article URL         : /blog/pourquoi-porter-un-baya-vertus-seduction/
+Concept Visuel      : Rangs de perles de hanches Baya en verre rouge rubis, doré et cauris lovés sur tissu en soie ivoire
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Type de Plan      : Photo éditoriale réaliste de reportage, composition 16:9 soignée
+- Éclairage         : Lumière blanche naturelle de jour, reflets nets, matières organiques
+- Règle 1           : STRICTEMENT AUCUN HUMAIN, AUCUNE MAIN, AUCUN VISAGE
+- Règle 2           : STRICTEMENT AUCUN TEXTE, AUCUNE LETTRE, AUCUNE ÉTIQUETTE
+- Règle 3           : Objet et composition uniques et spécifiques au sujet traité
+
+================================================================================
+PROMPT UNIQUE : ARTICLE BLOG (FORMAT PAYSAGE 16:9)
+================================================================================
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Macro luxury jewelry photograph of authentic African waist beads (Baya). Three glistening coiled strands of translucent ruby-red glass seed beads, micro golden brass beads, and polished white sea cowries arranged gracefully on soft ivory raw silk in bright natural white daylight. crisp documentary photograph, realistic editorial still life, authentic traditional materials and real physical artifacts, clean luminous daylight composition, rich tactile textures, 8k resolution, shot on 50mm macro lens, strictly no text, no words, no letters, no numbers, no writing, no labels, no watermark, no typography, strictly no humans, no people, nobody, no hands, no faces, no 3D render, no CGI
+
+Paramètres Midjourney : --v 6.1 --style raw --ar 16:9
+Résolution DALL-E / gpt-image-2 : 1536x1024 pixels
+================================================================================

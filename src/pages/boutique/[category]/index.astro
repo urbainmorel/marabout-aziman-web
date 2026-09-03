@@ -119,6 +119,9 @@ const [beforeProducts, afterProducts] = hasMatch
                       src={prod.image || cat.image}
                       alt={prod.title}
                       loading="lazy"
+                      decoding="async"
+                      width="800"
+                      height="500"
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-transparent to-transparent"></div>

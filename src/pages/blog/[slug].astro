@@ -120,11 +120,39 @@ const breadcrumbSchema = {
   <!-- ARTICLE CONTENT -->
   <article class="py-12 sm:py-16 md:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
     
-    <!-- Table of Contents -->
+        <!-- Table of Contents -->
     <TableOfContents />
+
+    <!-- Featured Main Image -->
+    <div class="rounded-3xl overflow-hidden shadow-xl max-h-[460px] bg-brand-950 border border-brand-800 my-8">
+      <img
+        src={article.image}
+        alt={article.title}
+        loading="eager"
+        decoding="async"
+        width="1200"
+        height="675"
+        class="w-full h-full object-cover"
+      />
+    </div>
 
     <!-- Pure Editorial HTML -->
     <div class="prose-aziman" set:html={article.contentHtml} />
+
+    {article.secondaryImage && (
+      <!-- Secondary Ritual Insight Image -->
+      <div class="rounded-3xl overflow-hidden shadow-xl max-h-[420px] bg-brand-950 border border-brand-800 my-10">
+        <img
+          src={article.secondaryImage}
+          alt={article.title}
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="675"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    )}
 
     <!-- Author Box -->
     <div class="card-luxury p-6 sm:p-8 bg-brand-950 text-white rounded-3xl border border-brand-800 flex flex-col sm:flex-row items-center gap-6 my-10 shadow-xl relative overflow-hidden">

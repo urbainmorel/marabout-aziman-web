@@ -1,0 +1,27 @@
+================================================================================
+PROMPT BLOG UNIQUE - PHOTOGRAPHIE EDITORIALE HAUTE DEFINITION (16:9 LANDSCAPE)
+ARTICLE : HERO PRINCIPAL DU BLOG & ENSEIGNEMENTS SPIRITUELS
+================================================================================
+
+Catégorie Blog      : Blog & Enseignements (/blog/categorie/general/)
+Article URL         : /blog/
+Concept Visuel      : Pupitre en bois précieux avec parchemin vierge roulé, lampe à huile en bronze, cauris et graines sacrées du Fâ
+
+--------------------------------------------------------------------------------
+SPECIFICATIONS PHOTOGRAPHIQUES (STRICTEMENT SANS HUMAIN ET SANS TEXTE)
+--------------------------------------------------------------------------------
+- Type de Plan      : Photo éditoriale réaliste de reportage, composition 16:9 soignée
+- Éclairage         : Lumière blanche naturelle de jour, reflets nets, matières organiques
+- Règle 1           : STRICTEMENT AUCUN HUMAIN, AUCUNE MAIN, AUCUN VISAGE
+- Règle 2           : STRICTEMENT AUCUN TEXTE, AUCUNE LETTRE, AUCUNE ÉTIQUETTE
+- Règle 3           : Objet et composition uniques et spécifiques au sujet traité
+
+================================================================================
+PROMPT UNIQUE : ARTICLE BLOG (FORMAT PAYSAGE 16:9)
+================================================================================
+[COPIER-COLLER LE PROMPT CI-DESSOUS] :
+Wide-angle editorial still life photograph of a traditional wisdom sanctuary desk. A polished dark mahogany reading stand holds an unrolled blank parchment scroll with subtle hand-drawn geometric sacred grid lines, an antique cast bronze oil lamp with a tiny glowing flame, polished white sea cowrie shells, and dark palm nuts (Ikin). Soft natural morning daylight entering from a window onto a light wooden study desk. Serene, scholarly and mystical atmosphere. crisp documentary photograph, realistic editorial still life, authentic traditional materials and real physical artifacts, clean luminous daylight composition, rich tactile textures, 8k resolution, shot on 50mm macro lens, strictly no text, no words, no letters, no numbers, no writing, no labels, no watermark, no typography, strictly no humans, no people, nobody, no hands, no faces, no 3D render, no CGI
+
+Paramètres Midjourney : --v 6.1 --style raw --ar 16:9
+Résolution DALL-E / gpt-image-2 : 1536x1024 pixels
+================================================================================

@@ -46,7 +46,7 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
       { label: 'Blog & Guides', href: '/blog' },
       { label: category.name, href: `/blog/categorie/${category.slug}` },
     ]}
-    image="https://images.unsplash.com/photo-1533237199180-27937bebb5cb?q=80&w=1000&auto=format&fit=crop"
+    image={category.image || "/images/blog/hero-blog.webp"}
     primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
     secondaryCta={{ label: 'Lire nos publications', href: '#articles', icon: 'book' }}
   />
