@@ -4,6 +4,7 @@ import HeroHeader from '../../components/HeroHeader.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CtaSection from '../../components/CtaSection.astro';
 import { allBlogArticles, blogCategories } from '../../data/blogData';
+import { siteSettings } from '../../data/siteData';
 
 const seoTitle = "Blog & Guides Ésotériques : Rituels, Fâ & Secrets | Cabinet Aziman";
 const seoDesc = "Consultez tous les guides et articles de Maître Aziman sur le retour affectif, les rituels de protection, la chance financière et la pharmacopée traditionnelle.";
@@ -28,9 +29,9 @@ const shortCategoryNames: Record<string, string> = {
     title="Le Blog & Les Secrets Traditionnels du Maître Aziman"
     highlightWord="Maître Aziman"
     description="Retrouvez nos analyses détaillées, explications de rituels et conseils authentiques pour comprendre la puissance du Fâ, des plantes et des mystères ancestraux."
-    breadcrumbs={[{ label: 'Blog & Guides', href: '/blog' }]}
+    breadcrumbs={[{ label: 'Blog & Guides', href: '/blog/' }]}
     image="/images/blog/hero-blog.webp"
-    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
     secondaryCta={{ label: 'Lire nos publications', href: '#articles', icon: 'book' }}
   />
 
@@ -48,14 +49,14 @@ const shortCategoryNames: Record<string, string> = {
         </div>
 
         <a
-          href="/blog"
+          href="/blog/"
           class="px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-brand-900 text-white shadow-sm border border-brand-700"
         >
           Tous ({allBlogArticles.length})
         </a>
         {blogCategories.map((cat) => (
           <a
-            href={`/blog/categorie/${cat.slug}`}
+            href={`/blog/categorie/${cat.slug}/`}
             class="px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-700 hover:text-brand-900 hover:bg-brand-50 border border-brand-200 transition-colors"
           >
             {shortCategoryNames[cat.slug] || cat.name}
@@ -92,7 +93,7 @@ const shortCategoryNames: Record<string, string> = {
               </div>
 
               <h2 class="font-serif font-bold text-2xl sm:text-3xl text-brand-dark group-hover:text-brand-900 transition-colors leading-snug">
-                <a href={`/blog/${featuredPost.slug}`}>
+                <a href={`/blog/${featuredPost.slug}/`}>
                   {featuredPost.title}
                 </a>
               </h2>
@@ -113,7 +114,7 @@ const shortCategoryNames: Record<string, string> = {
               </div>
 
               <a
-                href={`/blog/${featuredPost.slug}`}
+                href={`/blog/${featuredPost.slug}/`}
                 class="btn-primary text-xs py-2 px-4 shadow-xs"
               >
                 <span>Lire l'article →</span>
@@ -146,7 +147,7 @@ const shortCategoryNames: Record<string, string> = {
                 {post.readTime}
               </div>
               <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-900 transition-colors leading-snug line-clamp-2">
-                <a href={`/blog/${post.slug}`}>
+                <a href={`/blog/${post.slug}/`}>
                   {post.title}
                 </a>
               </h3>
@@ -158,7 +159,7 @@ const shortCategoryNames: Record<string, string> = {
 
           <div class="p-6 pt-0 mt-auto">
             <a
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.slug}/`}
               class="pt-4 border-t border-brand-100 w-full inline-flex items-center justify-between text-xs font-bold text-brand-900 hover:text-brand-700 uppercase tracking-wider transition-colors"
             >
               <span>Lire l'article</span>

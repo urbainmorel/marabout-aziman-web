@@ -99,9 +99,9 @@ const breadcrumbSchema = {
     title={prod.title}
     description={prod.metaDescription}
     breadcrumbs={[
-      { label: 'Boutique', href: '/boutique' },
-      { label: cat.name, href: `/boutique/${cat.category}` },
-      { label: prod.title, href: `/boutique/${cat.category}/${prod.slug}` },
+      { label: 'Boutique', href: '/boutique/' },
+      { label: cat.name, href: `/boutique/${cat.category}/` },
+      { label: prod.title, href: `/boutique/${cat.category}/${prod.slug}/` },
     ]}
   
     image={prod ? `/images/boutique/${cat.category}/${prod.slug}-hero.webp` : `/images/boutique/categories/${cat.category}-hero.webp`}

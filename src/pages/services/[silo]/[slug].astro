@@ -104,9 +104,9 @@ const breadcrumbSchema = {
     title={sub.title}
     description={sub.metaDescription}
     breadcrumbs={[
-      { label: 'Services', href: '/services' },
-      { label: hub.name, href: `/services/${hub.silo}` },
-      { label: sub.title, href: `/services/${hub.silo}/${sub.slug}` },
+      { label: 'Services', href: '/services/' },
+      { label: hub.name, href: `/services/${hub.silo}/` },
+      { label: sub.title, href: `/services/${hub.silo}/${sub.slug}/` },
     ]}
   
     image={sub ? `/images/services/${hub.silo}/${sub.slug}-hero.webp` : `/images/services/categories/${hub.silo}-hero.webp`}
@@ -208,7 +208,7 @@ const breadcrumbSchema = {
             .slice(0, 4)
             .map(other => (
               <a
-                href={`/services/${hub.silo}/${other.slug}`}
+                href={`/services/${hub.silo}/${other.slug}/`}
                 class="p-4 rounded-xl bg-brand-50/60 border border-brand-200 hover:border-brand-500 hover:bg-white transition-all flex items-center justify-between text-xs font-bold text-brand-dark group shadow-xs"
               >
                 <span>{other.title}</span>

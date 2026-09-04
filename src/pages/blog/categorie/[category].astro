@@ -4,6 +4,7 @@ import HeroHeader from '../../../components/HeroHeader.astro';
 import TrustBadges from '../../../components/TrustBadges.astro';
 import CtaSection from '../../../components/CtaSection.astro';
 import { allBlogArticles, blogCategories, type BlogCategory } from '../../../data/blogData';
+import { siteSettings } from '../../../data/siteData';
 
 export async function getStaticPaths() {
   return blogCategories.map((category) => {
@@ -43,11 +44,11 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
     title={category.name}
     description={`${articles.length} article${articles.length > 1 ? 's' : ''} disponible${articles.length > 1 ? 's' : ''} dans cette thématique ésotérique.`}
     breadcrumbs={[
-      { label: 'Blog & Guides', href: '/blog' },
-      { label: category.name, href: `/blog/categorie/${category.slug}` },
+      { label: 'Blog & Guides', href: '/blog/' },
+      { label: category.name, href: `/blog/categorie/${category.slug}/` },
     ]}
     image={category.image || "/images/blog/hero-blog.webp"}
-    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
     secondaryCta={{ label: 'Lire nos publications', href: '#articles', icon: 'book' }}
   />
 
@@ -65,14 +66,14 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
         </div>
 
         <a
-          href="/blog"
+          href="/blog/"
           class="px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-700 hover:text-brand-900 border border-brand-200 transition-colors"
         >
           Tous ({allBlogArticles.length})
         </a>
         {blogCategories.map((cat) => (
           <a
-            href={`/blog/categorie/${cat.slug}`}
+            href={`/blog/categorie/${cat.slug}/`}
             class={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${
               cat.slug === category.slug
                 ? 'bg-brand-900 text-white font-bold shadow-sm border border-brand-700'
@@ -109,7 +110,7 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
                 {post.readTime}
               </div>
               <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-900 transition-colors leading-snug line-clamp-2">
-                <a href={`/blog/${post.slug}`}>
+                <a href={`/blog/${post.slug}/`}>
                   {post.title}
                 </a>
               </h3>
@@ -121,7 +122,7 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
 
           <div class="p-6 pt-0 mt-auto">
             <a
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.slug}/`}
               class="pt-4 border-t border-brand-100 w-full inline-flex items-center justify-between text-xs font-bold text-brand-900 hover:text-brand-700 uppercase tracking-wider transition-colors"
             >
               <span>Lire l'article</span>

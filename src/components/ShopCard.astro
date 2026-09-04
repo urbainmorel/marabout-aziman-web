@@ -46,7 +46,7 @@ const desc = homeShopDescriptions[category.category] || category.homeDescription
       <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent to-transparent"></div>
       <div class="absolute bottom-2 left-2.5 right-2.5">
         <h3 class="text-white font-serif font-bold text-xs sm:text-base leading-tight drop-shadow">
-          <a href={`/boutique/${category.category}`} class="hover:text-brand-200 transition-colors">
+          <a href={`/boutique/${category.category}/`} class="hover:text-brand-200 transition-colors">
             {index ? `${index}. ` : ''}{category.name}
           </a>
         </h3>
@@ -64,7 +64,7 @@ const desc = homeShopDescriptions[category.category] || category.homeDescription
   </div>
 
   <a
-    href={`/boutique/${category.category}`}
+    href={`/boutique/${category.category}/`}
     class="inline-flex items-center justify-between w-full pt-2.5 mt-3 text-[11px] sm:text-xs font-bold text-brand-900 hover:text-brand-700 border-t border-brand-100 transition-colors uppercase tracking-wider"
   >
     <span>Voir les articles</span>

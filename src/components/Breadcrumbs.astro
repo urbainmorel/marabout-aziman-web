@@ -49,7 +49,7 @@ const { items, light = false } = Astro.props;
             </span>
           ) : (
             <a
-              href={item.href}
+              href={item.href && item.href.startsWith('/') && !item.href.endsWith('/') && !item.href.includes('#') && !item.href.includes('?') ? `${item.href}/` : item.href}
               class={`transition-colors ${
                 light ? 'text-slate-600 hover:text-brand-900' : 'text-slate-300 hover:text-white'
               }`}

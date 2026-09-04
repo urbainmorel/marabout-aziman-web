@@ -38,10 +38,10 @@ const cabinetSchema = {
     badge="Consultations Privées à Paris & Déplacements"
     title="Cabinet Marabout en France : Consultations Privées à Paris et Prise de Rendez-vous 7j/7"
     description="Vous souhaitez rencontrer le Maître Aziman en tête-à-tête dans un cadre discret ou réserver une séance de voyance directe par téléphone ? Réserver une séance au cabinet marabout en France du Maître Aziman représente la démarche la plus rassurante pour exposer vos problèmes en toute intimité."
-    breadcrumbs={[{ label: 'Cabinet en France', href: '/cabinet-france' }]}
+    breadcrumbs={[{ label: 'Cabinet en France', href: '/cabinet-france/' }]}
     highlightWord="Maître Aziman"
     image="/images/institutionnel/cabinet-france.webp"
-    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
     
   />
 
@@ -105,7 +105,7 @@ const cabinetSchema = {
       <ul class="space-y-2 pl-4 border-l-2 border-brand-300 text-sm sm:text-base text-slate-700 font-sans">
         <li><strong>Par téléphone direct :</strong> <a href={`tel:${siteSettings.phone}`} class="font-bold text-brand-900 underline">{siteSettings.phoneDisplay}</a></li>
         <li><strong>Par WhatsApp 24/7 :</strong> <a href={siteSettings.whatsappLink} target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-700 underline">{siteSettings.whatsappDisplay}</a></li>
-        <li><strong>Page de contact :</strong> <a href="/contact" class="font-bold text-brand-900 underline">Prise de RDV et coordonnées</a></li>
+        <li><strong>Page de contact :</strong> <a href="/contact/" class="font-bold text-brand-900 underline">Prise de RDV et coordonnées</a></li>
       </ul>
     </div>
 

@@ -75,12 +75,12 @@ const [beforeProducts, afterProducts] = hasMatch
     title={cat.title}
     description={cat.metaDescription}
     breadcrumbs={[
-      { label: 'Boutique', href: '/boutique' },
-      { label: cat.name, href: `/boutique/${cat.category}` },
+      { label: 'Boutique', href: '/boutique/' },
+      { label: cat.name, href: `/boutique/${cat.category}/` },
     ]}
   
     image={`/images/boutique/categories/${cat.category}-hero.webp`}
-    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
     
   />
 
@@ -139,7 +139,7 @@ const [beforeProducts, afterProducts] = hasMatch
                   </div>
 
                   <h3 class="font-serif font-bold text-base sm:text-lg text-brand-dark group-hover:text-brand-900 transition-colors leading-snug">
-                    <a href={`/boutique/${cat.category}/${prod.slug}`} class="hover:underline">
+                    <a href={`/boutique/${cat.category}/${prod.slug}/`} class="hover:underline">
                       {prod.title}
                     </a>
                   </h3>
@@ -151,7 +151,7 @@ const [beforeProducts, afterProducts] = hasMatch
                 <!-- Deux boutons : Détails & Commander -->
                 <div class="mt-5 pt-3.5 border-t border-brand-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
                   <a
-                    href={`/boutique/${cat.category}/${prod.slug}`}
+                    href={`/boutique/${cat.category}/${prod.slug}/`}
                     class="text-xs py-2 px-3 text-center font-bold text-brand-900 hover:text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200 rounded-full transition-colors order-2 sm:order-1"
                   >
                     Détails →
