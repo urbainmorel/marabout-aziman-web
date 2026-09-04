@@ -1,0 +1,67 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id = import.meta.env.PUBLIC_GA_ID || 'G-39K3C0FG2Y' } = Astro.props;
+---
+
+{id && (
+  <>
+    <!-- Google tag (gtag.js) GA4 -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+    <script is:inline define:vars={{ gaId: id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', gaId, {
+        send_page_view: true,
+        cookie_flags: 'SameSite=None;Secure'
+      });
+
+      // Tracking des conversions stratégiques (WhatsApp, Téléphone, Formulaires)
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1. Clics WhatsApp
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                event_category: 'Contact',
+                event_label: 'WhatsApp Click',
+                method: 'WhatsApp'
+              });
+            }
+          });
+        });
+
+        // 2. Appels téléphoniques
+        document.querySelectorAll('a[href^="tel:"]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                event_category: 'Contact',
+                event_label: 'Phone Call Click',
+                method: 'Phone'
+              });
+            }
+          });
+        });
+
+        // 3. Soumission de formulaire de contact
+        document.querySelectorAll('form').forEach((form) => {
+          form.addEventListener('submit', () => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'form_submission', {
+                event_category: 'Engagement',
+                event_label: form.id || 'Contact Form'
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </>
+)}

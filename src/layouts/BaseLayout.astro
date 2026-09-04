@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import { siteSettings } from '../data/siteData';
 import '../styles/global.css';
 
@@ -98,6 +99,9 @@ const schemasToRender = schema
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Google Analytics 4 -->
+    <GoogleAnalytics />
     
     <!-- Primary Meta Tags -->
     <title>{title}</title>
