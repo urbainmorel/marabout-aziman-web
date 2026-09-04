@@ -161,6 +161,10 @@ const breadcrumbSchema = {
       <img
         src={article.author.avatar}
         alt={article.author.name}
+        loading="lazy"
+        decoding="async"
+        width="80"
+        height="80"
         class="w-20 h-20 rounded-full object-cover border-2 border-brand-400 flex-shrink-0 shadow-md"
       />
       <div class="space-y-2 text-center sm:text-left">

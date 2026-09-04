@@ -84,7 +84,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -105,7 +105,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -126,7 +126,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -147,7 +147,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -168,7 +168,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -189,7 +189,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -210,7 +210,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -231,7 +231,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -252,7 +252,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -273,7 +273,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -294,7 +294,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -315,7 +315,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -336,7 +336,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -357,7 +357,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -378,7 +378,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -399,7 +399,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -420,7 +420,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -441,7 +441,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -462,7 +462,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -483,7 +483,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -504,7 +504,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -525,7 +525,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -546,7 +546,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -567,7 +567,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   },
   {
@@ -588,7 +588,7 @@ export const allBlogArticles: BlogArticle[] = [
     "author": {
       "name": "Maître Aziman",
       "role": "Grand Marabout & Prêtre Bokonon en France",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+      "avatar": "/images/author/maitre-aziman.webp"
     }
   }
 ];
