@@ -47,7 +47,7 @@ const homeFaqList = [
   }
 ];
 
-// Exact 8 regional zones from PAGE D'ACCUEIL.txt
+// Regional zones (Métropole & Outre-Mer)
 const homeZones = [
   { name: "Paris & Île-de-France", depts: "75, 92, 93, 94, 77, 78, 91, 95", slug: "marabout-paris-ile-de-france" },
   { name: "Lyon & Auvergne-Rhône-Alpes", depts: "69, 42, 38", slug: "marabout-lyon-auvergne-rhone-alpes" },
@@ -57,6 +57,9 @@ const homeZones = [
   { name: "Toulouse, Montpellier & Occitanie", depts: "31, 34, 30", slug: "marabout-toulouse-montpellier-occitanie" },
   { name: "Nantes, Rennes & Grand Ouest", depts: "44, 35, 49", slug: "marabout-nantes-rennes-grand-ouest" },
   { name: "Strasbourg & Grand Est", depts: "67, 68, 57", slug: "marabout-strasbourg-grand-est" },
+  { name: "Guadeloupe (971)", depts: "Pointe-à-Pitre, Abymes, Baie-Mahault", slug: "marabout-guadeloupe" },
+  { name: "Martinique (972)", depts: "Fort-de-France, Lamentin, Robert", slug: "marabout-martinique" },
+  { name: "Guyane (973)", depts: "Cayenne, St-Laurent, Kourou", slug: "marabout-guyane" },
 ];
 
 const faqSchema = {
@@ -241,11 +244,11 @@ const websiteSchema = {
       
       <div class="max-w-3xl mx-auto space-y-2 mb-10">
         <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-white">
-          Cabinet en Île-de-France & Déplacements Régionaux
+          Cabinet en Île-de-France, Déplacements & Outre-Mer
         </h2>
         <div class="w-12 h-1 bg-brand-400 mx-auto rounded-full"></div>
         <p class="text-xs sm:text-sm text-slate-300 font-sans pt-2">
-          Maître Aziman vous reçoit sur rendez-vous au sein de son cabinet principal situé en région parisienne. Toutefois, il se déplace également régulièrement dans les grandes métropoles françaises pour des consultations privées :
+          Maître Aziman vous reçoit sur rendez-vous au sein de son cabinet principal situé en région parisienne. Il intervient également en déplacements réguliers dans toute la France métropolitaine ainsi qu'auprès des résidents d'Outre-Mer (Guadeloupe, Martinique, Guyane) par consultations et rituels sacrés à distance :
         </p>
       </div>
 

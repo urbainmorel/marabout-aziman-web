@@ -6,38 +6,46 @@ import CtaSection from '../../components/CtaSection.astro';
 import { allZones } from '../../data/zonesData';
 import { siteSettings } from '../../data/siteData';
 
-const seoTitle = "Zones d'Intervention en France : Cabinet & Distance | Aziman";
-const seoDesc = "Découvrez l'ensemble des zones d'intervention de Maître Aziman en France. Consultations en cabinet à Paris et déplacements réguliers à Lyon, Marseille, Bordeaux, etc.";
+const seoTitle = "Zones d'Intervention en France & Outre-Mer : Cabinet & Distance | Aziman";
+const seoDesc = "Découvrez l'ensemble des zones d'intervention de Maître Aziman : métropole (Paris, Lyon, Marseille, Bordeaux...) et Outre-Mer (Guadeloupe, Martinique, Guyane).";
+
+const metroZones = allZones.filter(z => !['marabout-guadeloupe', 'marabout-martinique', 'marabout-guyane'].includes(z.slug));
+const outreMerZones = allZones.filter(z => ['marabout-guadeloupe', 'marabout-martinique', 'marabout-guyane'].includes(z.slug));
 ---
 
 <BaseLayout title={seoTitle} description={seoDesc}>
   
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader
-    badge="Présence Nationale & Déplacements"
-    title="Zones d'Intervention du Maître Aziman en France"
-    description="Maître Aziman vous reçoit sur rendez-vous au sein de son cabinet principal en Île-de-France et intervient dans toutes les grandes métropoles françaises lors de ses déplacements et par rituels à distance."
-    breadcrumbs={[{ label: 'Zones d\'Intervention', href: '/zones-d-intervention' }]}
+    badge="Présence Nationale & Territoires d'Outre-Mer"
+    title="Zones d'Intervention du Maître Aziman en France & Outre-Mer"
+    description="Maître Aziman vous reçoit sur rendez-vous au sein de son cabinet principal en Île-de-France et intervient dans toutes les grandes métropoles françaises ainsi que dans les régions d'Outre-Mer (Guadeloupe, Martinique, Guyane) par consultations et rituels sacrés à distance."
+    breadcrumbs={[{ label: 'Zones d\'Intervention', href: '/zones-d-intervention/' }]}
     highlightWord="Maître Aziman"
     image="/images/zones/pillar-zone.webp"
-    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
-    
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
   />
 
   <TrustBadges />
 
-  <!-- ZONES GRID -->
-  <section class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- OUTRE-MER SECTION (CARAÏBES & GUYANE) -->
+  <section class="py-12 sm:py-16 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center space-y-2 mb-10">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-100 text-brand-900 border border-brand-300">
+        Nouveau : Rayonnement Caraïbes & Amérique du Sud
+      </span>
       <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
-        Les 8 Régions d'Intervention en France
+        Régions d'Outre-Mer (Guadeloupe, Martinique, Guyane)
       </h2>
       <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
+      <p class="text-sm text-slate-600 max-w-2xl mx-auto font-sans pt-2">
+        Face à une demande grandissante, Maître Aziman assure un suivi spirituel d'exception pour les résidents des Antilles et de Guyane : consultations divinatoires adaptées aux fuseaux horaires, rituels puissants à distance et expédition sécurisée de vos talismans et remèdes par Colissimo Outre-Mer.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {allZones.map((zone) => (
-        <div class="card-luxury overflow-hidden flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {outreMerZones.map((zone) => (
+        <div class="card-luxury overflow-hidden flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-sm hover:shadow-md">
           <div class="relative h-48 bg-brand-950 overflow-hidden">
             <img
               src={zone.image}
@@ -48,9 +56,9 @@ const seoDesc = "Découvrez l'ensemble des zones d'intervention de Maître Azima
               height="500"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent"></div>
             <div class="absolute bottom-3 left-4 text-white">
-              <span class="text-[10px] uppercase text-brand-300 font-bold tracking-wider">Région France</span>
+              <span class="text-[10px] uppercase text-amber-300 font-bold tracking-wider">Région d'Outre-Mer</span>
               <h3 class="font-serif font-bold text-lg leading-tight drop-shadow">{zone.regionName}</h3>
             </div>
           </div>
@@ -70,6 +78,58 @@ const seoDesc = "Découvrez l'ensemble des zones d'intervention de Maître Azima
           </div>
         </div>
       ))}
+    </div>
+  </section>
+
+  <!-- METROPOLE ZONES GRID -->
+  <section class="py-12 sm:py-16 bg-slate-50/70 border-y border-slate-200">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center space-y-2 mb-10">
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
+          Les 8 Régions d'Intervention en France Métropolitaine
+        </h2>
+        <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
+        <p class="text-xs sm:text-sm text-slate-600 font-sans pt-1">
+          Consultations privées au cabinet principal en Île-de-France et lors de déplacements réguliers dans toute la métropole.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {metroZones.map((zone) => (
+          <div class="card-luxury overflow-hidden flex flex-col justify-between group hover:border-brand-500 transition-all duration-200 shadow-xs bg-white">
+            <div class="relative h-48 bg-brand-950 overflow-hidden">
+              <img
+                src={zone.image}
+                alt={zone.title}
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="500"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 text-white">
+                <span class="text-[10px] uppercase text-brand-300 font-bold tracking-wider">France Métropolitaine</span>
+                <h3 class="font-serif font-bold text-lg leading-tight drop-shadow">{zone.regionName}</h3>
+              </div>
+            </div>
+
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed font-sans">
+                {zone.metaDescription}
+              </p>
+
+              <a
+                href={`/zones-d-intervention/${zone.slug}/`}
+                class="mt-5 pt-3 border-t border-brand-100 text-xs font-bold text-brand-900 hover:text-brand-700 uppercase tracking-wider flex items-center justify-between transition-colors"
+              >
+                <span>Consulter cette région</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 

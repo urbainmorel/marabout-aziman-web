@@ -25,6 +25,8 @@ export interface BlogArticle {
 export interface BlogCategory {
   slug: string;
   name: string;
+  folder?: string;
+  image?: string;
 }
 
 export const blogCategories: BlogCategory[] = [
