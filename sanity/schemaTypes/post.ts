@@ -52,7 +52,21 @@ export default defineType({
           name: 'alt',
           type: 'string',
           title: 'Texte alternatif (SEO)',
-          validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+    defineField({
+      name: 'secondaryImage',
+      title: 'Image secondaire (illustration rituel)',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Texte alternatif (SEO)',
         },
       ],
     }),

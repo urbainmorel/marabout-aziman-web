@@ -163,3 +163,13 @@
 .prose-aziman hr {
   @apply my-10 border-brand-200;
 }
+
+/* -------------------------------------------------------------
+   PROTECTION DU CONTENU VISUEL (IMAGES)
+------------------------------------------------------------- */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+

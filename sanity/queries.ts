@@ -7,6 +7,7 @@ export const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
   readingTime,
   featured,
   mainImage,
+  secondaryImage,
   author->{
     name,
     "slug": slug.current,
@@ -28,6 +29,7 @@ export const POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0
   readingTime,
   featured,
   mainImage,
+  secondaryImage,
   body,
   seo,
   author->{
@@ -38,12 +40,13 @@ export const POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0
     bio
   },
   category->{
+    _id,
     title,
     "slug": slug.current
   }
 }`;
 
-export const RELATED_POSTS_QUERY = `*[_type == "post" && slug.current != $slug && category._ref == $categoryId][0...3] {
+export const RELATED_POSTS_QUERY = `*[_type == "post" && slug.current != $slug && category._ref == $categoryId][0...2] {
   _id,
   title,
   "slug": slug.current,
