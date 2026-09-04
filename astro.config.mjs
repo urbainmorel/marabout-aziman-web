@@ -9,6 +9,7 @@ process.env.SANITY_ASTRO_DISABLE_MODULE_DEDUPE = 'true';
 // https://astro.build/config - Sanity Studio enabled
 export default defineConfig({
   site: 'https://www.marabout-aziman.fr',
+  trailingSlash: 'always',
   integrations: [
     react(),
     tailwind({

@@ -71,9 +71,19 @@ const faqSchema = {
     }
   }))
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Cabinet Maître Aziman",
+  "alternateName": "Grand Marabout en France - Cabinet Aziman",
+  "url": "https://www.marabout-aziman.fr/",
+  "inLanguage": "fr-FR",
+  "description": seoDesc
+};
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={faqSchema}>
+<BaseLayout title={seoTitle} description={seoDesc} keywords={seoKeywords} schema={[faqSchema, websiteSchema]}>
   
   <!-- 1. HERO SECTION UNIFIÉE -->
   <HeroHeader

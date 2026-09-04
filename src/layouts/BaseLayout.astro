@@ -26,12 +26,22 @@ const {
   keywords = "marabout en france, grand marabout paris, retour affectif, voyance fâ, marabout sérieux, rituel amour",
   image = "/images/og-default.webp",
   currentPath = Astro.url.pathname,
-  canonicalUrl = `https://www.marabout-aziman.fr${Astro.url.pathname.replace(/\/$/, '') || '/'}`,
+  canonicalUrl,
   schema,
   article,
 } = Astro.props;
 
 const siteName = siteSettings.siteName;
+const siteBaseUrl = 'https://www.marabout-aziman.fr';
+
+// Ensure canonical URL has trailing slash and consistent domain
+const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const computedCanonicalUrl = canonicalUrl || `${siteBaseUrl}${pathname}`;
+
+// Ensure og:image and twitter:image are full absolute URLs for social crawlers
+const absoluteImage = image.startsWith('http')
+  ? image
+  : `${siteBaseUrl}${image.startsWith('/') ? '' : '/'}${image}`;
 
 // Default Global Organization / LocalBusiness Schema
 const defaultLocalBusinessSchema = {
@@ -41,8 +51,8 @@ const defaultLocalBusinessSchema = {
   "alternateName": "Cabinet Aziman",
   "legalName": siteSettings.legalEntity,
   "description": description,
-  "image": image,
-  "url": "https://www.marabout-aziman.fr",
+  "image": absoluteImage,
+  "url": "https://www.marabout-aziman.fr/",
   "telephone": siteSettings.phone,
   "priceRange": "€€",
   "paymentAccepted": "Cash, Credit Card, Bank Transfer, PayPal",
@@ -95,7 +105,7 @@ const schemasToRender = schema
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
     <meta name="author" content="Maître Aziman" />
-    <link rel="canonical" href={canonicalUrl} />
+    <link rel="canonical" href={computedCanonicalUrl} />
     
     <!-- Favicon & Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -110,10 +120,10 @@ const schemasToRender = schema
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={article ? "article" : "website"} />
-    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:url" content={computedCanonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={absoluteImage} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="fr_FR" />
 
@@ -127,10 +137,10 @@ const schemasToRender = schema
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:url" content={computedCanonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={absoluteImage} />
 
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

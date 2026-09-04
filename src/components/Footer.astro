@@ -37,7 +37,7 @@ import { allZones } from '../data/zonesData';
         <ul class="space-y-2 text-xs sm:text-sm">
           {servicesHubs.map((svc) => (
             <li>
-              <a href={`/services/${svc.silo}`} class="text-slate-300 hover:text-white transition-colors">
+              <a href={`/services/${svc.silo}/`} class="text-slate-300 hover:text-white transition-colors">
                 {svc.name}
               </a>
             </li>
@@ -53,7 +53,7 @@ import { allZones } from '../data/zonesData';
         <ul class="space-y-2 text-xs sm:text-sm">
           {allZones.map((zone) => (
             <li>
-              <a href={`/zones-d-intervention/${zone.slug}`} class="text-slate-300 hover:text-white transition-colors">
+              <a href={`/zones-d-intervention/${zone.slug}/`} class="text-slate-300 hover:text-white transition-colors">
                 {zone.regionName}
               </a>
             </li>
@@ -67,12 +67,12 @@ import { allZones } from '../data/zonesData';
           Navigation Rapide
         </h4>
         <ul class="space-y-2 text-xs sm:text-sm">
-          <li><a href="/a-propos" class="text-slate-300 hover:text-white transition-colors">À Propos du Maître</a></li>
-          <li><a href="/cabinet-france" class="text-slate-300 hover:text-white transition-colors">Cabinet en France & RDV</a></li>
-          <li><a href="/temoignages-avis" class="text-slate-300 hover:text-white transition-colors">Avis & Témoignages</a></li>
-          <li><a href="/boutique" class="text-slate-300 hover:text-white transition-colors">Boutique Ésotérique</a></li>
-          <li><a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog & Guides</a></li>
-          <li><a href="/contact" class="text-slate-300 hover:text-white transition-colors">Contact & Urgences</a></li>
+          <li><a href="/a-propos/" class="text-slate-300 hover:text-white transition-colors">À Propos du Maître</a></li>
+          <li><a href="/cabinet-france/" class="text-slate-300 hover:text-white transition-colors">Cabinet en France & RDV</a></li>
+          <li><a href="/temoignages-avis/" class="text-slate-300 hover:text-white transition-colors">Avis & Témoignages</a></li>
+          <li><a href="/boutique/" class="text-slate-300 hover:text-white transition-colors">Boutique Ésotérique</a></li>
+          <li><a href="/blog/" class="text-slate-300 hover:text-white transition-colors">Blog & Guides</a></li>
+          <li><a href="/contact/" class="text-slate-300 hover:text-white transition-colors">Contact & Urgences</a></li>
         </ul>
       </div>
 
@@ -80,13 +80,13 @@ import { allZones } from '../data/zonesData';
 
     <!-- Horizontal Legal Sub-section with Balanced Spacing -->
     <div class="py-6 border-b border-slate-800/80 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-slate-400 font-sans">
-      <a href="/mentions-legales" class="hover:text-white transition-colors">Mentions Légales</a>
+      <a href="/mentions-legales/" class="hover:text-white transition-colors">Mentions Légales</a>
       <span class="text-slate-700 hidden sm:inline">•</span>
-      <a href="/politique-confidentialite" class="hover:text-white transition-colors">Politique de Confidentialité</a>
+      <a href="/politique-confidentialite/" class="hover:text-white transition-colors">Politique de Confidentialité</a>
       <span class="text-slate-700 hidden sm:inline">•</span>
-      <a href="/cgu" class="hover:text-white transition-colors">Conditions Générales (CGU)</a>
+      <a href="/cgu/" class="hover:text-white transition-colors">Conditions Générales (CGU)</a>
       <span class="text-slate-700 hidden sm:inline">•</span>
-      <a href="/cookies" class="hover:text-white transition-colors">Gestion des Cookies</a>
+      <a href="/cookies/" class="hover:text-white transition-colors">Gestion des Cookies</a>
     </div>
 
     <!-- Bottom Copyright -->

@@ -3,4 +3,5 @@ Allow: /
 Disallow: /studio/
 Disallow: /studio
 
-Sitemap: https://marabout-aziman.fr/sitemap-index.xml
+Sitemap: https://www.marabout-aziman.fr/sitemap-index.xml
+Sitemap: https://www.marabout-aziman.fr/sitemap-0.xml

@@ -8,9 +8,37 @@ import { testimonials, siteSettings } from '../data/siteData';
 
 const seoTitle = "Avis Marabout en France : Témoignages Vérifiés | Aziman";
 const seoDesc = "Consultez les véritables avis marabout en France sur le Maître Aziman. Retours affectifs réussis, fortune et désenvoûtement. Témoignages récents.";
+
+const reviewsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Cabinet Maître Aziman - Grand Marabout en France",
+  "url": "https://www.marabout-aziman.fr/temoignages-avis/",
+  "telephone": siteSettings.phone,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": testimonials.length.toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": testimonials.map((t) => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": t.author
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": t.rating.toString(),
+      "bestRating": "5"
+    },
+    "reviewBody": t.text
+  }))
+};
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc}>
+<BaseLayout title={seoTitle} description={seoDesc} schema={reviewsSchema}>
   
   <!-- HERO HEADER REUSABLE -->
   <HeroHeader

@@ -8,34 +8,34 @@ interface Props {
 const { currentPath = '/' } = Astro.props;
 
 const serviceCategories = [
-  { name: 'Amour & Sentiments', href: '/services/amour-sentiments' },
-  { name: 'Richesse & Finance', href: '/services/richesse-finance' },
-  { name: 'Commerce & Carrière', href: '/services/commerce-carriere-reussite' },
-  { name: 'Divination & Voyance Fâ', href: '/services/divination-voyance' },
-  { name: 'Protection & Désenvoûtement', href: '/services/protection-desenvoutement' },
-  { name: 'Santé & Pharmacopée', href: '/services/sante-traditionnelle' },
-  { name: 'Justice & Procès', href: '/services/justice-proces-litiges' },
-  { name: 'Immigration & Titres de Séjour', href: '/services/immigration-titres-sejour-visas' },
+  { name: 'Amour & Sentiments', href: '/services/amour-sentiments/' },
+  { name: 'Richesse & Finance', href: '/services/richesse-finance/' },
+  { name: 'Commerce & Carrière', href: '/services/commerce-carriere-reussite/' },
+  { name: 'Divination & Voyance Fâ', href: '/services/divination-voyance/' },
+  { name: 'Protection & Désenvoûtement', href: '/services/protection-desenvoutement/' },
+  { name: 'Santé & Pharmacopée', href: '/services/sante-traditionnelle/' },
+  { name: 'Justice & Procès', href: '/services/justice-proces-litiges/' },
+  { name: 'Immigration & Titres de Séjour', href: '/services/immigration-titres-sejour-visas/' },
 ];
 
 const boutiqueCategories = [
-  { name: 'Savons Rituels', href: '/boutique/savons' },
-  { name: 'Eaux Sacrées', href: '/boutique/eaux' },
-  { name: 'Parfums & Macérations', href: '/boutique/parfums-macerations' },
-  { name: 'Poudres & Terres Sacrées', href: '/boutique/poudres-terres-sacrees' },
-  { name: 'Talismans & Gris-Gris', href: '/boutique/talismans-cuir-gris-gris' },
-  { name: 'Parures & Métaux', href: '/boutique/parures-bayas-metaux' },
-  { name: 'Cadenas Sacrés', href: '/boutique/cadenas-receptacles-argent' },
-  { name: 'Pharmacopée Végétale', href: '/boutique/pharmacopee-vegetale' },
+  { name: 'Savons Rituels', href: '/boutique/savons/' },
+  { name: 'Eaux Sacrées', href: '/boutique/eaux/' },
+  { name: 'Parfums & Macérations', href: '/boutique/parfums-macerations/' },
+  { name: 'Poudres & Terres Sacrées', href: '/boutique/poudres-terres-sacrees/' },
+  { name: 'Talismans & Gris-Gris', href: '/boutique/talismans-cuir-gris-gris/' },
+  { name: 'Parures & Métaux', href: '/boutique/parures-bayas-metaux/' },
+  { name: 'Cadenas Sacrés', href: '/boutique/cadenas-receptacles-argent/' },
+  { name: 'Pharmacopée Végétale', href: '/boutique/pharmacopee-vegetale/' },
 ];
 
 const mainNav = [
   { name: 'Accueil', href: '/' },
-  { name: 'Services & Rituels', href: '/services', dropdown: serviceCategories },
-  { name: 'Boutique', href: '/boutique', dropdown: boutiqueCategories },
-  { name: 'À Propos', href: '/a-propos' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Services & Rituels', href: '/services/', dropdown: serviceCategories },
+  { name: 'Boutique', href: '/boutique/', dropdown: boutiqueCategories },
+  { name: 'À Propos', href: '/a-propos/' },
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Contact', href: '/contact/' },
 ];
 ---
 
