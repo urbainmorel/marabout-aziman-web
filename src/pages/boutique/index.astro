@@ -29,6 +29,13 @@ const seoDesc = "Découvrez la boutique ésotérique du Cabinet Maître Aziman. 
 
   <!-- CATEGORIES GRID -->
   <section class="py-12 sm:py-16 md:py-20 max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-2 mb-10">
+      <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-brand-dark">
+        Nos 8 Rayons d'Articles Consacrés
+      </h2>
+      <div class="w-12 h-1 bg-brand-900 mx-auto rounded-full"></div>
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {boutiqueCategories.map((cat) => (
         <ShopCard category={cat} />
@@ -39,17 +46,17 @@ const seoDesc = "Découvrez la boutique ésotérique du Cabinet Maître Aziman. 
     <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 p-8 sm:p-10 rounded-3xl bg-surface border border-brand-200/80 text-center shadow-xs">
       <div class="space-y-1.5">
         <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block">Garantie 01</span>
-        <h3 class="font-serif font-bold text-base text-brand-dark">Livraison Discrète 24/48h</h3>
+        <p class="font-serif font-bold text-base text-brand-dark">Livraison Discrète 24/48h</p>
         <p class="text-xs text-slate-600 font-sans">Emballage neutre sans mention ésotérique. Colissimo Suivi & Chronopost.</p>
       </div>
       <div class="space-y-1.5">
         <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block">Garantie 02</span>
-        <h3 class="font-serif font-bold text-base text-brand-dark">Consécration Personnalisée</h3>
+        <p class="font-serif font-bold text-base text-brand-dark">Consécration Personnalisée</p>
         <p class="text-xs text-slate-600 font-sans">Chaque support est préparé au nom et prénom du consultant avant envoi.</p>
       </div>
       <div class="space-y-1.5">
         <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block">Garantie 03</span>
-        <h3 class="font-serif font-bold text-base text-brand-dark">Commande Directe WhatsApp</h3>
+        <p class="font-serif font-bold text-base text-brand-dark">Commande Directe WhatsApp</p>
         <p class="text-xs text-slate-600 font-sans">Conseils d'utilisation et validation immédiate au {siteSettings.whatsappDisplay}.</p>
       </div>
     </div>

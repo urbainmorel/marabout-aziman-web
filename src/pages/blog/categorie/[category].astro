@@ -32,7 +32,8 @@ const shortCategoryNames: Record<string, string> = {
   'guides-produits': 'Guides',
 };
 
-const seoTitle = `${category.name} : Rituels & Guides | Cabinet Aziman`;
+const catDisplay = category.name.replace(' & ', ' et ');
+const seoTitle = `${catDisplay} : Guides & Rituels | Cabinet Aziman`;
 const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maître Aziman dans la catégorie ${category.name}. Rituels, conseils et enseignements.`;
 ---
 
@@ -109,11 +110,11 @@ const seoDesc = `Découvrez tous les articles et secrets ésotériques de Maîtr
               <div class="text-[11px] text-slate-400 font-medium font-sans">
                 {post.readTime}
               </div>
-              <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-900 transition-colors leading-snug line-clamp-2">
+              <h2 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-900 transition-colors leading-snug line-clamp-2">
                 <a href={`/blog/${post.slug}/`}>
                   {post.title}
                 </a>
-              </h3>
+              </h2>
               <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed font-sans">
                 {post.metaDescription}
               </p>
