@@ -5,6 +5,7 @@ import TrustBadges from '../../components/TrustBadges.astro';
 import DomainCard from '../../components/DomainCard.astro';
 import CtaSection from '../../components/CtaSection.astro';
 import { servicesHubs } from '../../data/servicesData';
+import { siteSettings } from '../../data/siteData';
 
 const seoTitle = "Nos Domaines de Rituels & Consultations | Cabinet Aziman France";
 const seoDesc = "Découvrez l'ensemble des domaines d'intervention spirituelle du Cabinet Maître Aziman en France : Amour, Richesse, Commerce, Protection, Justice, Santé, Voyance.";
@@ -20,7 +21,7 @@ const seoDesc = "Découvrez l'ensemble des domaines d'intervention spirituelle d
     breadcrumbs={[{ label: 'Services & Rituels', href: '/services' }]}
     highlightWord="Maître Aziman"
     image="/images/services/categories/divination-voyance-hero.webp"
-    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
     
   />
 

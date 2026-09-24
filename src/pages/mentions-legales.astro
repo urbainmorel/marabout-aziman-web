@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroHeader from '../components/HeroHeader.astro';
 import LegalTabs from '../components/LegalTabs.astro';
 import { mentionsLegalesContent } from '../data/legalData';
+import { siteSettings } from '../data/siteData';
 
 const { title, metaTitle, metaDescription, intro, sections } = mentionsLegalesContent;
 ---
@@ -16,7 +17,7 @@ const { title, metaTitle, metaDescription, intro, sections } = mentionsLegalesCo
     description={intro}
     breadcrumbs={[{ label: title, href: '/mentions-legales' }]}
     image="/images/institutionnel/legales.webp"
-    primaryCta={{ label: 'WhatsApp 24/7', href: 'https://wa.me/33753368297', icon: 'whatsapp' }}
+    primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
     
   />
 

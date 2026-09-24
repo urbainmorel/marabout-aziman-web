@@ -33,16 +33,16 @@ export default defineType({
     }),
     defineField({
       name: 'whatsappNumber',
-      title: 'Numéro WhatsApp (ex: +22995309859)',
+      title: 'Numéro WhatsApp (ex: +33759399230)',
       type: 'string',
-      initialValue: '+22995309859',
+      initialValue: '+33759399230',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'whatsappDisplay',
-      title: 'Numéro WhatsApp affiché (ex: +229 95 30 98 59)',
+      title: 'Numéro WhatsApp affiché (ex: +33 (0)7 59 39 92 30)',
       type: 'string',
-      initialValue: '+229 95 30 98 59',
+      initialValue: '+33 (0)7 59 39 92 30',
     }),
     defineField({
       name: 'email',

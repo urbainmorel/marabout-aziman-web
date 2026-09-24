@@ -125,7 +125,7 @@ const [beforeRituels, afterRituels] = hasMatch
             const whatsappMsg = isVoyance
               ? `Bonjour Maître Aziman, je souhaite réserver une consultation de voyance : ${sub.title}\nLien : https://www.marabout-aziman.fr/services/${hub.silo}/${sub.slug}/`
               : `Bonjour Maître Aziman, je souhaite commander le rituel : ${sub.title}\nLien : https://www.marabout-aziman.fr/services/${hub.silo}/${sub.slug}/`;
-            const whatsappRituelUrl = `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(whatsappMsg)}`;
+            const whatsappRituelUrl = `https://wa.me/${siteSettings.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMsg)}`;
             return (
               <div class="card-luxury p-4 sm:p-5 bg-white border border-brand-200/80 hover:border-brand-500 transition-all flex flex-col justify-between group shadow-xs rounded-2xl">
                 <div>

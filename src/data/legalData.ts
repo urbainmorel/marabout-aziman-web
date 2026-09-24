@@ -18,7 +18,7 @@ export const mentionsLegalesContent = {
   - Cabinet France : Paris, France
   - Sanctuaire & Cabinet Bénin : Cotonou, Bénin
 - **Téléphone (Appel direct France) :** +33 7 59 39 92 30 / +33 6 55 50 69 85
-- **WhatsApp (Ligne directe internationale) :** +229 95 30 98 59
+- **WhatsApp (Ligne directe) :** +33 (0)7 59 39 92 30
 - **Courrier électronique :** contact@marabout-aziman.fr`
     },
     {
@@ -48,7 +48,7 @@ Toute reproduction, représentation, modification, diffusion ou exploitation tot
       title: "5. Contact & Service Réclamations",
       content: `Pour toute demande d'information, prise de rendez-vous ou réclamation :
 - **Par téléphone :** +33 7 59 39 92 30 / +33 6 55 50 69 85
-- **Par WhatsApp :** +229 95 30 98 59
+- **Par WhatsApp :** +33 (0)7 59 39 92 30
 - **Par e-mail :** contact@marabout-aziman.fr`
     }
   ]
@@ -68,7 +68,7 @@ export const politiqueConfidentialiteContent = {
 - **Statut :** Entrepreneur Individuel (SIRET : 945 386 159 00012)
 - **Adresses :** Paris, France / Cotonou, Bénin
 - **E-mail de contact :** contact@marabout-aziman.fr
-- **Téléphone :** +33 7 59 39 92 30 | **WhatsApp :** +229 95 30 98 59`
+- **Téléphone / WhatsApp :** +33 (0)7 59 39 92 30`
     },
     {
       title: "2. Données Personnelles Collectées",
@@ -121,7 +121,7 @@ Elles sont uniquement transmises aux prestataires techniques indispensables au f
 - **Droit à la portabilité (Art. 20 RGPD).**
 - **Droit d'opposition (Art. 21 RGPD).**
 
-Pour exercer ces droits, il vous suffit d'adresser votre demande accompagnée d'un justificatif d'identité à : **contact@marabout-aziman.fr** ou par WhatsApp au **+229 95 30 98 59**.
+Pour exercer ces droits, il vous suffit d'adresser votre demande accompagnée d'un justificatif d'identité à : **contact@marabout-aziman.fr** ou par WhatsApp au **+33 (0)7 59 39 92 30**.
 
 Vous disposez également du droit d'introduire une réclamation auprès de l'autorité de contrôle compétente en France, la **CNIL (Commission Nationale de l'Informatique et des Libertés - www.cnil.fr)**.`
     }
@@ -166,7 +166,7 @@ Le paiement des séances de voyance et rituels à distance s'effectue préalable
     {
       title: "4. Commandes et Livraisons de la Boutique",
       content: `### 4.1. Traitement des commandes
-Les commandes peuvent être passées directement sur le site ou finalisées avec l'assistance du secrétariat via WhatsApp (+229 95 30 98 59 / +33 7 59 39 92 30).
+Les commandes peuvent être passées directement sur le site ou finalisées avec l'assistance du secrétariat via WhatsApp (+33 (0)7 59 39 92 30).
 
 ### 4.2. Expédition et discrétion
 - **Zone de livraison :** France métropolitaine, Corse, DOM-TOM et international.
@@ -225,7 +225,7 @@ Ces cookies sont indispensables au fonctionnement normal et à la sécurité du 
 Ces cookies permettent d'analyser de façon anonyme la fréquentation du site et l'intérêt porté aux articles du blog afin d'en optimiser les performances.
 
 ### 2.3. Traceurs de fonctionnalités tierces
-- **Bouton d'interaction WhatsApp :** Permet d'initier un échange chiffré direct avec Maître Aziman (+229 95 30 98 59 / +33 7 59 39 92 30).
+- **Bouton d'interaction WhatsApp :** Permet d'initier un échange chiffré direct avec Maître Aziman (+33 (0)7 59 39 92 30).
 - **Médias intégrés :** Assure la lecture fluide des témoignages et contenus audio/vidéo.`
     },
     {
@@ -251,7 +251,7 @@ Vous pouvez configurer votre logiciel de navigation pour refuser systématiqueme
       content: `Pour toute question relative à l'utilisation des traceurs sur notre site, vous pouvez nous contacter :
 - **Par e-mail :** contact@marabout-aziman.fr
 - **Par téléphone :** +33 7 59 39 92 30
-- **Par WhatsApp :** +229 95 30 98 59`
+- **Par WhatsApp :** +33 (0)7 59 39 92 30`
     }
   ]
 };

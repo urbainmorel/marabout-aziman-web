@@ -110,7 +110,7 @@ const [beforeProducts, afterProducts] = hasMatch
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {cat.products.map((prod) => {
-            const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article consacré : ${prod.title} (${prod.price})\nLien : https://www.marabout-aziman.fr/boutique/${cat.category}/${prod.slug}/`)}`;
+            const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article consacré : ${prod.title} (${prod.price})\nLien : https://www.marabout-aziman.fr/boutique/${cat.category}/${prod.slug}/`)}`;
             return (
               <div class="card-luxury p-4 sm:p-5 bg-white border border-brand-200/80 hover:border-brand-500 transition-all flex flex-col justify-between group shadow-xs rounded-2xl">
                 <div>

@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 
 const whatsappUrl = customWhatsappMsg
-  ? `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(customWhatsappMsg)}`
+  ? `https://wa.me/${siteSettings.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(customWhatsappMsg)}`
   : siteSettings.whatsappLink;
 ---
 

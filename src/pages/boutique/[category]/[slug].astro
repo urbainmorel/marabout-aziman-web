@@ -32,7 +32,7 @@ interface Props {
 const { cat, prod } = Astro.props;
 
 const productUrl = `https://www.marabout-aziman.fr/boutique/${cat.category}/${prod.slug}/`;
-const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article consacré : ${prod.title} (${prod.price})\nLien : ${productUrl}`)}`;
+const whatsappOrderUrl = `https://wa.me/${siteSettings.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(`Bonjour Maître Aziman, je souhaite commander l'article consacré : ${prod.title} (${prod.price})\nLien : ${productUrl}`)}`;
 
 // Product Schema
 const productSchema = {
