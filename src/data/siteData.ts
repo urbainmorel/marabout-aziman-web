@@ -19,9 +19,9 @@ export interface SiteSettings {
 }
 
 export const siteSettings: SiteSettings = {
-  siteName: 'Cabinet Aziman',
+  siteName: 'Marabout Aziman',
   fullName: 'Maître Aziman',
-  tagline: 'Grand Marabout en France : Voyance & Rituels Traditionnels',
+  tagline: 'Marabout Aziman : Grand Marabout en France & Rituels Traditionnels',
   phone: '+33759399230',
   phoneDisplay: '+33 (0)7 59 39 92 30',
   whatsappNumber: '+33759399230',

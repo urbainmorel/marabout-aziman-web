@@ -49,18 +49,25 @@ const defaultLocalBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Cabinet Maître Aziman - Grand Marabout en France",
-  "alternateName": "Cabinet Aziman",
+  "alternateName": [
+    "Marabout Aziman",
+    "Cabinet Aziman",
+    "Maître Aziman",
+    "Grand Marabout Aziman",
+    "Marabout France"
+  ],
   "legalName": siteSettings.legalEntity,
   "description": description,
   "image": absoluteImage,
   "url": "https://www.marabout-aziman.fr/",
   "telephone": siteSettings.phone,
+  "email": siteSettings.email,
   "priceRange": "€€",
   "paymentAccepted": "Cash, Credit Card, Bank Transfer, PayPal",
   "currenciesAccepted": "EUR",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Cabinet de Paris 16e / Île-de-France",
+    "streetAddress": "Paris 16e",
     "addressLocality": "Paris",
     "addressRegion": "Île-de-France",
     "postalCode": "75016",
@@ -71,6 +78,13 @@ const defaultLocalBusinessSchema = {
     "latitude": "48.8637",
     "longitude": "2.2769"
   },
+  "knowsAbout": [
+    "Voyance Fâ traditionnelle",
+    "Retour affectif rapide",
+    "Rituels ancestraux vaudou et béninois",
+    "Désenvoûtement et protection spirituelle",
+    "Richesse et réussite financière"
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -80,8 +94,17 @@ const defaultLocalBusinessSchema = {
     }
   ],
   "areaServed": [
+    { "@type": "Country", "name": "France" },
     { "@type": "AdministrativeArea", "name": "Île-de-France" },
-    { "@type": "Country", "name": "France" }
+    { "@type": "City", "name": "Paris" },
+    { "@type": "City", "name": "Lyon" },
+    { "@type": "City", "name": "Marseille" },
+    { "@type": "City", "name": "Bordeaux" },
+    { "@type": "City", "name": "Lille" },
+    { "@type": "City", "name": "Toulouse" },
+    { "@type": "AdministrativeArea", "name": "Guadeloupe" },
+    { "@type": "AdministrativeArea", "name": "Martinique" },
+    { "@type": "AdministrativeArea", "name": "Guyane" }
   ],
   "sameAs": [
     siteSettings.whatsappLink
@@ -104,6 +127,9 @@ const schemasToRender = schema
     <GoogleAnalytics />
     
     <!-- Primary Meta Tags -->
+    <!-- Google Site Verification (Search Console) -->
+    <meta name="google-site-verification" content="DJadMp8GMZFruGzO7Jj1LAweRNnjsj8hn1ohffNvMEI" />
+    
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />

@@ -6,8 +6,8 @@ import CtaSection from '../../components/CtaSection.astro';
 import { allZones } from '../../data/zonesData';
 import { siteSettings } from '../../data/siteData';
 
-const seoTitle = "Zones d'Intervention en France & Outre-Mer : Cabinet & Distance | Aziman";
-const seoDesc = "Découvrez l'ensemble des zones d'intervention de Maître Aziman : métropole (Paris, Lyon, Marseille, Bordeaux...) et Outre-Mer (Guadeloupe, Martinique, Guyane).";
+const seoTitle = "Marabout en France : Zones d'Intervention & Villes | Cabinet Aziman";
+const seoDesc = "Marabout en France : découvrez les zones d'intervention de Maître Aziman à Paris, Lyon, Marseille, Bordeaux, Lille, Toulouse et en Outre-Mer 7j/7.";
 
 const metroZones = allZones.filter(z => !['marabout-guadeloupe', 'marabout-martinique', 'marabout-guyane'].includes(z.slug));
 const outreMerZones = allZones.filter(z => ['marabout-guadeloupe', 'marabout-martinique', 'marabout-guyane'].includes(z.slug));

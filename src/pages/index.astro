@@ -20,9 +20,9 @@ const homeBlogArticles = homeFeaturedBlogSlugs
   .map(slug => allBlogArticles.find(article => article.slug === slug))
   .filter((article): article is NonNullable<typeof article> => Boolean(article));
 
-const seoTitle = "Grand Marabout en France : Voyance & Rituels | Cabinet Aziman";
-const seoDesc = "Consultez Maître Aziman, grand marabout en France. Retour affectif rapide, chance, protection et rituels ancestraux. RDV au cabinet ou à distance.";
-const seoKeywords = "marabout en france, grand marabout paris, voyance fâ, marabout africain sérieux france, retour affectif france";
+const seoTitle = "Marabout Aziman : Grand Marabout en France | Voyance & Rituels Traditionnels";
+const seoDesc = "Consultez le Grand Marabout Aziman en France. Cabinet de voyance, retour affectif rapide, protection et rituels ancestraux du Fâ. RDV à Paris et à distance 24/7.";
+const seoKeywords = "marabout aziman, marabout aziman france, marabout france, grand marabout france, cabinet aziman, maître aziman, grand marabout paris, voyance fâ, retour affectif france";
 
 // Exact 3 testimonials from PAGE D'ACCUEIL.txt
 const homeTestimonials = [
@@ -90,8 +90,8 @@ const faqSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Cabinet Maître Aziman",
-  "alternateName": "Grand Marabout en France - Cabinet Aziman",
+  "name": "Marabout Aziman",
+  "alternateName": ["Cabinet Aziman", "Cabinet Maître Aziman", "Grand Marabout en France", "Marabout Aziman France"],
   "url": "https://www.marabout-aziman.fr/",
   "inLanguage": "fr-FR",
   "description": seoDesc
@@ -103,8 +103,8 @@ const websiteSchema = {
   <!-- 1. HERO SECTION UNIFIÉE -->
   <HeroHeader
     badge="Cabinet de Voyance & Rituels Traditionnels"
-    title="Grand Marabout Aziman en France : Voyance & Rituels Traditionnels"
-    highlightWord="Maître Aziman"
+    title="Marabout Aziman : Grand Marabout en France & Rituels Traditionnels"
+    highlightWord="Marabout Aziman"
     description="Retour affectif rapide, désenvoûtement, chance financière et rituels ancestraux du Fâ. Consultations privées en Île-de-France et rituels sérieux à distance partout en France."
     image="/images/home/hero-accueil.webp"
     primaryCta={{ label: 'WhatsApp 24/7', href: siteSettings.whatsappLink, icon: 'whatsapp' }}
