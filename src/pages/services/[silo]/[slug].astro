@@ -34,10 +34,8 @@ const { hub, sub } = Astro.props;
 const isVoyance = hub.silo === 'divination-voyance';
 const ctaLabel = isVoyance ? 'Consultation' : 'Commander';
 const serviceUrl = `https://www.marabout-aziman.fr/services/${hub.silo}/${sub.slug}/`;
-const whatsappMessage = isVoyance
-  ? `Bonjour Maître Aziman, je souhaite réserver une consultation de voyance : ${sub.title}\nLien : ${serviceUrl}`
-  : `Bonjour Maître Aziman, je souhaite commander le rituel : ${sub.title}\nLien : ${serviceUrl}`;
-const whatsappServiceUrl = `https://wa.me/${siteSettings.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`;
+
+const whatsappServiceUrl = siteSettings.whatsappLink;
 
 // Service / Ritual Schema
 const ritualSchema = {

@@ -71,7 +71,7 @@ export const siteSettings = {
   phoneDisplay: '+33 (0)7 59 39 92 30',
   whatsappNumber: '+33759399230',
   whatsappDisplay: '+33 (0)7 59 39 92 30',
-  whatsappLink: 'https://wa.me/33759399230?text=Bonjour%20Ma%C3%AEtre%20Aziman%2C%20je%20souhaite%20une%20consultation%20confidentielle.',
+  whatsappLink: 'https://wa.me/33759399230',
   email: 'contact@marabout-aziman.fr',
   address: 'Cabinet en Île-de-France & Interventions à distance',
   workingHours: '7j/7 - 24h/24 (Consultations sur RDV & Urgences)',
